@@ -1,0 +1,124 @@
+.login-screen {
+  width: 100%;
+  height: 100vh;
+  background-color: #e0f2f2;
+  font-size: 1rem;
+  display: -ms-grid;
+  display: grid;
+}
+
+.login-screen .login-card {
+  background-color: white;
+  margin: auto;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  height: 75vh;
+  padding: 3em;
+  width: 30vw;
+  -ms-grid-rows: 1.3fr 2fr .5fr;
+      grid-template-rows: 1.3fr 2fr .5fr;
+  grid-gap: 1.5em;
+}
+
+.login-screen .login-card button {
+  background-color: #1E1E24;
+  color: white;
+  border-radius: 1em;
+}
+
+.login-screen .login-card .top-header {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr .5fr;
+      grid-template-rows: 1fr 1fr .5fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-screen .login-card .top-header .title {
+  font-size: 1.5em;
+}
+
+.login-screen .login-card .top-header .buttons-gp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30vw;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.login-screen .login-card .top-header .buttons-gp button {
+  text-align: center;
+  width: 11vw;
+  height: 4.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: flex;
+}
+
+.login-screen .login-card .top-header .buttons-gp button img {
+  position: relative;
+  width: 1.5vw;
+  top: -.1em;
+}
+
+.login-screen .login-card .top-header .or {
+  color: #3d3d3d;
+}
+
+.login-screen .login-card .bottom-header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-screen .login-card .bottom-header input {
+  width: 23vw;
+}
+
+.login-screen .login-card .bottom-header button {
+  height: 4em;
+}
+
+.login-screen .login-card .dont-have span {
+  color: #D82D57;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

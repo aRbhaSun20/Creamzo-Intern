@@ -14,9 +14,10 @@ const Login = () => {
 	return (
 		<React.Fragment>
 			<div className="login-screen">
+				<div className="illustrator">Illustrator</div>
 				<div className="login-card">
 					<div className="top-header">
-						<div className="title">Log in with</div>
+						<div className="title">Hello, Welcome Back!</div>
 						<div className="buttons-gp">
 							<Button
 								variant="contained"
@@ -69,27 +70,30 @@ const Login = () => {
 							placeholder="*******"
 							variant="outlined"
 						/>
-						<Button
-							variant="contained"
-							color="primary"
-							onClick={(e) => {
-								e.preventDefault();
-								console.log("submit");
-							}}
-						>
-							Log In
-						</Button>
-					</div>
-					<div className="dont-have">
-						Don’t have an account?{" "}
-						<span
-							onClick={(e) => {
-								e.preventDefault();
-								console.log("sign up");
-							}}
-						>
-							Sign up
-						</span>
+						<div className="login-forget">
+							<Button
+								variant="contained"
+								color="primary"
+								onClick={(e) => {
+									e.preventDefault();
+									console.log("submit");
+								}}
+							>
+								Log In
+							</Button>
+							<div className="forget">Forget Password?</div>
+						</div>
+						<div className="dont-have">
+							Don’t have an account?
+							<span
+								onClick={(e) => {
+									e.preventDefault();
+									console.log("sign up");
+								}}
+							>
+								Sign up
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

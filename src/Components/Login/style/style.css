@@ -1,10 +1,25 @@
 .login-screen {
   width: 100%;
-  height: 100vh;
-  background-color: #e0f2f2;
+  height: 90vh;
   font-size: 1rem;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.login-screen .illustrator {
+  height: 100%;
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login-screen .login-card {
@@ -17,12 +32,10 @@
           align-items: center;
   display: -ms-grid;
   display: grid;
-  height: 75vh;
-  padding: 3em;
-  width: 30vw;
-  -ms-grid-rows: 1.3fr 2fr .5fr;
-      grid-template-rows: 1.3fr 2fr .5fr;
-  grid-gap: 1.5em;
+  height: 72vh;
+  width: 27vw;
+  -ms-grid-rows: .8fr 2fr;
+      grid-template-rows: .8fr 2fr;
 }
 
 .login-screen .login-card button {
@@ -53,7 +66,12 @@
 }
 
 .login-screen .login-card .top-header .title {
-  font-size: 1.5em;
+  font-size: 2em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .login-screen .login-card .top-header .buttons-gp {
@@ -68,8 +86,8 @@
 
 .login-screen .login-card .top-header .buttons-gp button {
   text-align: center;
-  width: 11vw;
-  height: 4.2em;
+  width: 10vw;
+  height: 4em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,6 +103,11 @@
 }
 
 .login-screen .login-card .top-header .or {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   color: #3d3d3d;
 }
 
@@ -110,14 +133,51 @@
 }
 
 .login-screen .login-card .bottom-header input {
-  width: 23vw;
+  width: 19vw;
 }
 
 .login-screen .login-card .bottom-header button {
   height: 4em;
 }
 
+.login-screen .login-card .login-forget {
+  width: 100%;
+  height: 6em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.login-screen .login-card .login-forget button {
+  height: 5vh;
+  width: 15vw;
+}
+
+.login-screen .login-card .login-forget .forget {
+  padding-top: 2em;
+}
+
+.login-screen .login-card .dont-have {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .login-screen .login-card .dont-have span {
+  padding-left: .5em;
   color: #D82D57;
   cursor: pointer;
 }

@@ -8,24 +8,25 @@ import google from "./assets/google.png";
 
 import CloseIcon from "@material-ui/icons/Close";
 
-const Login = ({ setopen }) => {
+const SignUp = ({ setopen }) => {
 	const [mail, setMail] = useState("");
 
 	const [password, setPassword] = useState("");
+	const [age, setAge] = useState("");
 
 	return (
 		<React.Fragment>
 			<div className="login-card">
 				<div className="top-header">
 					<div className="title" style={{ position: "relative" }}>
-						Hello, Welcome Back!
+						Hey, Welcome to Cremzo!
 						<CloseIcon
 							onClick={() => {
 								setopen(false);
 							}}
 							style={{
 								position: "absolute",
-								right: "-4em",
+								right: "-3em",
 								top: ".4em",
 								cursor: "pointer",
 							}}
@@ -59,7 +60,6 @@ const Login = ({ setopen }) => {
 				</div>
 				<div className="bottom-header">
 					<TextField
-						required
 						id="outlined-basic"
 						label="Email"
 						value={mail}
@@ -71,9 +71,8 @@ const Login = ({ setopen }) => {
 						variant="outlined"
 					/>
 					<TextField
-						required
 						id="outlined-basic"
-						label="Password"
+						label="Create Password"
 						type="password"
 						value={password}
 						onChange={(e) => {
@@ -81,6 +80,16 @@ const Login = ({ setopen }) => {
 							setPassword(e.target.value);
 						}}
 						placeholder="*******"
+						variant="outlined"
+					/>
+					<TextField
+						id="outlined-basic"
+						label="Age"
+						value={age}
+						onChange={(e) => {
+							e.preventDefault();
+							setAge(e.target.value);
+						}}
 						variant="outlined"
 					/>
 					<div className="login-forget">
@@ -92,7 +101,7 @@ const Login = ({ setopen }) => {
 								console.log("submit");
 							}}
 						>
-							Log In
+							Continue
 						</Button>
 						<div className="forget">Forget Password?</div>
 					</div>
@@ -113,4 +122,4 @@ const Login = ({ setopen }) => {
 	);
 };
 
-export default Login;
+export default SignUp;

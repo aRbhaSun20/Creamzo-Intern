@@ -33,6 +33,8 @@
   display: -ms-grid;
   display: grid;
   height: 72vh;
+  padding: 3em;
+  border-radius: 1em;
   width: 27vw;
   -ms-grid-rows: .8fr 2fr;
       grid-template-rows: .8fr 2fr;

@@ -8,7 +8,8 @@ const Home = () => {
 			<div
 				className="image-conatiner"
 				style={{ width: "100%", height: "90vh"}}
-			></div>
+			>
+			</div>
 		</React.Fragment>
 	);
 };

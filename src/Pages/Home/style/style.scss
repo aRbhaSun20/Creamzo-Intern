@@ -4,18 +4,9 @@
 }
 
 .container {
-    max-width: 82vw;
+    // max-width: 90vw;
+    min-width: 100em;
     margin-top: 8em;
-    width: auto;
-    height: 80vh;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container2 {
-    max-width: 50vw;
     width: auto;
     height: 80vh;
     display: flex;

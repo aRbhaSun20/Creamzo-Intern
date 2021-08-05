@@ -4,27 +4,8 @@
 }
 
 .container {
-  max-width: 82vw;
+  min-width: 100em;
   margin-top: 8em;
-  width: auto;
-  height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.container2 {
-  max-width: 50vw;
   width: auto;
   height: 80vh;
   display: -webkit-box;

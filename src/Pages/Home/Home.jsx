@@ -9,7 +9,6 @@ const Home = () => {
 	let arr2 = [10, 9, 8, 7, 8];
 	return (
 		<React.Fragment>
-<<<<<<< HEAD
 			<div className="container">
 				{arr.map((ele, i) => (
 					<div
@@ -24,13 +23,6 @@ const Home = () => {
 				))}
 			</div>
 			<div className="title"></div>
-=======
-			<div
-				className="image-conatiner"
-				style={{ width: "100%", height: "90vh"}}
-			>
-			</div>
->>>>>>> a1b65ed9772917b0dae191497de978ef10a59a31
 		</React.Fragment>
 	);
 };

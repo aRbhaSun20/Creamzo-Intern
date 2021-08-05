@@ -1,0 +1,12 @@
+.image {
+    min-width: 8em;
+    height: 32em;
+    background-color: grey;
+    transition: all 1s ease-in-out;
+    opacity: .3;
+
+    &:hover {
+        width: 14em;
+        opacity: 1;
+    }
+}

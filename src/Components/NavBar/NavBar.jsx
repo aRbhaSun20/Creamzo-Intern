@@ -10,6 +10,14 @@ const NavBar = () => {
 	const [LoginOpen, setLoginOpen] = React.useState(false);
 	const [SignUpOpen, setSignUpOpen] = React.useState(false);
 
+	const handleLoginClose = () => {
+		setLoginOpen(false);
+	};
+
+	const handleSignClose = () => {
+		setSignUpOpen(false);
+	};
+
 	return (
 		<React.Fragment>
 			<div className="navbar">
@@ -75,9 +83,7 @@ const NavBar = () => {
 
 					<Modal
 						open={LoginOpen}
-						onClose={() => {
-							setLoginOpen(false);
-						}}
+						onClose={handleLoginClose}
 						aria-labelledby="simple-modal-title"
 						aria-describedby="simple-modal-description"
 						style={{ display: "flex", margin: "auto" }}
@@ -86,9 +92,7 @@ const NavBar = () => {
 					</Modal>
 					<Modal
 						open={SignUpOpen}
-						onClose={() => {
-							setSignUpOpen(false);
-						}}
+						onClose={handleSignClose}
 						aria-labelledby="simple-modal-title"
 						aria-describedby="simple-modal-description"
 						style={{ display: "flex", margin: "auto" }}

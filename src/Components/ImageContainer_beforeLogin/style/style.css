@@ -1,0 +1,14 @@
+.image {
+  min-width: 8em;
+  height: 32em;
+  background-color: grey;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  opacity: .3;
+}
+
+.image:hover {
+  width: 14em;
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

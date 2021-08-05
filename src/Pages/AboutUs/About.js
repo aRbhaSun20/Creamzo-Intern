@@ -6,7 +6,7 @@ import Team from "../../Components/About/team";
 import Serv from "../../Components/About/service1";
 import Img from "../../Components/About/image";
 import Recent from "../../Components/About/recent";
-
+import React from "react";
 
 
 function About() {

@@ -4,15 +4,17 @@
 }
 
 .container {
-    // max-width: 90vw;
-    min-width: 100em;
-    margin-top: 8em;
+    max-width: 80vw;
+    min-width: 80em;
+    position: relative;
+    top: 8em;
     width: auto;
     height: 80vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    margin: auto;
 }
 
 .title {

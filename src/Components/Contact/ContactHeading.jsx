@@ -1,6 +1,4 @@
 import React from 'react'
-import style from '../Contact/style/style.module.css'
-import Alert from 'react-bootstrap/Alert';
 
 const Contact = () =>{
     return(

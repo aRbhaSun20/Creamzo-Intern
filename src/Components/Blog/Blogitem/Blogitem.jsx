@@ -1,15 +1,21 @@
 import React, { useState } from "react";
-import { Facebook, Instagram, Opacity, Twitter } from "@material-ui/icons";
+import { Facebook, Instagram, Twitter } from "@material-ui/icons";
 
 import "./styles/styles.css";
 import dummyimage from "./styles/blogitemimage.jpg";
 
 function Blogitem() {
+	// eslint-disable-next-line
 	const [dummyHeading, setdummyHeading] = useState("Dummy heading");
+	// eslint-disable-next-line
 	const [dummyDate, setdummyDate] = useState("02/08/2021");
+	// eslint-disable-next-line
 	const [facebookUrl, setfacebookUrl] = useState("https://www.facebook.com");
+	// eslint-disable-next-line
 	const [twitterUrl, settwitterUrl] = useState("https://www.twitter.com");
+	// eslint-disable-next-line
 	const [instagramUrl, setinstagramUrl] = useState("https://www.instagram.com");
+	// eslint-disable-next-line
 	const [categorytype, setcategorytype] = useState("Art");
 
 	return (

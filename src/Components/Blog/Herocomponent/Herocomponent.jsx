@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles/styles.css";
+// eslint-disable-next-line
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+// eslint-disable-next-line
 import herobackground from "./styles/herobackground.jpg";
 function Herocomponent() {
   return (

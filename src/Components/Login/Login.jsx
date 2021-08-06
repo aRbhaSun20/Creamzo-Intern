@@ -24,9 +24,9 @@ const Login = ({ setopen }) => {
 								setopen(false);
 							}}
 							style={{
-								position: "absolute",
+								position: "relative",
 								right: "-4em",
-								top: ".4em",
+								top: "-.1em",
 								cursor: "pointer",
 							}}
 						/>

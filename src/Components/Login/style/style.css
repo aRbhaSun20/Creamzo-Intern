@@ -50,6 +50,7 @@
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
+  margin-top: 2em;
 }
 
 .login-card .top-header .buttons-gp {

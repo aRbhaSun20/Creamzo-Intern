@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from "react-router-dom";
 
 import Home from "./Home/Home";
 import NavBar from "../Components/NavBar/NavBar";
@@ -18,13 +23,49 @@ const Routes = () => {
 				<div className="App">
 					<NavBar />
 					<Switch>
-						<Route path="/" exact component={Home}></Route>
-						<Route path="/about" exact component={About}></Route>
-						<Route path="/discover" exact component={Discover}></Route>
-						<Route path="/contact" exact component={ContactPage}></Route>
-						<Route path="/blog" exact component={Blog}></Route>
-						<Route path="/articles" exact component={BlogArticles}></Route>
-						<Route path="/articleitem" exact component={Article}></Route>
+						<Route
+							path="/"
+							exact
+							render={(props) => <Home {...props} />}
+						></Route>
+
+						<Route
+							path="/about"
+							exact
+							render={(props) => <About {...props} />}
+						></Route>
+
+						<Route
+							path="/discover"
+							exact
+							render={(props) => <Discover {...props} />}
+						></Route>
+
+						<Route
+							path="/contact"
+							exact
+							render={(props) => <ContactPage {...props} />}
+						></Route>
+
+						<Route
+							path="/blog"
+							exact
+							render={(props) => <Blog {...props} />}
+						></Route>
+
+						<Route
+							path="/articles"
+							exact
+							render={(props) => <BlogArticles {...props} />}
+						></Route>
+
+						<Route
+							path="/articleitem"
+							exact
+							render={(props) => <Article {...props} />}
+						></Route>
+
+						<Redirect to="/" />
 					</Switch>
 					<EndSection />
 				</div>

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "./css/styles.css";
 function Team() {
 	return (
@@ -19,18 +20,18 @@ function Team() {
 								<h4>Walter White</h4>
 								<span>Chief Executive Officer</span>
 								<div class="social">
-									<a href="">
+									<Link to="/">
 										<i class="bi bi-twitter"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-facebook"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-instagram"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-linkedin"></i>
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -49,18 +50,18 @@ function Team() {
 								<h4>Sarah Jhonson</h4>
 								<span>Product Manager</span>
 								<div class="social">
-									<a href="">
+									<Link to="/">
 										<i class="bi bi-twitter"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-facebook"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-instagram"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-linkedin"></i>
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -79,18 +80,18 @@ function Team() {
 								<h4>William Anderson</h4>
 								<span>CTO</span>
 								<div class="social">
-									<a href="">
+									<Link to="/">
 										<i class="bi bi-twitter"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-facebook"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-instagram"></i>
-									</a>
-									<a href="">
+									</Link>
+									<Link to="/">
 										<i class="bi bi-linkedin"></i>
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>

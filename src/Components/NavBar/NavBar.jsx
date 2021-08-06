@@ -22,12 +22,7 @@ const NavBar = () => {
 		<React.Fragment>
 			<div className="navbar">
 				<NavLink activeClassName="activeLink" to="/" exact>
-					<Typography
-						variant="h4"
-						className="title"
-						style={{ fontWeight: "bold" }}
-						href="/"
-					>
+					<Typography variant="h4" style={{ fontWeight: "bold" }} href="/">
 						Logo
 					</Typography>
 				</NavLink>
@@ -60,9 +55,14 @@ const NavBar = () => {
 					</NavLink>
 
 					<Button
-						style={{ fontWeight: "bold", width: "8em", height: "3em" }}
+						style={{
+							fontWeight: "bold",
+							width: "8em",
+							height: "3em",
+							borderRadius: "1.5em",
+						}}
 						variant="contained"
-						color="primary"
+						color="secondary"
 						onClick={() => {
 							setLoginOpen(true);
 						}}
@@ -71,9 +71,14 @@ const NavBar = () => {
 					</Button>
 
 					<Button
-						style={{ fontWeight: "bold", width: "8em", height: "3em" }}
+						style={{
+							fontWeight: "bold",
+							width: "8em",
+							height: "3em",
+							borderRadius: "1.5em",
+						}}
 						variant="contained"
-						color="primary"
+						color="secondary"
 						onClick={() => {
 							setSignUpOpen(true);
 						}}

@@ -18,6 +18,7 @@ const Home = () => {
 		{ value: 8, title: "title9" },
 		{ value: 7, title: "title0" },
 	];
+	
 	const [title, setTitle] = useState("");
 	return (
 		<React.Fragment>

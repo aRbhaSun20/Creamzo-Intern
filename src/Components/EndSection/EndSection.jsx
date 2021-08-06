@@ -36,7 +36,7 @@ const EndSection = () => {
 					</div>
 					<div>
 						<i className="fa fa-phone" />
-						<p>+911234567890</p>
+						<a href="tel:+911234567890">+911234567890</a>
 					</div>
 					<div>
 						<i className="fa fa-envelope" />
@@ -53,18 +53,18 @@ const EndSection = () => {
 						photographs, DIY, and crafts.
 					</p>
 					<div className="footer-icons">
-						<a href="#">
+						<Link to="/">
 							<i className="fa fa-facebook" />
-						</a>
-						<a href="#">
+						</Link>
+						<Link to="/">
 							<i className="fa fa-twitter" />
-						</a>
-						<a href="#">
+						</Link>
+						<Link to="/">
 							<i className="fa fa-linkedin" />
-						</a>
-						<a href="#">
+						</Link>
+						<Link to="/">
 							<i className="fa fa-github" />
-						</a>
+						</Link>
 					</div>
 				</div>
 			</footer>

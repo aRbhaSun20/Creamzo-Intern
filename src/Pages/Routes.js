@@ -15,7 +15,7 @@ import ContactPage from "./Contact/ContactPage";
 import Blog from "./Blog/Blog";
 import Article from "../Components/Blog/Article/Article";
 import BlogArticles from "./BlogArticles/BlogArticles";
-
+import Articledisplay from "./ArticleDisplay/Articledisplay";
 const Routes = () => {
 	return (
 		<React.Fragment>
@@ -62,8 +62,9 @@ const Routes = () => {
 						<Route
 							path="/articleitem"
 							exact
-							render={(props) => <Article {...props} />}
+							render={(props) => <Articledisplay {...props} />}
 						></Route>
+						
 
 						<Redirect to="/" />
 					</Switch>

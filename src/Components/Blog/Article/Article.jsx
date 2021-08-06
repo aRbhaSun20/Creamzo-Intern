@@ -14,9 +14,9 @@ function Article() {
 	return (
 		<div>
 			<img className="article-image" src={blogitemimage} alt="article" />
-			<h1 style={{ paddingLeft: "1rem", width: "30rem" }}>{dummyHeading}</h1>
+			<h1 style={{ paddingLeft: "1rem",fontSize:'1.5rem', width: "20rem" }}>{dummyHeading}</h1>
 			<h4 className="secondary-imageitem-text">{secondaryText}</h4>
-			<a className="readmore-button" href={buttonurl}>
+			<a className="readmore-button" styles={{fontSize:'1rem'}}href={buttonurl}>
 				READ MORE
 			</a>
 		</div>

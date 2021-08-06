@@ -1,7 +1,7 @@
 import React from 'react'
 import Article from '../../Components/Blog/Article/Article'
 import ArticleItem from '../../Components/Blog/ArticleItem/ArticleItem'
-function articledisplay() {
+function Articledisplay() {
     return (
         <div>
             <ArticleItem />
@@ -9,4 +9,4 @@ function articledisplay() {
     )
 }
 
-export default articledisplay
+export default Articledisplay

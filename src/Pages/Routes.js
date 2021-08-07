@@ -13,9 +13,10 @@ import About from "./AboutUs/About";
 import Discover from "./Discover/Discover";
 import ContactPage from "./Contact/ContactPage";
 import Blog from "./Blog/Blog";
-import Article from "../Components/Blog/Article/Article";
 import BlogArticles from "./BlogArticles/BlogArticles";
 import Articledisplay from "./ArticleDisplay/Articledisplay";
+import Tnc from "../Components/Tnc/Tnc";
+
 const Routes = () => {
 	return (
 		<React.Fragment>
@@ -60,11 +61,12 @@ const Routes = () => {
 						></Route>
 
 						<Route
-							path="/articleitem"
+							path="/terms"
 							exact
-							render={(props) => <Articledisplay {...props} />}
+							render={(props) => <Tnc {...props} />}
 						></Route>
-						
+
+						<Route path="/articleitem"></Route>
 
 						<Redirect to="/" />
 					</Switch>

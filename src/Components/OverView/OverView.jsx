@@ -37,7 +37,7 @@ const OverView = () => {
 				style={{
 					display: "grid",
 					width: "75%",
-					height: "80vh",
+					height: "95vh",
 					justifyContent: "center",
 					alignItems: "center",
 					alignContent: "center",

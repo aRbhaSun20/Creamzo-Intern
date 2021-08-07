@@ -1,0 +1,74 @@
+.container{
+    width: 70vw;
+    margin: 0 auto;
+}
+.aboutInfo{
+    display: flex;
+    gap: 10%;
+    padding: 5vw;
+}
+.teamName{
+    width: 35%;
+    word-wrap: break-word;
+    border: 7px solid black;
+}
+.teamName h1{
+ position: relative;
+ top: 75%;
+ left: 10%;
+
+}
+.introduction{
+    width: 55%;
+    padding: 25px;
+    margin-top: 10vh;
+    word-wrap: break-word;
+}
+.introduction p{
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1520px) {
+  
+  .aboutInfo{
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+  }
+  .teamName{
+      width: 40%;
+      margin-left: 30%;
+      height: auto;
+      padding: 7vh 3vh 1vh 1vh ;
+  }
+  .introduction{
+      margin-top: 1vh;
+      width: 80%;
+      margin-left: 10%;
+  }
+}
+
+.team{
+    text-align: center;
+    padding: 50px;
+    
+}
+/* images */
+.gridContainer{
+    justify-content: center;
+}
+
+.memberCard{
+    display: flex;
+    /* border: 3px solid black; */
+}
+.memberImage{
+    width: 100%;
+}
+.memberImage:hover{
+    transition: 0.5s;
+    transform: translate(15%,0%);
+}
+.details {
+    margin: 50% auto auto auto;
+}

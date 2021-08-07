@@ -1,9 +1,8 @@
 import React from "react";
 import "../../Components/Discover/style/style.css";
 import Grid from "@material-ui/core/Grid";
-import DiscoverItem from "../../Components/Discover/DiscoverItem";
 import defaultImage from "./assets/defaultExplore.jpg";
-
+import style from "../Profile/style/MyUploads.module.css";
 const Discover = () => {
 	let arr = [
 		{ img: { defaultImage }, name: "Travel" },
@@ -18,20 +17,26 @@ const Discover = () => {
 		{ img: { defaultImage }, name: "Travel" },
 		{ img: { defaultImage }, name: "Travel" },
 		{ img: { defaultImage }, name: "Travel" },
-		// { img: { defaultImage }, name: "Travel" },
-		// { img: { defaultImage }, name: "Travel" },
-		// { img: { defaultImage }, name: "Travel" },
+		{
+			img: { defaultImage },
+			name: "Travel",
+		},
+		{ img: { defaultImage }, name: "Travel" },
+		{ img: { defaultImage }, name: "Travel" },
 	];
 	return (
-		<div className="discover-container" style={{ height: "auto" }}>
+		<div className="discover-container">
 			<h1 className="title-item">Discover Creamzo</h1>
-			<div style={{ display: "grid", gridTemplateRows: "repeat(6,1fr)" }}>
-				<Grid className="grid" container>
-					{arr.map((item, ind) => {
-						return <DiscoverItem key={ind} img={item.img} name={item.name} />;
-					})}
-				</Grid>
-			</div>
+
+			<Grid className={style.gridContainer} container spacing={2}>
+				{arr.map((image, index) => (
+					<Grid className="grid-item" item xs={2}>
+						<img className="discoverImage" src={defaultImage} alt="discover" />
+
+						<div className="grid-item-title"> {image.name} </div>
+					</Grid>
+				))}
+			</Grid>
 		</div>
 	);
 };

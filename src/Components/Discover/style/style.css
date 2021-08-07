@@ -1,44 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .title-item {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 5vh;
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 5vh;
 }
-
 .discover-container {
-    margin: auto 4vw;
-    height: 90vh;
-}
-
-.grid {
-    column-gap: 4vw;
-    row-gap: 4vh;
+  margin: auto 2vw;
 }
 
 .grid-item {
-    width: 15vw;
-    height: 30vh;
-    position: relative;
-    opacity: 1;
-    cursor: pointer;
+  height: 32vh;
+  cursor: pointer;
+  opacity: 0.7;
 }
-
-.grid-item :hover {
-    opacity: 0.7;
-}
-
-.grid-item img {
-    position: absolute;
-    max-width: 100%;
-    height: fit-content;
-    border-radius: 25px;
+.grid-item:hover {
+  transition: 1s;
+  opacity: 1;
 }
 
 .grid-item-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
+  position: relative;
+  top: -45%;
+  transform: translate(0%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  word-wrap: break-word;
+}
+/* new */
+
+.discoverImage {
+  max-width: 100%;
+  border-radius: 25px;
+
+}
+.gridContainer {
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
 }

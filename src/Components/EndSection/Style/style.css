@@ -63,17 +63,9 @@ footer {
   margin: 20px 0 12px;
   padding: 0;
 }
-<<<<<<< HEAD
-.footerLink{
-	padding: 15px 15px 15px 0px;
-}
-.footer-distributed .footer-links .footerLink:hover{
-  color:  #ffffff67;
-=======
 
 .end-section .footer-links .footerLink:hover {
   color: #ffffff67;
->>>>>>> 5f5685243b1ebd895410b653739f15a6047926f8
 }
 
 .footerLink {

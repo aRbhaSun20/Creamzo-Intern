@@ -237,19 +237,6 @@ const EndSection = () => {
 							<TwitterIcon fontSize="large" style={{ color: "white" }} />
 						</Link>
 					</div>
-<<<<<<< HEAD
-				</div>
-				<div className="footer-right">
-					<p className="footer-company-about">
-						<span>About the company</span>
-						Creamzo’s motto is to motivate people who are passionate, creative, and fun-loving. It’s the largest collection of Ideas, quotes, and photographs, DIY, and crafts.
-					</p>
-					<div className="footer-icons">
-						<a href="https://www.facebook.com/"><i className="fa fa-facebook" /></a>
-						<a href="https://www.facebook.com/"><i className="fa fa-twitter" /></a>
-						<a href="https://www.facebook.com/"><i className="fa fa-linkedin" /></a>
-						<a href="https://www.facebook.com/"><i className="fa fa-github" /></a>
-=======
 					<div className="icon">
 						<Link to="/">
 							<InstagramIcon
@@ -257,7 +244,6 @@ const EndSection = () => {
 								style={{ color: "white", width: "10em" }}
 							/>
 						</Link>
->>>>>>> 5f5685243b1ebd895410b653739f15a6047926f8
 					</div>
 				</div>
 			</div>

@@ -1,36 +1,39 @@
-
-
-.title-item{
+.title-item {
     text-align: center;
-   font-size: 2.5em;
-   margin-bottom: 5vh;
-}
-.discover-container{
-margin: auto 4vw;
-/* height: 90vh; */
+    font-size: 2.5em;
+    margin-bottom: 5vh;
 }
 
-.grid{
-column-gap: 4vw;
-row-gap: 4vh;
+.discover-container {
+    margin: auto 4vw;
+    height: 90vh;
 }
-.grid-item{
+
+.grid {
+    column-gap: 4vw;
+    row-gap: 4vh;
+}
+
+.grid-item {
     width: 15vw;
     height: 30vh;
     position: relative;
     opacity: 1;
     cursor: pointer;
 }
-.grid-item :hover{
+
+.grid-item :hover {
     opacity: 0.7;
 }
-.grid-item img{
+
+.grid-item img {
     position: absolute;
     max-width: 100%;
     height: fit-content;
     border-radius: 25px;
 }
-.grid-item-title{
+
+.grid-item-title {
     position: absolute;
     top: 50%;
     left: 50%;

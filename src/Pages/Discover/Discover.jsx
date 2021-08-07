@@ -18,12 +18,12 @@ const Discover = () => {
 		{ img: { defaultImage }, name: "Travel" },
 		{ img: { defaultImage }, name: "Travel" },
 		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
+		// { img: { defaultImage }, name: "Travel" },
+		// { img: { defaultImage }, name: "Travel" },
+		// { img: { defaultImage }, name: "Travel" },
 	];
 	return (
-		<div className="discover-container">
+		<div className="discover-container" style={{ height: "auto" }}>
 			<h1 className="title-item">Discover Creamzo</h1>
 			<div style={{ display: "grid", gridTemplateRows: "repeat(6,1fr)" }}>
 				<Grid className="grid" container>

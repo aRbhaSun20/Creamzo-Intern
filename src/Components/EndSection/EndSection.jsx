@@ -4,7 +4,6 @@ import "./Style/style.css";
 const EndSection = () => {
 	return (
 		<React.Fragment>
-
 			<footer className="footer-distributed">
 				<div className="footer-left">
 					<h3>Creamzo</h3>
@@ -36,10 +35,10 @@ const EndSection = () => {
 						Creamzo’s motto is to motivate people who are passionate, creative, and fun-loving. It’s the largest collection of Ideas, quotes, and photographs, DIY, and crafts.
 					</p>
 					<div className="footer-icons">
-						<a href="#"><i className="fa fa-facebook" /></a>
-						<a href="#"><i className="fa fa-twitter" /></a>
-						<a href="#"><i className="fa fa-linkedin" /></a>
-						<a href="#"><i className="fa fa-github" /></a>
+						<a href="https://www.facebook.com/"><i className="fa fa-facebook" /></a>
+						<a href="https://www.facebook.com/"><i className="fa fa-twitter" /></a>
+						<a href="https://www.facebook.com/"><i className="fa fa-linkedin" /></a>
+						<a href="https://www.facebook.com/"><i className="fa fa-github" /></a>
 					</div>
 				</div>
 			</footer>

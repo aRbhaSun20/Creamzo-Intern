@@ -1,39 +1,80 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from "react-router-dom";
 
 import Home from "./Home/Home";
 import NavBar from "../Components/NavBar/NavBar";
 import EndSection from "../Components/EndSection/EndSection";
-import FooterBeforeLogin from "../Components/EndSection/FooterBeforeLogin";
-import Discover from "./Discover/Discover.jsx"
+import About from "./AboutUs/About";
+import Discover from "./Discover/Discover";
 import ContactPage from "./Contact/ContactPage";
-import PublicViewProfile from "./Profile/PublicViewProfile";
-import UserViewProfile from "./Profile/UserViewProfile";
-import MyUploadsPage from "./Profile/MyUploads";
-import Glider from "../Components/Creative/Glider";
-import Teams from "./Team/Teams";
+import Blog from "./Blog/Blog";
+import BlogArticles from "./BlogArticles/BlogArticles";
+import Articledisplay from "./ArticleDisplay/Articledisplay";
+import Tnc from "../Components/Tnc/Tnc";
+
 const Routes = () => {
 	return (
-    <React.Fragment>
-      <Router>
-        <div className="App">
-          <NavBar />
-          <Switch>
-            <Route path="/" exact component={Home}></Route>
-            <Route path="/discover" exact component={Discover}></Route>
-            <Route path="/contact" exact component={ContactPage}></Route>
-            <Route path="/profilePublic" exact component={PublicViewProfile}></Route>
-            <Route path="/profileUser" exact component={UserViewProfile}></Route>
-            <Route path="/myuploads" exact component={MyUploadsPage}></Route>            
-            <Route path="/creative" exact component={Glider}></Route>
-            <Route path="/team" exact component={Teams}></Route>
-          </Switch>
-          <EndSection />
-          <FooterBeforeLogin/>
-        </div>
-      </Router>
-    </React.Fragment>
-  );
+		<React.Fragment>
+			<Router>
+				<div className="App">
+					<NavBar />
+					<Switch>
+						<Route
+							path="/"
+							exact
+							render={(props) => <Home {...props} />}
+						></Route>
+
+						<Route
+							path="/about"
+							exact
+							render={(props) => <About {...props} />}
+						></Route>
+
+						<Route
+							path="/discover"
+							exact
+							render={(props) => <Discover {...props} />}
+						></Route>
+
+						<Route
+							path="/contact"
+							exact
+							render={(props) => <ContactPage {...props} />}
+						></Route>
+
+						<Route
+							path="/blog"
+							exact
+							render={(props) => <Blog {...props} />}
+						></Route>
+
+						<Route
+							path="/articles"
+							exact
+							render={(props) => <BlogArticles {...props} />}
+						></Route>
+
+						<Route
+							path="/terms"
+							exact
+							render={(props) => <Tnc {...props} />}
+						></Route>
+
+						<Route path="/articleitem"></Route>
+
+						<Redirect to="/" />
+					</Switch>
+					<EndSection />
+				</div>
+			</Router>
+		</React.Fragment>
+	);
 };
 
 export default Routes;

@@ -10,16 +10,19 @@ const NavBar = () => {
 	const [LoginOpen, setLoginOpen] = React.useState(false);
 	const [SignUpOpen, setSignUpOpen] = React.useState(false);
 
+	const handleLoginClose = () => {
+		setLoginOpen(false);
+	};
+
+	const handleSignClose = () => {
+		setSignUpOpen(false);
+	};
+
 	return (
 		<React.Fragment>
 			<div className="navbar">
 				<NavLink activeClassName="activeLink" to="/" exact>
-					<Typography
-						variant="h4"
-						className="title"
-						style={{ fontWeight: "bold" }}
-						href="/"
-					>
+					<Typography variant="h4" style={{ fontWeight: "bold" }} href="/">
 						Logo
 					</Typography>
 				</NavLink>
@@ -52,9 +55,14 @@ const NavBar = () => {
 					</NavLink>
 
 					<Button
-						style={{ fontWeight: "bold", width: "8em", height: "3em" }}
+						style={{
+							fontWeight: "bold",
+							width: "8em",
+							height: "3em",
+							borderRadius: "1.5em",
+						}}
 						variant="contained"
-						color="primary"
+						color="secondary"
 						onClick={() => {
 							setLoginOpen(true);
 						}}
@@ -63,9 +71,14 @@ const NavBar = () => {
 					</Button>
 
 					<Button
-						style={{ fontWeight: "bold", width: "8em", height: "3em" }}
+						style={{
+							fontWeight: "bold",
+							width: "8em",
+							height: "3em",
+							borderRadius: "1.5em",
+						}}
 						variant="contained"
-						color="primary"
+						color="secondary"
 						onClick={() => {
 							setSignUpOpen(true);
 						}}
@@ -75,9 +88,7 @@ const NavBar = () => {
 
 					<Modal
 						open={LoginOpen}
-						onClose={() => {
-							setLoginOpen(false);
-						}}
+						onClose={handleLoginClose}
 						aria-labelledby="simple-modal-title"
 						aria-describedby="simple-modal-description"
 						style={{ display: "flex", margin: "auto" }}
@@ -86,9 +97,7 @@ const NavBar = () => {
 					</Modal>
 					<Modal
 						open={SignUpOpen}
-						onClose={() => {
-							setSignUpOpen(false);
-						}}
+						onClose={handleSignClose}
 						aria-labelledby="simple-modal-title"
 						aria-describedby="simple-modal-description"
 						style={{ display: "flex", margin: "auto" }}

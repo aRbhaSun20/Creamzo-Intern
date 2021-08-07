@@ -25,9 +25,9 @@ const SignUp = ({ setopen }) => {
 								setopen(false);
 							}}
 							style={{
-								position: "absolute",
-								right: "-3em",
-								top: ".4em",
+								position: "relative",
+								right: "-2.9em",
+								top: "-.1em",
 								cursor: "pointer",
 							}}
 						/>

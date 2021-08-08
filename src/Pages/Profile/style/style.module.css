@@ -1,0 +1,33 @@
+.container{
+    width: 50vw;
+    margin: 0 auto;
+
+}
+.details{
+margin: auto 15vw;
+}
+.links{
+margin: auto 19vw;
+padding-top: 20px;
+width: max-content;
+}
+
+.followbtn{
+    margin: 0 auto;
+    position: relative;
+    left: 45%;
+    width: 10%;
+    height: 35px;
+    border-radius: 20px;
+    background-color: rgba(220, 20, 60, 0.8);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: small;
+    cursor: pointer;
+}
+
+.followbtn:hover{
+    background-color: rgba(220, 20, 60, 1);
+   
+}

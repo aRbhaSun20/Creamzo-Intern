@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.herolanding{
+    height: auto;
+    margin: 0;
+}
+
+.hero-image {
+    padding-top: 13rem;
+    padding-bottom: 18rem;
+   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("herobackground.jpg");
+    /* height: 75%; */
+    height: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-left: 5rem;
+    padding-right: 15rem;
+}
+
+
+
+
+.main-text{
+    color: white;
+    font-size: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+.secondary-text{
+    color: white;
+    padding-left: white;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.spacing{
+    padding-top: 2rem;
+}
+
+.articles-button{
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+

@@ -1,0 +1,61 @@
+.Menu{
+    display: flex;
+    align-items: center;
+}
+.Menu .menu-list{
+    flex-grow: 1;
+}
+
+
+svg#circle {
+    height: 250px;
+    width: 250px;
+
+  }
+  g circle {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    stroke-linecap: butt;
+    opacity: 0.5;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  g circle .highlight{
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    stroke-linecap: butt;
+    opacity: 0.5;
+    fill: pink;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  g:hover circle {
+    fill: pink;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 700;
+    stroke-width: 10;
+  }
+
+
+  text {
+    fill: blue;
+    font-size: 24px;
+  }
+  a:hover text {
+    fill: blue;
+    text-decoration: none;
+  }
+
+  a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
+}
+
+
+

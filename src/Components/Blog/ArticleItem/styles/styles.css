@@ -1,0 +1,21 @@
+
+.article-display{
+    margin: 3rem;
+}
+.article-display-image{
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    height: 20rem;
+    background-color: black;
+}
+.heading-text{
+    padding-top: 2rem;
+    font-size: 3rem;
+}
+
+.secondary-article-text{
+    font-size: 1rem;
+    padding-top: 2rem;
+    font-weight: normal;
+}

@@ -12,7 +12,37 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+		"& .MuiFormLabel-root.Mui-disabled": {
+			color: "white",
+		},
+	},
+}));
+const CssTextField = withStyles({
+	root: {
+		"& label.Mui-focused": {
+			color: "white",
+		},
+		"& .MuiInput-underline:after": {
+			borderBottomColor: "white",
+		},
+		"& .MuiOutlinedInput-root": {
+			"& fieldset": {
+				borderColor: "white",
+			},
+			"&.Mui-focused fieldset": {
+				borderColor: "white",
+			},
+		},
+	},
+})(TextField);
+
 const EndSection = () => {
+	const classes = useStyles();
+
 	return (
 		<React.Fragment>
 			<div
@@ -154,19 +184,25 @@ const EndSection = () => {
 								variant="h4"
 								style={{ color: "white", paddingBottom: ".5em" }}
 							>
-								Resources
+								<Link to="/" style={{ color: "white" }}>
+									Resources
+								</Link>
 							</Typography>
 							<Typography
 								variant="subtitle1"
 								style={{ width: "35em", textAlign: "justify", color: "white" }}
 							>
-								Blog
+								<Link to="/blog" style={{ color: "white" }}>
+									Blog
+								</Link>
 							</Typography>
 							<Typography
 								variant="subtitle1"
 								style={{ width: "35em", textAlign: "justify", color: "white" }}
 							>
-								Careers
+								<Link to="/" style={{ color: "white" }}>
+									Careers
+								</Link>
 							</Typography>
 							<Typography
 								variant="subtitle1"
@@ -184,7 +220,8 @@ const EndSection = () => {
 							>
 								Subscribe
 							</Typography>
-							<TextField
+							<CssTextField
+								className={classes.margin}
 								label="Email Address"
 								variant="outlined"
 								id="standard-secondary"

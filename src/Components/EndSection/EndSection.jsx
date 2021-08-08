@@ -49,7 +49,7 @@ const EndSection = () => {
 							alignItems: "center",
 						}}
 					>
-						<div
+						{/* <div
 							style={{
 								display: "flex",
 								flexDirection: "column",
@@ -59,13 +59,13 @@ const EndSection = () => {
 								margin: "auto",
 								height: "10vh",
 							}}
-						>
-							<LocationOnIcon fontSize="medium" style={{ color: "white" }} />
+						> */}
+							{/* <LocationOnIcon fontSize="medium" style={{ color: "white" }} />
 							<p style={{ color: "white" }}>
 								<span>address to be provided</span> Bangalore, India
-							</p>
+							</p> */}
 						</div>
-						<div
+						{/* <div
 							style={{
 								display: "flex",
 								flexDirection: "column",
@@ -108,7 +108,7 @@ const EndSection = () => {
 								</a>
 							</p>
 						</div>
-					</div>
+					</div> */}
 
 					<div
 						className="bottom"

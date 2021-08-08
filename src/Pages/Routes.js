@@ -16,6 +16,8 @@ import Blog from "./Blog/Blog";
 import BlogArticles from "./BlogArticles/BlogArticles";
 import Articledisplay from "./ArticleDisplay/Articledisplay";
 import Tnc from "../Components/Tnc/Tnc";
+import Teams from '../Pages/Team/Teams';
+import Collection from "../Components/Collections/Collection";
 
 const Routes = () => {
 	return (
@@ -64,6 +66,16 @@ const Routes = () => {
 							path="/terms"
 							exact
 							render={(props) => <Tnc {...props} />}
+						></Route>
+						<Route
+							path="/teams"
+							exact
+							render={(props) => <Teams />}
+						></Route>
+						<Route
+							path="/collection"
+							exact
+							render={(props) => <Collection />}
 						></Route>
 
 						<Route path="/articleitem"></Route>

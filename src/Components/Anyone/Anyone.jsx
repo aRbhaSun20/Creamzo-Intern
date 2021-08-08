@@ -116,7 +116,7 @@ const Anyone = () => {
 							backgroundColor: "grey",
 							top: "20em",
 							left: "-16em",
-							right: "0em",
+							right: "1em",
 							bottom: "0em",
 							borderRadius: ".5em",
 						}}
@@ -142,7 +142,7 @@ const Anyone = () => {
 							backgroundColor: "grey",
 							top: "28em",
 							borderRadius: ".5em",
-							left: "3em",
+							left: "-1em",
 						}}
 					></div>
 					<div
@@ -237,7 +237,7 @@ const Anyone = () => {
 							height: "10em",
 							backgroundColor: "grey",
 							top: "10vh",
-							left: "-1vw",
+							left: "-2vw",
 							borderRadius: ".5em",
 						}}
 					></div>

@@ -15,7 +15,7 @@ import Discover from "./Discover/Discover";
 import ContactPage from "./Contact/ContactPage";
 import Blog from "./Blog/Blog";
 import BlogArticles from "./BlogArticles/BlogArticles";
-// import Articledisplay from "./ArticleDisplay/Articledisplay";
+import Articledisplay from "./ArticleDisplay/Articledisplay";
 import Account from "./Account/Account";
 import Tnc from "../Components/Tnc/Tnc";
 

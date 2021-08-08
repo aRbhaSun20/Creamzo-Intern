@@ -12,8 +12,6 @@ const Anyone = () => {
 					display: "flex",
 					justifyContent: "start",
 					alignItems: "flex-start",
-					position: "relative",
-					left: "-6em",
 				}}
 			>
 				<div
@@ -28,7 +26,7 @@ const Anyone = () => {
 						marginRight: "auto",
 						position: "relative",
 						left: "6em",
-						top:"2em"
+						top: "2em",
 					}}
 				>
 					<Typography
@@ -155,7 +153,7 @@ const Anyone = () => {
 							height: "15em",
 							backgroundColor: "grey",
 							top: "-10em",
-							left: "73.5vw",
+							left: "77vw",
 							borderRadius: ".5em",
 						}}
 					></div>
@@ -167,7 +165,7 @@ const Anyone = () => {
 							height: "22em",
 							backgroundColor: "grey",
 							top: "7em",
-							left: "73.5vw",
+							left: "77vw",
 							borderRadius: ".5em",
 						}}
 					></div>
@@ -179,7 +177,7 @@ const Anyone = () => {
 							height: "7em",
 							backgroundColor: "grey",
 							top: "-2em",
-							left: "67vw",
+							left: "70.5vw",
 							borderRadius: ".5em",
 						}}
 					></div>
@@ -191,7 +189,7 @@ const Anyone = () => {
 							height: "14em",
 							backgroundColor: "grey",
 							top: "48vh",
-							left: "79.8vw",
+							left: "83.3vw",
 							borderRadius: ".5em",
 						}}
 					></div>
@@ -203,7 +201,7 @@ const Anyone = () => {
 							height: "14em",
 							backgroundColor: "grey",
 							top: "48vh",
-							left: "69.5vw",
+							left: "72.5vw",
 							borderRadius: ".5em",
 						}}
 					></div>
@@ -215,7 +213,7 @@ const Anyone = () => {
 							height: "10em",
 							backgroundColor: "grey",
 							top: "29vh",
-							left: "64.5vw",
+							left: "68vw",
 							borderRadius: ".5em",
 						}}
 					></div>
@@ -227,7 +225,7 @@ const Anyone = () => {
 							height: "8em",
 							backgroundColor: "grey",
 							top: "50vh",
-							left: "62.5vw",
+							left: "65vw",
 							borderRadius: ".5em",
 						}}
 					></div>

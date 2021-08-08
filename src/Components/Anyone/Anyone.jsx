@@ -7,24 +7,28 @@ const Anyone = () => {
 			<div
 				className="container"
 				style={{
-					width: "100vw",
+					width: "auto",
 					height: "80vh",
 					display: "flex",
 					justifyContent: "start",
 					alignItems: "flex-start",
-					margin: "auto",
+					position: "relative",
+					left: "-6em",
 				}}
 			>
 				<div
 					className="text"
 					style={{
-						width: "30%",
+						width: "40%",
 						height: "32vh",
 						display: "grid",
 						justifyContent: "space-evenly",
 						alignItems: "center",
 						marginLeft: "auto",
 						marginRight: "auto",
+						position: "relative",
+						left: "6em",
+						top:"2em"
 					}}
 				>
 					<Typography
@@ -57,7 +61,12 @@ const Anyone = () => {
 					</Button>
 				</div>
 
-				<div className="imgs" style={{ position: "absolute" }}>
+				<div
+					className="imgs"
+					style={{
+						position: "absolute",
+					}}
+				>
 					<div
 						className=""
 						style={{
@@ -71,9 +80,7 @@ const Anyone = () => {
 							bottom: "0em",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -87,9 +94,7 @@ const Anyone = () => {
 							bottom: "0em",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -103,9 +108,7 @@ const Anyone = () => {
 							bottom: "0em",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -119,9 +122,7 @@ const Anyone = () => {
 							bottom: "0em",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -133,9 +134,7 @@ const Anyone = () => {
 							left: "-3em",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -147,9 +146,7 @@ const Anyone = () => {
 							borderRadius: ".5em",
 							left: "3em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -158,12 +155,10 @@ const Anyone = () => {
 							height: "15em",
 							backgroundColor: "grey",
 							top: "-10em",
-							left: "77.5vw",
+							left: "73.5vw",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -172,12 +167,10 @@ const Anyone = () => {
 							height: "22em",
 							backgroundColor: "grey",
 							top: "7em",
-							left: "77.5vw",
+							left: "73.5vw",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -186,12 +179,10 @@ const Anyone = () => {
 							height: "7em",
 							backgroundColor: "grey",
 							top: "-2em",
-							left: "71vw",
+							left: "67vw",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -200,12 +191,10 @@ const Anyone = () => {
 							height: "14em",
 							backgroundColor: "grey",
 							top: "48vh",
-							left: "84vw",
+							left: "79.8vw",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -214,12 +203,10 @@ const Anyone = () => {
 							height: "14em",
 							backgroundColor: "grey",
 							top: "48vh",
-							left: "73vw",
+							left: "69.5vw",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -228,12 +215,10 @@ const Anyone = () => {
 							height: "10em",
 							backgroundColor: "grey",
 							top: "29vh",
-							left: "68vw",
+							left: "64.5vw",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -242,12 +227,10 @@ const Anyone = () => {
 							height: "8em",
 							backgroundColor: "grey",
 							top: "50vh",
-							left: "65vw",
+							left: "62.5vw",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 					<div
 						className=""
 						style={{
@@ -256,12 +239,10 @@ const Anyone = () => {
 							height: "10em",
 							backgroundColor: "grey",
 							top: "10vh",
-							left: "0vw",
+							left: "-1vw",
 							borderRadius: ".5em",
 						}}
-					>
-						{/* <img src={null} alt="" /> */}
-					</div>
+					></div>
 				</div>
 			</div>
 		</React.Fragment>

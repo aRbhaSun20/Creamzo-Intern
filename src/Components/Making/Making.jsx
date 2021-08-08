@@ -7,7 +7,7 @@ const Making = () => {
 			<div
 				className="conatiner"
 				style={{
-					width: "100vw",
+					width: "auto",
 					height: "90vh",
 					display: "grid",
 					gridTemplateColumns: "1fr 1fr",
@@ -89,7 +89,7 @@ const Making = () => {
 						style={{
 							position: "absolute",
 							top: "0em",
-							left: "17em",
+							left: "16em",
 							width: "8em",
 							height: "8em",
 							backgroundColor: "grey",
@@ -130,8 +130,8 @@ const Making = () => {
 						className="img"
 						style={{
 							position: "absolute",
-							bottom: "12vh",
-							right: "11vw",
+							bottom: "9vh",
+							right: "10.5vw",
 							width: "12em",
 							height: "12em",
 							backgroundColor: "grey",

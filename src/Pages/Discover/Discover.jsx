@@ -31,7 +31,13 @@ const Discover = () => {
 		>
 			<h1 className="title-item">Discover Creamzo</h1>
 
-			<Grid className={style.gridContainer} container spacing={2}>
+			<Grid
+				className={style.gridContainer}
+				container
+				alignItems="center"
+				justify="center"
+				spacing={2}
+			>
 				{arr.map((image, index) => (
 					<Grid className="grid-item" item xs={2} key={index}>
 						<img className="discoverImage" src={defaultImage} alt="discover" />

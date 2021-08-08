@@ -10,7 +10,7 @@ import Home from "./Home/Home";
 import NavBar from "../Components/NavBar/NavBar";
 import EndSection from "../Components/EndSection/EndSection";
 import About from "./AboutUs/About";
-// import Footer from "../Components/EndSection/FooterBeforeLogin";
+import Footer from "../Components/EndSection/FooterBeforeLogin";
 import Discover from "./Discover/Discover";
 import ContactPage from "./Contact/ContactPage";
 import Blog from "./Blog/Blog";

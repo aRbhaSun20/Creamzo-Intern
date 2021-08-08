@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Style/style.css";
+import "./Style/style2.css";
 
 const FooterBeforeLogin = () => {
     return (

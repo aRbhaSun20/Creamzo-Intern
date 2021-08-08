@@ -40,7 +40,11 @@ const Login = ({ setopen }) => {
 								console.log("google");
 							}}
 						>
-							<img src={google} alt="google" />
+							<img
+								src={google}
+								alt="google"
+								style={{ maxWidth: "2em", height: "2em" }}
+							/>
 							Google
 						</Button>
 						<Button
@@ -51,7 +55,11 @@ const Login = ({ setopen }) => {
 								console.log("fb");
 							}}
 						>
-							<img src={fb} alt="fb" />
+							<img
+								src={fb}
+								alt="fb"
+								style={{ maxWidth: "2em", height: "2em" }}
+							/>
 							FaceBook
 						</Button>
 					</div>

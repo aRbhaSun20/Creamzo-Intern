@@ -64,7 +64,11 @@ const OverView = () => {
 					<Button
 						variant="contained"
 						color="primary"
-						style={{ width: "15em", height: "3.5em" }}
+						style={{
+							backgroundColor: "black",
+							width: "15em",
+							height: "3.5em",
+						}}
 					>
 						Checkout More
 						<ArrowForwardIcon style={{ position: "relative", left: ".5em" }} />

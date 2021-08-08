@@ -1,4 +1,4 @@
-.end-section {
+.footerContainer {
     width: 100%;
     height: 30vh;
     background-color: #353535;
@@ -14,7 +14,6 @@
 
 .main {
     max-height: 550px;
-    ;
     background-color: #292c2f;
     color: white;
     font-size: 38pt;
@@ -26,46 +25,46 @@ footer {
     bottom: 0;
 }
 
-.end-section {
+.footerContainer {
     background-color: #292c2f;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
     margin-top: 80px;
-    // padding: 2em;
 }
 
-.end-section .footer-left,
-.end-section .footer-center,
-.end-section .footer-right {
+.footerContainer .footer-left,
+.footerContainer .footer-center,
+.footerContainer .footer-right {
     display: inline-block;
     vertical-align: top;
 }
 
-.end-section .footer-left {
+.footerContainer .footer-left {
     width: 40%;
 }
 
-.end-section h3 {
+.footerContainer h3 {
     color: #ffffff;
     font: normal 36px 'Cookie', cursive;
     margin: 0;
 }
 
-.end-section h3 span {
+.footerContainer h3 span {
     color: #5383d3;
 }
 
-
-.end-section .footer-links {
+.footerContainer .footer-links {
     color: #ffffff;
     margin: 20px 0 12px;
     padding: 0;
 }
 
-.end-section .footer-links .footerLink:hover {
+.footerContainer .footer-links .footerLink:hover {
     color: #ffffff67;
 }
 
@@ -73,26 +72,25 @@ footer {
     margin-right: 5px;
 }
 
-.end-section .footer-links a {
+.footerContainer .footer-links a {
     display: inline-block;
     line-height: 1.8;
     text-decoration: none;
     color: inherit;
 }
 
-.end-section .footer-company-name {
+.footerContainer .footer-company-name {
     color: #8f9296;
     font-size: 14px;
     font-weight: normal;
     margin: 0;
 }
 
-
-.end-section .footer-center {
+.footerContainer .footer-center {
     width: 35%;
 }
 
-.end-section .footer-center i {
+.footerContainer .footer-center i {
     background-color: #33383b;
     color: #ffffff;
     font-size: 25px;
@@ -105,36 +103,35 @@ footer {
     vertical-align: middle;
 }
 
-.end-section .footer-center i.fa-envelope {
+.footerContainer .footer-center i.fa-envelope {
     font-size: 17px;
     line-height: 38px;
 }
 
-.end-section .footer-center p {
+.footerContainer .footer-center p {
     display: inline-block;
     color: #ffffff;
     vertical-align: middle;
     margin: 0;
 }
 
-.end-section .footer-center p span {
+.footerContainer .footer-center p span {
     display: block;
     font-weight: normal;
     font-size: 14px;
     line-height: 2;
 }
 
-.end-section .footer-center p a {
+.footerContainer .footer-center p a {
     color: #5383d3;
     text-decoration: none;
-    ;
 }
 
-.end-section .footer-right {
+.footerContainer .footer-right {
     width: 20%;
 }
 
-.end-section .footer-company-about {
+.footerContainer .footer-company-about {
     line-height: 20px;
     color: #92999f;
     font-size: 13px;
@@ -142,7 +139,7 @@ footer {
     margin: 0;
 }
 
-.end-section .footer-company-about span {
+.footerContainer .footer-company-about span {
     display: block;
     color: #ffffff;
     font-size: 14px;
@@ -150,45 +147,40 @@ footer {
     margin-bottom: 20px;
 }
 
-.end-section .footer-icons {
+.footerContainer .footer-icons {
     margin-top: 25px;
 }
 
-.end-section .footer-icons a {
+.footerContainer .footer-icons a {
     display: inline-block;
     width: 35px;
     height: 35px;
     cursor: pointer;
     background-color: #33383b;
     border-radius: 2px;
-
     font-size: 20px;
     color: #ffffff;
     text-align: center;
     line-height: 35px;
-
     margin-right: 3px;
     margin-bottom: 5px;
 }
 
-
 @media (max-width: 880px) {
-
-    .end-section {
+    .footerContainer {
         font: bold 14px sans-serif;
-
     }
 
-    .end-section .footer-left,
-    .end-section .footer-center,
-    .end-section .footer-right {
+    .footerContainer .footer-left,
+    .footerContainer .footer-center,
+    .footerContainer .footer-right {
         display: block;
         width: 100%;
         margin-bottom: 40px;
         text-align: center;
     }
 
-    .end-section .footer-center i {
+    .footerContainer .footer-center i {
         margin-left: 0;
     }
 
@@ -196,5 +188,6 @@ footer {
         line-height: normal;
         font-size: auto;
     }
-
 }
+
+/*# sourceMappingURL=style.css.map */

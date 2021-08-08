@@ -1,14 +1,9 @@
-import { Typography, TextField, InputAdornment } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import "./Style/style.css";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import CallIcon from "@material-ui/icons/Call";
-
-import MailIcon from "@material-ui/icons/Mail";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedIn from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 
@@ -21,194 +16,109 @@ const EndSection = () => {
 					width: "auto",
 					display: "grid",
 					gridTemplateRows: "1fr 1fr",
-					height: "55vh",
+					height: "30vh",
 					backgroundColor: "#353535",
-					margin: "auto",
 					overflow: "hidden",
+					gridGap: "2em",
+					justifyContent: "center",
+					alignItems: "center",
 				}}
 			>
 				<div
+					className="bottom"
 					style={{
 						display: "grid",
-						gridTemplateRows: "1fr 1fr",
-						gridGap: "3em",
+						paddingTop: "2em",
+						gridTemplateColumns: "1fr 1fr 1fr",
+						width: "100%",
+						gridGap: "5em",
 						justifyContent: "center",
-						alignItems: "center",
-						placeContent: "center",
+						alignItems: "start",
+						height: "20vh",
+						position: "relative",
+						left: "5em",
 					}}
 				>
-					<div
-						style={{
-							display: "grid",
-							gridTemplateColumns: "1fr 1fr 1fr",
-							height: "10vh",
-							width: "68vw",
-							borderBottom: "2px solid grey",
-							paddingBottom: "2em",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					>
-						{/* <div
+					<div className="footer-left">
+						<Typography
+							variant="h4"
+							style={{ color: "white", paddingBottom: ".5em" }}
+						>
+							About
+						</Typography>
+						<Typography
+							variant="subtitle1"
 							style={{
-								display: "flex",
-								flexDirection: "column",
-								alignItems: "center",
-								justifyContent: "space-evenly",
-								width: "20vw",
-								margin: "auto",
-								height: "10vh",
-							}}
-						> */}
-							{/* <LocationOnIcon fontSize="medium" style={{ color: "white" }} />
-							<p style={{ color: "white" }}>
-								<span>address to be provided</span> Bangalore, India
-							</p> */}
-						</div>
-						{/* <div
-							style={{
-								display: "flex",
-								flexDirection: "column",
-								alignItems: "center",
-								justifyContent: "space-evenly",
-								width: "20vw",
-								margin: "auto",
-								height: "10vh",
-								paddingLeft: "5em",
+								width: "28em",
+								textAlign: "justify",
+								color: "white",
 							}}
 						>
-							<CallIcon fontSize="medium" style={{ color: "white" }} />
-							<p>
-								<a
-									href="tel:+911234567890"
-									style={{ color: "white", textDecoration: "none" }}
-								>
-									+911234567890
-								</a>
-							</p>
-						</div>
-						<div
-							style={{
-								display: "flex",
-								flexDirection: "column",
-								alignItems: "center",
-								justifyContent: "space-evenly",
-								width: "20vw",
-								margin: "auto",
-								height: "10vh",
-							}}
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+							dolorum cumque nam accusantium laudantium voluptates iusto
+							corporis a fugiat, ea commodi, autem pariatur quia eaque ipsam ad
+							excepturi sit voluptas!
+						</Typography>
+					</div>
+					<div className="footer-left">
+						<Typography
+							variant="h4"
+							style={{ color: "white", paddingBottom: ".5em" }}
 						>
-							<MailIcon fontSize="medium" style={{ color: "white" }} />
-							<p style={{ color: "white" }}>
-								<a
-									href="mailto:support@company.com"
-									style={{ color: "white", textDecoration: "none" }}
-								>
-									creamzo@gamil.com
-								</a>
-							</p>
-						</div>
-					</div> */}
-
-					<div
-						className="bottom"
-						style={{
-							display: "grid",
-							gridTemplateColumns: "1fr .5fr 1fr",
-							width: "72vw",
-							overflow: "hidden",
-							gridGap: "5em",
-							backgroundColor: "#353535",
-							justifyContent: "center",
-							alignItems: "start",
-							height: "20vh",
-							position: "relative",
-							top: "-2em",
-							paddingLeft: "5em",
-							// left: "5em",
-						}}
-					>
-						<div className="footer-left">
-							<Typography
-								variant="h4"
-								style={{ color: "white", paddingBottom: ".5em" }}
-							>
-								About
-							</Typography>
-							<Typography
-								variant="subtitle1"
-								style={{
-									width: "28em",
-									textAlign: "justify",
-									color: "white",
-								}}
-							>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-								dolorum cumque nam accusantium laudantium voluptates iusto
-								corporis a fugiat, ea commodi, autem pariatur quia eaque ipsam
-								ad excepturi sit voluptas!
-							</Typography>
-						</div>
-						<div className="footer-left" style={{ width: "15vw" }}>
-							<Typography
-								variant="h4"
-								style={{ color: "white", paddingBottom: ".5em" }}
-							>
+							<Link to="/" style={{ color: "white" }}>
 								Resources
-							</Typography>
-							<Typography
-								variant="subtitle1"
-								style={{ width: "35em", textAlign: "justify", color: "white" }}
-							>
+							</Link>
+						</Typography>
+						<Typography
+							variant="subtitle1"
+							style={{ width: "35em", textAlign: "justify", color: "white" }}
+						>
+							<Link to="/blog" style={{ color: "white" }}>
 								Blog
-							</Typography>
-							<Typography
-								variant="subtitle1"
-								style={{ width: "35em", textAlign: "justify", color: "white" }}
-							>
+							</Link>
+						</Typography>
+						<Typography
+							variant="subtitle1"
+							style={{ width: "35em", textAlign: "justify", color: "white" }}
+						>
+							<Link to="/" style={{ color: "white" }}>
 								Careers
-							</Typography>
-							<Typography
-								variant="subtitle1"
-								style={{ width: "35em", textAlign: "justify", color: "white" }}
-							>
-								<Link to="/terms" style={{ color: "white" }}>
-									Terms and Conditions
-								</Link>
-							</Typography>
-						</div>
-						<div className="footer-left">
-							<Typography
-								variant="h4"
-								style={{ color: "white", paddingBottom: ".5em" }}
-							>
-								Subscribe
-							</Typography>
-							<TextField
-								label="Email Address"
-								variant="outlined"
-								id="standard-secondary"
-								InputProps={{
-									endAdornment: (
-										<InputAdornment position="end">
-											<ArrowForwardIcon style={{ color: "white" }} />
-										</InputAdornment>
-									),
-								}}
-							/>
-							<Typography
-								variant="subtitle1"
-								style={{
-									width: "35em",
-									textAlign: "justify",
-									color: "white",
-									paddingTop: "1em",
-								}}
-								color="secondary"
-							>
-								Get digital marketing updates in your mailbox
-							</Typography>
-						</div>
+							</Link>
+						</Typography>
+						<Typography
+							variant="subtitle1"
+							style={{ width: "35em", textAlign: "justify", color: "white" }}
+						>
+							<Link to="/terms" style={{ color: "white" }}>
+								Terms and Conditions
+							</Link>
+						</Typography>
+					</div>
+					<div className="footer-left">
+						<Typography
+							variant="h4"
+							style={{ color: "white", paddingBottom: ".5em" }}
+						>
+							Subscribe
+						</Typography>
+						<input
+							type="text"
+							id="standard-secondary"
+							style={{ height: "3em", padding: "1em", borderRadius: ".5em" }}
+							placeholder="Email Address"
+						/>
+						<Typography
+							variant="subtitle1"
+							style={{
+								width: "35em",
+								textAlign: "justify",
+								color: "white",
+								paddingTop: "1em",
+							}}
+							color="secondary"
+						>
+							Get digital marketing updates in your mailbox
+						</Typography>
 					</div>
 				</div>
 
@@ -218,8 +128,7 @@ const EndSection = () => {
 						justifyContent: "space-evenly",
 						alignItems: "center",
 						width: "100%",
-						backgroundColor: "#4d4d4d",
-						height: "10vh",
+						height: "5vh",
 					}}
 				>
 					<div className="icon">
@@ -229,7 +138,7 @@ const EndSection = () => {
 					</div>
 					<div className="icon">
 						<Link to="/">
-							<GitHubIcon fontSize="large" style={{ color: "white" }} />
+							<LinkedIn fontSize="large" style={{ color: "white" }} />
 						</Link>
 					</div>
 					<div className="icon">
@@ -239,10 +148,7 @@ const EndSection = () => {
 					</div>
 					<div className="icon">
 						<Link to="/">
-							<InstagramIcon
-								fontSize="large"
-								style={{ color: "white", width: "10em" }}
-							/>
+							<InstagramIcon fontSize="large" style={{ color: "white" }} />
 						</Link>
 					</div>
 				</div>

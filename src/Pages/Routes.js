@@ -74,7 +74,7 @@ const Routes = () => {
               render={(props) => <Tnc {...props} />}
             ></Route>
 
-            <Route path="/articleitem"></Route>
+            {/* <Route path="/articleitem"></Route> */}
 
 						<Route
 							path="/articleitem"

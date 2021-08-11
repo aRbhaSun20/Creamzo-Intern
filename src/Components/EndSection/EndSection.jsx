@@ -103,8 +103,7 @@ const EndSection = () => {
 						</Typography>
 						<input
 							type="text"
-							id="standard-secondary"
-							style={{ height: "3em", padding: "1em", borderRadius: ".5em" }}
+							style={{ height: "3em", padding: "1em", borderRadius: ".5em",width:"20em" }}
 							placeholder="Email Address"
 						/>
 						<Typography

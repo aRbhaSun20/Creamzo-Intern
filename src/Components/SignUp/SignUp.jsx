@@ -11,7 +11,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 
 const SignUp = ({ setopen }) => {
-	const [mail, setMail] = useState(""); 
+	const [mail, setMail] = useState("");
 	// eslint-disable-next-line
 	const [login, setLogin] = useContext(LoginContext);
 	const [password, setPassword] = useState("");
@@ -107,23 +107,11 @@ const SignUp = ({ setopen }) => {
 							onClick={(e) => {
 								e.preventDefault();
 								setLogin({ type: LOGIN_ACTIONS.LOGIN });
+								setopen(false);
 							}}
 						>
 							Continue
 						</Button>
-						<div className="forget">Forget Password?</div>
-					</div>
-					<div className="dont-have">
-						Don’t have an account?
-						<span
-							onClick={(e) => {
-								e.preventDefault();
-								console.log("sign up");
-								setopen(false)
-							}}
-						>
-							Sign up
-						</span>
 					</div>
 				</div>
 			</div>

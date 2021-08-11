@@ -27,3 +27,29 @@
     justify-content: center;
     align-items: center;
 }
+
+.container1 {
+    display: flex;
+    // 	display: "flex",
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: auto;
+    // 	grid-gap: 2em;
+    height: auto;
+    // 	margin: 2em";
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    img {
+        width: 29em;
+        margin: 1em;
+        border-radius: 1em;
+    }
+    // @for $i from 1 through 36 {
+    //     img:nth-child(#{$i}) {
+    //         $h: ((random(90)/3) + 12) + em;
+    //         height: $h;
+    //         // line-height: $h;
+    //     }
+    // }
+}

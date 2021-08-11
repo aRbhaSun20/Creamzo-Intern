@@ -10,7 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 
-const Login = ({ setopen }) => {
+const Login = ({ setopen, setSignopen }) => {
 	const [mail, setMail] = useState("");
 	// eslint-disable-next-line
 	const [login, setLogin] = useContext(LoginContext);
@@ -113,7 +113,8 @@ const Login = ({ setopen }) => {
 						<span
 							onClick={(e) => {
 								e.preventDefault();
-								console.log("sign up");
+								setopen(false);
+								setSignopen(true);
 							}}
 						>
 							Sign up

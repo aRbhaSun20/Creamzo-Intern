@@ -1,4 +1,4 @@
-import { Button, Typography } from "@material-ui/core";
+import { Button, TextField, Typography } from "@material-ui/core";
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./style/style.css";
@@ -30,6 +30,15 @@ const NavBar = () => {
 				</NavLink>
 
 				<div className="remaining-navs">
+					{login ? (
+						<TextField
+							id="outlined-basic"
+							label="Search"
+							style={{ width: "40em", position: "relative", top: ".3em" }}
+							variant="outlined"
+						/>
+					) : null}
+
 					<NavLink
 						activeClassName="activeLink"
 						to="/about"
@@ -115,7 +124,7 @@ const NavBar = () => {
 						aria-describedby="simple-modal-description"
 						style={{ display: "flex", margin: "auto" }}
 					>
-						<Login setopen={setLoginOpen} />
+						<Login setopen={setLoginOpen} setSignopen={setSignUpOpen} />
 					</Modal>
 					<Modal
 						open={SignUpOpen}

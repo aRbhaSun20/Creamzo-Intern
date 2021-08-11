@@ -13,7 +13,6 @@ import col10 from './assets/collage10.png';
 import col11 from './assets/collage11.png';
 import col12 from './assets/collage12.png';
 const Carousel = () => {
-	
 	return (
 		<React.Fragment>
 			<div className="OverviewCarousalContainer ">

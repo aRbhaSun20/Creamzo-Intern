@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import AlbumSection from "../../Components/Creative/Glider";
 import OverView from "../OverVIew/OverView";
-import Team from "../Team/Teams"
+import Team from "../Team/Teams";
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
 
@@ -29,10 +29,11 @@ TabPanel.propTypes = {
 	index: PropTypes.any.isRequired,
 	value: PropTypes.any.isRequired,
 };
+
 function a11yProps(index) {
 	return {
-		id: `simple-tab-${index}`,
-		"aria-controls": `simple-tabpanel-${index}`,
+		id: `full-width-tab-${index}`,
+		"aria-controls": `full-width-tabpanel-${index}`,
 	};
 }
 
@@ -49,11 +50,8 @@ function About() {
 				indicatorColor="primary"
 				textColor="primary"
 				onChange={handleChange}
-				aria-label="disabled tabs example"
 			>
-				<Tab label="OverView" {...a11yProps(0)}>
-					<OverView />
-				</Tab>
+				<Tab label="OverView" {...a11yProps(0)}></Tab>
 				<Tab label="Team" {...a11yProps(1)}></Tab>
 				<Tab label="Creative" {...a11yProps(2)}></Tab>
 			</Tabs>
@@ -61,7 +59,7 @@ function About() {
 				<OverView />
 			</TabPanel>
 			<TabPanel value={value} index={1}>
-				<Team/>
+				<Team />
 			</TabPanel>
 			<TabPanel value={value} index={2}>
 				<AlbumSection />

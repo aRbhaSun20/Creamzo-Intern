@@ -1,14 +1,16 @@
 import { Button, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./style/style.css";
 import Modal from "@material-ui/core/Modal";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
+import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 
 const NavBar = () => {
 	const [LoginOpen, setLoginOpen] = React.useState(false);
 	const [SignUpOpen, setSignUpOpen] = React.useState(false);
+	const [login, setLogin] = useContext(LoginContext);
 
 	const handleLoginClose = () => {
 		setLoginOpen(false);
@@ -53,38 +55,58 @@ const NavBar = () => {
 					>
 						<Typography style={{ fontWeight: "bold" }}>Discover</Typography>
 					</NavLink>
+					{!login ? (
+						<Button
+							style={{
+								fontWeight: "bold",
+								width: "8em",
+								height: "3em",
+								borderRadius: "1.5em",
+							}}
+							variant="contained"
+							color="secondary"
+							onClick={() => {
+								setLoginOpen(true);
+							}}
+						>
+							Sign In
+						</Button>
+					) : null}
+					{!login ? (
+						<Button
+							style={{
+								fontWeight: "bold",
+								width: "8em",
+								height: "3em",
+								borderRadius: "1.5em",
+							}}
+							variant="contained"
+							color="secondary"
+							onClick={() => {
+								setSignUpOpen(true);
+							}}
+						>
+							Sign Up
+						</Button>
+					) : null}
 
-					<Button
-						style={{
-							fontWeight: "bold",
-							width: "8em",
-							height: "3em",
-							borderRadius: "1.5em",
-						}}
-						variant="contained"
-						color="secondary"
-						onClick={() => {
-							setLoginOpen(true);
-						}}
-					>
-						Sign In
-					</Button>
-
-					<Button
-						style={{
-							fontWeight: "bold",
-							width: "8em",
-							height: "3em",
-							borderRadius: "1.5em",
-						}}
-						variant="contained"
-						color="secondary"
-						onClick={() => {
-							setSignUpOpen(true);
-						}}
-					>
-						Sign Up
-					</Button>
+					{login ? (
+						<Button
+							style={{
+								fontWeight: "bold",
+								width: "8em",
+								height: "3em",
+								borderRadius: "1.5em",
+							}}
+							variant="contained"
+							color="secondary"
+							onClick={() => {
+								setLogin({ type: LOGIN_ACTIONS.LOGOUT });
+							}}
+						>
+							Sign Out
+						</Button>
+					) : null}
 
 					<Modal
 						open={LoginOpen}

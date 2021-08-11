@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import { Button, TextField } from "@material-ui/core";
 
@@ -8,9 +8,12 @@ import google from "./assets/google.png";
 
 import CloseIcon from "@material-ui/icons/Close";
 
-const SignUp = ({ setopen }) => {
-	const [mail, setMail] = useState("");
+import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 
+const SignUp = ({ setopen }) => {
+	const [mail, setMail] = useState(""); 
+	// eslint-disable-next-line
+	const [login, setLogin] = useContext(LoginContext);
 	const [password, setPassword] = useState("");
 	const [age, setAge] = useState("");
 
@@ -68,7 +71,6 @@ const SignUp = ({ setopen }) => {
 				</div>
 				<div className="bottom-header">
 					<TextField
-						id="outlined-basic"
 						label="Email"
 						value={mail}
 						onChange={(e) => {
@@ -79,7 +81,6 @@ const SignUp = ({ setopen }) => {
 						variant="outlined"
 					/>
 					<TextField
-						id="outlined-basic"
 						label="Create Password"
 						type="password"
 						value={password}
@@ -91,7 +92,6 @@ const SignUp = ({ setopen }) => {
 						variant="outlined"
 					/>
 					<TextField
-						id="outlined-basic"
 						label="Age"
 						value={age}
 						onChange={(e) => {
@@ -106,7 +106,7 @@ const SignUp = ({ setopen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								console.log("submit");
+								setLogin({ type: LOGIN_ACTIONS.LOGIN });
 							}}
 						>
 							Continue
@@ -119,6 +119,7 @@ const SignUp = ({ setopen }) => {
 							onClick={(e) => {
 								e.preventDefault();
 								console.log("sign up");
+								setopen(false)
 							}}
 						>
 							Sign up

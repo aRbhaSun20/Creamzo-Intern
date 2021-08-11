@@ -10,7 +10,7 @@ function Article() {
 		"A small river named Duden flows by their place and supplies it with the necessary regelialia."
 	);
 	// eslint-disable-next-line
-    const [buttonurl, setbuttonurl] = useState("www.google.com");
+    const [buttonurl, setbuttonurl] = useState("/articleitem");
 	return (
 		<div>
 			<img className="article-image" src={blogitemimage} alt="article" />

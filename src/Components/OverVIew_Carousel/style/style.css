@@ -1,0 +1,32 @@
+.OverviewCarousalContainer{
+     width: 100%;
+      height: 100vh;
+}
+.imageCOrousalCOnatiner{
+    display: flex;
+    justify-content: flex-start;
+}
+#c{
+        animation: mymove 20s infinite;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+}
+@keyframes mymove {
+  0%   {left: 0vw;}
+  25%  {left: -25vw;}
+  75%  {left:-50vw}
+  100% {left: 0vw;}
+}
+#cc{
+        animation: mymove2 20s infinite;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+}
+@keyframes mymove2 {
+  0%   {left: 0vw;}
+  25%  {left: 25vw;}
+  75%  {left: 50vw}
+  100% {left: 00vw;}
+}

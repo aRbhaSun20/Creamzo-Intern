@@ -1,0 +1,22 @@
+.Container{
+    margin-bottom: 20px;
+}
+.CollectionHeading{
+    padding: 20px;
+}
+.CollectionImageContainer{
+    height: 30vh;
+}
+#CollectionImage{
+    height: 100%;
+    opacity: 0.8;
+}
+#CollectionImage:hover{
+opacity: 1.0;
+}
+#CollectionGridContainer{
+    row-gap: 0px;
+}
+#CollectionPictures{
+    margin-top: 15px;
+}

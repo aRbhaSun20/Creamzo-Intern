@@ -214,7 +214,7 @@ a:hover {
   color: #7f2717;
 }
 
-a:not([href]):not([class]), a:not([href]):not([class]):hover {
+a:not([]):not([class]), a:not([]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }

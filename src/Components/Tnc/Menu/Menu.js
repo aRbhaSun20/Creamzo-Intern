@@ -5,6 +5,7 @@ import Option1 from '../Content/Option1';
 import Option2 from '../Content/Option2';
 import Option3 from '../Content/Option3';
 import Option4 from '../Content/Option4';
+import {Link} from 'react-router-dom';
 
 class Menu extends Component{
     constructor() {
@@ -40,10 +41,10 @@ class Menu extends Component{
                                 <svg id="circle">
                                     <g>
                                         
-                                        <a href={item.url} className={item.cName} target="_top"  onClick={()=>{this.setState({active : item.select});this.setColor(item.select)}}>
+                                        <Link to={item.url} className={item.cName} target="_top"  onClick={()=>{this.setState({active : item.select});this.setColor(item.select)}}>
                                         <circle cx="125" cy="125" r="100" fill={this.state.color[item.select-1]} className={item.select===this.state.active} />
                                             <text x="50%" y="50%" style={{textAnchor: "middle"}}>{item.title}</text>
-                                        </a>
+                                        </Link>
                                     </g>
                                 </svg>
                             </div>

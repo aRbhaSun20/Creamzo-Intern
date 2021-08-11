@@ -2,6 +2,7 @@
 import { Fab } from '@material-ui/core'
 import { Add } from '@material-ui/icons'
 import React from 'react'
+import {Link} from 'react-router-dom';
 import './styles.css'
 
 function FABPin() {
@@ -21,11 +22,11 @@ function FABPin() {
     return (
         
            <div>
-               <a href="/articleitem">
+               <Link to="/articleitem">
                <Fab style={style}>
                 <Add />
           </Fab>
-               </a>
+               </Link>
          
           </div>
       

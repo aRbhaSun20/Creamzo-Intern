@@ -24,7 +24,7 @@ const NavBar = () => {
 		<React.Fragment>
 			<div className="navbar">
 				<NavLink activeClassName="activeLink" to="/" exact>
-					<Typography variant="h4" style={{ fontWeight: "bold" }} href="/">
+					<Typography variant="h4" style={{ fontWeight: "bold" }}>
 						Logo
 					</Typography>
 				</NavLink>

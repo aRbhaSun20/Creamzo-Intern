@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component  } from "react";
 import Glide from "@glidejs/glide";
 import picture from "./assets/img1.webp";
 import styles from "./style/Creativestyle.module.css";
@@ -18,13 +18,13 @@ class AlbumSection extends Component {
 		this.state = {
 			slider: new Glide(`.glide`, {
 				type: "slider",
-				startAt: 2,
+				startAt: 4,
 				focusAt: 2,
 				perView: 3,
-
 				autoplay: true,
-				animationDuration: 9000,
-				rewindDuration: 35000,
+				animationDuration: 4000,
+				rewind:true,
+				// rewindDuration: 35000,
 				animationTimingFunc: "ease-in-out",
 			}),
 			albumImages: [
@@ -35,12 +35,12 @@ class AlbumSection extends Component {
 				picture,
 				picture,
 				picture,
-				picture,
-				picture,
-				picture,
-				picture,
-				picture,
-				picture,
+				// picture,
+				// picture,
+				// picture,
+				// picture,
+				// picture,
+				// picture,
 			],
 		};
 	}
@@ -53,8 +53,9 @@ class AlbumSection extends Component {
 		this.state.slider.destroy();
 	}
 
-	render() {
-		return (
+
+		render(){
+			return(
 			<div className="album-section">
 				<div className="glide">
 					<div id={styles.track} className="glide__track" data-glide-el="track">
@@ -76,7 +77,7 @@ class AlbumSection extends Component {
 											}}
 										>
 											<img
-												// className={styles.UploadImage}
+												className={styles.UploadImage}
 												src={slide}
 												alt="slides"
 												// className={index}
@@ -85,8 +86,8 @@ class AlbumSection extends Component {
 												className={styles.text}
 												style={{ position: "relative", top: "1em" }}
 											>
-												<h1>text</h1>
-												<button className={styles.button}>Button</button>
+												{/* <h1>text</h1>
+												<button className={styles.button}>Button</button> */}
 											</div>
 										</div>
 									</li>
@@ -96,8 +97,7 @@ class AlbumSection extends Component {
 					</div>
 				</div>
 			</div>
-		);
-	}
+			)}
+		
 }
-
 export default AlbumSection;

@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import picture from "./assets/cover.png"
 import styles from "./style/collectionStyle.module.css"
-import Glide from "@glidejs/glide";
 
 const Collection = () => {
     let arr = [picture, picture, picture, picture, picture, picture, picture, picture, picture, picture]

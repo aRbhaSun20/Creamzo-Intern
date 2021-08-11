@@ -1,7 +1,11 @@
 import React from "react";
 import { Button, Typography } from "@material-ui/core";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-
+import img1 from './assets/img1.jpg';
+import img2 from './assets/img2 .jpg';
+import img3 from './assets/img3.jpg';
+import img4 from './assets/img4.jpg'
+import { style } from "@material-ui/system";
 const styles = {
 	imgContainer: {
 		width: "18em",
@@ -27,6 +31,9 @@ const styles = {
 		alignItems: "center",
 		opacity: ".9",
 	},
+	overViewImage:{
+		width:"100%"
+	}
 };
 
 const OverView = () => {
@@ -87,16 +94,16 @@ const OverView = () => {
 					}}
 				>
 					<div className="box" style={styles.imgContainer}>
-						Img Container1
+						<img className={style.overViewImage} src={img1} alt="" />
 					</div>
 					<div className="box" style={styles.imgContainerStatic}>
-						Img Container2
+						<img className={style.overViewImage} src={img2} alt="" />
 					</div>
 					<div className="box" style={styles.imgContainer}>
-						Img Container3
+						<img className={style.overViewImage} src={img3} alt="" />
 					</div>
 					<div className="box" style={styles.imgContainerStatic}>
-						Img Container4
+						<img className={style.overViewImage} src={img4} alt="" />
 					</div>
 				</div>
 			</div>

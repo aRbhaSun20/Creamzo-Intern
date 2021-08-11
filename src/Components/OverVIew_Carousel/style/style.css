@@ -1,32 +1,23 @@
 .OverviewCarousalContainer{
      width: 100%;
       height: 100vh;
+      overflow: hidden;
 }
+
 .imageCOrousalCOnatiner{
-    display: flex;
-    justify-content: flex-start;
-}
-#c{
-        animation: mymove 20s infinite;
+        animation: mymove 100s infinite;
         width: 100%;
         height: 100%;
         position: absolute;
+    display: flex;
+        column-gap: 10px;
 }
+.corousalImage{
+  height: 100%;
+}
+
 @keyframes mymove {
   0%   {left: 0vw;}
-  25%  {left: -25vw;}
-  75%  {left:-50vw}
-  100% {left: 0vw;}
+  100% {left: -980vw;}
 }
-#cc{
-        animation: mymove2 20s infinite;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-}
-@keyframes mymove2 {
-  0%   {left: 0vw;}
-  25%  {left: 25vw;}
-  75%  {left: 50vw}
-  100% {left: 00vw;}
-}
+

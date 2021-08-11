@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { Button, TextField } from "@material-ui/core";
 
@@ -8,9 +8,12 @@ import google from "./assets/google.png";
 
 import CloseIcon from "@material-ui/icons/Close";
 
+import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
+
 const Login = ({ setopen }) => {
 	const [mail, setMail] = useState("");
-
+	// eslint-disable-next-line
+	const [login, setLogin] = useContext(LoginContext);
 	const [password, setPassword] = useState("");
 
 	return (
@@ -97,7 +100,8 @@ const Login = ({ setopen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								console.log("submit");
+								setLogin({ type: LOGIN_ACTIONS.LOGIN });
+								setopen(false);
 							}}
 						>
 							Log In

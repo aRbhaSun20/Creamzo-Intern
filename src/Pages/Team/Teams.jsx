@@ -42,12 +42,14 @@ const Teams = () => {
 	];
 	return (
 		<React.Fragment>
-			<div className={style.container}>
-				<Information />
-				<Team team="HR" members={hrTeam} />
-				<Team team="Content Writing" members={contentTeam} />
-				<Team team="Web Development" members={webTeam} />
-				<Team team="Graphic" members={graphicTeam} />
+			<div style={{ backgroundColor: "black",color:"white" }}>
+				<div  className={style.container}>
+					<Information />
+					<Team team="HR" members={hrTeam} />
+					<Team team="Content Writing" members={contentTeam} />
+					<Team team="Web Development" members={webTeam} />
+					<Team team="Graphic" members={graphicTeam} />
+				</div>
 			</div>
 		</React.Fragment>
 	);

@@ -1,15 +1,16 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import style from './style/style.module.css'
-import femaleImage from './assets/silhouette-woman-4-pdv-transparent.png'
+import femaleImage from './assets/WhatsApp Image 2021-08-12 at 12.48.59 AM.jpeg'
+import maleImage from './assets/male-head-transparent.png'
 const Team = ({ team, members }) => {
     
 	// eslint-disable-next-line
 	const pictures = [
 		femaleImage,
 		femaleImage,
-		femaleImage,
-		femaleImage,
+		maleImage,
+		maleImage,
 		femaleImage,
 		femaleImage,
 		femaleImage,
@@ -33,7 +34,7 @@ const Team = ({ team, members }) => {
 								<div>
 									<img
 										className={style.memberImage}
-										src={femaleImage}
+										src={index%2===0?maleImage: femaleImage}
 										alt="member"
 									/>
 								</div>

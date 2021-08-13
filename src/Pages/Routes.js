@@ -19,7 +19,8 @@ import Account from "./Account/Account";
 import Tnc from "../Components/Tnc/Tnc";
 import Teams from '../Pages/Team/Teams';
 import Collection from "../Components/Collections/Collection";
-
+import BoardCreation from "../Components/Board/BoardCreation";
+import BoardDisplay from "../Components/Board/BoardDisplay";
 const Routes = () => {
   return (
     <React.Fragment>
@@ -89,6 +90,16 @@ const Routes = () => {
 							path="/collection"
 							exact
 							render={(props) => <Collection />}
+						></Route>
+						<Route
+							path="/boardcreation"
+							exact
+							render={(props) => <BoardCreation />}
+						></Route>
+						<Route
+							path="/boardDisplay"
+							exact
+							render={(props) => <BoardDisplay />}
 						></Route>
 
 						<Redirect to="/" />

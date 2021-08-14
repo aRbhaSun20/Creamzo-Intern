@@ -3,6 +3,7 @@ import { Facebook, Instagram, Twitter } from "@material-ui/icons";
 
 import "./styles/styles.css";
 import dummyimage from "./styles/blogitemimage.jpg";
+import { Link } from "react-router-dom";
 
 function Blogitem() {
 	// eslint-disable-next-line
@@ -37,16 +38,16 @@ function Blogitem() {
 					<h1 style={{ fontSize: "3rem" }}>{dummyHeading}</h1>
 
 					<div className="iconspack">
-						<a href={facebookUrl} style={{ color: "black", fontSize: 45 }}>
+						<Link to={facebookUrl} style={{ color: "black", fontSize: 45 }}>
 							<Facebook />
-						</a>
-						<a href={twitterUrl} style={{ color: "black", fontSize: 45 }}>
+						</Link>
+						<Link to={twitterUrl} style={{ color: "black", fontSize: 45 }}>
 							{" "}
 							<Twitter />
-						</a>
-						<a href={instagramUrl} style={{ color: "black", fontSize: 45 }}>
+						</Link>
+						<Link to={instagramUrl} style={{ color: "black", fontSize: 45 }}>
 							<Instagram />
-						</a>
+						</Link>
 					</div>
 
 					<h6 className="dateopacity">{dummyDate}</h6>

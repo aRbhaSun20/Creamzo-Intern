@@ -19,7 +19,7 @@ const reducer = (login, action) => {
 };
 
 export const Login = ({ children }) => {
-	const [login, setLogin] = useReducer(reducer, true);
+	const [login, setLogin] = useReducer(reducer, false);
 	return (
 		<LoginContext.Provider value={[login, setLogin]}>
 			{children}

@@ -16,7 +16,6 @@ import Blog from "./Blog/Blog";
 import BlogArticles from "./BlogArticles/BlogArticles";
 import Articledisplay from "./ArticleDisplay/Articledisplay";
 import Account from "./Account/Account";
-import Tnc from "../Components/Tnc/Tnc";
 import Teams from "../Pages/Team/Teams";
 import Collection from "../Components/Collections/Collection";
 import BoardCreation from "../Components/Board/BoardCreation";
@@ -69,11 +68,6 @@ const Routes = () => {
 							exact
 							render={(props) => <Account {...props} />}
 						></Route>
-						<Route
-							path="/terms"
-							exact
-							render={(props) => <Tnc {...props} />}
-						></Route>
 
 						{/* <Route path="/articleitem"></Route> */}
 
@@ -99,12 +93,7 @@ const Routes = () => {
 							render={(props) => <BoardDisplay />}
 						></Route>
 						<Route
-							path="/boardDisplay"
-							exact
-							render={(props) => <BoardDisplay />}
-						></Route>
-						<Route
-							path="/termsAndConditions"
+							path="/terms"
 							exact
 							render={(props) => <TermsAndConditions />}
 						></Route>

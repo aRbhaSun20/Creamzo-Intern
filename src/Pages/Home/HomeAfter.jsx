@@ -4,6 +4,7 @@ import Conatiner from "../../Components/ImageContainer_afterLogin/Conatiner";
 import { useState } from "react";
 import { Add } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
+import { Link } from "react-router-dom";
 const HomeAfter = () => {
 	// eslint-disable-next-line
 	const [limit, setLimit] = useState(25);
@@ -35,24 +36,26 @@ const HomeAfter = () => {
 				width: "90%",
 			}}
 		>
-			{new Array(5)
-				.fill("")
-				.map(() =>
-					shuffleArray(images).map((image, i) => (
+			{new Array(5).fill("").map(() =>
+				shuffleArray(images).map((image, i) => (
+					<Link to="/boardDisplay">
 						<Conatiner
 							image={image}
 							key={i}
 							height={Math.random() * limit * Math.random() + 12}
 						/>
-					))
-				)}
+					</Link>
+				))
+			)}
 			<div
 				className="add"
 				style={{ position: "fixed", bottom: "6em", right: "1.5em" }}
 			>
-				<IconButton style={{ outline: "none", backgroundColor: "#dedede" }}>
-					<Add style={{ fontSize: "3rem", color: "black" }} />
-				</IconButton>
+				<Link to="/boardCreation">
+					<IconButton style={{ outline: "none", backgroundColor: "#dedede" }}>
+						<Add style={{ fontSize: "3rem", color: "black" }} />
+					</IconButton>
+				</Link>
 			</div>
 		</div>
 	);

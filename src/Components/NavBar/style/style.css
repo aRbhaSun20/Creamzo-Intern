@@ -1,0 +1,81 @@
+.navbar {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  padding: 0 3em;
+}
+
+.navbar .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar .remaining-navs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 85%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: flex-end;
+  font-weight: bold;
+  justify-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: bolder;
+}
+
+.navbar .remaining-navs .navs {
+  font-size: 1rem;
+  opacity: .3;
+  position: relative;
+  top: .5em;
+}
+
+.navbar .remaining-navs .navs,
+.navbar .remaining-navs .activeLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 5em;
+  height: 2em;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.navbar .remaining-navs .activeLink {
+  opacity: 1;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .title {
+  margin: auto;
+}
+/*# sourceMappingURL=style.css.map */

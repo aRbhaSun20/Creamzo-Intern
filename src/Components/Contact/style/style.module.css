@@ -1,0 +1,51 @@
+.contactContainer{
+    width: 50vw;
+    margin: 0 auto;
+    height: 90vh;
+}
+.contactForm{
+    margin-top: 5vh;
+}
+.FirstLastName{
+    display: flex;
+    justify-content:space-between;
+}
+#firstName{
+    width: 45%;
+}
+#lastName{
+    width: 45%;
+}
+.formElement{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    margin-top: 15px;
+}
+.formElement input,textarea{
+    border: none  ; 
+    border-bottom: 2px solid black;
+    font-size: 17px;
+}
+.formElement label{
+    font-size: 20px;
+}
+.formElement input, textarea:focus{
+    outline: none !important;
+    border-bottom: 2px solid black;
+}
+
+.submitButton{
+    margin-top: 5vh;
+    width: 8vw;
+    height: 4.5vh;
+    background-color: #d34747d3;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+.submitButton:hover{
+    background-color: #ac3838f6;
+
+}

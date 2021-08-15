@@ -1,0 +1,70 @@
+.BoardCreationContainer{
+    width: 60vw;
+    margin: 5vh auto;
+    background-color: white;
+    border-radius: 20px;
+    /* height: 80vh; */
+    
+}
+.ContentContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    column-gap: 2vw;    
+
+}
+.leftContainer{
+    width: 50%;
+    padding: 15px;
+    color: black;
+}
+.dots img{
+    width: 25px;
+    height: 25px;
+    /* padding: 20px; */
+    margin-bottom: 15px;
+
+}
+.picture{
+width: 95%;
+height: 60vh;
+border: 3px solid rgb(206, 203, 203) ;
+text-align: center;
+background-color: rgb(230, 233, 233);
+border-radius: 15px;
+}
+
+.rightContiner{
+padding: 15PX;
+width: 50%;
+}
+.BoardCreationForm{
+display: flex;
+flex-direction: column;
+width: 90%;
+row-gap: 3vh;
+}
+.BoardCreationFormInput{
+    height: 6vh;
+    background-color: white;
+    border: none;
+    border-bottom: 2px solid black;
+
+}
+
+.BoardCreationFormInput:focus{
+    outline: none !important;
+}
+#boardSubmit{
+    width: 80px;
+    height: 40px;
+    border-radius:0px 10px 10px 0px ;
+    cursor: pointer;
+    background-color: rgb(236, 13, 13);
+    border: none;
+   color: white;
+   font-weight: 600;
+}
+#boardSubmit:hover{
+   background-color: rgb(194, 10, 10);
+}

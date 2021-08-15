@@ -1,0 +1,23 @@
+.OverviewCarousalContainer{
+     width: 100%;
+      height: 100vh;
+      overflow: hidden;
+}
+
+.imageCOrousalCOnatiner{
+        animation: mymove 150s infinite;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    display: flex;
+        column-gap: 10px;
+}
+.corousalImage{
+  height: 100%;
+}
+
+@keyframes mymove {
+  0%   {left: 0vw;}
+  100% {left: -980vw;}
+}
+

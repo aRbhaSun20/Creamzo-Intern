@@ -21,7 +21,9 @@ const BoardDisplay = () => {
                         </div>
                         <div className={style.rightContinerDisplay}>
                             <h3 style={{ color: "black" }}> Title: <small>title here</small> </h3>
-                            <h3 style={{ color: "black" }}> Description: <br /> <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi reprehenderit tempora expedita praesentium fugiat? Provident aspernatur rerum numquam autem excepturi labore ipsum commodi? Vero repellat, assumenda suscipit maiores quis cumque!</small></h3>
+                            <h3 style={{ color: "black" }}> Description: <br /> <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi reprehenderit tempora expedita praesentium fugiat? Provident aspernatur rerum numquam autem excepturi labore ipsum commodi? Vero repellat, assumenda suscipit maiores quis cumque!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, nobis
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur officiis eveniet incidunt nesciunt dolorem quam totam hic blanditiis minima! Eveniet..lorem20 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia non, explicabo eius id vero eum? Eligendi ex eaque repellat harum? lorem50</small></h3>
                             <h3 style={{ color: "black" }}>Author: <small>Author name</small> </h3>
                             <div style={{ display: "flex" }}>
                                 <img style={{ width: "25px", height: "25px" }} src={download} alt="downloads" />

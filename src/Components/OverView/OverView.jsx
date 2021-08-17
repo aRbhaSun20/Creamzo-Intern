@@ -10,7 +10,7 @@ const styles = {
 	imgContainer: {
 		width: "18em",
 		height: "22em",
-		backgroundColor: "grey",
+		// backgroundColor: "grey",
 		position: "relative",
 		top: "3em",
 		borderRadius: ".5em",
@@ -23,7 +23,7 @@ const styles = {
 	imgContainerStatic: {
 		width: "18em",
 		height: "22em",
-		backgroundColor: "grey",
+		// backgroundColor: "grey",
 		borderRadius: ".5em",
 		color: "white",
 		display: "flex",
@@ -94,16 +94,16 @@ const OverView = () => {
 					}}
 				>
 					<div className="box" style={styles.imgContainer}>
-						<img className={style.overViewImage} src={img1} alt="" />
+						<img style={{borderRadius:"20px",height:"100%",width:"100%"}} className={style.overViewImage} src={img1} alt="" />
 					</div>
 					<div className="box" style={styles.imgContainerStatic}>
-						<img className={style.overViewImage} src={img2} alt="" />
+						<img style={{ borderRadius: "20px", height: "100%", width: "100%" }} className={style.overViewImage} src={img2} alt="" />
 					</div>
 					<div className="box" style={styles.imgContainer}>
-						<img className={style.overViewImage} src={img3} alt="" />
+						<img style={{ borderRadius: "20px", height: "100%", width: "100%" }} className={style.overViewImage} src={img3} alt="" />
 					</div>
 					<div className="box" style={styles.imgContainerStatic}>
-						<img className={style.overViewImage} src={img4} alt="" />
+						<img style={{ borderRadius: "20px", height: "100%", width: "100%" }} className={style.overViewImage} src={img4} alt="" />
 					</div>
 				</div>
 			</div>

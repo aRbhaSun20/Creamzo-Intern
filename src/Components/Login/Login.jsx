@@ -6,8 +6,6 @@ import "./style/style.css";
 import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
-import CloseIcon from "@material-ui/icons/Close";
-
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 
 const Login = ({ setopen, setSignopen }) => {
@@ -20,19 +18,11 @@ const Login = ({ setopen, setSignopen }) => {
 		<React.Fragment>
 			<div className="login-card">
 				<div className="top-header">
-					<div className="title" style={{ position: "relative" }}>
+					<div
+						className="title"
+						style={{ position: "relative", top: "-0.5em",color:"black" }}
+					>
 						Hello, Welcome Back!
-						<CloseIcon
-							onClick={() => {
-								setopen(false);
-							}}
-							style={{
-								position: "relative",
-								right: "-4em",
-								top: "-.1em",
-								cursor: "pointer",
-							}}
-						/>
 					</div>
 					<div className="buttons-gp">
 						<Button
@@ -41,6 +31,12 @@ const Login = ({ setopen, setSignopen }) => {
 							onClick={(e) => {
 								e.preventDefault();
 								console.log("google");
+							}}
+							style={{
+								backgroundColor: "#d4d4d4",
+								color: "black",
+								width: "12em",
+								borderRadius: "1.2em",
 							}}
 						>
 							<img
@@ -56,6 +52,11 @@ const Login = ({ setopen, setSignopen }) => {
 							onClick={(e) => {
 								e.preventDefault();
 								console.log("fb");
+							}}
+							style={{
+								backgroundColor: "#d4d4d4",
+								color: "black",
+								width: "13em",
 							}}
 						>
 							<img
@@ -78,6 +79,7 @@ const Login = ({ setopen, setSignopen }) => {
 							e.preventDefault();
 							setMail(e.target.value);
 						}}
+						style={{border:"black"}}
 						placeholder="name@gmail.com"
 						variant="outlined"
 					/>
@@ -103,6 +105,7 @@ const Login = ({ setopen, setSignopen }) => {
 								setLogin({ type: LOGIN_ACTIONS.LOGIN });
 								setopen(false);
 							}}
+							style={{ backgroundColor: "#d4d4d4", color: "black" }}
 						>
 							Log In
 						</Button>

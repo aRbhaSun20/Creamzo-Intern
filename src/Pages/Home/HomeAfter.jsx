@@ -1,35 +1,62 @@
 import React from "react";
 import "./style/style.css";
 import Conatiner from "../../Components/ImageContainer_afterLogin/Conatiner";
+import { useState } from "react";
+import { Add } from "@material-ui/icons";
+import { IconButton } from "@material-ui/core";
+import { Link } from "react-router-dom";
 const HomeAfter = () => {
+	// eslint-disable-next-line
+	const [limit, setLimit] = useState(25);
 	const images = [
 		"https://picsum.photos/200/300?image=1050",
 		"https://picsum.photos/400/400?image=1039",
 		"https://picsum.photos/400/400?image=1080",
 		"https://picsum.photos/200/200?image=997",
 		"https://picsum.photos/500/400?image=287",
-		"https://picsum.photos/400/500?image=955",
-		"https://picsum.photos/200/300?image=916",
-		"https://picsum.photos/300/300?image=110",
-		"https://picsum.photos/300/300?image=206",
-		"https://picsum.photos/300/300?image=110",
-		"https://picsum.photos/300/300?image=206",
-		"https://picsum.photos/300/300?image=206",
 	];
+	function shuffleArray(array) {
+		for (var i = array.length - 1; i > 0; i--) {
+			// Generate random number
+			var j = Math.floor(Math.random() * Math.random() * (i + 1));
+
+			var temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+
+		return array;
+	}
 	return (
 		<div
 			className="container1"
 			style={{
-				maxHeight: "150vh",
+				maxHeight: `${limit * 7.5}vh`,
+				maxWidth: "90vw",
+				width: "90%",
 			}}
 		>
-			{images.map((image, i) => (
-				<Conatiner
-					image={image}
-					key={i}
-					height={(Math.random() * 50) / 2 + 12}
-				/>
-			))}
+			{new Array(5).fill("").map(() =>
+				shuffleArray(images).map((image, i) => (
+					<Link to="/boardDisplay">
+						<Conatiner
+							image={image}
+							key={i}
+							height={Math.random() * limit * Math.random() + 12}
+						/>
+					</Link>
+				))
+			)}
+			<div
+				className="add"
+				style={{ position: "fixed", bottom: "6em", right: "1.5em" }}
+			>
+				<Link to="/boardCreation">
+					<IconButton style={{ outline: "none", backgroundColor: "#dedede" }}>
+						<Add style={{ fontSize: "3rem", color: "black" }} />
+					</IconButton>
+				</Link>
+			</div>
 		</div>
 	);
 };

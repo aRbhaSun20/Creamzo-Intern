@@ -1,0 +1,140 @@
+.termsContainer {
+  width: 99vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.termsContainer .terms_left {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80vh;
+}
+
+.termsContainer .terms_left h2 {
+  font-size: 3.5rem;
+  color: gray;
+  margin-bottom: 3rem;
+}
+
+.termsContainer .terms_left p {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.termsContainer .terms_left .link {
+  cursor: pointer;
+}
+
+.termsContainer .terms_right {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.tos h1 {
+  font-size: 3.7rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 7rem 0 3rem;
+}
+
+.tos .tos_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.tos .tos_inner .title {
+  width: 30%;
+}
+
+.tos .tos_inner .title h2 {
+  font-size: 2.8rem;
+  padding-right: 1.5rem;
+}
+
+.tos .tos_inner .para {
+  width: 70%;
+  padding-right: 1.5rem;
+}
+
+.tos .tos_inner .para p {
+  font-size: 1.7rem;
+}
+
+@media screen and (max-width: 1120px) {
+  .termsContainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 95vw !important;
+    padding: 0 1.5rem;
+  }
+  .termsContainer .terms_left {
+    width: 100% !important;
+    height: 20rem;
+  }
+  .termsContainer .terms_left h2 {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  .termsContainer .terms_right {
+    width: 100% !important;
+  }
+  .tos h1 {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  .tos .tos_inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0 1.8rem;
+  }
+  .tos .tos_inner .title,
+  .tos .tos_inner .para {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=Terms.css.map */

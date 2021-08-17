@@ -1,14 +1,24 @@
 .image {
-  min-width: 8em;
-  height: 35em;
-  background-color: grey;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  opacity: .3;
+  width: 11em;
+  height: 40em;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  opacity: .6;
+  -webkit-filter: grayscale(90%);
+          filter: grayscale(90%);
 }
 
 .image:hover {
-  width: 14em;
+  width: 16em;
   opacity: 1;
+  -webkit-filter: grayscale(10%);
+          filter: grayscale(10%);
+}
+
+.image img {
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 40em;
 }
 /*# sourceMappingURL=style.css.map */

@@ -51,9 +51,17 @@ function About() {
 				textColor="primary"
 				onChange={handleChange}
 			>
-				<Tab label="OverView" {...a11yProps(0)}></Tab>
-				<Tab label="Team" {...a11yProps(1)}></Tab>
-				<Tab label="Creative" {...a11yProps(2)}></Tab>
+				<Tab
+					label="OverView"
+					style={{ outline: "none" }}
+					{...a11yProps(0)}
+				></Tab>
+				<Tab label="Team" style={{ outline: "none" }} {...a11yProps(1)}></Tab>
+				<Tab
+					label="Creative"
+					style={{ outline: "none" }}
+					{...a11yProps(2)}
+				></Tab>
 			</Tabs>
 			<TabPanel value={value} index={0}>
 				<OverView />

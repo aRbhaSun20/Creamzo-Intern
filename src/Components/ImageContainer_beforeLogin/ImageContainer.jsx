@@ -2,10 +2,15 @@ import React from "react";
 
 import "./style/style.css";
 
-const ImageContainer = () => {
+const ImageContainer = ({ imgPath }) => {
 	return (
 		<React.Fragment>
-			<div className="image"></div>
+			<div className="image">
+				<img
+					src={imgPath}
+					alt="pictures"
+				/>
+			</div>
 		</React.Fragment>
 	);
 };

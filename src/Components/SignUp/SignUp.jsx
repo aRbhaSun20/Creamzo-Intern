@@ -6,8 +6,6 @@ import "./style/style.css";
 import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
-import CloseIcon from "@material-ui/icons/Close";
-
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 
 const SignUp = ({ setopen }) => {
@@ -21,19 +19,16 @@ const SignUp = ({ setopen }) => {
 		<React.Fragment>
 			<div className="login-card">
 				<div className="top-header">
-					<div className="title" style={{ position: "relative" }}>
-						Hey, Welcome to Cremzo!
-						<CloseIcon
-							onClick={() => {
-								setopen(false);
-							}}
-							style={{
-								position: "relative",
-								right: "-2.9em",
-								top: "-.1em",
-								cursor: "pointer",
-							}}
-						/>
+					<div
+						className="title"
+						style={{
+							position: "relative",
+							top: "-0.5em",
+							color: "black",
+							fontWeight: "normal",
+						}}
+					>
+						Hey, Welcome to Creamzo!
 					</div>
 					<div className="buttons-gp">
 						<Button
@@ -42,6 +37,12 @@ const SignUp = ({ setopen }) => {
 							onClick={(e) => {
 								e.preventDefault();
 								console.log("google");
+							}}
+							style={{
+								backgroundColor: "#d4d4d4",
+								color: "black",
+								width: "12em",
+								borderRadius: "1.2em",
 							}}
 						>
 							<img
@@ -57,6 +58,11 @@ const SignUp = ({ setopen }) => {
 							onClick={(e) => {
 								e.preventDefault();
 								console.log("fb");
+							}}
+							style={{
+								backgroundColor: "#d4d4d4",
+								color: "black",
+								width: "13em",
 							}}
 						>
 							<img
@@ -109,6 +115,7 @@ const SignUp = ({ setopen }) => {
 								setLogin({ type: LOGIN_ACTIONS.LOGIN });
 								setopen(false);
 							}}
+							style={{ backgroundColor: "#d4d4d4", color: "black" }}
 						>
 							Continue
 						</Button>

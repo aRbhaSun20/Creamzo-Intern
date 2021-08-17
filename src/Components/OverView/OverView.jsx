@@ -1,16 +1,15 @@
 import React from "react";
 import { Button, Typography } from "@material-ui/core";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import img1 from './assets/img1.jpg';
-import img2 from './assets/img2 .jpg';
-import img3 from './assets/img3.jpg';
-import img4 from './assets/img4.jpg'
+import img1 from "./assets/img1.jpg";
+import img2 from "./assets/img2 .jpg";
+import img3 from "./assets/img3.jpg";
+import img4 from "./assets/img4.jpg";
 import { style } from "@material-ui/system";
 const styles = {
 	imgContainer: {
 		width: "18em",
 		height: "22em",
-		// backgroundColor: "grey",
 		position: "relative",
 		top: "3em",
 		borderRadius: ".5em",
@@ -23,17 +22,18 @@ const styles = {
 	imgContainerStatic: {
 		width: "18em",
 		height: "22em",
-		// backgroundColor: "grey",
-		borderRadius: ".5em",
 		color: "white",
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
 		opacity: ".9",
 	},
-	overViewImage:{
-		width:"100%"
-	}
+	overViewImage: {
+		objectFit: "cover",
+		width: "100%",
+		height: "auto",
+		borderRadius: ".5em",
+	},
 };
 
 const OverView = () => {
@@ -94,16 +94,56 @@ const OverView = () => {
 					}}
 				>
 					<div className="box" style={styles.imgContainer}>
-						<img style={{borderRadius:"20px",height:"100%",width:"100%"}} className={style.overViewImage} src={img1} alt="" />
+						<img
+							className={style.overViewImage}
+							src={img1}
+							alt="pic"
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: "1em",
+							}}
+						/>
 					</div>
 					<div className="box" style={styles.imgContainerStatic}>
-						<img style={{ borderRadius: "20px", height: "100%", width: "100%" }} className={style.overViewImage} src={img2} alt="" />
+						<img
+							className={style.overViewImage}
+							src={img2}
+							alt="pic"
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: "1em",
+							}}
+						/>
 					</div>
 					<div className="box" style={styles.imgContainer}>
-						<img style={{ borderRadius: "20px", height: "100%", width: "100%" }} className={style.overViewImage} src={img3} alt="" />
+						<img
+							className={style.overViewImage}
+							src={img3}
+							alt="pic"
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: "1em",
+							}}
+						/>
 					</div>
 					<div className="box" style={styles.imgContainerStatic}>
-						<img style={{ borderRadius: "20px", height: "100%", width: "100%" }} className={style.overViewImage} src={img4} alt="" />
+						<img
+							className={style.overViewImage}
+							src={img4}
+							alt="pic"
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: "1em",
+							}}
+						/>
 					</div>
 				</div>
 			</div>

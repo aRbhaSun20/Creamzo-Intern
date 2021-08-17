@@ -8,7 +8,7 @@ import {
 
 import Home from "./Home/Home";
 import NavBar from "../Components/NavBar/NavBar";
-import EndSection from "../Components/EndSection/EndSection";
+import Footer from "../Components/EndSection/Footer";
 import About from "./AboutUs/About";
 import Discover from "./Discover/Discover";
 import ContactPage from "./Contact/ContactPage";
@@ -16,7 +16,6 @@ import Blog from "./Blog/Blog";
 import BlogArticles from "./BlogArticles/BlogArticles";
 import Articledisplay from "./ArticleDisplay/Articledisplay";
 import Account from "./Account/Account";
-import Tnc from "../Components/Tnc/Tnc";
 import Teams from "../Pages/Team/Teams";
 import Collection from "../Components/Collections/Collection";
 import BoardCreation from "../Components/Board/BoardCreation";
@@ -69,11 +68,6 @@ const Routes = () => {
 							exact
 							render={(props) => <Account {...props} />}
 						></Route>
-						<Route
-							path="/terms"
-							exact
-							render={(props) => <Tnc {...props} />}
-						></Route>
 
 						{/* <Route path="/articleitem"></Route> */}
 
@@ -99,18 +93,13 @@ const Routes = () => {
 							render={(props) => <BoardDisplay />}
 						></Route>
 						<Route
-							path="/boardDisplay"
-							exact
-							render={(props) => <BoardDisplay />}
-						></Route>
-						<Route
-							path="/termsAndConditions"
+							path="/terms"
 							exact
 							render={(props) => <TermsAndConditions />}
 						></Route>
 						<Redirect to="/" />
 					</Switch>
-					<EndSection />
+					<Footer />
 				</div>
 			</Router>
 		</React.Fragment>

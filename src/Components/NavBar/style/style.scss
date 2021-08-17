@@ -16,7 +16,7 @@
 
     .remaining-navs {
         display: flex;
-        width: 70%;
+        width: 85%;
         height: 100%;
         align-items: center;
         justify-self: flex-end;
@@ -29,30 +29,16 @@
             font-size: 1rem;
             opacity: .3;
             position: relative;
+            top: .5em;
         }
 
         .navs,
         .activeLink {
             display: flex;
             justify-content: center;
-            width: 8em;
+            width: 5em;
             height: 2em;
             transition: all .2s ease-in;
-
-            &::after {
-                content: "";
-                width: 0px;
-                position: absolute;
-                // left: 50%;
-                bottom:-.5em;
-                border-bottom: 4px solid blue;
-                transition: all ease-in-out .2s;
-            }
-
-            &:hover::after {
-                width: 8em;
-                // left: 0;
-            }
         }
 
         .activeLink {

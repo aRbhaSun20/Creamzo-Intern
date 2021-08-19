@@ -14,7 +14,7 @@
 
 .footer_container .footer_inner {
   width: 38rem;
-  height: 3.5rem;
+  height: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +51,7 @@
 }
 
 .footer_container .footer_social_links .footer_icons {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: white;
 }
 

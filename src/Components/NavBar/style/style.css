@@ -7,7 +7,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 10vh;
+  height: 8vh;
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
   padding: 0 3em;
@@ -46,7 +46,6 @@
 }
 
 .navbar .remaining-navs .navs {
-  font-size: 1rem;
   opacity: .3;
   position: relative;
   top: .5em;

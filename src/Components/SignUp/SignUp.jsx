@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 
-import { Button, TextField } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 import "./style/style.css";
 import fb from "./assets/fb.png";
@@ -26,6 +26,7 @@ const SignUp = ({ setopen }) => {
 							top: "-0.5em",
 							color: "black",
 							fontWeight: "normal",
+							fontSize: "1.5rem",
 						}}
 					>
 						Hey, Welcome to Creamzo!
@@ -43,6 +44,7 @@ const SignUp = ({ setopen }) => {
 								color: "black",
 								width: "12em",
 								borderRadius: "1.2em",
+								fontSize: ".6rem",
 							}}
 						>
 							<img
@@ -63,6 +65,7 @@ const SignUp = ({ setopen }) => {
 								backgroundColor: "#d4d4d4",
 								color: "black",
 								width: "13em",
+								fontSize: ".6rem",
 							}}
 						>
 							<img
@@ -76,35 +79,45 @@ const SignUp = ({ setopen }) => {
 					<div className="or">or</div>
 				</div>
 				<div className="bottom-header">
-					<TextField
-						label="Email"
+					<input
 						value={mail}
 						onChange={(e) => {
 							e.preventDefault();
 							setMail(e.target.value);
 						}}
+						type="text"
+						style={{
+							width: "20em",
+							fontSize: ".8rem",
+							height: "3em",
+						}}
 						placeholder="name@gmail.com"
-						variant="outlined"
 					/>
-					<TextField
-						label="Create Password"
+					<input
 						type="password"
 						value={password}
 						onChange={(e) => {
 							e.preventDefault();
 							setPassword(e.target.value);
 						}}
+						style={{
+							width: "20em",
+							fontSize: ".8rem",
+							height: "3em",
+						}}
 						placeholder="*******"
-						variant="outlined"
 					/>
-					<TextField
-						label="Age"
+					<input
 						value={age}
 						onChange={(e) => {
 							e.preventDefault();
 							setAge(e.target.value);
 						}}
-						variant="outlined"
+						style={{
+							width: "20em",
+							fontSize: ".8rem",
+							height: "3em",
+						}}
 					/>
 					<div className="login-forget">
 						<Button
@@ -115,7 +128,11 @@ const SignUp = ({ setopen }) => {
 								setLogin({ type: LOGIN_ACTIONS.LOGIN });
 								setopen(false);
 							}}
-							style={{ backgroundColor: "#d4d4d4", color: "black" }}
+							style={{
+								backgroundColor: "#d4d4d4",
+								fontSize: ".6rem",
+								color: "black",
+							}}
 						>
 							Continue
 						</Button>

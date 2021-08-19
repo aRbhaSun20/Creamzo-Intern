@@ -1,6 +1,6 @@
 .image {
-  width: 11em;
-  height: 40em;
+  width: 7.5em;
+  height: 27em;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   opacity: .6;
@@ -9,7 +9,7 @@
 }
 
 .image:hover {
-  width: 16em;
+  width: 11em;
   opacity: 1;
   -webkit-filter: grayscale(10%);
           filter: grayscale(10%);
@@ -19,6 +19,6 @@
   width: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 40em;
+  height: 29em;
 }
 /*# sourceMappingURL=style.css.map */

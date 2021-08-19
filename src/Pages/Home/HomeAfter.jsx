@@ -38,7 +38,13 @@ const HomeAfter = () => {
 		>
 			{new Array(5).fill("").map(() =>
 				shuffleArray(images).map((image, i) => (
-					<Link to="/boardDisplay">
+					<Link to={{
+						pathname: "/boardDisplay",
+						state: {
+							i: image
+						}
+					}}>
+
 						<Conatiner
 							image={image}
 							key={i}

@@ -73,8 +73,11 @@
 }
 .memberImage:hover{
     transition: 0.5s;
-    transform: translate(15%,0%);
+    transform: translate(13px,-3px);
+    /* padding-left: 20px; */
 }
 .details {
     margin: 50% auto auto auto;
+    text-align: center;
+    word-wrap: break-word;
 }

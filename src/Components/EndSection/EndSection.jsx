@@ -16,7 +16,7 @@ const EndSection = () => {
 					width: "auto",
 					display: "grid",
 					gridTemplateRows: "1fr 1fr",
-					height: "30vh",
+					height: "20vh",
 					backgroundColor: "#353535",
 					overflow: "hidden",
 					gridGap: "2em",
@@ -34,14 +34,14 @@ const EndSection = () => {
 						gridGap: "5em",
 						justifyContent: "center",
 						alignItems: "start",
-						height: "20vh",
+						height: "10vh",
 						position: "relative",
 						left: "5em",
 					}}
 				>
 					<div className="footer-left">
 						<Typography
-							variant="h4"
+							variant="h6"
 							style={{ color: "white", paddingBottom: ".5em" }}
 						>
 							About

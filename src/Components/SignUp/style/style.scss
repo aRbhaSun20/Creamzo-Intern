@@ -11,7 +11,7 @@
     padding-bottom: 1em;
 
     button {
-        // background-color: #1E1E24;
+        background-color: #1E1E24;
         color: white;
         border-radius: 1em;
     }
@@ -27,9 +27,10 @@
         justify-content: center;
 
         .title {
-            font-size: 2em;
+            font-size: 1.5em;
             align-self: center;
             justify-self: center;
+            margin-top: 2em;
         }
 
         .buttons-gp {
@@ -58,6 +59,7 @@
             align-self: center;
             justify-self: center;
             color: rgb(61, 61, 61);
+            font-size: 1em;
         }
     }
 
@@ -87,12 +89,14 @@
 
         .forget {
             padding-top: 2em;
+            font-size: .8rem;
         }
     }
 
     .dont-have {
         display: flex;
         justify-content: center;
+        font-size: .8rem;
 
         span {
             padding-left: .5em;

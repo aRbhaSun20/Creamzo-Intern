@@ -1,12 +1,12 @@
 .image {
-    width: 11em;
-    height: 40em;
+    width: 7.5em;
+    height: 27em;
     transition: all .5s ease-in-out;
     opacity: .6;
     filter: grayscale(90%);
 
     &:hover {
-        width: 16em;
+        width: 11em;
         opacity: 1;
         filter: grayscale(10%);
     }
@@ -14,6 +14,6 @@
     img {
         width: auto;
         object-fit: cover;
-        height: 40em;
+        height: 29em;
     }
 }

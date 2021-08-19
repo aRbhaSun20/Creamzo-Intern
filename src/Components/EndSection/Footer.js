@@ -12,7 +12,7 @@ function Footer() {
 			<div className="footer_inner">
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: "1.2rem" }}
+					style={{ fontSize: ".8rem" }}
 					exact
 					to="/about"
 				>
@@ -20,7 +20,7 @@ function Footer() {
 				</NavLink>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: "1.2rem" }}
+					style={{ fontSize: ".8rem" }}
 					to="/discover"
 					exact
 				>
@@ -28,7 +28,7 @@ function Footer() {
 				</NavLink>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: "1.2rem" }}
+					style={{ fontSize: ".8rem" }}
 					to="/blog"
 					exact
 				>
@@ -36,7 +36,7 @@ function Footer() {
 				</NavLink>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: "1.2rem" }}
+					style={{ fontSize: ".8rem" }}
 					to="/contact"
 					exact
 				>
@@ -44,7 +44,7 @@ function Footer() {
 				</NavLink>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: "1.2rem" }}
+					style={{ fontSize: ".8rem" }}
 					to="/terms"
 					exact
 				>
@@ -53,19 +53,19 @@ function Footer() {
 			</div>
 			<div className="footer_social_links">
 				<a href="https://www.facebook.com/Creamzo7">
-					<FacebookIcon className="footer_icons" style={{ fontSize: "2rem" }} />
+					<FacebookIcon className="footer_icons" style={{ fontSize: "1.5rem" }} />
 				</a>
 				<a href="https://www.instagram.com/creamzo7/">
 					<InstagramIcon
 						className="footer_icons"
-						style={{ fontSize: "2rem" }}
+						style={{ fontSize: "1.5rem" }}
 					/>
 				</a>
 				<a href="https://www.linkedin.com/company/creamzo/">
-					<LinkedInIcon className="footer_icons" style={{ fontSize: "2rem" }} />
+					<LinkedInIcon className="footer_icons" style={{ fontSize: "1.5rem" }} />
 				</a>
 				<a href="https://twitter.com/creamzo3">
-					<TwitterIcon className="footer_icons" style={{ fontSize: "2rem" }} />
+					<TwitterIcon className="footer_icons" style={{ fontSize: "1.5rem" }} />
 				</a>
 			</div>
 		</div>

@@ -44,7 +44,7 @@
 }
 
 .login-card .top-header .title {
-  font-size: 2em;
+  font-size: 1.5em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -88,6 +88,7 @@
   -ms-grid-column-align: center;
       justify-self: center;
   color: #3d3d3d;
+  font-size: 1em;
 }
 
 .login-card .bottom-header {
@@ -136,6 +137,7 @@
 
 .login-card .login-forget .forget {
   padding-top: 2em;
+  font-size: .8rem;
 }
 
 .login-card .dont-have {
@@ -145,6 +147,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: .8rem;
 }
 
 .login-card .dont-have span {

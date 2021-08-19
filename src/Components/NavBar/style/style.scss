@@ -2,7 +2,7 @@
     display: grid;
     justify-content: space-between;
     align-items: center;
-    height: 10vh;
+    height: 8vh;
     grid-template-columns: 1fr 2fr;
     padding: 0 3em;
 
@@ -26,7 +26,6 @@
         font-weight: bolder;
 
         .navs {
-            font-size: 1rem;
             opacity: .3;
             position: relative;
             top: .5em;

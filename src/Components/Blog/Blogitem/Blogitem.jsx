@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Facebook, Instagram, Twitter } from "@material-ui/icons";
+import { Facebook, Instagram, LinkedIn, Twitter } from "@material-ui/icons";
 
 import "./styles/styles.css";
 import dummyimage from "./styles/blogitemimage.jpg";
@@ -16,6 +16,8 @@ function Blogitem() {
 	const [twitterUrl, settwitterUrl] = useState("https://www.twitter.com");
 	// eslint-disable-next-line
 	const [instagramUrl, setinstagramUrl] = useState("https://www.instagram.com");
+	// eslint-disable-next-line
+	const [linkedinUrl, setlinkedinUrl] = useState("https://www.linkedin.com");
 	// eslint-disable-next-line
 	const [categorytype, setcategorytype] = useState("Art");
 
@@ -47,6 +49,9 @@ function Blogitem() {
 						</Link>
 						<Link to={instagramUrl} style={{ color: "black", fontSize: 45 }}>
 							<Instagram />
+						</Link>
+						<Link to={linkedinUrl} style={{ color: "black", fontSize: 45 }}>
+							<LinkedIn />
 						</Link>
 					</div>
 

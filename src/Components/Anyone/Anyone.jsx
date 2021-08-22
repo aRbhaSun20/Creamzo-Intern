@@ -32,7 +32,7 @@ const Anyone = () => {
 						variant="h4"
 						style={{
 							fontWeight: "bolder",
-							fontSize: "1.5rem",
+							fontSize: "1.8vw",
 							textAlign: "center",
 						}}
 					>
@@ -41,7 +41,7 @@ const Anyone = () => {
 					<Typography
 						style={{
 							textAlign: "center",
-							fontSize: ".8rem",
+							fontSize: ".8vw",
 							width: "50%",
 							margin: "auto",
 						}}
@@ -56,10 +56,10 @@ const Anyone = () => {
 						color="primary"
 						style={{
 							backgroundColor: "black",
-							width: "15em",
-							height: "3em",
+							width: "12vw",
+							height: "5vh",
 							margin: "auto",
-							fontSize: ".6rem",
+							fontSize: ".8vw",
 						}}
 					>
 						Join the Community
@@ -81,17 +81,17 @@ const Anyone = () => {
 						className="imgs"
 						style={{
 							position: "absolute",
-							top: "0em",
+							top: "0rem",
 						}}
 					>
 						<div
 							className=""
 							style={{
 								position: "absolute",
-								width: "12em",
-								height: "13.5em",
-								top: "-8em",
-								left: "-6em",
+								width: "12vw",
+								height: "28vh",
+								top: "-12vh",
+								left: "-4vw",
 							}}
 						>
 							<img
@@ -101,7 +101,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -109,10 +109,10 @@ const Anyone = () => {
 							className=""
 							style={{
 								position: "absolute",
-								width: "15em",
-								height: "10em",
-								top: "-4.5em",
-								left: "7em",
+								width: "12vw",
+								height: "24vh",
+								top: "-6vh",
+								left: "9vw",
 							}}
 						>
 							<img
@@ -122,7 +122,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -130,10 +130,10 @@ const Anyone = () => {
 							className=""
 							style={{
 								position: "absolute",
-								width: "18em",
-								height: "12em",
-								top: "7em",
-								left: "-6em",
+								width: "16vw",
+								height: "25vh",
+								top: "20vh",
+								left: "-5vw",
 							}}
 						>
 							<img
@@ -143,7 +143,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -151,10 +151,10 @@ const Anyone = () => {
 							className=""
 							style={{
 								position: "absolute",
-								width: "8em",
-								height: "8em",
-								top: "20em",
-								left: "-6em",
+								width: "16vw",
+								height: "20vh",
+								top: "48vh",
+								left: "-5vw",
 							}}
 						>
 							<img
@@ -164,7 +164,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -172,10 +172,10 @@ const Anyone = () => {
 							className=""
 							style={{
 								position: "absolute",
-								width: "18em",
-								height: "12em",
-								top: "20em",
-								left: "3em",
+								width: "20vw",
+								height: "30vh",
+								top: "38vh",
+								left: "13vw",
 							}}
 						>
 							<img
@@ -185,7 +185,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -204,18 +204,17 @@ const Anyone = () => {
 						className="imgs"
 						style={{
 							position: "absolute",
-							top: "0em",
-							right: "11.5em",
+							top: "0rem",
 						}}
 					>
 						<div
 							className=""
 							style={{
 								position: "absolute",
-								width: "8em",
-								height: "12em",
-								top: "-8em",
-								left: "7.5em",
+								width: "12vw",
+								height: "28vh",
+								top: "-12vh",
+								right: "-4vw",
 							}}
 						>
 							<img
@@ -225,7 +224,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -233,10 +232,10 @@ const Anyone = () => {
 							className=""
 							style={{
 								position: "absolute",
-								width: "10em",
-								height: "10em",
-								top: "-4.5em",
-								left: "-4em",
+								width: "12vw",
+								height: "24vh",
+								top: "-6vh",
+								right: "9vw",
 							}}
 						>
 							<img
@@ -246,7 +245,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -254,10 +253,10 @@ const Anyone = () => {
 							className=""
 							style={{
 								position: "absolute",
-								width: "18em",
-								height: "12em",
-								top: "7em",
-								left: "-2.5em",
+								width: "16vw",
+								height: "25vh",
+								top: "20vh",
+								right: "-5vw",
 							}}
 						>
 							<img
@@ -267,7 +266,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -275,10 +274,10 @@ const Anyone = () => {
 							className=""
 							style={{
 								position: "absolute",
-								width: "8em",
-								height: "8em",
-								top: "20em",
-								left: "7.5em",
+								width: "16vw",
+								height: "20vh",
+								top: "48vh",
+								right: "-5vw",
 							}}
 						>
 							<img
@@ -288,7 +287,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>
@@ -296,10 +295,10 @@ const Anyone = () => {
 							className=""
 							style={{
 								position: "absolute",
-								width: "18em",
-								height: "12em",
-								top: "20em",
-								left: "-12em",
+								width: "20vw",
+								height: "30vh",
+								top: "38vh",
+								right: "13vw",
 							}}
 						>
 							<img
@@ -309,7 +308,7 @@ const Anyone = () => {
 									width: "100%",
 									height: "100%",
 									objectFit: "cover",
-									borderRadius: "1.5em",
+									borderRadius: "1.5rem",
 								}}
 							/>
 						</div>

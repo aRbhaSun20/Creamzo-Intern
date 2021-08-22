@@ -1,165 +1,153 @@
 import {
-  Avatar,
-  IconButton,
-  Input,
-  InputAdornment,
-  Modal,
-  OutlinedInput,
-  Paper,
-  Typography,
+	Avatar,
+	InputAdornment,
+	Typography,
+	InputBase,
+	MenuItem,
+	Popper,
 } from "@material-ui/core";
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./style/style.css";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
-import { NotificationsActive, Search } from "@material-ui/icons";
+import {  Search } from "@material-ui/icons";
+import { useState } from "react";
 
 const NavBar = () => {
-  // eslint-disable-next-line
-  const [login, setLogin] = useContext(LoginContext);
+	// eslint-disable-next-line
+	const [login, setLogin] = useContext(LoginContext);
+	const [anchorEl, setAnchorEl] = React.useState(null);
+	const [open, setOpen] = useState(false);
+	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+		setOpen(!open);
+	};
 
-  const [notifyOpen, setnotifyOpen] = React.useState(false);
+	const handleClose = () => {
+		setAnchorEl(null);
+		setOpen(false);
+	};
+	// const [notifyOpen, setnotifyOpen] = React.useState(false);
 
-  const handlenotifyClose = () => {
-    setnotifyOpen(false);
-  };
-  return (
+	// const handlenotifyClose = () => {
+	// 	setnotifyOpen(false);
+	// };
+
+	return (
 		<React.Fragment>
 			<div className="navbar">
-				<NavLink activeClassName="activeLink" to="/" exact>
-					<Typography variant="h5" style={{ fontWeight: "bold" }}>
-						Logo
-					</Typography>
-				</NavLink>
-				<NavLink activeClassName="activeLink" to="/" exact>
-					<div
-						style={{
-							fontWeight: "bolder",
-							width: "8em",
-							height: "3em",
-							borderRadius: "1.5em",
-							outline: "none",
-							position: "relative",
-							left: "1em",
-							top: "1em",
-							fontSize: ".9rem",
-							textDecoration: "none",
-						}}
-					>
-						Home
-					</div>
-				</NavLink>
-				<div className="remaining-navs" style={{ width: "80%" }}>
-					<Input
-						id="outlined-basic"
-						placeholder="Search..."
-						style={{
-							width: "70vw",
-							position: "relative",
-							top: ".3em",
-							left: "-2em",
-							height: "2.5em",
-							borderRadius: "2em",
-							outline: "none",
-							paddingLeft: "1em",
-							borderBottom: "none",
-							backgroundColor: "#dbdbdb",
-						}}
-						startAdornment={
-							<InputAdornment position="start">
-								<Search style={{ height: ".7em" }} />
-							</InputAdornment>
-						}
-						variant="outlined"
-					/>
-					<IconButton
-						style={{
-							outline: "none",
-							position: "relative",
-							left: "-.5em",
-						}}
-						onClick={() => {
-							setnotifyOpen(!notifyOpen);
-						}}
-					>
-						<NotificationsActive
-							style={{ fontSize: "1.5rem", color: "grey" }}
-						/>
-					</IconButton>
-					<Modal
-						open={notifyOpen}
-						onClose={handlenotifyClose}
-						aria-labelledby="simple-modal-title"
-						aria-describedby="simple-modal-description"
-						style={{
-							width: "100%",
-							height: "100%",
-							display: "flex",
-							justifyContent: "flex-end",
-							alignItems: "center",
-							marginRight: "2em",
-						}}
-						disableAutoFocus={true}
-						disableEnforceFocus={true}
-					>
-						<Paper
-							elevation={3}
-							style={{
-								width: "22vw",
-								height: "85vh",
-								maxHeight: "85vh",
-								marginRight: "2em",
-								marginTop: "2em",
-								display: "grid",
-								justifyContent: "space-evenly",
-								flexDirection: "column",
-								alignItems: "center",
-								gridTemplateRows: "1.2fr 10fr",
-								borderRadius: "2em",
-							}}
+				<div
+					className="top"
+					style={{
+						display: "flex",
+						justifyContent: "space-evenly",
+						alignItems: "center",
+						width: "20%",
+					}}
+				>
+					<NavLink activeClassName="activeLink" to="/" exact>
+						<Typography
+							variant="h4"
+							style={{ fontWeight: "bold", fontSize: "2vw" }}
 						>
-							<Typography
+							Logo
+						</Typography>
+					</NavLink>
+					<NavLink activeClassName="activeLink" to="/" exact>
+						<Typography
+							variant="h5"
+							style={{ fontSize: ".8vw" }}
+						>
+							Home
+						</Typography>
+					</NavLink>
+				</div>
+
+				<div className="remaining-navs" style={{ width: "80%" }}>
+					<div
+						className="input-group"
+						style={{
+							display: "flex",
+							justifyContent: "space-evenly",
+							alignItems: "center",
+							width: "75rem",
+						}}
+					>
+						<div>
+							<InputBase
+								type="search"
+								placeholder="Search"
+								aria-describedby="button-addon2"
 								style={{
-									fontSize: "1rem",
-									width: "25vw",
+									backgroundColor: "#eaeaf1",
+									borderRadius: "2rem",
+									paddingLeft: "2rem",
+									width: "60vw",
+									outline: "none",
+									height: "3rem",
 									display: "flex",
-									justifyContent: "center",
 									alignItems: "center",
 								}}
-							>
-								Updates
-							</Typography>
-						</Paper>
-					</Modal>
+								startAdornment={
+									<InputAdornment position="start">
+										<Search />
+									</InputAdornment>
+								}
+								class="form-control border-0 bg-light navbar_input"
+							/>
+						</div>
+					</div>
 					<div
+						className="links"
 						style={{
-							fontWeight: "bold",
-							borderRadius: "1.5em",
+							width: "20rem",
+							display: "flex",
+							justifyContent: "space-evenly",
+							alignItems: "center",
 						}}
 					>
-						<Avatar
-							alt="Remy Sharp"
-							src=""
-							onClick={() => {
-								setLogin({ type: LOGIN_ACTIONS.LOGOUT });
-							}}
-						/>
-					</div>
-					{/* <Accordion>
-						<AccordionSummary
-							expandIcon={<ExpandMoreIcon />}
-							aria-controls="panel1a-content"
-							id="panel1a-header"
+						<NavLink
+							activeClassName="activeLink"
+							to="/about"
+							className="navs"
+							exact
 						>
-						</AccordionSummary>
-						<AccordionDetails>
-							<Typography>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-								eget.
+							<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
+								About Us
 							</Typography>
-						</AccordionDetails>
-					</Accordion> */}
+						</NavLink>
+						<NavLink
+							className="navs"
+							activeClassName="activeLink"
+							to="/blog"
+							exact
+						>
+							<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
+								Blog
+							</Typography>
+						</NavLink>
+
+						<div className="avatar">
+							<Avatar style={{ fontSize: "1vw" }} onClick={handleClick} />
+							<Popper
+								id="simple-menu"
+								anchorEl={anchorEl}
+								open={open}
+								onClose={handleClose}
+							>
+								<MenuItem onClick={handleClose}>Profile</MenuItem>
+								<MenuItem onClick={handleClose}>My account</MenuItem>
+								<MenuItem
+									onClick={() => {
+										handleClose();
+										setLogin({ type: LOGIN_ACTIONS.LOGOUT });
+									}}
+								>
+									Logout
+								</MenuItem>
+							</Popper>
+						</div>
+					</div>
 				</div>
 			</div>
 		</React.Fragment>

@@ -9,10 +9,10 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 function Footer() {
 	return (
 		<div className="footer_container">
-			<div className="footer_inner"style={{width:"30%"}}>
+			<div className="footer_inner" style={{ width: "40%" }}>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: ".8rem" }}
+					style={{ fontSize: ".9vw" }}
 					exact
 					to="/about"
 				>
@@ -20,7 +20,7 @@ function Footer() {
 				</NavLink>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: ".8rem" }}
+					style={{ fontSize: ".9vw" }}
 					to="/discover"
 					exact
 				>
@@ -28,7 +28,7 @@ function Footer() {
 				</NavLink>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: ".8rem" }}
+					style={{ fontSize: ".9vw" }}
 					to="/blog"
 					exact
 				>
@@ -36,7 +36,7 @@ function Footer() {
 				</NavLink>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: ".8rem" }}
+					style={{ fontSize: ".9vw" }}
 					to="/contact"
 					exact
 				>
@@ -44,28 +44,37 @@ function Footer() {
 				</NavLink>
 				<NavLink
 					className="footer_links"
-					style={{ fontSize: ".8rem" }}
+					style={{ fontSize: ".9vw" }}
 					to="/terms"
 					exact
 				>
 					Terms
 				</NavLink>
 			</div>
-			<div className="footer_social_links" style={{paddingTop:"0.35em",width:"8%"}}>
+			<div className="footer_social_links" style={{ width: "8%" }}>
 				<a href="https://www.facebook.com/Creamzo7">
-					<FacebookIcon className="footer_icons" style={{ fontSize: "1.5rem" }} />
+					<FacebookIcon
+						className="footer_icons"
+						style={{ fontSize: "1.2vw", position: "relative", top: ".2rem" }}
+					/>
 				</a>
 				<a href="https://www.instagram.com/creamzo7/">
 					<InstagramIcon
 						className="footer_icons"
-						style={{ fontSize: "1.5rem" }}
+						style={{ fontSize: "1.2vw", position: "relative", top: ".2rem" }}
 					/>
 				</a>
 				<a href="https://www.linkedin.com/company/creamzo/">
-					<LinkedInIcon className="footer_icons" style={{ fontSize: "1.5rem" }} />
+					<LinkedInIcon
+						className="footer_icons"
+						style={{ fontSize: "1.2vw", position: "relative", top: ".2rem" }}
+					/>
 				</a>
 				<a href="https://twitter.com/creamzo3">
-					<TwitterIcon className="footer_icons" style={{ fontSize: "1.5rem" }} />
+					<TwitterIcon
+						className="footer_icons"
+						style={{ fontSize: "1.2vw", position: "relative", top: ".2rem" }}
+					/>
 				</a>
 			</div>
 		</div>

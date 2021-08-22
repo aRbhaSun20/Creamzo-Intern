@@ -8,18 +8,19 @@
           align-items: center;
   display: -ms-grid;
   display: grid;
-  height: 70vh;
-  border-radius: 1em;
+  height: 60vh;
+  border-radius: 1rem;
   width: 30vw;
-  -ms-grid-rows: .8fr 1.2fr;
-      grid-template-rows: .8fr 1.2fr;
-  padding-bottom: 1em;
+  -ms-grid-rows: 1fr 4fr;
+      grid-template-rows: 1fr 4fr;
+  padding-bottom: 4rem;
+  place-content: center;
 }
 
 .login-card button {
-  background-color: #1E1E24;
+  background-color: #1e1e24;
   color: white;
-  border-radius: 1em;
+  border-radius: 1rem;
 }
 
 .login-card .top-header {
@@ -29,31 +30,33 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-  width: 100%;
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 1fr .5fr;
-      grid-template-rows: 1fr 1fr .5fr;
+  height: 5vh;
+  width: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .login-card .top-header .title {
-  font-size: 1.5em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
-.login-card .top-header .buttons-gp {
+.login-card .buttons-gp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,10 +66,10 @@
           justify-content: space-evenly;
 }
 
-.login-card .top-header .buttons-gp button {
+.login-card .buttons-gp button {
   text-align: center;
   width: 10vw;
-  height: 4em;
+  height: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,20 +78,22 @@
   display: flex;
 }
 
-.login-card .top-header .buttons-gp button img {
+.login-card .buttons-gp button img {
   position: relative;
   width: 1.5vw;
-  top: -.1em;
+  top: -0.1rem;
 }
 
-.login-card .top-header .or {
+.login-card .or {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
   color: #3d3d3d;
-  font-size: 1em;
+  font-size: 0.8rem;
 }
 
 .login-card .bottom-header {
@@ -112,13 +117,38 @@
           justify-content: center;
 }
 
-.login-card .login-forget {
-  width: 100%;
-  height: 6em;
+.login-card .bottom-header .inputs {
+  height: 20vh;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-card .bottom-header .inputs .inp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-card .login-forget {
+  padding-top: 1rem;
+  width: 100%;
+  height: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,16 +158,20 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .login-card .login-forget button {
-  height: 6vh;
-  width: 15vw;
+  height: 3rem;
+  width: 9rem;
 }
 
 .login-card .login-forget .forget {
-  padding-top: 2em;
-  font-size: .8rem;
+  padding-top: 2rem;
+  font-size: 0.8rem;
 }
 
 .login-card .dont-have {
@@ -147,12 +181,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: .8rem;
+  font-size: .95rem;
 }
 
 .login-card .dont-have span {
-  padding-left: .5em;
-  color: #D82D57;
+  padding-left: 0.5rem;
+  color: #d82d57;
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

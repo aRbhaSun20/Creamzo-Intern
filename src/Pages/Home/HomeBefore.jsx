@@ -66,12 +66,13 @@ const HomeBefore = () => {
   return (
     <React.Fragment>
       <div className="container">
+        
         {arr.map((ele, i) => (
           <Button
             key={i}
             style={{
               position: "relative",
-              bottom: `${ele.value}em`,
+              bottom: `${ele.value}rem`,
               outline: "none",
             }}
             onMouseEnter={() => {

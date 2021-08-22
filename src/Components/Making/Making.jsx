@@ -13,7 +13,7 @@ const Making = () => {
       <div
         className="conatiner"
         style={{
-          width: "auto",
+          width: "100%",
           height: "90vh",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",

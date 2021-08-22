@@ -31,7 +31,7 @@ const HomeAfter = () => {
     <div
       className="container1"
       style={{
-        maxHeight: `${limit * 10}vh`,
+        maxHeight: `${limit * 8}vh`,
         maxWidth: "80vw",
         width: "90%",
         paddingTop: "2em",

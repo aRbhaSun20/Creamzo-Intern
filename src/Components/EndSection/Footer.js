@@ -9,7 +9,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 function Footer() {
 	return (
 		<div className="footer_container">
-			<div className="footer_inner">
+			<div className="footer_inner"style={{width:"30%"}}>
 				<NavLink
 					className="footer_links"
 					style={{ fontSize: ".8rem" }}
@@ -51,7 +51,7 @@ function Footer() {
 					Terms
 				</NavLink>
 			</div>
-			<div className="footer_social_links">
+			<div className="footer_social_links" style={{paddingTop:"0.35em",width:"8%"}}>
 				<a href="https://www.facebook.com/Creamzo7">
 					<FacebookIcon className="footer_icons" style={{ fontSize: "1.5rem" }} />
 				</a>

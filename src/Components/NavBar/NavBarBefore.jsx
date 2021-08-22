@@ -25,18 +25,18 @@ const NavBar = () => {
     <React.Fragment>
       <div className="navbar">
         <NavLink activeClassName="activeLink" to="/" exact>
-          <Typography variant="h5" style={{ fontWeight: "bold" }}>
+          <Typography variant="h4" style={{ fontWeight: "bold" }}>
             Logo
           </Typography>
         </NavLink>
-        <div className="remaining-navs" style={{ width: "45%" }}>
+        <div className="remaining-navs" style={{ width: "50%" }}>
           <NavLink
             activeClassName="activeLink"
             to="/about"
             className="navs"
             exact
           >
-            <Typography style={{ fontWeight: "bold", fontSize: ".8rem" }}>About</Typography>
+            <Typography style={{ fontWeight: "bold", fontSize: "1rem" }}>About</Typography>
           </NavLink>
           <NavLink
             className="navs"
@@ -44,7 +44,7 @@ const NavBar = () => {
             to="/blog"
             exact
           >
-            <Typography style={{ fontWeight: "bold", fontSize: ".8rem" }}>Blog</Typography>
+            <Typography style={{ fontWeight: "bold", fontSize: "1rem" }}>Blog</Typography>
           </NavLink>
 
           <NavLink
@@ -53,19 +53,19 @@ const NavBar = () => {
             to="/discover"
             exact
           >
-            <Typography style={{ fontWeight: "bold", fontSize: ".8rem" }}>
+            <Typography style={{ fontWeight: "bold", fontSize: "1rem" }}>
               Discover
             </Typography>
           </NavLink>
           <Button
             style={{
               fontWeight: "bold",
-              width: "8em",
-              height: "3em",
-              borderRadius: "1.5em",
-              marginLeft: "1em",
+              width: "8rem",
+              height: "3rem",
+              borderRadius: "1.5rem",
+              marginLeft: "1rem",
               outline: "none",
-              fontSize: ".7rem",
+              fontSize: ".9rem",
             }}
             variant="contained"
             onClick={() => {
@@ -77,11 +77,11 @@ const NavBar = () => {
           <Button
             style={{
               fontWeight: "bold",
-              width: "8em",
-              height: "3em",
-              borderRadius: "1.5em",
+              width: "8rem",
+              height: "3rem",
+              borderRadius: "1.5rem",
               outline: "none",
-              fontSize: ".7rem",
+              fontSize: ".9rem",
             }}
             variant="contained"
             color="secondary"

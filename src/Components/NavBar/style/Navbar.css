@@ -1,0 +1,145 @@
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+.navbar {
+  margin-top: 10px;
+}
+
+.navbar .navbar_container .navbar-brand {
+  font-size: 3.5rem;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #c21336;
+}
+
+.navbar .navbar_container .navbar-brand .logo {
+  width: 19rem;
+  height: 5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 0.4rem;
+}
+
+.navbar .navbar_container .input_container {
+  background-color: #eaeaf1 !important;
+  width: 100%;
+  margin: 0 45px 0;
+}
+
+.navbar .navbar_container .input-group {
+  background-color: #eaeaf1 !important;
+  border-top-right-radius: 1rem !important;
+  border-bottom-right-radius: 1rem !important;
+  border-top-left-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+}
+
+.navbar .navbar_container .navbar_input {
+  border-bottom-right-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  font-size: 1.6rem;
+  background-color: #eaeaf1 !important;
+  height: 3.8rem;
+}
+
+.navbar .navbar_container #nav_icon {
+  margin: 0.9rem 0.6rem 0 1.2rem !important;
+  height: 2rem !important;
+  width: 2rem !important;
+}
+
+.navbar .navbar_container .navbar-nav {
+  font-size: 1.8rem;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60rem;
+  position: relative;
+}
+
+.navbar .navbar_container .navbar-nav .nav_btn {
+  width: 10rem;
+  font-size: 1.8rem;
+  border-radius: 20rem;
+  height: 4.5rem;
+  background-color: #c21336;
+  outline: none !important;
+  border: none !important;
+}
+
+.navbar .navbar_container .navbar-nav .nav_btn:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.navbar .navbar_container .navbar-nav .avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  font-style: 1.5rem !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+  cursor: pointer;
+}
+
+@media (max-width: 1120px) {
+  .navbar_container {
+    width: 90vw !important;
+  }
+  .navbar_container .input_container {
+    width: 100% !important;
+    margin: 6px 0 !important;
+    background-color: aqua !important;
+  }
+  .navbar_container #navbarNavAltMarkup {
+    width: 100%;
+  }
+  .navbar_container .navbar-nav {
+    width: 100% !important;
+  }
+  .navbar_container .navbar-nav .nav_btn {
+    margin-bottom: 6px;
+  }
+  .nav_outer {
+    overflow-x: hidden;
+    width: 100vw !important;
+    padding: 0 !important;
+  }
+  #dropdown {
+    position: absolute;
+    top: -35px !important;
+    right: 60px !important;
+    z-index: 9999 !important;
+    width: 18rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    height: 20.5rem;
+  }
+}
+/*# sourceMappingURL=Navbar.css.map */

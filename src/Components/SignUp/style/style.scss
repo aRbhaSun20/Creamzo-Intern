@@ -1,107 +1,112 @@
-.login-card {
-    background-color: white;
-    margin: auto;
-    justify-self: center;
-    align-items: center;
-    display: grid;
-    height: 70vh;
-    border-radius: 1em;
-    width: 30vw;
-    grid-template-rows: .8fr 1.2fr;
-    padding-bottom: 1em;
+.signup-card {
+	background-color: white;
+	margin: auto;
+	justify-self: center;
+	align-items: center;
+	display: grid;
+	height: 80vh;
+	border-radius: 1rem;
+	width: 30vw;
+	grid-template-rows: 1fr 5fr;
+	padding-bottom: 1rem;
+	place-content: center;
 
-    button {
-        background-color: #1E1E24;
-        color: white;
-        border-radius: 1em;
-    }
+	button {
+		background-color: #1e1e24;
+		color: white;
+		border-radius: 1rem;
+	}
 
-    .top-header {
-        grid-row: 1/2;
-        grid-column: 1/2;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-rows: 1fr 1fr .5fr;
-        align-items: center;
-        justify-content: center;
+	.top-header {
+		grid-row: 1/2;
+		grid-column: 1/2;
+		height: "5vh";
+		.title {
+			font-size: 1.5rem;
+			align-self: center;
+			justify-self: center;
+			margin-top: 2rem;
+		}
+	}
 
-        .title {
-            font-size: 1.5em;
-            align-self: center;
-            justify-self: center;
-            margin-top: 2em;
-        }
+	.buttons-gp {
+		display: flex;
+		width: 30vw;
 
-        .buttons-gp {
-            display: flex;
-            width: 30vw;
+		justify-content: space-evenly;
 
-            justify-content: space-evenly;
+		button {
+			text-align: center;
+			width: 10vw;
+			height: 4rem;
+			display: flex;
+			justify-content: space-around;
+			display: flex;
 
-            button {
-                text-align: center;
-                width: 10vw;
-                height: 4em;
-                display: flex;
-                justify-content: space-around;
-                display: flex;
+			img {
+				position: relative;
+				width: 1.5vw;
+				top: -0.1rem;
+			}
+		}
+	}
 
-                img {
-                    position: relative;
-                    width: 1.5vw;
-                    top: -.1em;
-                }
-            }
-        }
+	.or {
+		align-self: center;
+		justify-self: center;
+		color: rgb(61, 61, 61);
+		font-size: 1rem;
+	}
+	.bottom-header {
+		display: grid;
+		grid-row: 2/3;
+		grid-column: 1/2;
+		grid-template-rows: auto;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		.inputs {
+			height: 40vh;
+			display: grid;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			.inp {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
 
-        .or {
-            align-self: center;
-            justify-self: center;
-            color: rgb(61, 61, 61);
-            font-size: 1em;
-        }
-    }
+	.login-forget {
+		width: 100%;
+		height: 6rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
 
-    .bottom-header {
-        display: grid;
-        grid-row: 2/3;
-        grid-column: 1/2;
-        grid-template-rows: auto;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-    }
+		button {
+			height: 6vh;
+			width: 10vw;
+		}
 
-    .login-forget {
-        width: 100%;
-        height: 6em;
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
+		.forget {
+			padding-top: 2rem;
+			font-size: 0.8rem;
+		}
+	}
 
-        button {
-            height: 6vh;
-            width: 15vw;
-        }
+	.dont-have {
+		display: flex;
+		justify-content: center;
+		font-size: 0.8rem;
 
-        .forget {
-            padding-top: 2em;
-            font-size: .8rem;
-        }
-    }
-
-    .dont-have {
-        display: flex;
-        justify-content: center;
-        font-size: .8rem;
-
-        span {
-            padding-left: .5em;
-            color: #D82D57;
-            cursor: pointer;
-        }
-    }
+		span {
+			padding-left: 0.5rem;
+			color: #d82d57;
+			cursor: pointer;
+		}
+	}
 }

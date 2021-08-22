@@ -9,7 +9,7 @@ import {
 } from "@material-ui/icons";
 
 const Conatiner = ({ image, height }) => {
-  const [opacity, setOpacity] = useState(0);
+  const [opacity, setOpacity] = useState(1);
   return (
     <div style={{ position: "relative" }}>
       <img src={image} alt="" style={{ height: `100%`, borderRadius: "2em" }} />
@@ -22,22 +22,22 @@ const Conatiner = ({ image, height }) => {
           zIndex: "1000",
           top: "0em",
           left: ".5em",
-          width: "14em",
+          width: "12vw",
           borderRadius: "2em",
         }}
-        onMouseEnter={(e) => {
-        	e.preventDefault();
-        	setOpacity(0.2);
-        }}
-        onMouseLeave={(e) => {
-        	e.preventDefault();
-        	setOpacity(0);
-        }}
+        // onMouseEnter={(e) => {
+        // 	e.preventDefault();
+        // 	setOpacity(0.2);
+        // }}
+        // onMouseLeave={(e) => {
+        // 	e.preventDefault();
+        // 	setOpacity(0);
+        // }}
       >
         <div
           style={{
             display: "flex",
-            width: "auto",
+            width: "12vw",
             position: "relative",
             left: "-8.5em",
           }}

@@ -23,6 +23,7 @@ const Discover = () => {
 		},
 		{ img: { defaultImage }, name: "Travel" },
 		{ img: { defaultImage }, name: "Travel" },
+		{ img: { defaultImage }, name: "Travel" },
 	];
 	return (
 		<div

@@ -9,7 +9,10 @@ import download from "./assets/326639_download_file_icon.png";
 import views from "./assets/1954555_eye_look_view_views_watch_icon.png";
 import share from "./assets/2561282_share_icon.png";
 import heart from "./assets/2246820_heart_like_notification_icon.png";
+import { useLocation } from "react-router-dom";
 const BoardDisplay = () => {
+	const location = useLocation();
+	const {i} = location.state
 	return (
 		<React.Fragment>
 			<div style={{ backgroundColor: "rgb(230, 233, 233)", padding: "30px" }}>
@@ -18,7 +21,7 @@ const BoardDisplay = () => {
 						<div className={style.leftContainerDisplay}>
 							<img
 								style={{ width: "100%", height: "100%", borderRadius: "15px" }}
-								src={leftImage}
+								src={i}
 								alt="addedImage"
 							/>
 						</div>
@@ -44,8 +47,8 @@ const BoardDisplay = () => {
 							<div style={{ display: "flex" }}>
 								<img
 									style={{ width: "25px", height: "25px" }}
-									src={download}
-									alt="downloads"
+									src={heart}
+									alt="liked"
 								/>
 								<h3>: 0</h3>
 							</div>
@@ -60,19 +63,21 @@ const BoardDisplay = () => {
 							<div style={{ display: "flex" }}>
 								<img
 									style={{ width: "25px", height: "25px" }}
+									src={download}
+									alt="downloads"
+								/>
+								<h3>: 0</h3>
+							</div>
+							
+							<div style={{ display: "flex" }}>
+								<img
+									style={{ width: "25px", height: "25px" }}
 									src={share}
 									alt="shared"
 								/>
 								<h3>: 0</h3>
 							</div>
-							<div style={{ display: "flex" }}>
-								<img
-									style={{ width: "25px", height: "25px" }}
-									src={heart}
-									alt="liked"
-								/>
-								<h3>: 0</h3>
-							</div>
+							
 							<h3>Find Creamzo on</h3>
 							<div
 								style={{ height: "30px", display: "flex", paddingTop: "0px" }}

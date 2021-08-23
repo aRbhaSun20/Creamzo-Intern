@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./style/BoardDisplay.module.css";
-import leftImage from "./assets/eric-christian-king-XKGKZBroImE-unsplash (2).jpg";
+// import leftImage from "./assets/eric-christian-king-XKGKZBroImE-unsplash (2).jpg";
 import facebook from "./assets/771366_facebook_logo_media_network_social_icon.png";
 import instagram from "./assets/5296765_camera_instagram_instagram logo_icon.png";
 import twitter from "./assets/5296514_bird_tweet_twitter_twitter logo_icon.png";

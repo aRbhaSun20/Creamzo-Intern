@@ -1,107 +1,123 @@
 .login-card {
-    background-color: white;
-    margin: auto;
-    justify-self: center;
-    align-items: center;
-    display: grid;
-    height: 70vh;
-    border-radius: 1em;
-    width: 30vw;
-    grid-template-rows: .8fr 1.2fr;
-    padding-bottom: 1em;
+	background-color: white;
+	margin: auto;
+	justify-self: center;
+	align-items: center;
+	display: grid;
+	height: 60vh;
+	border-radius: 1rem;
+	width: 30vw;
+	grid-template-rows: 1fr 4fr;
+	padding-bottom: 4rem;
+	place-content: center;
 
-    button {
-        background-color: #1E1E24;
-        color: white;
-        border-radius: 1em;
-    }
+	button {
+		background-color: #1e1e24;
+		color: white;
+		border-radius: 1rem;
+	}
 
-    .top-header {
-        grid-row: 1/2;
-        grid-column: 1/2;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-rows: 1fr 1fr .5fr;
-        align-items: center;
-        justify-content: center;
+	.top-header {
+		grid-row: 1/2;
+		grid-column: 1/2;
+		height: 5vh;
+		width: 30vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
 
-        .title {
-            font-size: 1.5em;
-            align-self: center;
-            justify-self: center;
-            margin-top: 2em;
-        }
+		.title {
+			align-self: center;
+			justify-self: center;
+			margin-top: 2rem;
+		}
+	}
 
-        .buttons-gp {
-            display: flex;
-            width: 30vw;
+	.buttons-gp {
+		display: flex;
+		width: 30vw;
 
-            justify-content: space-evenly;
+		justify-content: space-evenly;
 
-            button {
-                text-align: center;
-                width: 10vw;
-                height: 4em;
-                display: flex;
-                justify-content: space-around;
-                display: flex;
+		button {
+			text-align: center;
+			width: 10vw;
+			height: 4rem;
+			display: flex;
+			justify-content: space-around;
+			display: flex;
 
-                img {
-                    position: relative;
-                    width: 1.5vw;
-                    top: -.1em;
-                }
-            }
-        }
+			img {
+				position: relative;
+				width: 1.5vw;
+				top: -0.1rem;
+			}
+		}
+	}
 
-        .or {
-            align-self: center;
-            justify-self: center;
-            color: rgb(61, 61, 61);
-            font-size: 1em;
-        }
-    }
+	.or {
+		align-self: center;
+		justify-self: center;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		color: rgb(61, 61, 61);
+		font-size: 0.8rem;
+	}
 
-    .bottom-header {
-        display: grid;
-        grid-row: 2/3;
-        grid-column: 1/2;
-        grid-template-rows: auto;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-    }
+	.bottom-header {
+		display: grid;
+		grid-row: 2/3;
+		grid-column: 1/2;
+		grid-template-rows: auto;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		
+		.inputs {
+			height: 20vh;
+			display: grid;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			.inp {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
 
-    .login-forget {
-        width: 100%;
-        height: 6em;
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
+	.login-forget {
+		padding-top: 1rem;
+		width: 100%;
+		height: 5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: column;
 
-        button {
-            height: 6vh;
-            width: 15vw;
-        }
+		button {
+			height: 3rem;
+			width: 9rem;
+		}
 
-        .forget {
-            padding-top: 2em;
-            font-size: .8rem;
-        }
-    }
+		.forget {
+			padding-top: 2rem;
+			font-size: 0.8rem;
+		}
+	}
 
-    .dont-have {
-        display: flex;
-        justify-content: center;
-        font-size: .8rem;
+	.dont-have {
+		display: flex;
+		justify-content: center;
+		font-size: .95rem;
 
-        span {
-            padding-left: .5em;
-            color: #D82D57;
-            cursor: pointer;
-        }
-    }
+		span {
+			padding-left: 0.5rem;
+			color: #d82d57;
+			cursor: pointer;
+		}
+	}
 }

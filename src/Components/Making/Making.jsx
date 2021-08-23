@@ -19,7 +19,7 @@ const Making = () => {
           gridTemplateColumns: "1fr 1fr",
           justifyContent: "center",
           alignItems: "center",
-          padding: "1em",
+          padding: "1rem",
         }}
       >
         <div
@@ -32,15 +32,15 @@ const Making = () => {
             justifyContent: "space-evenly",
             margin: "auto",
             position: "relative",
-            left: "6em",
+            left: "6rem",
           }}
         >
           <Typography
             variant="h4"
             style={{
-              paddingBottom: ".6em",
+              paddingBottom: ".6rem",
               fontWeight: "bolder",
-              fontSize: "1.5rem",
+              fontSize: "1.8vw",
             }}
           >
             Make something awesome
@@ -48,9 +48,9 @@ const Making = () => {
           <Typography
             variant="subtitle1"
             style={{
-              paddingBottom: "2em",
+              paddingBottom: "2rem",
               textAlign: "justify",
-              fontSize: ".8rem",
+              fontSize: ".8vw",
             }}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
@@ -62,10 +62,10 @@ const Making = () => {
             variant="contained"
             style={{
               backgroundColor: "black",
-              width: "15em",
-              height: "3.5em",
+              width: "12vw",
+              height: "5vh",
               margin: "auto",
-              fontSize: ".6rem",
+              fontSize: ".8vw",
             }}
             color="primary"
           >
@@ -78,17 +78,17 @@ const Making = () => {
             width: "75%",
             height: "70vh",
             position: "relative",
-            left: "-2em",
+            left: "-2rem",
           }}
         >
           <div
             className="img"
             style={{
               position: "absolute",
-              top: "-4em",
-              right: "-4em",
-              width: "16em",
-              height: "16em",
+              top: "-6vh",
+              right: "-4vw",
+              width: "16vw",
+              height: "30vh",
             }}
           >
             <img
@@ -98,7 +98,7 @@ const Making = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1.5em",
+                borderRadius: "1.5rem",
               }}
             />
           </div>
@@ -106,10 +106,10 @@ const Making = () => {
             className="img"
             style={{
               position: "absolute",
-              top: "-2em",
-              left: "14em",
-              width: "6em",
-              height: "6em",
+              top: "-7vh",
+              right: "16vw",
+              width: "8vw",
+              height: "15vh",
             }}
           >
             <img
@@ -119,7 +119,7 @@ const Making = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1.5em",
+                borderRadius: "1.5rem",
               }}
             />
           </div>
@@ -128,9 +128,9 @@ const Making = () => {
             style={{
               position: "absolute",
               top: "11vh",
-              left: "8vw",
-              width: "13em",
-              height: "14em",
+              left: "5.5vw",
+              width: "16vw",
+              height: "22vh",
             }}
           >
             <img
@@ -140,7 +140,7 @@ const Making = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1.5em",
+                borderRadius: "1.5rem",
               }}
             />
           </div>
@@ -148,10 +148,10 @@ const Making = () => {
             className="img"
             style={{
               position: "absolute",
-              bottom: "15vh",
+              top: "28vh",
               right: "-4vw",
-              width: "16em",
-              height: "12em",
+              width: "16vw",
+              height: "18vh",
             }}
           >
             <img
@@ -161,7 +161,7 @@ const Making = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1.5em",
+                borderRadius: "1.5rem",
               }}
             />
           </div>
@@ -169,10 +169,10 @@ const Making = () => {
             className="img"
             style={{
               position: "absolute",
-              bottom: "5vh",
+              bottom: "10vh",
               right: "14vw",
-              width: "10em",
-              height: "10em",
+              width: "13vw",
+              height: "22vh",
             }}
           >
             <img
@@ -182,7 +182,7 @@ const Making = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1.5em",
+                borderRadius: "1.5rem",
               }}
             />
           </div>

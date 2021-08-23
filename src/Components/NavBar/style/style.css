@@ -78,4 +78,8 @@
 .navbar .title {
   margin: auto;
 }
+
+.navbar .search-field {
+  border-radius: 2rem;
+}
 /*# sourceMappingURL=style.css.map */

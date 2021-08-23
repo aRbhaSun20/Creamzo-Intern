@@ -11,9 +11,9 @@
   height: 80vh;
   border-radius: 1rem;
   width: 30vw;
-  -ms-grid-rows: 1fr 5fr;
-      grid-template-rows: 1fr 5fr;
-  padding-bottom: 1rem;
+  -ms-grid-rows: 1fr 8fr;
+      grid-template-rows: 1fr 8fr;
+  padding-bottom: 4rem;
   place-content: center;
 }
 
@@ -30,11 +30,25 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-  height: "5vh";
+  height: 10vh;
+  width: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .signup-card .top-header .title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -77,8 +91,10 @@
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
   color: #3d3d3d;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .signup-card .bottom-header {
@@ -103,7 +119,7 @@
 }
 
 .signup-card .bottom-header .inputs {
-  height: 40vh;
+  height: 45vh;
   display: -ms-grid;
   display: grid;
   -webkit-box-orient: vertical;
@@ -131,6 +147,7 @@
 }
 
 .signup-card .login-forget {
+  padding-top: 1rem;
   width: 100%;
   height: 6rem;
   display: -webkit-box;
@@ -142,11 +159,15 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .signup-card .login-forget button {
-  height: 6vh;
-  width: 10vw;
+  height: 3rem;
+  width: 9rem;
 }
 
 .signup-card .login-forget .forget {
@@ -161,7 +182,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 0.8rem;
+  font-size: .95rem;
 }
 
 .signup-card .dont-have span {

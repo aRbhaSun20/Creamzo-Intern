@@ -7,29 +7,43 @@ import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
+import { Link } from "react-router-dom";
 
-const SignUp = ({ setopen }) => {
+const SignUp = ({ setopen, setLoginOpen }) => {
 	const [mail, setMail] = useState("");
 	// eslint-disable-next-line
 	const [login, setLogin] = useContext(LoginContext);
+	// eslint-disable-next-line
 	const [password, setPassword] = useState("");
+	// eslint-disable-next-line
 	const [age, setAge] = useState("");
 
 	return (
 		<React.Fragment>
 			<div className="signup-card">
-				<div>
+				<div className="top-header">
 					<div
 						className="title"
 						style={{
 							position: "relative",
 							top: "-0.5rem",
 							color: "black",
-							fontWeight: "normal",
-							fontSize: "1.5rem",
+							fontSize: "1.7vw",
+							fontWeight: "bold",
 						}}
 					>
 						Hey, Welcome to Creamzo!
+					</div>
+					<div className="dont-have">
+						Already have an account?
+						<span
+							onClick={() => {
+								setopen(false);
+								setLoginOpen(true);
+							}}
+						>
+							Login
+						</span>
 					</div>
 				</div>
 				<div className="bottom-header">
@@ -43,9 +57,9 @@ const SignUp = ({ setopen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20rem",
-									fontSize: ".8rrem",
-									height: "3rem",
+									width: "20vw",
+									fontSize: ".7vw",
+									height: "5vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -61,9 +75,9 @@ const SignUp = ({ setopen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20rem",
-									fontSize: ".8rrem",
-									height: "3rem",
+									width: "20vw",
+									fontSize: ".7vw",
+									height: "5vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -79,9 +93,9 @@ const SignUp = ({ setopen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20rem",
-									fontSize: ".8rrem",
-									height: "3rem",
+									width: "20vw",
+									fontSize: ".7vw",
+									height: "5vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -97,9 +111,9 @@ const SignUp = ({ setopen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20rem",
-									fontSize: ".8rrem",
-									height: "3rem",
+									width: "20vw",
+									fontSize: ".7vw",
+									height: "5vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -115,9 +129,9 @@ const SignUp = ({ setopen }) => {
 								}}
 								type="password"
 								style={{
-									width: "20rem",
-									fontSize: ".8rrem",
-									height: "3rem",
+									width: "20vw",
+									fontSize: ".7vw",
+									height: "5vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -133,9 +147,9 @@ const SignUp = ({ setopen }) => {
 								}}
 								type="password"
 								style={{
-									width: "20rem",
-									fontSize: ".8rrem",
-									height: "3rem",
+									width: "20vw",
+									fontSize: ".7vw",
+									height: "5vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -153,14 +167,26 @@ const SignUp = ({ setopen }) => {
 								setopen(false);
 							}}
 							style={{
-								backgroundColor: "#d4d4d4",
-								fontSize: "1rem",
-								color: "black",
+								backgroundColor: "red",
+								fontSize: ".8vw",
+								color: "white",
+								width: "8vw",
 							}}
 						>
 							Sign Up
 						</Button>
-						<div className="sub">
+						<div variant="subtitle1" className="or">
+							OR
+						</div>
+						<div
+							className="sub"
+							style={{
+								display: "flex",
+								justifyContent: "space-evenly",
+								alignItems: "center",
+								width: "100%",
+							}}
+						>
 							<Button
 								variant="contained"
 								color="primary"
@@ -169,16 +195,21 @@ const SignUp = ({ setopen }) => {
 									console.log("google");
 								}}
 								style={{
-									backgroundColor: "#d4d4d4",
+									backgroundColor: "white",
 									color: "black",
-									borderRadius: "1.2rem",
-									fontSize: ".6rrem",
+									borderRadius: ".5rem",
+									fontSize: ".7vw",
 								}}
 							>
 								<img
 									src={google}
 									alt="google"
-									style={{ maxWidth: "2rem", height: "2rem" }}
+									style={{
+										width: "1.5vw",
+										height: "2vh",
+										position: "relative",
+										left: "-.5rem",
+									}}
 								/>
 								Google
 							</Button>
@@ -190,18 +221,54 @@ const SignUp = ({ setopen }) => {
 									console.log("fb");
 								}}
 								style={{
-									backgroundColor: "#d4d4d4",
+									backgroundColor: "white",
 									color: "black",
-									fontSize: ".6rrem",
+									fontSize: ".7vw",
+									borderRadius: ".5rem",
 								}}
 							>
 								<img
 									src={fb}
 									alt="fb"
-									style={{ maxWidth: "2rem", height: "2rem" }}
+									style={{
+										width: "1.5vw",
+										height: "2vh",
+										position: "relative",
+										left: "-.5em",
+									}}
 								/>
 								FaceBook
 							</Button>
+						</div>
+						<div
+							className="acceptance"
+							style={{
+								display: "flex",
+								justifyContent: "space-evenly",
+								alignItems: "center",
+								width: "70%",
+								paddingTop: "1rem",
+							}}
+						>
+							<div style={{ textAlign: "center" }}>
+								By continuing, you agree to Creamzo's
+								<Link
+									style={{ color: "black", paddingLeft: ".5em" }}
+									onClick={() => setopen(false)}
+									to="/terms"
+								>
+									Terms of Service
+								</Link>
+								,
+								<Link
+									style={{ color: "black", paddingLeft: ".5em" }}
+									onClick={() => setopen(false)}
+									to="/terms"
+								>
+									Privacy policy.
+								</Link>
+							</div>
+							,
 						</div>
 					</div>
 				</div>

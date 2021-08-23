@@ -8,11 +8,11 @@ import img4 from "./assets/img4.jpg";
 
 const styles = {
   imgContainer: {
-    width: "13em",
-    height: "16em",
+    width: "12vw",
+    height: "32vh",
     position: "relative",
-    top: "3em",
-    borderRadius: ".5em",
+    top: "3rem",
+    borderRadius: ".5rem",
     color: "white",
     display: "flex",
     justifyContent: "center",
@@ -20,8 +20,8 @@ const styles = {
     opacity: ".7",
   },
   imgContainerStatic: {
-    width: "13em",
-    height: "16em",
+    width: "12vw",
+    height: "32vh",
     color: "white",
     display: "flex",
     justifyContent: "center",
@@ -32,7 +32,7 @@ const styles = {
     objectFit: "cover",
     width: "100%",
     height: "auto",
-    borderRadius: ".5em",
+    borderRadius: ".5rem",
   },
 };
 
@@ -50,18 +50,18 @@ const OverView = () => {
           alignContent: "center",
           margin: "auto",
           gridTemplateColumns: "1fr 1fr",
-          gridGap: "2em",
+          gridGap: "2rem",
           position: "relative",
-          left: "4em",
+          left: "4rem",
         }}
       >
-        <div className="text" style={{ display: "grid", height: "18em" }}>
-          <Typography style={{ fontWeight: "bolder", fontSize: "1.5rem" }}>
+        <div className="text" style={{ display: "grid", height: "18rem" }}>
+          <Typography style={{ fontWeight: "bolder", fontSize: "1.8vw" }}>
             OverView Content
           </Typography>
           <Typography
             variant="subtitle1"
-            style={{ textAlign: "justify", width: "85%", fontSize: ".8rem" }}
+            style={{ textAlign: "justify", width: "85%", fontSize: ".8vw" }}
           >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
             repellat maxime repudiandae voluptatem libero culpa quos dignissimos
@@ -73,13 +73,13 @@ const OverView = () => {
             color="primary"
             style={{
               backgroundColor: "black",
-              width: "18em",
-              height: "3.5em",
-              fontSize: ".6rem",
+              width: "13vw",
+              height: "5vh",
+              fontSize: ".8vw",
             }}
           >
             Checkout More
-            <ArrowForwardIcon style={{ position: "relative", left: ".5em" }} />
+            <ArrowForwardIcon style={{ position: "relative", left: ".5rem" }} />
           </Button>
         </div>
         <div
@@ -87,11 +87,11 @@ const OverView = () => {
           style={{
             display: "grid",
             gridTemplateColumns: "auto auto",
-            gridGap: "2em",
+            gridGap: "2rem",
             width: "80%",
             justifyContent: "center",
             alignItems: "center",
-            marginLeft: "2em",
+            marginLeft: "2rem",
           }}
         >
           <div className="box" style={styles.imgContainer}>
@@ -103,7 +103,7 @@ const OverView = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1em",
+                borderRadius: "1rem",
               }}
             />
           </div>
@@ -116,7 +116,7 @@ const OverView = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1em",
+                borderRadius: "1rem",
               }}
             />
           </div>
@@ -129,7 +129,7 @@ const OverView = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1em",
+                borderRadius: "1rem",
               }}
             />
           </div>
@@ -142,7 +142,7 @@ const OverView = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderRadius: "1em",
+                borderRadius: "1rem",
               }}
             />
           </div>

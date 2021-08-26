@@ -21,9 +21,7 @@ function Herocomponent() {
 					language ocean.
 				</p>
 				<br />
-				<br />
-				<br />
-				<br />
+				
 				<br />
 				<Link className="articles-button" to="/articles">
 					<Button>All our articles</Button>

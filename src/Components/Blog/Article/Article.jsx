@@ -15,7 +15,7 @@ function Article() {
 	return (
 		<div>
 			<img className="article-image" src={blogitemimage} alt="article" />
-			<h1 style={{ paddingLeft: "1rem", fontSize: "1.5rem", width: "20rem" }}>
+			<h1 style={{ paddingLeft: "1rem", fontSize: "1.5rem", width: "15rem" }}>
 				{dummyHeading}
 			</h1>
 			<h4 className="secondary-imageitem-text">{secondaryText}</h4>

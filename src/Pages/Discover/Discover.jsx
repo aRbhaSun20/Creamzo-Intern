@@ -1,51 +1,38 @@
 import React from "react";
+
+import style from "../Profile/style/MyUploads.module.css";
 import "../../Components/Discover/style/style.css";
 import Grid from "@material-ui/core/Grid";
-import defaultImage from "./assets/defaultExplore.jpg";
-import style from "../Profile/style/MyUploads.module.css";
+
+
+function importAll(r){
+    return r.keys().map(r);
+}
+const images=importAll(require.context('./assets/',false,/\.(png|jpe?g|svg|jpg)$/));
+
 const Discover = () => {
-	let arr = [
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Animals" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{
-			img: { defaultImage },
-			name: "Travel",
-		},
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-		{ img: { defaultImage }, name: "Travel" },
-	];
+	// console.log(images);
+	
 	return (
-		<div
-			className="discover-container"
-			style={{ paddingTop: "2em", paddingBottom: "5em" }}
-		>
+		<div className="discover-container" style={{ paddingTop: "2em", paddingBottom: "5em" }} >
 			<h1 className="title-item">Discover Creamzo</h1>
 
 			<Grid
-				className={style.gridContainer}
 				container
 				alignItems="center"
 				justify="center"
-				spacing={2}
+				spacing={4}
+				className={style.gridContainer}
+				style={{justifyContent:"space-evenly"}}
 			>
-				{arr.map((image, index) => (
-					<Grid className="grid-item" item xs={2} key={index}>
-						<img className="discoverImage" src={defaultImage} alt="discover" />
-
-						<div className="grid-item-title"> {image.name} </div>
-					</Grid>
-				))}
+				{
+					images.map(image=>(
+						<Grid className="grid-item" spacing={4}>
+							<img className="discoverImage" src={image.default} alt="discover"/>
+							<div className="grid-item-title"> {(image.default).substring(14,(image.default).indexOf("."))}</div>
+						</Grid>
+					))
+				}
 			</Grid>
 		</div>
 	);

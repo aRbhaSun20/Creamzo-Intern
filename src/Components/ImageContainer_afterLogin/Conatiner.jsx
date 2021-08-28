@@ -10,7 +10,6 @@ import {
 import { Link } from "react-router-dom";
 
 const Conatiner = ({ image, height }) => {
-	// eslint-disable-next-line
 	const [opacity, setOpacity] = useState(0);
 	return (
 		<div

@@ -28,7 +28,7 @@
 
 .main-text {
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -37,12 +37,12 @@
 .secondary-text {
     color: white;
     padding-left: white;
-    padding-top: 1rem;
-    font-size: 1.5rem;
+    /* padding-top: 1rem; */
+    font-size: 1rem;
 }
 
 .spacing {
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .articles-button {

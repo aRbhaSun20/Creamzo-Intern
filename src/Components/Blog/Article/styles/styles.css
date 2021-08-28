@@ -1,9 +1,9 @@
 
 .article-image{
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     background-color: red;
-    margin: 1rem;
+    margin: 0.5rem;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -11,19 +11,20 @@
 .secondary-imageitem-text{
     padding:1rem;
     opacity: 75%;
-    font-size: 1rem;
-    width: 20rem;
+    font-size: 0.8rem;
+    width: 15rem;
     color: black;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 }
 
 .readmore-button{
     text-decoration: none;
     margin-top: 3rem;
     font-weight: bold;
+    font-size: 0.7rem;
     margin:1rem;
     background-color: black;
     color: white;
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 4px;
 }

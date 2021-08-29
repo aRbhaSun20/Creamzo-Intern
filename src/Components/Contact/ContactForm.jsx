@@ -26,7 +26,7 @@ const ContactForm = () => {
                     <div className={style.formElement}>
                         {/* <label htmlFor="email">Email</label>
                         <input type="email" name="email" id="email" /> */}
-                        <TextField id="outlined-basic" label="email" variant="outlined" />
+                        <TextField id="outlined-basic" label="Email" variant="outlined" />
 
                     </div>
                     <div className={style.formElement}>

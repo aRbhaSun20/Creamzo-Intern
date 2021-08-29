@@ -1,10 +1,13 @@
 .contactContainer{
-    width: 50vw;
-    margin: 10vh auto auto auto;
-    height: 90vh;
+    width: 60%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    /*height: 90vh;*/
 }
 .contactForm{
     margin-top: 5vh;
+    text-align: center;
 }
 .FirstLastName{
     display: flex;
@@ -36,16 +39,45 @@
 } */
 
 .submitButton{
-    margin-top: 5vh;
-    width: 8vw;
-    height: 4.5vh;
-    background-color: #d34747d3;
+    color:white;
+    margin: 5% auto;
+    width: 40%;
+    padding: 2%;
+    background-color:crimson;
     border-radius: 25px;
     border: none;
     cursor: pointer;
     font-size: 17px;
 }
 .submitButton:hover{
-    background-color: #ac3838f6;
-
+    background-color: crimson;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+    color: white;
+}
+.contactus{
+    padding-bottom: 4%; 
+    font-size: 3rem; 
+    text-align: center; 
+    color: crimson;
+}
+.contactText{
+    text-align: center;
+}
+@media (max-width: 500px){
+    .contactus{
+        font-size: 2rem;
+    }
+    .FirstLastName{
+        display: block;
+    }
+    #firstName{
+        width: 100%;
+    }
+    #lastName{
+        width: 100%;
+    }
+    .submitButton{
+        width: 70%;
+    }
 }

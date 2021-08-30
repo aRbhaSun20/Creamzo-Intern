@@ -27,8 +27,8 @@ import UserViewProfile from "./Profile/UserViewProfile";
 import { LoginContext } from "../Context/Login";
 
 const Routes = () => {
-
-	const [login, setLogin] = useContext(LoginContext);
+	// eslint-disable-next-line 
+		const [login, setLogin] = useContext(LoginContext);
 
 	return (
 		<React.Fragment>

@@ -16,10 +16,12 @@
   height: 32vh;
   cursor: pointer;
   opacity: 0.7;
+  margin-top: 20px;
 }
 .grid-item:hover {
-  transition: 1s;
   opacity: 1;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 .grid-item-title {
@@ -33,9 +35,16 @@
   word-wrap: break-word;
 }
 /* new */
-
+/*.gridContainer{
+  justify-content: space-evenly;
+}
+.MuiGrid-justify-content-xs-center {
+    justify-content: space-evenly;
+}*/
 .discoverImage {
-  max-width: 100%;
+  width: 200px;
+  height: 200px;
+  /*max-width: 100%;*/
   border-radius: 25px;
 
 }

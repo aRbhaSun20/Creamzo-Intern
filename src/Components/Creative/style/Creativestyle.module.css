@@ -1,27 +1,21 @@
-.CreativeCarousalContainer{
-     width: 100%;
-      height: 70vh;
-      overflow: hidden;
+
+.imageContainer{
+  opacity: 1;
+}
+.imageContainer:hover{
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
-.imageCOrousalCOnatiner1{
-        animation: mymove 15s infinite;
-        width: 100%;
-        height: 70%;
-        position: absolute;
-        display: block;
-        display: flex;
-        column-gap: 10px;
-}
-
-
-.corousalImageCreative{
-  height: 100%;
-
-  width: 35%;
-}
-
-@keyframes mymove {
-  0%   {left: 0vw;}
-  100% {left: -200vw;}
+.creativeName{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #5555668c;
+  position: relative;
+  bottom: 38px;
+  padding: 1%;
+  text-align: center;
 }

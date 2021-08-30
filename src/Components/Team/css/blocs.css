@@ -1,0 +1,199 @@
+@charset "UTF-8";
+:root {
+  --customTheme-color: #ff009b;
+  --customTheme-color-hover: #cc007c;
+}
+
+:root {
+  --customTheme-color: #ff009b;
+  --customTheme-color-hover: #cc007c;
+}
+
+.tematik_trombinoscope {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  z-index: 0;
+}
+.tematik_trombinoscope-image {
+  position: relative;
+  flex: 0 0 auto;
+  margin-left: -2rem;
+  margin-right: 1rem;
+  width: 50%;
+  max-width: 9rem;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.4s;
+  z-index: -1;
+}
+.tematik_trombinoscope-image img {
+  max-height: 10rem;
+}
+.tematik_trombinoscope-contenu {
+  flex: 1 1 auto;
+  padding-bottom: 1rem;
+  min-height: 5rem;
+}
+.tematik_trombinoscope-contenu > * {
+  display: block;
+  margin: 0;
+}
+@media (min-width: 992px) {
+  .tematik_trombinoscope-contenu small {
+    font-size: 1rem;
+  }
+}
+.tematik_trombinoscope:hover .tematik_trombinoscope-image {
+  transform: translate3d(1rem, 0, 0);
+}
+.tematik_trombinoscope[href]:hover .tematik_trombinoscope-contenu strong {
+  color: #ff009b;
+}
+
+:root {
+  --customTheme-color: #ff009b;
+  --customTheme-color-hover: #cc007c;
+}
+
+.topic_list ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.topic_list li {
+  display: inline-block;
+  margin-bottom: 0.125rem;
+}
+.headerBlog .topic_list li, .footerBlog .topic_list li {
+  margin-right: 0.25rem;
+}
+.topic_list a {
+  color: #06060c;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.125rem;
+  padding: 0.25rem 0.5rem;
+  background: #e5e5f0;
+  font-size: 0.875rem;
+}
+.topic_list a:hover {
+  background: #ff009b;
+  color: #fff;
+}
+.themeMagento .topic_list a:hover {
+  background: #F26322;
+}
+.topic_list a img {
+  margin-right: 0.5rem;
+}
+.topic_list li.active a {
+  color: #ff009b;
+}
+
+:root {
+  --customTheme-color: #ff009b;
+  --customTheme-color-hover: #cc007c;
+}
+
+.topic_list--icones ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.topic_list--icones li {
+  margin-bottom: 1rem;
+}
+.topic_list--icones a {
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+  color: #7d7d9b;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: background-color 0.4s, color 0.4s;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+.topic_list--icones a:hover {
+  color: #ff009b;
+}
+.themeMagento .topic_list--icones a:hover {
+  color: #F26322;
+}
+.topic_list--icones a img {
+  margin-right: 0.5rem;
+}
+.topic_list--icones li.active a {
+  color: #ff009b;
+}
+
+:root {
+  --customTheme-color: #ff009b;
+  --customTheme-color-hover: #cc007c;
+}
+
+.topic_list ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.topic_list li {
+  display: inline-block;
+  margin-bottom: 0.125rem;
+}
+.headerBlog .topic_list li, .footerBlog .topic_list li {
+  margin-right: 0.25rem;
+}
+.topic_list a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.125rem;
+  padding: 0.25rem 0.5rem;
+  background: #36363b;
+  color: #fff;
+  font-size: 0.875rem;
+}
+.themeMagento .topic_list a {
+  background: #e5e5f0;
+  color: #06060c;
+}
+.topic_list a:hover {
+  background: #ff009b;
+}
+.themeMagento .topic_list a:hover {
+  background: #F26322;
+  color: #fff;
+}
+.topic_list a img {
+  margin-right: 0.5rem;
+}
+.topic_list li.active a {
+  color: #ff009b;
+}
+
+.themeMagento {
+  --customTheme-color: #F26322;
+  --customTheme-color-hover: #c24f1b;
+}
+
+.tematik-page-list-home {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+}
+.tip{
+  font-size: 95%;
+}

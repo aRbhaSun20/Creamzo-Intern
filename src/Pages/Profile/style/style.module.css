@@ -1,18 +1,20 @@
-.container{
+.container {
     width: 50vw;
     margin: 0 auto;
-
-}
-.details{
-margin: auto 15vw;
-}
-.links{
-margin: auto 19vw;
-padding-top: 20px;
-width: max-content;
+    height: 100vh;
 }
 
-.followbtn{
+.details {
+    margin: auto 15vw;
+}
+
+.links {
+    margin: auto 19vw;
+    padding-top: 20px;
+    width: max-content;
+}
+
+.followbtn {
     margin: 0 auto;
     position: relative;
     left: 45%;
@@ -27,7 +29,7 @@ width: max-content;
     cursor: pointer;
 }
 
-.followbtn:hover{
+.followbtn:hover {
     background-color: rgba(220, 20, 60, 1);
-   
+
 }

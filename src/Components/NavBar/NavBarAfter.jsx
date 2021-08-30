@@ -7,10 +7,10 @@ import {
 	Popper,
 } from "@material-ui/core";
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./style/style.css";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
-import {  Search } from "@material-ui/icons";
+import { Search } from "@material-ui/icons";
 import { useState } from "react";
 
 const NavBar = () => {
@@ -54,10 +54,7 @@ const NavBar = () => {
 						</Typography>
 					</NavLink>
 					<NavLink activeClassName="activeLink" to="/" exact>
-						<Typography
-							variant="h5"
-							style={{ fontSize: ".8vw" }}
-						>
+						<Typography variant="h5" style={{ fontSize: ".8vw" }}>
 							Home
 						</Typography>
 					</NavLink>
@@ -135,8 +132,22 @@ const NavBar = () => {
 								open={open}
 								onClose={handleClose}
 							>
-								<MenuItem onClick={handleClose}>Profile</MenuItem>
-								<MenuItem onClick={handleClose}>My account</MenuItem>
+								<MenuItem onClick={handleClose}>
+									<Link
+										to="/profile"
+										style={{ textDecoration: "none", color: "black" }}
+									>
+										Profile
+									</Link>
+								</MenuItem>
+								<MenuItem onClick={handleClose}>
+									<Link
+										to="/settings"
+										style={{ textDecoration: "none", color: "black" }}
+									>
+										My account
+									</Link>
+								</MenuItem>
 								<MenuItem
 									onClick={() => {
 										handleClose();

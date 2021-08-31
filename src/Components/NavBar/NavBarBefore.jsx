@@ -24,7 +24,7 @@ const NavBar = () => {
   };
 
   const handleToggleButton=()=>{
-  	// console.log(Toggle)
+  	console.log(Toggle)
   	if(Toggle){
   		setToggle(false);
   	}

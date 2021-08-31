@@ -36,44 +36,17 @@ const NavBar = () => {
 	return (
 		<React.Fragment>
 			<div className="navbar">
-				<div
-					className="top"
-					style={{
-						display: "flex",
-						justifyContent: "space-evenly",
-						alignItems: "center",
-						width: "20%",
-					}}
-				>
+				<div className="top">
 					<NavLink activeClassName="activeLink" to="/" exact>
 						<Typography
 							variant="h4"
-							style={{ fontWeight: "bold", fontSize: "2vw" }}
+							style={{ fontWeight: "bold", fontSize: "1rem" }}
 						>
 							Logo
 						</Typography>
 					</NavLink>
-					<NavLink activeClassName="activeLink" to="/" exact>
-						<Typography
-							variant="h5"
-							style={{ fontSize: ".8vw" }}
-						>
-							Home
-						</Typography>
-					</NavLink>
-				</div>
-
-				<div className="remaining-navs" style={{ width: "80%" }}>
-					<div
-						className="input-group"
-						style={{
-							display: "flex",
-							justifyContent: "space-evenly",
-							alignItems: "center",
-							width: "75rem",
-						}}
-					>
-						<div>
+					<div className="input-group">
+						<div style={{width: "-webkit-fill-available"}}>
 							<InputBase
 								type="search"
 								placeholder="Search"
@@ -81,8 +54,8 @@ const NavBar = () => {
 								style={{
 									backgroundColor: "#eaeaf1",
 									borderRadius: "2rem",
-									paddingLeft: "2rem",
-									width: "60vw",
+									paddingLeft: "1rem",
+									width: "100%",
 									outline: "none",
 									height: "3rem",
 									display: "flex",
@@ -97,23 +70,24 @@ const NavBar = () => {
 							/>
 						</div>
 					</div>
-					<div
-						className="links"
-						style={{
-							width: "20rem",
-							display: "flex",
-							justifyContent: "space-evenly",
-							alignItems: "center",
-						}}
-					>
+				</div>
+
+				<div className="remaining-navs">
+					
+					<div className="links">
+						<NavLink activeClassName="activeLink" to="/" className="navs" exact>
+							<Typography>
+								Home
+							</Typography>
+						</NavLink>
 						<NavLink
 							activeClassName="activeLink"
 							to="/about"
 							className="navs"
 							exact
 						>
-							<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
-								About Us
+							<Typography>
+								About
 							</Typography>
 						</NavLink>
 						<NavLink
@@ -122,7 +96,7 @@ const NavBar = () => {
 							to="/blog"
 							exact
 						>
-							<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
+							<Typography>
 								Blog
 							</Typography>
 						</NavLink>

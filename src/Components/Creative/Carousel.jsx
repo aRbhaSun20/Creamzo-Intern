@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import useWindowDimensions from './useWindowDimensions.jsx'
 import './style/carousel.css'
 
 const Carousel = (props) => {
     let {children, show} = props
 
-    const { height, width } = useWindowDimensions();
+    const { width } = useWindowDimensions();
     // console.log(height,width);
     if(width<450){
         show=1;
@@ -23,12 +23,6 @@ const Carousel = (props) => {
         setLength(children.length)
     }, [children])
 
-
-    useEffect(()=>{
-        const interval= setInterval(next,3000);
-        return ()=> clearInterval(interval);
-    },[])
-
     const next = () => {
         setCurrentIndex(prevState => (prevState + 1)%(length-show+1))
         // console.log(currentIndex,length,show);
@@ -40,6 +34,13 @@ const Carousel = (props) => {
         // }
         
     }
+
+    useEffect(()=>{
+        const interval= setInterval(next,4000);
+        return ()=> clearInterval(interval);
+    })
+
+    
 
     const prev = () => {
         if (currentIndex > 0) {

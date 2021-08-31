@@ -32,7 +32,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 85%;
+  width: 50%;
   height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -42,14 +42,14 @@
   justify-items: flex-end;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: flex-end;
   font-weight: bolder;
 }
 
 .navbar .remaining-navs .navs {
   opacity: 0.3;
   position: relative;
-  top: 0.5rem;
+  align-items: center;
 }
 
 .navbar .remaining-navs .navs,
@@ -82,4 +82,128 @@
 .navbar .search-field {
   border-radius: 2rem;
 }
+
+/*.navbutton{*/
+  /*font-Weight: bold;
+  width:50px;
+  height: 5vh;
+  
+  outline: none;
+  font-size: .8vw;*/
+  /*border-radius: 1.5rem;*/
+/*}*/
+.Three{
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+.togglebutton{
+  display: none;
+}
+.AppbarContainer {
+  /*position: relative;
+  left: -13px;*/
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #ebecf7;
+    z-index: 10;
+    margin-top: 15px;
+    border-bottom: 1px black solid;
+}
+.appbar{
+  padding: 10px;
+}
+
+.top .input-group{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 55%;
+}
+
+.links{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.links a{
+  margin-right: 10px;
+}
+
+.top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+}
+
+
+
+@media screen and (max-width: 910px){
+  .navbar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .navbar .remaining-navs {
+    width: 60%;
+  }
+  .togglebutton{
+    display: none;
+  }
+  .top{
+    width: 40%;
+  }
+}
+@media screen and (max-width: 656px){
+  .navbar .remaining-navs {
+    width: 87%;
+  }
+  .togglebutton{
+    display: none;
+  }
+  .top .input-group{
+    display: none;
+  }
+  .top{
+    width: 13%;
+  }
+}
+@media screen and (max-width: 530px){
+  .navbar .remaining-navs {
+    width: 91%;
+  }
+  .togglebutton{
+    display: none;
+  }
+  .top{
+    width: 8%;
+  }
+}
+@media screen and (max-width: 500px){
+  .Three{
+    display: none;
+  }
+  .togglebutton{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .navbar .remaining-navs{
+    width: 80%;
+    justify-content: space-evenly;
+  }
+}
+
+
+
+
+
+
+
 /*# sourceMappingURL=style.css.map */

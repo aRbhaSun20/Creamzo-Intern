@@ -5,11 +5,13 @@ import "./style/style.css";
 import Modal from "@material-ui/core/Modal";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
+import Appbar from "./Appbar.jsx";
 import { LoginContext } from "../../Context/Login";
 
 const NavBar = () => {
   const [LoginOpen, setLoginOpen] = React.useState(false);
   const [SignUpOpen, setSignUpOpen] = React.useState(false);
+  const [Toggle,setToggle]= React.useState(false);
   // eslint-disable-next-line
   const [login, setLogin] = useContext(LoginContext);
 
@@ -21,25 +23,39 @@ const NavBar = () => {
     setSignUpOpen(false);
   };
 
+  const handleToggleButton=()=>{
+  	// console.log(Toggle)
+  	if(Toggle){
+  		setToggle(false);
+  	}
+  	else{
+  		setToggle(true)
+  	}
+  }
+
+
+
   return (
 		<React.Fragment>
-			<div className="navbar">
+			<div className="navbar" style={{marginTop:"10px",marginBotton:"10px"}}>
 				<NavLink activeClassName="activeLink" to="/" exact>
 					<Typography
 						variant="h4"
-						style={{ fontWeight: "bold", fontSize: "2vw" }}
+						style={{ fontWeight: "bold", fontSize:"15px"}}
 					>
 						Logo
 					</Typography>
 				</NavLink>
-				<div className="remaining-navs" style={{ width: "50%" }}>
+
+				<div className="remaining-navs">
+					<div className="Three">
 					<NavLink
 						activeClassName="activeLink"
 						to="/about"
 						className="navs"
 						exact
 					>
-						<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
+						<Typography>
 							About
 						</Typography>
 					</NavLink>
@@ -49,7 +65,7 @@ const NavBar = () => {
 						to="/blog"
 						exact
 					>
-						<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
+						<Typography >
 							Blog
 						</Typography>
 					</NavLink>
@@ -60,21 +76,15 @@ const NavBar = () => {
 						to="/discover"
 						exact
 					>
-						<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
+						<Typography >
 							Discover
 						</Typography>
 					</NavLink>
+					</div>
 					<Button
-						style={{
-							fontWeight: "bold",
-							width: "7vw",
-							height: "5vh",
-							borderRadius: "1.5rem",
-							marginLeft: "1rem",
-							outline: "none",
-							fontSize: ".8vw",
-						}}
+						className="navbutton"
 						variant="contained"
+						style={{borderRadius:"1.5rem",textTransform:"capitalize",marginRight:"10px",boxShadow:"none"}}
 						onClick={() => {
 							setSignUpOpen(true);
 						}}
@@ -82,16 +92,10 @@ const NavBar = () => {
 						Sign Up
 					</Button>
 					<Button
-						style={{
-							fontWeight: "bold",
-							width: "7vw",
-							height: "5vh",
-							borderRadius: "1.5rem",
-							outline: "none",
-							fontSize: ".8vw",
-						}}
+						className="navbutton"
 						variant="contained"
 						color="secondary"
+						style={{borderRadius:"1.5rem",textTransform:"capitalize", boxShadow:"none"}}
 						onClick={() => {
 							setLoginOpen(true);
 						}}
@@ -117,7 +121,11 @@ const NavBar = () => {
 					>
 						<SignUp setopen={setSignUpOpen} setLoginOpen={setLoginOpen} />
 					</Modal>
+					<div className="togglebutton">
+						<span onClick={handleToggleButton}><i class="fa fa-bars" aria-hidden="true"></i></span>
+					</div>
 				</div>
+				<Appbar status={Toggle}/>
 			</div>
 		</React.Fragment>
 	);

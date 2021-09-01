@@ -89,10 +89,10 @@ const HomeAfter = () => {
 			</div>
 			<div
 				className="add"
-				style={{ position: "fixed", bottom: "2.5em", right: "1em" }}>
+				style={{ position: "fixed", bottom: "5.5em", right: "2em" }}>
 				<Link to="/boardCreation">
 					<IconButton style={{ outline: "none", backgroundColor: "#dedede" }}>
-						<Add style={{ fontSize: "1.8vw", color: "black" }} />
+						<Add style={{ fontSize: "2vw", color: "black" }} />
 					</IconButton>
 				</Link>
 			</div>

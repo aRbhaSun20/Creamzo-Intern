@@ -8,13 +8,19 @@ import {
 	Share,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import "./style/style.css";
 
-const Conatiner = ({ image, height }) => {
+const Conatiner = (props) => {
+	let image=props.image;
+	let height=props.height;
+	// eslint-disable-next-line
 	const [opacity, setOpacity] = useState(0);
+	// var randomArray=["200px","230px","300px","250px","270px","350"];
+	// height=`${randomArray[Math.floor(Math.random()*randomArray.length)]}`;
 	return (
 		<div
 			className="imglogin"
-			style={{ position: "relative" }}
+			style={{ position: "relative",height:{height}}}
 			onMouseEnter={(e) => {
 				e.preventDefault();
 				setOpacity(1);
@@ -23,34 +29,31 @@ const Conatiner = ({ image, height }) => {
 				e.preventDefault();
 				setOpacity(0);
 			}}
+			// onClick={()=>{
+			// 	console.log(height);
+			// }}
 		>
 			<img
 				src={image}
 				alt=""
-				onClick={() => {
-					console.log("hi");
-				}}
-				style={{ height: `100%`, borderRadius: "1em" }}
+				height={height}
+				// height={randomArray[Math.floor(Math.random()*randomArray.length)]}
+				// onClick={() => {
+				// 	console.log(height);
+				// }}
+				style={{borderRadius: "1em"}}
 			/>
 
 			<div
 				className="details"
-				style={{
-					position: "absolute",
-					height: `8vh`,
-					opacity: `${opacity}`,
-					zIndex: "1000",
-					top: "1vh",
-					left: ".5em",
-					width: "15vw",
-				}}
-			>
+				style={{opacity: `${opacity}`}}>
 				<div
 					style={{
 						display: "flex",
-						width: "15vw",
-						position: "relative",
-						left: "-8.5em",
+						width: "100%",
+						justifyContent: "space-between",
+						// position: "relative",
+						// left: "-7.5em",
 					}}
 				>
 					{opacity ? (
@@ -58,16 +61,16 @@ const Conatiner = ({ image, height }) => {
 							style={{
 								display: "flex",
 								justifyContent: "flex-end",
-								width: "100%",
+								// width: "100%",
 							}}
 						>
 							<IconButton
 								variant="contained"
 								style={{
 									borderRadius: "1em",
-									position: "relative",
-									left: "3.5em",
-									top: ".5em",
+									// position: "relative",
+									// left: "3.5em",
+									// top: ".5em",
 									outline: "none",
 								}}
 							>
@@ -85,9 +88,9 @@ const Conatiner = ({ image, height }) => {
 							style={{
 								display: "flex",
 								justifyContent: "flex-end",
-								width: "100%",
-								position: "relative",
-								left: "8em",
+								// width: "100%",
+								// position: "relative",
+								// left: "8em",
 								top: ".5em",
 							}}
 						>
@@ -109,62 +112,57 @@ const Conatiner = ({ image, height }) => {
 			<div
 				className="details"
 				style={{
-					position: "absolute",
-					height: `8vh`,
+					// position: "absolute",
+					// height: `8vh`,
 					opacity: `${opacity}`,
-					zIndex: "1000",
-					bottom: "-6vh",
-					left: "9em",
-					width: "15vw",
+					// zIndex: "1000",
+					top:"77%",
+					// bottom: "-6vh",
+					// left: "70%",
+					// width: "100%",
 				}}
 			>
 				<div
 					style={{
-						display: "flex",
-						width: "15vw",
-						position: "relative",
-						left: "-8.5em",
+						// display: "flex",
+						// justifyContent:"space-between",
+						// width: "100%",
+						height:"100%",
+						paddingLeft:"7%",
+						// position: "relative",
+						// left: "-8.5em",
 					}}
 				>
 					{opacity ? (
-						<div
-							className="bottom"
-							style={{
-								display: "flex",
-								width: "21vw",
-								alignItems: "center",
-								position: "absolute",
-								justifyContent: "space-between",
-								bottom: ".3em",
-								marginLeft: "1em",
-							}}
-						>
-							<Link to="/boardDisplay">
-								<Button
-									variant="contained"
-									style={{
-										borderRadius: "1em",
-										position: "relative",
-										bottom: "0.5rem",
-										outline: "none",
-										fontSize: ".7rem",
-									}}
-								>
-									<ArrowUpward
+						<div className="bottom">
+							<div className="end">
+								<Link to="/boardDisplay">
+									<Button
+										variant="contained"
 										style={{
-											transform: "rotate(45deg)",
-											marginRight: ".5em",
-											fontSize: "1rem",
+											borderRadius: "1em",
+											// position: "relative",
+											width:"100%",
+											// bottom: "0.5rem",
+											outline: "none",
+											textTransform:"capitalize",
+											// fontSize: ".7rem",
 										}}
-									/>
-									Link
-								</Button>
-							</Link>
-							<div
-								className="end"
-								style={{ position: "relative", left: "-7.5em", bottom: ".5em" }}
-							>
-								<IconButton style={{ outline: "none" }}>
+									>
+										<ArrowUpward
+											style={{
+												transform: "rotate(45deg)",
+												// marginRight: ".5em",
+												width:"50%",
+												fontSize: "1rem",
+											}}
+										/>
+										Link
+									</Button>
+								</Link>
+							</div>
+							<div className="end" >
+								<IconButton style={{ outline: "none",padding:"4px" }}>
 									<GetAppIcon
 										style={{
 											color: "white",
@@ -174,7 +172,7 @@ const Conatiner = ({ image, height }) => {
 										}}
 									/>
 								</IconButton>
-								<IconButton style={{ outline: "none" }}>
+								<IconButton style={{ outline: "none",padding:"4px" }}>
 									<Share
 										style={{
 											color: "white",

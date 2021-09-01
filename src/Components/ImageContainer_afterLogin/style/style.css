@@ -1,0 +1,34 @@
+.details{
+	position: absolute;
+	height: 8vh;
+	z-index: 1000;
+	top: 1vh;
+	left: 5%;
+	width: 90%;
+}
+
+.bottom{
+	display: flex;
+	/*width: 100%;*/
+	height: 100%;
+	align-items: center;
+	/*position: relative;*/
+	bottom: 3em;
+	/*left: 6em;*/
+	/*position: absolute;*/
+	justify-content: space-between;
+	/*bottom: .3em;*/
+	/*margin-left: 1em;*/
+}
+
+
+.end{
+	/*position: relative;*/
+	width: 45%;
+	/*overflow-x: hidden;*/
+	/*left: -7.5em;*/
+	bottom: .5em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between
+}

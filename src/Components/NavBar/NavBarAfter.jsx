@@ -72,14 +72,18 @@ const NavBar = () => {
 					</div>
 				</div>
 
-				<div className="remaining-navs">
-					
-					<div className="links">
+				<div className="afterloginnav">
 						<NavLink activeClassName="activeLink" to="/" className="navs" exact>
 							<Typography>
 								Home
 							</Typography>
 						</NavLink>
+					<div className="links">
+						{/*<NavLink activeClassName="activeLink" to="/" className="navs" exact>
+							<Typography>
+								Home
+							</Typography>
+						</NavLink>*/}
 						<NavLink
 							activeClassName="activeLink"
 							to="/about"
@@ -100,7 +104,7 @@ const NavBar = () => {
 								Blog
 							</Typography>
 						</NavLink>
-
+					</div>
 						<div className="avatar">
 							<Avatar style={{ fontSize: "1vw" }} onClick={handleClick} />
 							<Popper
@@ -108,6 +112,7 @@ const NavBar = () => {
 								anchorEl={anchorEl}
 								open={open}
 								onClose={handleClose}
+								style={{backgroundColor:"#f8f9fe", zIndex:"1000"}}
 							>
 								<MenuItem onClick={handleClose}>Profile</MenuItem>
 								<MenuItem onClick={handleClose}>My account</MenuItem>
@@ -121,7 +126,7 @@ const NavBar = () => {
 								</MenuItem>
 							</Popper>
 						</div>
-					</div>
+					
 				</div>
 			</div>
 		</React.Fragment>

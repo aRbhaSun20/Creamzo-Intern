@@ -4,7 +4,7 @@
 	justify-self: center;
 	align-items: center;
 	display: grid;
-	height: 80vh;
+	height: 90%;
 	border-radius: 1rem;
 	width: 30vw;
 	grid-template-rows: 1fr 8fr;
@@ -20,7 +20,7 @@
 	.top-header {
 		grid-row: 1/2;
 		grid-column: 1/2;
-		height: 10vh;
+		height: 15vh;
 		width: 30vw;
 		display: flex;
 		flex-direction: column;
@@ -67,21 +67,19 @@
 	}
 
 	.bottom-header {
-		display: grid;
-		grid-row: 2/3;
-		grid-column: 1/2;
-		grid-template-rows: auto;
+		display: flex;
+		flex-direction: column;
 		width: 100%;
 		height: 100%;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-evenly;
 		
 		.inputs {
-			height: 45vh;
-			display: grid;
-			flex-direction: column;
+			height: 30vh;
+			display: flex;
 			align-items: center;
 			justify-content: center;
+			flex-wrap: wrap;
 			.inp {
 				display: flex;
 				align-items: center;

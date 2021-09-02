@@ -6,15 +6,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: -ms-grid;
-  display: grid;
-  height: 80vh;
+  /*display: -ms-grid;*/
+  display: flex;
+  height: 90%;
   border-radius: 1rem;
-  width: 30vw;
+  /*width: 30vw;*/
+  width: 45%;
+  flex-direction: column;/*
   -ms-grid-rows: 1fr 8fr;
-      grid-template-rows: 1fr 8fr;
-  padding-bottom: 4rem;
-  place-content: center;
+      grid-template-rows: 1fr 8fr;*/
+  /*padding-bottom: 3rem;*/
+  /*place-content: center;*/
+
 }
 
 .signup-card button {
@@ -24,7 +27,7 @@
 }
 
 .signup-card .top-header {
-  -ms-grid-row: 1;
+  /*-ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
   -ms-grid-column: 1;
@@ -44,7 +47,13 @@
           justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+          align-items: center;*/
+  height: 15vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center
 }
 
 .signup-card .top-header .title {
@@ -91,14 +100,14 @@
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: .6em;
+  padding-bottom: .6em;
   color: #3d3d3d;
   font-size: 0.8rem;
 }
 
 .signup-card .bottom-header {
-  display: -ms-grid;
+  /*display: -ms-grid;
   display: grid;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
@@ -115,12 +124,19 @@
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+          justify-content: center;*/
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 75vh;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .signup-card .bottom-header .inputs {
-  height: 45vh;
-  display: -ms-grid;
+  height: 35vh;
+  width: 95%;
+  /*display: -ms-grid;
   display: grid;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -131,11 +147,17 @@
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+          justify-content: center;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4%
 }
 
 .signup-card .bottom-header .inputs .inp {
-  display: -webkit-box;
+  /*display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
@@ -143,13 +165,15 @@
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+          justify-content: center;*/
+  width: 45%;
+  min-width: 150px;
 }
 
 .signup-card .login-forget {
-  padding-top: 1rem;
+  /*padding-top: 1rem;*/
   width: 100%;
-  height: 6rem;
+  height: 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,8 +190,11 @@
 }
 
 .signup-card .login-forget button {
-  height: 3rem;
-  width: 9rem;
+  width: 6.6rem;
+  font-size: 0.8rem;
+  border-radius: 20rem;
+  height: 1.8rem;
+  background-color: #c21336;
 }
 
 .signup-card .login-forget .forget {
@@ -189,5 +216,59 @@
   padding-left: 0.5rem;
   color: #d82d57;
   cursor: pointer;
+}
+
+.acceptance{
+  padding-top: 1rem;
+}
+
+@media screen and (max-width: 850px){
+  .signup-card{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .signup-card{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 570px){
+  .signup-card{
+    width: 85%;
+  }
+}
+@media screen and (max-width: 460px){
+  .signup-card .top-header .title{
+    text-align: center;
+  }
+  .signup-card{
+    height: 95%;
+    width: 90%;
+  }
+  .signup-card .bottom-header .inputs .inp{
+    height: 50px;
+    width: 80%;
+  }
+  .signup-card .bottom-header{
+    justify-content: space-between;
+  }
+  .signup-card .bottom-header .inputs{
+    height: 55vh;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+  .signup-card .login-forget{
+    /*height: 22vh;*/
+    height: 14vh;
+  }
+  .signup-card .or{
+    padding-top: .3em;
+    padding-bottom: .3em;
+  }
+  .acceptance{
+    padding-top: 0.5rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

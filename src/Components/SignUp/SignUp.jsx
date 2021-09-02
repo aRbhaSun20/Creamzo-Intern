@@ -28,7 +28,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							position: "relative",
 							top: "-0.5rem",
 							color: "black",
-							fontSize: "1.7vw",
+							fontSize: "1.5rem",
 							fontWeight: "bold",
 						}}
 					>
@@ -57,9 +57,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -75,9 +75,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -93,9 +93,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -111,9 +111,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -129,9 +129,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								type="password"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -147,9 +147,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								type="password"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -167,10 +167,11 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								setopen(false);
 							}}
 							style={{
-								backgroundColor: "red",
-								fontSize: ".8vw",
-								color: "white",
-								width: "8vw",
+								// backgroundColor: "red",
+								// fontSize: ".8vw",
+								// color: "white",
+								// width: "8vw",
+								textTransform:"capitalize",
 							}}
 						>
 							Sign Up
@@ -198,15 +199,17 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 									backgroundColor: "white",
 									color: "black",
 									borderRadius: ".5rem",
-									fontSize: ".7vw",
+									fontSize: "1em",
+									textTransform:"capitalize",
+									padding:"0px",
 								}}
 							>
 								<img
 									src={google}
 									alt="google"
 									style={{
-										width: "1.5vw",
-										height: "2vh",
+										width: "1.3em",
+										height: "3vh",
 										position: "relative",
 										left: "-.5rem",
 									}}
@@ -223,18 +226,20 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								style={{
 									backgroundColor: "white",
 									color: "black",
-									fontSize: ".7vw",
-									borderRadius: ".5rem",
+									fontSize: "1em",
+									borderRadius: ".7vw",
+									textTransform:"capitalize",
+									padding:"0px",
 								}}
 							>
 								<img
 									src={fb}
 									alt="fb"
 									style={{
-										width: "1.5vw",
-										height: "2vh",
+										width: "1.3em",
+										height: "3vh",
 										position: "relative",
-										left: "-.5em",
+										left: "-.2em",
 									}}
 								/>
 								FaceBook
@@ -243,11 +248,12 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 						<div
 							className="acceptance"
 							style={{
-								display: "flex",
-								justifyContent: "space-evenly",
+								// display: "flex",
+								// justifyContent: "space-evenly",
 								alignItems: "center",
-								width: "70%",
-								paddingTop: "1rem",
+								width: "90%",
+								// paddingTop: "1rem",
+								fontSize:".8em",
 							}}
 						>
 							<div style={{ textAlign: "center" }}>

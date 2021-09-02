@@ -5,9 +5,9 @@ import "./styles/styles.css";
 import dummyimage from "./styles/blogitemimage.jpg";
 import { Link } from "react-router-dom";
 
-function Blogitem() {
-  // eslint-disable-next-line
-  const [dummyHeading, setdummyHeading] = useState("Dummy heading");
+function Blogitem({data}) {
+  console.log(data?.title)
+  
   // eslint-disable-next-line
   const [dummyDate, setdummyDate] = useState("02/08/2021");
   // eslint-disable-next-line
@@ -24,7 +24,7 @@ function Blogitem() {
   return (
     <div style={{  margin: "1rem" }}>
       <img
-        src={dummyimage}
+        src={data?.image}
         alt="blog"
         style={{
           height: "10rem",
@@ -38,7 +38,7 @@ function Blogitem() {
       <div style={{ width: "50%" }}>
         <div style={{ height: "20rem", padding: "1rem" }}>
           <h3 className={"dateopacity"}>{categorytype}</h3>
-          <h1 style={{ fontSize: "2.5rem" }}>{dummyHeading}</h1>
+          <h1 style={{ fontSize: "1.3rem" }}>{data?.title}</h1>
 
           <div className="iconspack">
             <Link to={facebookUrl} style={{ color: "black", fontSize: 45 }}>
@@ -55,8 +55,8 @@ function Blogitem() {
               <LinkedIn />
             </Link>
           </div>
-
-          <h6 className="dateopacity">{dummyDate}</h6>
+          <h6 className="dateopacity">{data?.time?.split('T')[0]}</h6>
+          
           <Link to={'/articleItem'}>
 		  <br />
             <h3 style={{paddingBottom:'5px'}}>Read more</h3>

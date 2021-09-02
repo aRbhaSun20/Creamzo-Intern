@@ -2,9 +2,11 @@ import React,{useState} from 'react'
 import blogitemimage from './styles/blogitemimage.jpg'
 import './styles/styles.css'
 
-function ArticleItem() {
+
+function ArticleItem({data}) {
+	console.log(data)
 	// eslint-disable-next-line
-	const [imageUrl, setimageUrl] = useState(blogitemimage);
+	// const [imageUrl, setimageUrl] = useState(blogitemimage);
 	// eslint-disable-next-line
 	const [headingtext, setheadingtext] = useState("Dummy heading");
 	// eslint-disable-next-line
@@ -15,7 +17,7 @@ function ArticleItem() {
 		<div className="article-display">
 			<img
 				className="article-display-image"
-				src={imageUrl}
+				src={data?.image}
 				alt="article"
 			/>
 			<h1 className="heading-text">{headingtext}</h1>

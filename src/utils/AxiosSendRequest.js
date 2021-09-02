@@ -80,13 +80,13 @@ export const axiosSendRequest = async (type, url, sendData) => {
 				method: "put",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
 				headers: AXIOS_ACTIONS.HEADERS,
-				data: data,
+				data: sendData,
 			};
 			break;
 
 		default:
 			return null;
 	}
-
+	
 	return await axios(config).catch((e) => console.log(e));
 };

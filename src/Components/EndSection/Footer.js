@@ -8,7 +8,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 
 function Footer() {
 	return (
-		<div className="footer_container">
+		<div className="footer_container" style={{height:"5vh"}}>
 			<div className="footer_inner">
 				<NavLink
 					className="footer_links"

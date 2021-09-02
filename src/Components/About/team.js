@@ -1,10 +1,14 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./css/styles.css";
 function Team() {
 	return (
-		<section className="content-section bg-primary text-white" id="Team">
-			<div class="container" data-aos="fade-up">
+		<section
+			className="content-section bg-primary text-white"
+			id="Team"
+			
+		>
+			<div class="container" data-aos="fade-up" style={{ width: "100vw", height: "100vh" }}>
 				<div class="section-title">
 					<h2>Team</h2>
 					<p>Check our Team</p>

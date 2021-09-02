@@ -7,20 +7,18 @@ import {
 	FavoriteBorder,
 	Share,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./style/style.css";
 
 const Conatiner = (props) => {
-	let image=props.image;
-	let height=props.height;
-	// eslint-disable-next-line
+	let image = props.image;
+	let height = props.height;
 	const [opacity, setOpacity] = useState(0);
-	// var randomArray=["200px","230px","300px","250px","270px","350"];
-	// height=`${randomArray[Math.floor(Math.random()*randomArray.length)]}`;
+	let history = useHistory();
 	return (
 		<div
 			className="imglogin"
-			style={{ position: "relative",height:{height}}}
+			style={{ position: "relative", height: { height } }}
 			onMouseEnter={(e) => {
 				e.preventDefault();
 				setOpacity(1);
@@ -29,164 +27,141 @@ const Conatiner = (props) => {
 				e.preventDefault();
 				setOpacity(0);
 			}}
-			// onClick={()=>{
-			// 	console.log(height);
-			// }}
 		>
 			<img
 				src={image}
 				alt=""
+				className="imgCont"
 				height={height}
-				// height={randomArray[Math.floor(Math.random()*randomArray.length)]}
-				// onClick={() => {
-				// 	console.log(height);
-				// }}
-				style={{borderRadius: "1em"}}
+				style={{ borderRadius: "1em" }}
+				onClick={() => history.push("/boardDisplay")}
 			/>
 
-			<div
-				className="details"
-				style={{opacity: `${opacity}`}}>
+			{opacity ? (
 				<div
 					style={{
 						display: "flex",
 						width: "100%",
-						justifyContent: "space-between",
-						// position: "relative",
-						// left: "-7.5em",
+						position: "absolute",
+						justifyContent: "center",
+						alignItems: "center",
+						top: "0",
 					}}
 				>
-					{opacity ? (
+					<div
+						style={{
+							display: "flex",
+							width: "90%",
+							justifyContent: "space-between",
+							alignItems: "center",
+						}}
+					>
+						<IconButton
+							variant="contained"
+							style={{
+								borderRadius: "1em",
+								// position: "relative",
+								// left: "3.5em",
+								// top: ".5em",
+								outline: "none",
+							}}
+						>
+							<FavoriteBorder
+								style={{
+									color: "white",
+									fontSize: "1.5rem",
+								}}
+							/>
+						</IconButton>
+						<IconButton
+							variant="contained"
+							style={{
+								borderRadius: "1em",
+								outline: "none",
+							}}
+						>
+							<AddCircleOutline
+								style={{ color: "white", fontSize: "1.5rem" }}
+							/>
+						</IconButton>
+					</div>
+				</div>
+			) : null}
+
+			{opacity ? (
+				<div
+					style={{
+						display: "flex",
+						width: "100%",
+						position: "absolute",
+						justifyContent: "center",
+						alignItems: "center",
+						bottom: "1rem",
+					}}
+				>
+					<div
+						style={{
+							display: "flex",
+							width: "85%",
+							justifyContent: "space-between",
+							alignItems: "center",
+						}}
+					>
+						<Button
+							variant="contained"
+							style={{
+								borderRadius: "1em",
+								// position: "relative",
+								width: "6rem",
+								// bottom: "0.5rem",
+								outline: "none",
+								textTransform: "capitalize",
+								// fontSize: ".7rem",
+							}}
+							onClick={() => console.log("hi")}
+						>
+							<ArrowUpward
+								style={{
+									transform: "rotate(45deg)",
+									// marginRight: ".5em",
+									width: "50%",
+									fontSize: "1rem",
+								}}
+							/>
+							Link
+						</Button>
 						<div
 							style={{
 								display: "flex",
-								justifyContent: "flex-end",
-								// width: "100%",
+								justifyContent: "space-between",
+								alignItems: "center",
+								width: "4rem",
 							}}
 						>
-							<IconButton
-								variant="contained"
-								style={{
-									borderRadius: "1em",
-									// position: "relative",
-									// left: "3.5em",
-									// top: ".5em",
-									outline: "none",
-								}}
-							>
-								<FavoriteBorder
+							<IconButton style={{ outline: "none", padding: "4px" }}>
+								<GetAppIcon
 									style={{
 										color: "white",
-										fontSize: "1.5rem",
+										fontSize: "1.2rem",
+										position: "relative",
+										bottom: "0em",
+									}}
+								/>
+							</IconButton>
+							<IconButton style={{ outline: "none", padding: "4px" }}>
+								<Share
+									style={{
+										color: "white",
+										fontSize: "1.2rem",
+										position: "relative",
+										bottom: "0em",
 									}}
 								/>
 							</IconButton>
 						</div>
-					) : null}
-					{opacity ? (
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "flex-end",
-								// width: "100%",
-								// position: "relative",
-								// left: "8em",
-								top: ".5em",
-							}}
-						>
-							<IconButton
-								variant="contained"
-								style={{
-									borderRadius: "1em",
-									outline: "none",
-								}}
-							>
-								<AddCircleOutline
-									style={{ color: "white", fontSize: "1.5rem" }}
-								/>
-							</IconButton>
-						</div>
-					) : null}
+					</div>
 				</div>
-			</div>
-			<div
-				className="details"
-				style={{
-					// position: "absolute",
-					// height: `8vh`,
-					opacity: `${opacity}`,
-					// zIndex: "1000",
-					top:"77%",
-					// bottom: "-6vh",
-					// left: "70%",
-					// width: "100%",
-				}}
-			>
-				<div
-					style={{
-						// display: "flex",
-						// justifyContent:"space-between",
-						// width: "100%",
-						height:"100%",
-						paddingLeft:"7%",
-						// position: "relative",
-						// left: "-8.5em",
-					}}
-				>
-					{opacity ? (
-						<div className="bottom">
-							<div className="end">
-								<Link to="/boardDisplay">
-									<Button
-										variant="contained"
-										style={{
-											borderRadius: "1em",
-											// position: "relative",
-											width:"100%",
-											// bottom: "0.5rem",
-											outline: "none",
-											textTransform:"capitalize",
-											// fontSize: ".7rem",
-										}}
-									>
-										<ArrowUpward
-											style={{
-												transform: "rotate(45deg)",
-												// marginRight: ".5em",
-												width:"50%",
-												fontSize: "1rem",
-											}}
-										/>
-										Link
-									</Button>
-								</Link>
-							</div>
-							<div className="end" >
-								<IconButton style={{ outline: "none",padding:"4px" }}>
-									<GetAppIcon
-										style={{
-											color: "white",
-											fontSize: "1.2rem",
-											position: "relative",
-											bottom: "0em",
-										}}
-									/>
-								</IconButton>
-								<IconButton style={{ outline: "none",padding:"4px" }}>
-									<Share
-										style={{
-											color: "white",
-											fontSize: "1.2rem",
-											position: "relative",
-											bottom: "0em",
-										}}
-									/>
-								</IconButton>
-							</div>
-						</div>
-					) : null}
-				</div>
-			</div>
+			) : null}
 		</div>
 	);
 };

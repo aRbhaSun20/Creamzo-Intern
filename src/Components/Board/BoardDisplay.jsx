@@ -9,9 +9,8 @@ import download from "./assets/326639_download_file_icon.png";
 import views from "./assets/1954555_eye_look_view_views_watch_icon.png";
 import share from "./assets/2561282_share_icon.png";
 import heart from "./assets/2246820_heart_like_notification_icon.png";
-import { useLocation } from "react-router-dom";
+
 const BoardDisplay = () => {
-	const location = useLocation();
 	return (
 		<React.Fragment>
 			<div style={{ backgroundColor: "rgb(230, 233, 233)", padding: "30px" }}>

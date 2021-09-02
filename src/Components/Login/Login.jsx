@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { Button, TextField } from "@material-ui/core";
 
 import "./style/style.css";
-import fb from "./assets/fb.png";
+// import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";

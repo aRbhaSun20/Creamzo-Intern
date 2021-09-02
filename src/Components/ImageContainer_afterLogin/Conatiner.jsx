@@ -7,7 +7,7 @@ import {
 	FavoriteBorder,
 	Share,
 } from "@material-ui/icons";
-import { Link, useHistory } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
 import "./style/style.css";
 
 const Conatiner = (props) => {

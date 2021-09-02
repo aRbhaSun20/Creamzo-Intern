@@ -22,22 +22,23 @@ function Blogitem() {
   const [categorytype, setcategorytype] = useState("Art");
 
   return (
-    <div style={{ display: "flex", margin: "3rem" }}>
+    <div style={{  margin: "1rem" }}>
       <img
         src={dummyimage}
         alt="blog"
         style={{
-          height: "25rem",
-          margin: "1.8rem",
+          height: "10rem",
+          widows: "15rem",
+          margin: "1rem",
           objectFit: "contain",
           borderRadius: "10px",
         }}
       />
 
       <div style={{ width: "50%" }}>
-        <div style={{ height: "25rem", padding: "1.5rem" }}>
+        <div style={{ height: "20rem", padding: "1rem" }}>
           <h3 className={"dateopacity"}>{categorytype}</h3>
-          <h1 style={{ fontSize: "3rem" }}>{dummyHeading}</h1>
+          <h1 style={{ fontSize: "2.5rem" }}>{dummyHeading}</h1>
 
           <div className="iconspack">
             <Link to={facebookUrl} style={{ color: "black", fontSize: 45 }}>
@@ -58,7 +59,8 @@ function Blogitem() {
           <h6 className="dateopacity">{dummyDate}</h6>
           <Link to={'/articleItem'}>
 		  <br />
-            <h3>Read more</h3>
+            <h3 style={{paddingBottom:'5px'}}>Read more</h3>
+            
           </Link>
         </div>
       </div>

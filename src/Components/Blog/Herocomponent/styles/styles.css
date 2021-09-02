@@ -23,6 +23,13 @@
     padding-right: 15rem;
 }
 
+@media screen and (max-width: 800px) {
+    .hero-image{
+        padding-right: 5rem;
+        padding-left: 3rem;
+    }
+  }
+
 
 
 
@@ -36,8 +43,6 @@
 
 .secondary-text {
     color: white;
-    padding-left: white;
-    /* padding-top: 1rem; */
     font-size: 1rem;
 }
 

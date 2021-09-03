@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from "react";
+import { ArticlesProvider } from "./ArticlesContext";
 import { BlogsProvider } from "./BlogsContext";
 import { PinsProvider } from "./PinsContext";
 
@@ -25,7 +26,9 @@ export const Login = ({ children }) => {
 	return (
 		<LoginContext.Provider value={[login, setLogin]}>
 			<BlogsProvider>
-				<PinsProvider>{children}</PinsProvider>
+				<PinsProvider>
+					<ArticlesProvider>{children}</ArticlesProvider>
+				</PinsProvider>
 			</BlogsProvider>
 		</LoginContext.Provider>
 	);

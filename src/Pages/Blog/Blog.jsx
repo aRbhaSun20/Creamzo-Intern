@@ -10,7 +10,7 @@ function Blog() {
     <div>
       <Herocomponent />
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        <Blogitem />
+        
         {trendingBlogData?.map((trendingBlog, i) => (
           <Blogitem key={trendingBlog._id} data={trendingBlog} />
         ))}

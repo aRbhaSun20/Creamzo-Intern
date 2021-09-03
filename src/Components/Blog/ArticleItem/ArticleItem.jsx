@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import blogitemimage from './styles/blogitemimage.jpg'
 import './styles/styles.css'
 
 

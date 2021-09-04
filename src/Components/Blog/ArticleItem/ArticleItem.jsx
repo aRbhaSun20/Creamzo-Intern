@@ -12,6 +12,7 @@ function ArticleItem({data}) {
 	const [secondarytext, setsecondarytext] = useState(
 		"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."
 	);
+	console.log(data)
 	return (
 		<div className="article-display">
 			<img
@@ -19,8 +20,8 @@ function ArticleItem({data}) {
 				src={data?.image}
 				alt="article"
 			/>
-			<h1 className="heading-text">{headingtext}</h1>
-			<h3 className="secondary-article-text">{secondarytext} </h3>
+			<h1 className="heading-text">{data?.title}</h1>
+			<h3 className="secondary-article-text">{data?.content} </h3>
 		</div>
 	);
 }

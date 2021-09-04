@@ -13,6 +13,7 @@ function Article({data}) {
 	);
 	// eslint-disable-next-line
 	const [buttonurl, setbuttonurl] = useState("/articleitem");
+	console.log(data)
 	return (
 		<div>
 			<img className="article-image" src={data?.image} alt="article" />
@@ -23,7 +24,7 @@ function Article({data}) {
 			<Link
 				className="readmore-button"
 				styles={{ fontSize: "1rem" }}
-				
+				to={"/articleitem"}
 				onClick={()=>setcurrentArticle(data)}
 			>
 				READ MORE

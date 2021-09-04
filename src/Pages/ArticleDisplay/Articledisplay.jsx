@@ -1,15 +1,17 @@
+import { data } from 'colcade'
 import React from 'react'
 import ArticleItem from '../../Components/Blog/ArticleItem/ArticleItem'
-import {useAllBlog} from '../../Context/BlogsContext'
+import {useArticle} from '../../Context/ArticlesContext'
 function Articledisplay() {
 
-    const allArtilcesData = useAllBlog()
+   const [currentArticle,setcurrentArticle] = useArticle()
     
     return (
         <div>
-            {allArtilcesData?.map(
+            {/* {allArtilcesData?.map(
                 articledata => (<ArticleItem key={articledata?._id} data={articledata}/>)
-            )}
+            )} */}
+            <ArticleItem data={currentArticle}/>
         </div>
     )
 }

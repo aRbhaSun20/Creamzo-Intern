@@ -3,7 +3,7 @@ import './styles/styles.css'
 
 
 function ArticleItem({data}) {
-	console.log(data)
+	
 	// eslint-disable-next-line
 	// const [imageUrl, setimageUrl] = useState(blogitemimage);
 	// eslint-disable-next-line

@@ -4,16 +4,16 @@ import {useArticle} from  '../../../Context/ArticlesContext'
 import { Link } from "react-router-dom";
 
 function Article({data}) {
-	const [currentArticle,setcurrentArticle] = useArticle()
 	// eslint-disable-next-line
-	const [dummyHeading, setdummyHeading] = useState("Dummy Heading");
+	const [currentArticle,setcurrentArticle] = useArticle()
+	
 	// eslint-disable-next-line
 	const [secondaryText, setsecondaryText] = useState(
 		"A small river named Duden flows by their place and supplies it with the necessary regelialia."
 	);
 	// eslint-disable-next-line
 	const [buttonurl, setbuttonurl] = useState("/articleitem");
-	console.log(data)
+
 	return (
 		<div>
 			<img className="article-image" src={data?.image} alt="article" />
@@ -27,7 +27,7 @@ function Article({data}) {
 				to={"/articleitem"}
 				onClick={()=>setcurrentArticle(data)}
 			>
-				READ MORE
+				Read More
 			</Link>
 		</div>
 	);

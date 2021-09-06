@@ -7,10 +7,10 @@ import {
 	Popper,
 } from "@material-ui/core";
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./style/style.css";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
-import {  Search } from "@material-ui/icons";
+import { Search } from "@material-ui/icons";
 import { useState } from "react";
 
 const NavBar = () => {
@@ -46,7 +46,7 @@ const NavBar = () => {
 						</Typography>
 					</NavLink>
 					<div className="input-group">
-						<div style={{width: "-webkit-fill-available"}}>
+						<div style={{ width: "-webkit-fill-available" }}>
 							<InputBase
 								type="search"
 								placeholder="Search"
@@ -73,11 +73,9 @@ const NavBar = () => {
 				</div>
 
 				<div className="afterloginnav">
-						<NavLink activeClassName="activeLink" to="/" className="navs" exact>
-							<Typography>
-								Home
-							</Typography>
-						</NavLink>
+					<NavLink activeClassName="activeLink" to="/" className="navs" exact>
+						<Typography>Home</Typography>
+					</NavLink>
 					<div className="links">
 						{/*<NavLink activeClassName="activeLink" to="/" className="navs" exact>
 							<Typography>
@@ -90,9 +88,7 @@ const NavBar = () => {
 							className="navs"
 							exact
 						>
-							<Typography>
-								About
-							</Typography>
+							<Typography>About</Typography>
 						</NavLink>
 						<NavLink
 							className="navs"
@@ -100,33 +96,44 @@ const NavBar = () => {
 							to="/blog"
 							exact
 						>
-							<Typography>
-								Blog
-							</Typography>
+							<Typography>Blog</Typography>
 						</NavLink>
 					</div>
-						<div className="avatar">
-							<Avatar style={{ fontSize: "1vw" }} onClick={handleClick} />
-							<Popper
-								id="simple-menu"
-								anchorEl={anchorEl}
-								open={open}
-								onClose={handleClose}
-								style={{backgroundColor:"#f8f9fe", zIndex:"1000"}}
-							>
-								<MenuItem onClick={handleClose}>Profile</MenuItem>
-								<MenuItem onClick={handleClose}>My account</MenuItem>
-								<MenuItem
-									onClick={() => {
-										handleClose();
-										setLogin({ type: LOGIN_ACTIONS.LOGOUT });
-									}}
+					<div className="avatar">
+						<Avatar style={{ fontSize: "1vw" }} onClick={handleClick} />
+						<Popper
+							id="simple-menu"
+							anchorEl={anchorEl}
+							open={open}
+							onClose={handleClose}
+							style={{ backgroundColor: "#f8f9fe", zIndex: "1000" }}
+						>
+							<MenuItem onClick={handleClose}>
+								<Link
+									to="/profile"
+									style={{ textDecoration: "none", color: "#616d8b" }}
 								>
-									Logout
-								</MenuItem>
-							</Popper>
-						</div>
-					
+									Profile
+								</Link>
+							</MenuItem>
+							<MenuItem onClick={handleClose}>
+								<Link
+									to="/settings"
+									style={{ textDecoration: "none", color: "#616d8b" }}
+								>
+									My account
+								</Link>
+							</MenuItem>
+							<MenuItem
+								onClick={() => {
+									handleClose();
+									setLogin({ type: LOGIN_ACTIONS.LOGOUT });
+								}}
+							>
+								Logout
+							</MenuItem>
+						</Popper>
+					</div>
 				</div>
 			</div>
 		</React.Fragment>

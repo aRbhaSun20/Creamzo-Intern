@@ -9,10 +9,8 @@ import download from "./assets/326639_download_file_icon.png";
 import views from "./assets/1954555_eye_look_view_views_watch_icon.png";
 import share from "./assets/2561282_share_icon.png";
 import heart from "./assets/2246820_heart_like_notification_icon.png";
-import { useLocation } from "react-router-dom";
+
 const BoardDisplay = () => {
-	const location = useLocation();
-	const {i} = location.state
 	return (
 		<React.Fragment>
 			<div style={{ backgroundColor: "rgb(230, 233, 233)", padding: "30px" }}>
@@ -21,18 +19,15 @@ const BoardDisplay = () => {
 						<div className={style.leftContainerDisplay}>
 							<img
 								style={{ width: "100%", height: "100%", borderRadius: "15px" }}
-								src={i}
 								alt="addedImage"
 							/>
 						</div>
 						<div className={style.rightContinerDisplay}>
 							<h3 style={{ color: "black" }}>
-								{" "}
-								Title: <small>title here</small>{" "}
+								Title: <small>title here</small>
 							</h3>
 							<h3 style={{ color: "black" }}>
-								{" "}
-								Description: <br />{" "}
+								Description: <br />
 								<small>
 									Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 									Quasi reprehenderit tempora expedita praesentium fugiat?
@@ -42,7 +37,7 @@ const BoardDisplay = () => {
 								</small>
 							</h3>
 							<h3 style={{ color: "black" }}>
-								Author: <small>Author name</small>{" "}
+								Author: <small>Author name</small>
 							</h3>
 							<div style={{ display: "flex" }}>
 								<img
@@ -68,7 +63,7 @@ const BoardDisplay = () => {
 								/>
 								<h3>: 0</h3>
 							</div>
-							
+
 							<div style={{ display: "flex" }}>
 								<img
 									style={{ width: "25px", height: "25px" }}
@@ -77,7 +72,7 @@ const BoardDisplay = () => {
 								/>
 								<h3>: 0</h3>
 							</div>
-							
+
 							<h3>Find Creamzo on</h3>
 							<div
 								style={{ height: "30px", display: "flex", paddingTop: "0px" }}

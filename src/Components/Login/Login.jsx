@@ -1,10 +1,9 @@
-
 import React, { useContext, useState } from "react";
 
 import { Button, TextField } from "@material-ui/core";
 
 import "./style/style.css";
-import fb from "./assets/fb.png";
+// import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
@@ -29,7 +28,7 @@ const Login = ({ setopen, setSignopen }) => {
 							color: "black",
 							fontSize: "1.5rem",
 							fontWeight: "bold",
-							textAlign:"center",
+							textAlign: "center",
 						}}
 					>
 						Welcome Back to Creamzo!
@@ -85,12 +84,13 @@ const Login = ({ setopen, setSignopen }) => {
 							/>
 						</div>
 					</div>
-					<div className="login-forget" 
+					<div
+						className="login-forget"
 						style={{
 							display: "flex",
-    						justifyContent: "center",
-    						alignItems: "center",
-    						flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							flexDirection: "column",
 						}}
 					>
 						<Button
@@ -106,7 +106,7 @@ const Login = ({ setopen, setSignopen }) => {
 								// fontSize: ".8vw",
 								// color: "white",
 								// width: "8rem",
-								textTransform:"capitalize",
+								textTransform: "capitalize",
 							}}
 						>
 							Log In
@@ -135,8 +135,10 @@ const Login = ({ setopen, setSignopen }) => {
 									color: "black",
 									borderRadius: ".5rem",
 									fontSize: "1em",
-									textTransform:"capitalize",
-									padding:"0px",
+									textTransform: "capitalize",
+									padding: "0px",
+									width: "10rem",
+									height: "3rem",
 								}}
 							>
 								<img
@@ -151,7 +153,7 @@ const Login = ({ setopen, setSignopen }) => {
 								/>
 								Google
 							</Button>
-							<Button
+							{/* <Button
 								variant="contained"
 								color="primary"
 								onClick={(e) => {
@@ -178,7 +180,7 @@ const Login = ({ setopen, setSignopen }) => {
 									}}
 								/>
 								Facebook
-							</Button>
+							</Button> */}
 						</div>
 						<div
 							className="acceptance"
@@ -190,7 +192,7 @@ const Login = ({ setopen, setSignopen }) => {
 								paddingTop: ".7rem",
 							}}
 						>
-							<div style={{ textAlign: "center",fontSize:".8rem" }}>
+							<div style={{ textAlign: "center", fontSize: ".8rem" }}>
 								By continuing, you agree to Creamzo's
 								<Link
 									style={{ color: "black", paddingLeft: ".5em" }}
@@ -212,18 +214,18 @@ const Login = ({ setopen, setSignopen }) => {
 					</div>
 				</div>
 				<div className="dont-have">
-						Don't have an account?
-						<Link>
-							<span
-								onClick={() => {
-									setopen(false);
-									setSignopen(true);
-								}}
-							>
-								Signup
-							</span>
-						</Link>
-					</div>
+					Don't have an account?
+					<Link>
+						<span
+							onClick={() => {
+								setopen(false);
+								setSignopen(true);
+							}}
+						>
+							Signup
+						</span>
+					</Link>
+				</div>
 			</div>
 		</React.Fragment>
 	);

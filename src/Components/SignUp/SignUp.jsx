@@ -3,7 +3,7 @@ import React, { useState, useContext } from "react";
 import { Button, TextField } from "@material-ui/core";
 
 import "./style/style.css";
-import fb from "./assets/fb.png";
+// import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
@@ -171,7 +171,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								// fontSize: ".8vw",
 								// color: "white",
 								// width: "8vw",
-								textTransform:"capitalize",
+								textTransform: "capitalize",
 							}}
 						>
 							Sign Up
@@ -200,8 +200,10 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 									color: "black",
 									borderRadius: ".5rem",
 									fontSize: "1em",
-									textTransform:"capitalize",
-									padding:"0px",
+									textTransform: "capitalize",
+									padding: "0px",
+									width: "10rem",
+									height: "3rem",
 								}}
 							>
 								<img
@@ -216,7 +218,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								/>
 								Google
 							</Button>
-							<Button
+							{/* <Button
 								variant="contained"
 								color="primary"
 								onClick={(e) => {
@@ -243,7 +245,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 									}}
 								/>
 								FaceBook
-							</Button>
+							</Button> */}
 						</div>
 						<div
 							className="acceptance"
@@ -253,7 +255,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								alignItems: "center",
 								width: "90%",
 								// paddingTop: "1rem",
-								fontSize:".8em",
+								fontSize: ".8em",
 							}}
 						>
 							<div style={{ textAlign: "center" }}>

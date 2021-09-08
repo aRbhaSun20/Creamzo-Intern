@@ -1,5 +1,5 @@
 .BoardDisplayContainer{
-     width: 50vw;
+     width: 55vw;
     margin: 5vh auto;
     background-color: white;
     border-radius: 20px;
@@ -9,19 +9,44 @@
 .ContentContainerDisplay{
     display: flex;
     justify-content: space-between;
-    padding: 40px;
+    padding: 35px;
     column-gap: 2vw;    
     height: 100%;
 }
 .leftContainerDisplay{
-    width: 50%;
+    /*width: 50%;*/
+    width: 45%;
 }
 
 .rightContinerDisplay{
-    padding: 30px;
- width: 50%;
+    /*padding: 30px;*/
+    /*padding-top: 30px;*/
+ /*width: 50%;*/
+    width: 55%;
     height: 100%;
-    row-gap: 3vh;
+    /*row-gap: 3vh;*/
+    row-gap: 2vh;
     display: flex;
     flex-direction: column;
+}
+@media screen and (max-width: 750px){
+    .ContentContainerDisplay{
+        padding: 25px;
+    }
+    .BoardDisplayContainer{
+        width: 75%;
+    }
+}
+@media screen and (max-width: 500px){
+    .ContentContainerDisplay{
+        padding: 10px;
+    }
+    .BoardDisplayContainer{
+        width: 96%;
+    }
+}
+@media screen and (max-width: 500px){
+    .BoardDisplayContainer{
+        width: 98%;
+    }
 }

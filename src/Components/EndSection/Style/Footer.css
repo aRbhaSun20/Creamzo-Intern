@@ -1,6 +1,8 @@
 .footer_container {
   width: 100%;
-  padding: 5px;
+  /* padding: 5px; */
+  height: 5vh;
+  padding: 1px;
   background-color: #c21336;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,6 +78,7 @@
     justify-content: space-evenly;
   }
   .footer_container{
+    height: fit-content;
     flex-direction: column;
   }
   .footer_container .footer_inner{

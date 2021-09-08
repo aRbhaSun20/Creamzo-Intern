@@ -9,33 +9,43 @@
 .ContentContainer{
     display: flex;
     justify-content: space-between;
-    padding: 50px;
+    /*padding: 50px;*/
+    padding: 40px;
     column-gap: 2vw;    
 
 }
 .leftContainer{
     width: 50%;
-    padding: 15px;
+    padding: 10px;
     color: black;
 }
 .dots img{
     width: 25px;
-    height: 25px;
+    /*height: 25px;*/
+    height: 35px;
     /* padding: 20px; */
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
 }
 .picture{
-width: 95%;
+/*width: 95%;*/
+width: 100%;
+display: flex;
+/*align-items: center;*/
+flex-direction: column;
+justify-content: center;
 height: 60vh;
-border: 3px solid rgb(206, 203, 203) ;
+/*border: 3px solid rgb(206, 203, 203) ;*/
 text-align: center;
 background-color: rgb(230, 233, 233);
 border-radius: 15px;
+align-items: center;
+/*border-style: dashed;*/
 }
 
 .rightContiner{
-padding: 15PX;
+/*padding: 15PX;*/
+padding: 10px;
 width: 50%;
 }
 .BoardCreationForm{
@@ -67,4 +77,44 @@ row-gap: 3vh;
 }
 #boardSubmit:hover{
    background-color: rgb(194, 10, 10);
+}
+
+.fileupload{
+    font-size: 1.5vw;
+}
+.dotbox{
+    position: absolute;
+    left: 30%;
+    background-color: whitesmoke;
+    padding: 3px;
+    width: 10%;
+    min-width: 82px;
+}
+
+@media screen and (max-width: 800px){
+    .BoardCreationContainer{
+        width: 80%;
+    }
+    .dotbox{
+        left: 25%;
+    }
+}
+@media screen and (max-width: 650px){
+    .BoardCreationContainer{
+        width: 90%;
+    }
+    .ContentContainer{
+        padding: 20px;
+        column-gap: 1vw;
+    }
+}
+@media screen and (max-width: 450px){
+    .BoardCreationContainer{
+        width: 95%;
+    }
+    .ContentContainer{
+        padding: 5px;
+        margin: auto;
+        column-gap: 0vw;
+    }
 }

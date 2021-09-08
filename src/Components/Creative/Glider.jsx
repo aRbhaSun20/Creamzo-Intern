@@ -16,7 +16,7 @@ const Glider = () => {
 		<React.Fragment>
 			<div
 				style={{
-					height: "100vh",
+					// height: "100vh",
 					justifyContent: "flex-start",
 					alignItems: "center",
 					width: "100vw",

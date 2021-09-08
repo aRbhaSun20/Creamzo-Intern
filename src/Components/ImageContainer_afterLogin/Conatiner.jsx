@@ -118,7 +118,7 @@ const Conatiner = (props) => {
 								textTransform: "capitalize",
 								// fontSize: ".7rem",
 							}}
-							onClick={() => console.log("hi")}
+							onClick={() => history.push("/boardDisplay")}
 						>
 							<ArrowUpward
 								style={{

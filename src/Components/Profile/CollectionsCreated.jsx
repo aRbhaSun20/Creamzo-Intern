@@ -6,7 +6,7 @@ const CollectionsCreated = () => {
         <div className={style.linksContainer} >
             <Link className={style.link} exact to="/created">Liked</Link>
            <Link className={style.link} exact to="/collections" >Collections</Link>
-            <Link className={style.link} exact to="/created">Created</Link>
+            <Link className={style.link} exact to="/created">Posts</Link>
 
         </div>
     )

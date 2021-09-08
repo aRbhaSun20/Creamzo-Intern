@@ -25,7 +25,7 @@ export const reducer = (pinDetails, actions) => {
 		case PIN_ACTIONS.LIKE:
 			return pinDetails;
 		case PIN_ACTIONS.DISLIKE:
-            axiosSendRequest(AXIOS_ACTIONS.PUT,)
+			axiosSendRequest(AXIOS_ACTIONS.PUT);
 			return pinDetails;
 		case PIN_ACTIONS.ADD_COLLECTION:
 			return pinDetails;
@@ -44,5 +44,9 @@ export const PinsProvider = ({ children }) => {
 	const { data: PinsData } = useQuery("All Pins", async () =>
 		axiosSendRequest(AXIOS_ACTIONS.GET, "allPins", null)
 	);
-	return <PinsContext.Provider value={PinsData}>{children}</PinsContext.Provider>;
+	return (
+		<PinsContext.Provider value={PinsData?.data?.result}>
+			{children}
+		</PinsContext.Provider>
+	);
 };

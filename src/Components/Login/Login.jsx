@@ -8,6 +8,7 @@ import google from "./assets/google.png";
 
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
+import { GoogleLogin } from "react-google-login";
 
 const Login = ({ setopen, setSignopen }) => {
 	const [mail, setMail] = useState("");
@@ -16,6 +17,9 @@ const Login = ({ setopen, setSignopen }) => {
 	// eslint-disable-next-line
 	const [password, setPassword] = useState("");
 
+	const responseGoogle = (response) => {
+		console.log(response);
+	};
 	return (
 		<React.Fragment>
 			<div className="login-card">
@@ -123,36 +127,45 @@ const Login = ({ setopen, setSignopen }) => {
 								width: "100%",
 							}}
 						>
-							<Button
-								variant="contained"
-								color="primary"
-								onClick={(e) => {
-									e.preventDefault();
-									console.log("google");
-								}}
-								style={{
-									backgroundColor: "white",
-									color: "black",
-									borderRadius: ".5rem",
-									fontSize: "1em",
-									textTransform: "capitalize",
-									padding: "0px",
-									width: "10rem",
-									height: "3rem",
-								}}
-							>
-								<img
-									src={google}
-									alt="google"
-									style={{
-										width: "1.3em",
-										height: "3vh",
-										position: "relative",
-										left: "-.5rem",
-									}}
-								/>
-								Google
-							</Button>
+							{" "}
+							<GoogleLogin
+								clientId="427485028588-om8pntnhnqnbrpot8olei5dtvmsjatng.apps.googleusercontent.com"
+								buttonText="Login"
+								onSuccess={responseGoogle}
+								onFailure={responseGoogle}
+								cookiePolicy={"single_host_origin"}
+								isSignedIn={true}
+								render={(renderProps) => (
+									<Button
+										variant="contained"
+										color="primary"
+										onClick={renderProps.onClick}
+										style={{
+											backgroundColor: "white",
+											color: "black",
+											borderRadius: ".5rem",
+											fontSize: "1em",
+											textTransform: "capitalize",
+											padding: "0px",
+											width: "10rem",
+											height: "3rem",
+										}}
+										disabled={renderProps.disabled}
+									>
+										<img
+											src={google}
+											alt="google"
+											style={{
+												width: "1.3em",
+												height: "3vh",
+												position: "relative",
+												left: "-.5rem",
+											}}
+										/>
+										Google
+									</Button>
+								)}
+							/>
 							{/* <Button
 								variant="contained"
 								color="primary"

@@ -129,7 +129,7 @@ const Login = ({ setopen, setSignopen }) => {
 						>
 							{" "}
 							<GoogleLogin
-								clientId="427485028588-om8pntnhnqnbrpot8olei5dtvmsjatng.apps.googleusercontent.com"
+								clientId="pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
 								buttonText="Login"
 								onSuccess={responseGoogle}
 								onFailure={responseGoogle}

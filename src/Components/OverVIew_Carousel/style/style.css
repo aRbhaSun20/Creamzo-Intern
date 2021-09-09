@@ -1,4 +1,4 @@
-.OverviewCarousalContainer{
+/*.OverviewCarousalContainer{
      width: 100%;
       height: 100vh;
       overflow: hidden;
@@ -9,7 +9,7 @@
         width: 100%;
         height: 100%;
         position: absolute;
-    display: flex;
+        display: flex;
         column-gap: 10px;
 }
 .corousalImage{
@@ -18,5 +18,79 @@
 
 @keyframes mymove {
   0%   {left: 0vw;}
-  100% {left: -980vw;}
+  90% {left: -880vw;}
+  100% {left: 0vw;}
+}*/
+
+.wrapper{
+  /*position: relative;*/
+  display: flex;
+  /*width: 320px;*/
+  /*margin: 150px auto;*/
+  margin: 25px 0px;
+  overflow-x: hidden;
+  perspective: 1000px;
 }
+.img-area{
+  /*position: absolute;*/
+  display: flex;
+  /*width: 100%;*/
+  /*height: 100%;*/
+  transform-style: preserve-3d;
+  /*transform: rotateY(-360deg) translateZ(-300px);*/
+  /*animation: animate 40s steps(10000, end) infinite;*/
+  animation: animate 95s steps(10000, start) 100;
+}
+.single-img{
+  /*position: absolute;*/
+  top: 10px;
+  left: 10px;
+  /*width: 300px;
+  height: 200px;*/
+  width: 500px;
+  height: 500px;
+}
+.single-img img{
+  /*width: 300px;*/
+  /*height: 200px;*/
+  width: 500px;
+  height: 500px;
+  border: 5px solid #fff;
+}
+
+.single-img .img-one{
+  /*transform: rotateY(0deg) translateZ(300px);*/
+}
+.single-img .img-two{
+  /*transform: rotateY(60deg) translateZ(300px);*/
+}
+.single-img .img-three{
+  /*transform: rotateY(120deg) translateZ(300px);*/
+}
+.single-img .img-four{
+  /*transform: rotateY(180deg) translateZ(300px);*/
+}
+.single-img .img-five{
+  /*transform: rotateY(240deg) translateZ(300px);*/
+}
+.single-img .img-six{
+  /*transform: rotateY(300deg) translateZ(300px);*/
+}
+
+@keyframes animate{
+  from{
+    /*transform: rotateY(-360deg);*/
+    /*transform: rotateX(-360deg);*/
+    /*transform: translateX(1000px);*/
+    transform: translateX(-50px);
+  }
+  to{
+    /*transform: rotateX(0deg);*/
+    transform: translateX(-4500px);
+  }
+}
+
+
+
+
+

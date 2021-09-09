@@ -1,51 +1,48 @@
 import { Typography, Button } from "@material-ui/core";
 import React from "react";
-import img from "../About/assets/img/art.jpg";
-import img1 from "../About/assets/img/diy.jpg";
-import img2 from "../About/assets/img/dog.jpg";
-import img3 from "../About/assets/img/quotes.jpg";
+
+import "./anyone.css";
+// import img from "../About/assets/img/art.jpg";
+// import img1 from "../About/assets/img/diy.jpg";
+// import img2 from "../About/assets/img/dog.jpg";
+// import img3 from "../About/assets/img/quotes.jpg";
+import img1 from "../About/assets/img/leftwinganyone.jpg";
+import img2 from "../About/assets/img/rightwinganyone.jpg";
+
 const Anyone = () => {
-  const images = [img, img1, img2, img3, img3];
+  // const images = [img, img1, img2, img3, img3];
   return (
 		<React.Fragment>
 			<div
-				className="container"
+				// className="container"
 				style={{
-					width: "100vw",
-					height: "80vh",
+					// width: "100vw",
+					width:"100%",
+					height: "75vh",
+					// height:"65vh",
+					top:"50px",
 					display: "flex",
-					justifyContent: "start",
+					// justifyContent: "start",
+					justifyContent:"center",
 					alignItems: "flex-start",
+
 				}}
 			>
 				<div
-					className="text"
-					style={{
-						width: "100%",
-						height: "32vh",
-						display: "grid",
-						justifyContent: "space-evenly",
-						alignItems: "center",
-					}}
-				>
+					className="text">
 					<Typography
 						variant="h4"
 						style={{
 							fontWeight: "bolder",
-							fontSize: "1.8vw",
+							// fontSize: "2.8vw",
+							fontSize:"2rem",
 							textAlign: "center",
 						}}
 					>
 						Anyone can join the community
 					</Typography>
 					<Typography
-						style={{
-							textAlign: "center",
-							fontSize: ".8vw",
-							width: "50%",
-							margin: "auto",
-						}}
-					>
+						className="descriptionany">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
 						perferendis ipsam blanditiis mollitia esse. Quod error voluptatibus
 						facere aperiam eligendi cum saepe iure aut. Expedita soluta cum
@@ -56,17 +53,29 @@ const Anyone = () => {
 						color="primary"
 						style={{
 							backgroundColor: "black",
-							width: "12vw",
-							height: "5vh",
+							// width: "12vw",
+							width:"18vw",
+							// height: "5vh",
+							height:"8vh",
 							margin: "auto",
-							fontSize: ".8vw",
+							// fontSize: "1.8vw",
+							fontSize:"80%",
+							minWidth:"85px",
+							maxWidth:"180px",
 						}}
 					>
 						Join the Community
 					</Button>
 				</div>
-
-				<div
+				<div>
+					<div className="backgroundimg" style={{left:"0"}}>
+						<img src={img2} alt="leftwing" style={{width:"100%",height:"65vh"}}/>
+					</div>
+					<div className="backgroundimg" style={{right:"0"}}>
+						<img src={img1} alt="rightwing" style={{width:"100%",height:"65vh"}}/>
+					</div>
+				</div>
+				{/*<div
 					className="left"
 					style={{
 						width: "100vw",
@@ -190,8 +199,8 @@ const Anyone = () => {
 							/>
 						</div>
 					</div>
-				</div>
-				<div
+				</div>*/}
+				{/*<div
 					className="right"
 					style={{
 						width: "100vw",
@@ -312,8 +321,8 @@ const Anyone = () => {
 								}}
 							/>
 						</div>
-					</div>
-				</div>
+					</div>*/}
+				{/*</div>*/}
 			</div>
 		</React.Fragment>
 	);

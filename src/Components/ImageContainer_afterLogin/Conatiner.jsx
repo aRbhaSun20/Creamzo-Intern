@@ -7,18 +7,30 @@ import {
 	FavoriteBorder,
 	Share,
 } from "@material-ui/icons";
-import {  useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./style/style.css";
+import { PIN_ACTIONS, useCurrentPin, usePin } from "../../Context/PinsContext";
+import { useSnackbar } from "notistack";
 
-const Conatiner = (props) => {
-	let image = props.image;
-	let height = props.height;
+const Conatiner = ({ data, height }) => {
 	const [opacity, setOpacity] = useState(0);
+	const [errorHandle, setErrorhandle] = useState(false);
+	// eslint-disable-next-line
+	const [pinCurrData, setPinCurrData] = useCurrentPin();
+	// eslint-disable-next-line
+	const [pinsData, refetch] = usePin();
+
+	const { enqueueSnackbar } = useSnackbar();
+
 	let history = useHistory();
 	return (
 		<div
 			className="imglogin"
-			style={{ position: "relative", height: { height } }}
+			style={{
+				position: "relative",
+				height: { height },
+				display: errorHandle ? "none" : null,
+			}}
 			onMouseEnter={(e) => {
 				e.preventDefault();
 				setOpacity(1);
@@ -29,12 +41,16 @@ const Conatiner = (props) => {
 			}}
 		>
 			<img
-				src={image}
+				src={data?.imgUrl}
 				alt=""
 				className="imgCont"
 				height={height}
 				style={{ borderRadius: "1em" }}
-				onClick={() => history.push("/boardDisplay")}
+				onError={() => setErrorhandle(true)}
+				onClick={() => {
+					setPinCurrData({ type: PIN_ACTIONS.PINS_CLICK, payload: data });
+					history.push("/boardDisplay");
+				}}
 			/>
 
 			{opacity ? (
@@ -60,10 +76,12 @@ const Conatiner = (props) => {
 							variant="contained"
 							style={{
 								borderRadius: "1em",
-								// position: "relative",
-								// left: "3.5em",
-								// top: ".5em",
 								outline: "none",
+							}}
+							onClick={() => {
+								enqueueSnackbar("Favourite Count Increased", {
+									variant: "success",
+								});
 							}}
 						>
 							<FavoriteBorder
@@ -78,6 +96,11 @@ const Conatiner = (props) => {
 							style={{
 								borderRadius: "1em",
 								outline: "none",
+							}}
+							onClick={() => {
+								enqueueSnackbar("Added to Collection", {
+									variant: "success",
+								});
 							}}
 						>
 							<AddCircleOutline
@@ -118,7 +141,7 @@ const Conatiner = (props) => {
 								textTransform: "capitalize",
 								// fontSize: ".7rem",
 							}}
-							onClick={() => history.push("/boardDisplay")}
+							// onClick={() => {}}
 						>
 							<ArrowUpward
 								style={{
@@ -138,7 +161,14 @@ const Conatiner = (props) => {
 								width: "4rem",
 							}}
 						>
-							<IconButton style={{ outline: "none", padding: "4px" }}>
+							<IconButton
+								onClick={() => {
+									enqueueSnackbar("Download Image Initialized", {
+										variant: "success",
+									});
+								}}
+								style={{ outline: "none", padding: "4px" }}
+							>
 								<GetAppIcon
 									style={{
 										color: "white",
@@ -148,7 +178,14 @@ const Conatiner = (props) => {
 									}}
 								/>
 							</IconButton>
-							<IconButton style={{ outline: "none", padding: "4px" }}>
+							<IconButton
+								onClick={() => {
+									enqueueSnackbar("Sharing Image Initialized", {
+										variant: "success",
+									});
+								}}
+								style={{ outline: "none", padding: "4px" }}
+							>
 								<Share
 									style={{
 										color: "white",

@@ -9,6 +9,8 @@ import google from "./assets/google.png";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
+// eslint-disable-next-line
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 
 const Login = ({ setopen, setSignopen }) => {
 	const [mail, setMail] = useState("");
@@ -19,6 +21,18 @@ const Login = ({ setopen, setSignopen }) => {
 
 	const responseGoogle = (response) => {
 		console.log(response);
+	};
+
+	const handleLogin = () => {
+		setLogin({ type: LOGIN_ACTIONS.LOGIN });
+		
+		// axiosSendRequest(AXIOS_ACTIONS.POST, "login", {
+		// 	email: mail,
+		// 	passwd: password,
+		// }).then((data) => {
+		// 	console.log(data);
+		// });
+		setopen(false);
 	};
 	return (
 		<React.Fragment>
@@ -72,10 +86,10 @@ const Login = ({ setopen, setSignopen }) => {
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
+								value={password}
 								onChange={(e) => {
 									e.preventDefault();
-									setMail(e.target.value);
+									setPassword(e.target.value);
 								}}
 								type="password"
 								style={{
@@ -102,8 +116,7 @@ const Login = ({ setopen, setSignopen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								setLogin({ type: LOGIN_ACTIONS.LOGIN });
-								setopen(false);
+								handleLogin();
 							}}
 							style={{
 								// backgroundColor: "red",
@@ -129,7 +142,7 @@ const Login = ({ setopen, setSignopen }) => {
 						>
 							{" "}
 							<GoogleLogin
-								clientId="pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
+								clientId="171125153728-pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
 								buttonText="Login"
 								onSuccess={responseGoogle}
 								onFailure={responseGoogle}

@@ -24,8 +24,8 @@ export const BlogsProvider = ({ children }) => {
 	// );
 
 	return (
-		<AllBlogsContext.Provider value={allBlogs?.data?.data}>
-			<TrendingBlogsContext.Provider value={trendingBlogs?.data?.data}>
+		<AllBlogsContext.Provider value={allBlogs?.data}>
+			<TrendingBlogsContext.Provider value={trendingBlogs?.data}>
 				{/* <ParticularBlogsContext> */}
 				{children}
 				{/* </ParticularBlogsContext> */}

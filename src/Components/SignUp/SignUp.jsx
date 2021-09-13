@@ -9,8 +9,17 @@ import google from "./assets/google.png";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
+// eslint-disable-next-line
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 const SignUp = ({ setopen, setLoginOpen }) => {
-	const [mail, setMail] = useState("");
+	const [signUpData, setSignUpData] = useState({
+		firstName: "",
+		lastName: "",
+		mail: "",
+		age: 0,
+		password: "",
+		confPass: "",
+	});
 	// eslint-disable-next-line
 	const [login, setLogin] = useContext(LoginContext);
 	// eslint-disable-next-line
@@ -20,6 +29,18 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 
 	const responseGoogle = (response) => {
 		console.log(response);
+	};
+	const handleChange = (e) => {
+		setSignUpData((state) => ({ ...state, [e.target.name]: e.target.value }));
+	};
+
+	const handleSIgnUp = () => {
+		// axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", signUpData).then(
+		// 	(data) => {
+		setLogin({ type: LOGIN_ACTIONS.LOGIN });
+		setopen(false);
+		// 	}
+		// );
 	};
 
 	return (
@@ -54,11 +75,8 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 					<div className="inputs">
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.firstName}
+								onChange={handleChange}
 								type="text"
 								style={{
 									width: "90%",
@@ -66,17 +84,15 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 									height: "3vh",
 									outline: "none",
 								}}
+								name="firstName"
 								variant="outlined"
 								label="First Name"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.lastName}
+								onChange={handleChange}
 								type="text"
 								style={{
 									width: "90%",
@@ -84,17 +100,15 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 									height: "3vh",
 									outline: "none",
 								}}
+								name="lastName"
 								variant="outlined"
 								label="Last Name"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.mail}
+								onChange={handleChange}
 								type="text"
 								style={{
 									width: "90%",
@@ -104,16 +118,14 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								variant="outlined"
 								label="Email"
+								name="mail"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
-								type="text"
+								value={signUpData.age}
+								onChange={handleChange}
+								type="number"
 								style={{
 									width: "90%",
 									fontSize: ".5vw",
@@ -122,15 +134,13 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								variant="outlined"
 								label="Age"
+								name="age"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.password}
+								onChange={handleChange}
 								type="password"
 								style={{
 									width: "90%",
@@ -140,15 +150,13 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								}}
 								variant="outlined"
 								label="Password"
+								name="password"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.confPass}
+								onChange={handleChange}
 								type="password"
 								style={{
 									width: "90%",
@@ -156,8 +164,12 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 									height: "3vh",
 									outline: "none",
 								}}
+								error={
+									signUpData.password === signUpData.confPass ? false : true
+								}
 								variant="outlined"
 								label="Confirm Password"
+								name="confPass"
 							/>
 						</div>
 					</div>
@@ -167,14 +179,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								setLogin({ type: LOGIN_ACTIONS.LOGIN });
-								setopen(false);
+								handleSIgnUp();
 							}}
 							style={{
-								// backgroundColor: "red",
-								// fontSize: ".8vw",
-								// color: "white",
-								// width: "8vw",
 								textTransform: "capitalize",
 							}}
 						>
@@ -193,7 +200,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							}}
 						>
 							<GoogleLogin
-								clientId="pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
+								clientId="171125153728-pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
 								buttonText="Login"
 								onSuccess={responseGoogle}
 								onFailure={responseGoogle}

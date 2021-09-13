@@ -4,6 +4,7 @@ import { BlogsProvider } from "./BlogsContext";
 import { PinsProvider } from "./PinsContext";
 
 export const LoginContext = createContext();
+// export const LoginDataContext = createContext()
 
 export const LOGIN_ACTIONS = {
 	LOGIN: "LOGIN",
@@ -23,6 +24,9 @@ const reducer = (login, action) => {
 
 export const Login = ({ children }) => {
 	const [login, setLogin] = useReducer(reducer, false);
+	// const [loginData,setLoginData] = useState({
+
+	// })
 	return (
 		<LoginContext.Provider value={[login, setLogin]}>
 			<BlogsProvider>

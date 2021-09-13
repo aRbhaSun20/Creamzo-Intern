@@ -44,6 +44,7 @@ const HomeAfter = () => {
 				// maxHeight: `${limit * 9}vh`,
 				// maxWidth: "80vw",
 				paddingTop: "2em",
+				height:"100vh"
 			}}
 		>
 			<div className="column1">
@@ -52,7 +53,7 @@ const HomeAfter = () => {
 						<Conatiner
 							data={image}
 							key={i}
-							height="100%"
+							height="70%"
 							// height={Math.random() * limit * Math.random() + 12}
 						/>
 					) : null
@@ -64,7 +65,7 @@ const HomeAfter = () => {
 						<Conatiner
 							data={image}
 							key={i}
-							height="100%"
+							height="70%"
 							// height={Math.random() * limit * Math.random() + 12}
 						/>
 					) : null
@@ -76,7 +77,7 @@ const HomeAfter = () => {
 						<Conatiner
 							data={image}
 							key={i}
-							height="100%"
+							height="70%"
 							// height={Math.random() * limit * Math.random() + 12}
 						/>
 					) : null
@@ -88,7 +89,7 @@ const HomeAfter = () => {
 						<Conatiner
 							data={image}
 							key={i}
-							height="100%"
+							height="70%"
 							// height={Math.random() * limit * Math.random() + 12}
 						/>
 					) : null
@@ -100,7 +101,7 @@ const HomeAfter = () => {
 						<Conatiner
 							data={image}
 							key={i}
-							height="100%"
+							height="70%"
 							// height={Math.random() * limit * Math.random() + 12}
 						/>
 					) : null

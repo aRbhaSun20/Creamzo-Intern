@@ -44,8 +44,7 @@ const Conatiner = ({ data, height }) => {
 				src={data?.imgUrl}
 				alt=""
 				className="imgCont"
-				height={height}
-				style={{ borderRadius: "1em" }}
+				style={{ borderRadius: "1em", height: height }}
 				onError={() => setErrorhandle(true)}
 				onClick={() => {
 					setPinCurrData({ type: PIN_ACTIONS.PINS_CLICK, payload: data });

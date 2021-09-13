@@ -1,5 +1,6 @@
 import { Button, IconButton } from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import React, { useState } from "react";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import {
@@ -25,7 +26,7 @@ const Conatiner = ({ data, height }) => {
 
 	let history = useHistory();
     
-	const [heartActive,setHeartActive] = useState('black')
+	const [heartActive,setHeartActive] = useState('red')
 
 	
 	return (
@@ -97,22 +98,39 @@ const Conatiner = ({ data, height }) => {
 								});
 							}}
 						>
+							{heartActive==='red'?
 							<FavoriteIcon
-								onClick={()=>{
-									if(heartActive=='black'){
-										setHeartActive('red')
-									}
-									else{
-										setHeartActive('black')
-									}
+							onClick={()=>{
+								if(heartActive=='black'){
+									setHeartActive('red')
 								}
+								else{
+									setHeartActive('black')
 								}
-								style={{
-									color: heartActive,
-									borderColor:'white',
-									fontSize: "1.5rem",
-								}}
-							/>
+							}
+							}
+							style={{
+								color: 'red',
+								borderColor:'white',
+								fontSize: "1.5rem",
+							}}
+						/> : <FavoriteBorderIcon
+						onClick={()=>{
+							if(heartActive=='black'){
+								setHeartActive('red')
+							}
+							else{
+								setHeartActive('black')
+							}
+						}
+						}
+						style={{
+							color:'red',
+							borderColor:'white',
+							fontSize: "1.5rem",
+						}}
+					/> }
+							
 						</IconButton>
 						<IconButton
 							variant="contained"

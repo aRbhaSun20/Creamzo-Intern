@@ -8,6 +8,9 @@ import google from "./assets/google.png";
 
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
+import { GoogleLogin } from "react-google-login";
+// eslint-disable-next-line
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 
 const Login = ({ setopen, setSignopen }) => {
 	const [mail, setMail] = useState("");
@@ -16,6 +19,21 @@ const Login = ({ setopen, setSignopen }) => {
 	// eslint-disable-next-line
 	const [password, setPassword] = useState("");
 
+	const responseGoogle = (response) => {
+		console.log(response);
+	};
+
+	const handleLogin = () => {
+		setLogin({ type: LOGIN_ACTIONS.LOGIN });
+		
+		// axiosSendRequest(AXIOS_ACTIONS.POST, "login", {
+		// 	email: mail,
+		// 	passwd: password,
+		// }).then((data) => {
+		// 	console.log(data);
+		// });
+		setopen(false);
+	};
 	return (
 		<React.Fragment>
 			<div className="login-card">
@@ -68,10 +86,10 @@ const Login = ({ setopen, setSignopen }) => {
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
+								value={password}
 								onChange={(e) => {
 									e.preventDefault();
-									setMail(e.target.value);
+									setPassword(e.target.value);
 								}}
 								type="password"
 								style={{
@@ -98,8 +116,7 @@ const Login = ({ setopen, setSignopen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								setLogin({ type: LOGIN_ACTIONS.LOGIN });
-								setopen(false);
+								handleLogin();
 							}}
 							style={{
 								// backgroundColor: "red",
@@ -123,36 +140,45 @@ const Login = ({ setopen, setSignopen }) => {
 								width: "100%",
 							}}
 						>
-							<Button
-								variant="contained"
-								color="primary"
-								onClick={(e) => {
-									e.preventDefault();
-									console.log("google");
-								}}
-								style={{
-									backgroundColor: "white",
-									color: "black",
-									borderRadius: ".5rem",
-									fontSize: "1em",
-									textTransform: "capitalize",
-									padding: "0px",
-									width: "10rem",
-									height: "3rem",
-								}}
-							>
-								<img
-									src={google}
-									alt="google"
-									style={{
-										width: "1.3em",
-										height: "3vh",
-										position: "relative",
-										left: "-.5rem",
-									}}
-								/>
-								Google
-							</Button>
+							{" "}
+							<GoogleLogin
+								clientId="171125153728-pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
+								buttonText="Login"
+								onSuccess={responseGoogle}
+								onFailure={responseGoogle}
+								cookiePolicy={"single_host_origin"}
+								isSignedIn={true}
+								render={(renderProps) => (
+									<Button
+										variant="contained"
+										color="primary"
+										onClick={renderProps.onClick}
+										style={{
+											backgroundColor: "white",
+											color: "black",
+											borderRadius: ".5rem",
+											fontSize: "1em",
+											textTransform: "capitalize",
+											padding: "0px",
+											width: "10rem",
+											height: "3rem",
+										}}
+										disabled={renderProps.disabled}
+									>
+										<img
+											src={google}
+											alt="google"
+											style={{
+												width: "1.3em",
+												height: "3vh",
+												position: "relative",
+												left: "-.5rem",
+											}}
+										/>
+										Google
+									</Button>
+								)}
+							/>
 							{/* <Button
 								variant="contained"
 								color="primary"

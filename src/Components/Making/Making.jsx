@@ -1,46 +1,29 @@
 import { Typography, Button } from "@material-ui/core";
 import React from "react";
-import img from "../About/assets/img/art.jpg";
-import img1 from "../About/assets/img/diy.jpg";
-import img2 from "../About/assets/img/dog.jpg";
-import img3 from "../About/assets/img/quotes.jpg";
+import "./making.css";
+// import img from "../About/assets/img/art.jpg";
+// import img1 from "../About/assets/img/diy.jpg";
+// import img2 from "../About/assets/img/dog.jpg";
+// import img3 from "../About/assets/img/quotes.jpg";
+import img from "../About/assets/img/Makeawesome.jpg";
+
 
 const Making = () => {
-  const images = [img, img1, img2, img3, img3];
+  // const images = [img, img1, img2, img3, img3];
 
   return (
     <React.Fragment>
       <div
-        className="conatiner"
-        style={{
-          width: "100%",
-          height: "90vh",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "1rem",
-        }}
-      >
-        <div
-          className="text"
-          style={{
-            width: "65%",
-            display: "felx",
-            flexDirection: "column",
-            height: "auto",
-            justifyContent: "space-evenly",
-            margin: "auto",
-            position: "relative",
-            left: "6rem",
-          }}
-        >
+        className="conatiner">
+        <div className="text">
           <Typography
             variant="h4"
             style={{
               paddingBottom: ".6rem",
               fontWeight: "bolder",
-              fontSize: "1.8vw",
+              // fontSize: "1.8vw",
+              fontSize:"2rem",
+              textAlign: "center",
             }}
           >
             Make something awesome
@@ -48,9 +31,9 @@ const Making = () => {
           <Typography
             variant="subtitle1"
             style={{
-              paddingBottom: "2rem",
-              textAlign: "justify",
-              fontSize: ".8vw",
+              // paddingBottom: "2rem",
+              textAlign: "center",
+              fontSize: "17px",
             }}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
@@ -62,17 +45,25 @@ const Making = () => {
             variant="contained"
             style={{
               backgroundColor: "black",
-              width: "12vw",
-              height: "5vh",
+              // width: "12vw",
+              width:"18vw",
+              // height: "5vh",
+              height:"8vh",
               margin: "auto",
-              fontSize: ".8vw",
+              // fontSize: ".8vw",
+              fontSize:"80%",
+              minWidth:"85px",
+              maxWidth:"180px",
             }}
             color="primary"
           >
             Join the Community
           </Button>
         </div>
-        <div
+        <div className="imagcontainer">
+          <img src={img} alt="Makeawesome" className="imagemake"/>
+        </div>
+        {/*<div
           className="img"
           style={{
             width: "75%",
@@ -186,7 +177,7 @@ const Making = () => {
               }}
             />
           </div>
-        </div>
+        </div>*/}
       </div>
     </React.Fragment>
   );

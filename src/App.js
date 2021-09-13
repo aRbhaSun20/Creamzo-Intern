@@ -5,6 +5,7 @@ import { Login } from "./Context/Login";
 import "bootstrap/js/dist/collapse";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { SnackbarProvider } from "notistack";
 
 const queryClient = new QueryClient();
 
@@ -14,10 +15,15 @@ const App = () => {
 	return (
 		<React.Fragment>
 			<QueryClientProvider client={queryClient}>
-				<Login>
-					<Routes login={login} setLogin={setLogin} />
-				</Login>
-				<ReactQueryDevtools initialIsOpen={false} />
+				<SnackbarProvider
+					anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+					maxSnack={3}
+				>
+					<Login>
+						<Routes login={login} setLogin={setLogin} />
+					</Login>
+					<ReactQueryDevtools initialIsOpen={false} />
+				</SnackbarProvider>
 			</QueryClientProvider>
 		</React.Fragment>
 	);

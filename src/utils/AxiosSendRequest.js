@@ -10,7 +10,7 @@ export const AXIOS_ACTIONS = {
 		"Content-Type": "application/json",
 	},
 	PUT: "put",
-	LOGIN: "LOGIN",
+	SIGNUP: "SIGNUP",
 	LOGOUT: "LOGOUT",
 	REGISTER: "REGISTER",
 };
@@ -50,10 +50,18 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			};
 			break;
 
-		case AXIOS_ACTIONS.LOGIN:
+		case AXIOS_ACTIONS.SIGNUP:
 			let formLogin = new FormData();
-			formLogin.append("email", sendData.email);
+			formLogin.append("email", sendData.mail);
 			formLogin.append("password", sendData.password);
+			formLogin.append("fname", sendData.firstName);
+			formLogin.append("lname", sendData.lastName);
+			formLogin.append("age", sendData.age);
+			// formLogin.append("creamzoId", "#456787");
+			// formLogin.append("aboutYou", "");
+			// formLogin.append("location", "Lahore");
+			// formLogin.append("gender", "male");
+
 			config = {
 				method: "post",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
@@ -87,6 +95,6 @@ export const axiosSendRequest = async (type, url, sendData) => {
 		default:
 			return null;
 	}
-	
-	return await axios(config).catch((e) => console.log(e));
+	const { data } = await axios(config).catch((e) => console.log(e));
+	return data;
 };

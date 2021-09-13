@@ -54,17 +54,17 @@ function About() {
 			>
 				<Tab
 					label="OverView"
-					style={{ outline: "none", fontSize: ".8vw" }}
+					style={{ outline: "none", fontSize: "12px" }}
 					{...a11yProps(0)}
 				></Tab>
 				<Tab
 					label="Team"
-					style={{ outline: "none", fontSize: ".8vw" }}
+					style={{ outline: "none", fontSize: "12px" }}
 					{...a11yProps(1)}
 				></Tab>
 				<Tab
 					label="Creative"
-					style={{ outline: "none", fontSize: ".8vw" }}
+					style={{ outline: "none", fontSize: "12px" }}
 					{...a11yProps(2)}
 				></Tab>
 			</Tabs>

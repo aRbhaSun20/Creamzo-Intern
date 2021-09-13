@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom";
 import "./style/style.css";
 import { PIN_ACTIONS, useCurrentPin, usePin } from "../../Context/PinsContext";
 import { useSnackbar } from "notistack";
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 
 const Conatiner = ({ data, height }) => {
 	const [opacity, setOpacity] = useState(0);
@@ -19,7 +20,6 @@ const Conatiner = ({ data, height }) => {
 	const [pinCurrData, setPinCurrData] = useCurrentPin();
 	// eslint-disable-next-line
 	const [pinsData, refetch] = usePin();
-
 	const { enqueueSnackbar } = useSnackbar();
 
 	let history = useHistory();
@@ -78,8 +78,17 @@ const Conatiner = ({ data, height }) => {
 								outline: "none",
 							}}
 							onClick={() => {
-								enqueueSnackbar("Favourite Count Increased", {
-									variant: "success",
+								console.log(`addDownloads/${data?._id}/%${data?.creamzoId}`);
+								axiosSendRequest(
+									AXIOS_ACTIONS.PUT,
+									`addDownloads/${data?._id}/${data?.creamzoId.split("#")[1]}`,
+									null
+								).then((data) => {
+									console.log(data);
+									refetch();
+									enqueueSnackbar("Favourite Count Increased", {
+										variant: "success",
+									});
 								});
 							}}
 						>
@@ -97,8 +106,15 @@ const Conatiner = ({ data, height }) => {
 								outline: "none",
 							}}
 							onClick={() => {
-								enqueueSnackbar("Added to Collection", {
-									variant: "success",
+								axiosSendRequest(AXIOS_ACTIONS.POST, `addCollection`, {
+									creamzoId: data?.creamzoId,
+									id: data?._id,
+								}).then((data) => {
+									refetch();
+									console.log(data);
+									enqueueSnackbar("Added to Collection", {
+										variant: "success",
+									});
 								});
 							}}
 						>
@@ -140,7 +156,6 @@ const Conatiner = ({ data, height }) => {
 								textTransform: "capitalize",
 								// fontSize: ".7rem",
 							}}
-							// onClick={() => {}}
 						>
 							<ArrowUpward
 								style={{
@@ -150,7 +165,7 @@ const Conatiner = ({ data, height }) => {
 									fontSize: "1rem",
 								}}
 							/>
-							Link
+							<a href={data.imgUrl}>Link</a>
 						</Button>
 						<div
 							style={{
@@ -162,8 +177,15 @@ const Conatiner = ({ data, height }) => {
 						>
 							<IconButton
 								onClick={() => {
-									enqueueSnackbar("Download Image Initialized", {
-										variant: "success",
+									axiosSendRequest(
+										AXIOS_ACTIONS.PUT,
+										`addDownloads/${data?._id}/${
+											data?.creamzoId.split("#")[1]
+										}`,
+										null
+									).then((data) => {
+										console.log(data);
+										refetch();
 									});
 								}}
 								style={{ outline: "none", padding: "4px" }}
@@ -179,8 +201,13 @@ const Conatiner = ({ data, height }) => {
 							</IconButton>
 							<IconButton
 								onClick={() => {
-									enqueueSnackbar("Sharing Image Initialized", {
-										variant: "success",
+									axiosSendRequest(
+										AXIOS_ACTIONS.PUT,
+										`addShares/${data?._id}/${data?.creamzoId.split("#")[1]}`,
+										null
+									).then((data) => {
+										console.log(data);
+										refetch();
 									});
 								}}
 								style={{ outline: "none", padding: "4px" }}

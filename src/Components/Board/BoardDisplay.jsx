@@ -10,7 +10,7 @@ import views from "./assets/1954555_eye_look_view_views_watch_icon.png";
 import share from "./assets/2561282_share_icon.png";
 import heart from "./assets/2246820_heart_like_notification_icon.png";
 import img from "./assets/eric-christian-king.jpg";
-import {useCurrentPin} from "../../Context/PinsContext";
+import { useCurrentPin } from "../../Context/PinsContext";
 
 const BoardDisplay = () => {
 	// eslint-disable-next-line
@@ -37,7 +37,7 @@ const BoardDisplay = () => {
 								{" "}
 								URL:{" "}
 								<small>
-									<a href="https://www.google.com">{pinCurrData.imgUrl}</a>
+									<a href={pinCurrData.imgUrl}>{pinCurrData.imgUrl}</a>
 								</small>{" "}
 							</h3>
 							<h3 style={{ color: "black" }}>
@@ -53,11 +53,7 @@ const BoardDisplay = () => {
 									src={heart}
 									alt="liked"
 								/>
-								<h3>
-									{Array.isArray(pinCurrData.likes)
-										? pinCurrData.likes.length
-										: pinCurrData.likes}
-								</h3>
+								<h3>{pinCurrData.likes?.length}</h3>
 							</div>
 							<div style={{ display: "flex", justifyContent: "flex-start" }}>
 								<img
@@ -65,11 +61,7 @@ const BoardDisplay = () => {
 									src={views}
 									alt="views"
 								/>
-								<h3>
-									{Array.isArray(pinCurrData.impressions)
-										? pinCurrData.impressions.length
-										: pinCurrData.impressions}
-								</h3>
+								<h3>{pinCurrData.impressions?.length}</h3>
 							</div>
 							<div style={{ display: "flex", justifyContent: "flex-start" }}>
 								<img
@@ -77,11 +69,7 @@ const BoardDisplay = () => {
 									src={download}
 									alt="downloads"
 								/>
-								<h3>
-									{Array.isArray(pinCurrData.downloads)
-										? pinCurrData.downloads.length
-										: pinCurrData.downloads}
-								</h3>
+								<h3>{pinCurrData.downloads?.length}</h3>
 							</div>
 
 							<div style={{ display: "flex", justifyContent: "flex-start" }}>
@@ -90,11 +78,7 @@ const BoardDisplay = () => {
 									src={share}
 									alt="shared"
 								/>
-								<h3>
-									{Array.isArray(pinCurrData.shares)
-										? pinCurrData.shares.length
-										: pinCurrData.shares}
-								</h3>
+								<h3>{pinCurrData.shares.length}</h3>
 							</div>
 
 							<h3>Find Creamzo on</h3>

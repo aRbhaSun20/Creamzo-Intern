@@ -5,7 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 // import FormHelperText from '@material-ui/core/FormHelperText';
 // import FormControl from '@material-ui/core/FormControl';
 import Select from "@material-ui/core/Select";
-
+import { Button } from "@material-ui/core";
 import style from "./style/BoardCreation.module.css";
 import dots from "./assets/dots.svg";
 
@@ -36,8 +36,8 @@ const BoardCreation = () => {
 	};
 
 	const handleSubmit = (e) => {
-		
-	}
+		console.log("done");
+	};
 
 	return (
 		<React.Fragment>
@@ -146,12 +146,14 @@ const BoardCreation = () => {
 										<MenuItem value="section2">Section 2</MenuItem>
 										<MenuItem value="section3">Section 3</MenuItem>
 									</Select>
-									<input
-										type="submit"
+									<Button
+										// type="submit"
 										name=""
 										id={style.boardSubmit}
-										value="Post"
-									/>
+										onClick={handleSubmit}
+									>
+										Post
+									</Button>
 								</div>
 
 								<TextField

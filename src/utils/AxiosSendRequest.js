@@ -34,7 +34,6 @@ export const axiosSendRequest = async (type, url, sendData) => {
 				headers: AXIOS_ACTIONS.HEADERS,
 				data: JSON.stringify(sendData),
 			};
-			console.log(config.data);
 			break;
 
 		case AXIOS_ACTIONS.DELETE:
@@ -57,7 +56,10 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			formLogin.append("fname", sendData.firstName);
 			formLogin.append("lname", sendData.lastName);
 			formLogin.append("age", sendData.age);
-			// formLogin.append("creamzoId", "#456787");
+			formLogin.append(
+				"creamzoId",
+				`#${Math.floor(Math.random() * 900000) + 100000}`
+			);
 			// formLogin.append("aboutYou", "");
 			// formLogin.append("location", "Lahore");
 			// formLogin.append("gender", "male");
@@ -87,8 +89,6 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			config = {
 				method: "put",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				headers: AXIOS_ACTIONS.HEADERS,
-				data: sendData,
 			};
 			break;
 

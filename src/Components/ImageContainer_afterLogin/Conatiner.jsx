@@ -1,4 +1,5 @@
 import { Button, IconButton } from "@material-ui/core";
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import React, { useState } from "react";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import {
@@ -15,6 +16,10 @@ const Conatiner = (props) => {
 	let height = props.height;
 	const [opacity, setOpacity] = useState(0);
 	let history = useHistory();
+    
+	const [heartActive,setHeartActive] = useState('black')
+
+	
 	return (
 		<div
 			className="imglogin"
@@ -66,9 +71,19 @@ const Conatiner = (props) => {
 								outline: "none",
 							}}
 						>
-							<FavoriteBorder
+							<FavoriteIcon
+								onClick={()=>{
+									if(heartActive=='black'){
+										setHeartActive('red')
+									}
+									else{
+										setHeartActive('black')
+									}
+								}
+								}
 								style={{
-									color: "white",
+									color: heartActive,
+									borderColor:'white',
 									fontSize: "1.5rem",
 								}}
 							/>

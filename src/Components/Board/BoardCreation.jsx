@@ -25,12 +25,6 @@ const BoardCreation = () => {
 	const handlechange = (e) => {
 		console.log(e.target.name);
 		if (e.target.name === "imgPath") {
-<<<<<<< HEAD
-			console.log(e.target.files[0]);
-			setDisplay((state) => ({
-				...state,
-				imgPath: e.target.files[0],
-=======
 			let dataImg = e.target.value.split(`\\`);
 			let blob = URL.createObjectURL(e.target.files[0]);
 			console.log(e.target.files[0]);
@@ -38,7 +32,6 @@ const BoardCreation = () => {
 				...state,
 				// [e.target.name]: `./${e.target.files[0].name}`,
 				[e.target.name]:blob,
->>>>>>> a7ec99ce7ceb28e974d84c81a5e5e99a9b8bb97e
 			}));
 		} else {
 			setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));

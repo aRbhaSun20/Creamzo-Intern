@@ -102,7 +102,7 @@ const Conatiner = ({ data, height }) => {
               {heartActive === "red" ? (
                 <FavoriteIcon
                   onClick={() => {
-                    if (heartActive == "black") {
+                    if (heartActive === "black") {
                       setHeartActive("red");
                     } else {
                       setHeartActive("black");
@@ -117,7 +117,7 @@ const Conatiner = ({ data, height }) => {
               ) : (
                 <FavoriteBorderIcon
                   onClick={() => {
-                    if (heartActive == "black") {
+                    if (heartActive === "black") {
                       setHeartActive("red");
                     } else {
                       setHeartActive("black");

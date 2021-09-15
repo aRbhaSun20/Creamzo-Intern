@@ -4,9 +4,10 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import React, { useState } from "react";
 import { saveAs } from "file-saver";
 import GetAppIcon from "@material-ui/icons/GetApp";
-// eslint-disable-next-line 
+// eslint-disable-next-line
 import { FacebookShareButton } from "react-share";
 import {
+	AddCircle,
 	AddCircleOutline,
 	ArrowUpward, // eslint-disable-next-line
 	FavoriteBorder,
@@ -29,6 +30,7 @@ const Conatiner = ({ data, height }) => {
 	let history = useHistory();
 
 	const [heartActive, setHeartActive] = useState("red");
+	const [addColl, setaddColl] = useState(true);
 
 	return (
 		<div
@@ -84,15 +86,25 @@ const Conatiner = ({ data, height }) => {
 								borderRadius: "1em",
 								outline: "none",
 							}}
+							name="favourite"
 							onClick={() => {
-								console.log(`addDownloads/${data?._id}/%${data?.creamzoId}`);
-								axiosSendRequest(
-									AXIOS_ACTIONS.PUT,
-									`addDownloads/${data?._id}/${data?.creamzoId.split("#")[1]}`,
-									null
-								).then((data) => {
-									refetch();
-								});
+								if (heartActive !== "red") {
+									axiosSendRequest(AXIOS_ACTIONS.PUT, `dislikePin`, {
+										creamzoId: `${data.creamzoId}`,
+										id: `${data._id}`,
+									}).then((res) => {
+										console.log(res);
+										refetch();
+									});
+								} else {
+									axiosSendRequest(AXIOS_ACTIONS.PUT, `likePin`, {
+										creamzoId: `${data.creamzoId}`,
+										id: `${data._id}`,
+									}).then((res) => {
+										console.log(res);
+										refetch();
+									});
+								}
 							}}
 						>
 							{heartActive === "red" ? (
@@ -133,18 +145,35 @@ const Conatiner = ({ data, height }) => {
 								borderRadius: "1em",
 								outline: "none",
 							}}
+							name="addcollection"
 							onClick={() => {
-								axiosSendRequest(AXIOS_ACTIONS.POST, `addCollection`, {
-									creamzoId: data?.creamzoId,
-									id: data?._id,
-								}).then((data) => {
-									refetch();
-								});
+								setaddColl((state) => !state);
+								if (!addColl) {
+									axiosSendRequest(AXIOS_ACTIONS.POST, `removeCollection`, {
+										creamzoId: `${data.creamzoId}`,
+										id: `${data._id}`,
+									}).then((res) => {
+										console.log(res);
+										refetch();
+									});
+								} else {
+									axiosSendRequest(AXIOS_ACTIONS.POST, `addCollection`, {
+										creamzoId: `${data.creamzoId}`,
+										id: `${data._id}`,
+									}).then((res) => {
+										console.log(res);
+										refetch();
+									});
+								}
 							}}
 						>
-							<AddCircleOutline
-								style={{ color: "white", fontSize: "1.5rem" }}
-							/>
+							{addColl ? (
+								<AddCircleOutline
+									style={{ color: "white", fontSize: "1.5rem" }}
+								/>
+							) : (
+								<AddCircle style={{ color: "white", fontSize: "1.5rem" }} />
+							)}
 						</IconButton>
 					</div>
 				</div>
@@ -211,6 +240,7 @@ const Conatiner = ({ data, height }) => {
 										refetch();
 									});
 								}}
+								name="download"
 								style={{ outline: "none", padding: "4px" }}
 							>
 								<GetAppIcon
@@ -229,12 +259,17 @@ const Conatiner = ({ data, height }) => {
 								onClick={() => {
 									axiosSendRequest(
 										AXIOS_ACTIONS.PUT,
-										`addShares/${data?._id}/${data?.creamzoId.split("#")[1]}`,
+										`addShares/${data?._id}/${
+											data?.creamzoId.split("#").length > 0
+												? `%23${data?.creamzoId.split("#")[1]}`
+												: data?.creamzoId
+										}`,
 										null
-									).then((data) => {
+									).then((res) => {
 										refetch();
 									});
 								}}
+								name="share"
 								style={{ outline: "none", padding: "4px" }}
 							>
 								<Share

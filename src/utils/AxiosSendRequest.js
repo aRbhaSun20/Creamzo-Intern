@@ -61,14 +61,10 @@ export const axiosSendRequest = async (type, url, sendData) => {
 				"creamzoId",
 				`#${Math.floor(Math.random() * 90000) + 10000}`
 			);
-			// formLogin.append("aboutYou", "");
-			// formLogin.append("location", "Lahore");
-			// formLogin.append("gender", "male");
 
 			config = {
 				method: "post",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				headers: { ...formLogin.getHeaders() },
 				data: formLogin,
 			};
 			break;
@@ -107,6 +103,7 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			config = {
 				method: "put",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
+				data:sendData
 			};
 			break;
 

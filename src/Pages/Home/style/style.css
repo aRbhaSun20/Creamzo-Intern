@@ -4,12 +4,11 @@
 }
 
 .container {
-  max-width: 120vw;
-  min-width: 90vw;
+  max-width: 40vw;
   position: relative;
-  top: 8rem;
-  width: auto;
-  height: 80vh;
+  /* top: 8rem; */
+  width: 20vw;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

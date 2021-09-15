@@ -28,8 +28,6 @@ function ArticleItem({data}) {
 					myData.substring(0,7) === "heading" ? <h2 style={{color:'black'}}>{data?.arObj ? data?.arObj[0][myData] : ""}</h2> : 
 					myData.substring(0,7) === "newBody" ? <h3 className="secondary-article-text">{data?.arObj ? data?.arObj[0][myData] : ""}</h3> : null
 				)
-
-				
 			}
 
 		</div>

@@ -20,9 +20,9 @@
     color: black;
 }
 .dots img{
-    width: 25px;
-    /*height: 25px;*/
-    height: 35px;
+    width: 17px;
+    height: 20px;
+    /*height: 35px;*/
     /* padding: 20px; */
     margin-bottom: 25px;
 
@@ -84,13 +84,23 @@ row-gap: 3vh;
 }
 .dotbox{
     position: absolute;
-    left: 30%;
+    /*left: 30%;*/
+    left: 29vw;
     background-color: whitesmoke;
-    padding: 3px;
-    width: 10%;
-    min-width: 82px;
+    stroke: rgb(239, 239, 239);
+    /*padding: 3px;*/
+    padding-left: 4px;
+    padding-right: 4px;
+    /*width: 10%;*/
+    /*min-width: 82px;*/
+    width: 100px;
+    border-radius: 16px;
+    cursor: pointer;
 }
-
+.dotbox div{
+    padding: 4px;
+    margin-left: 6px;
+}
 @media screen and (max-width: 800px){
     .BoardCreationContainer{
         width: 80%;

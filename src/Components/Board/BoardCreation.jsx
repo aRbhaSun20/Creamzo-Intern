@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 // import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from "@material-ui/core/MenuItem";
@@ -23,18 +23,37 @@ const BoardCreation = () => {
 	});
 
 	const handlechange = (e) => {
-		// console.log(dis);
+		console.log(e.target.name);
 		if (e.target.name === "imgPath") {
+<<<<<<< HEAD
 			console.log(e.target.files[0]);
 			setDisplay((state) => ({
 				...state,
 				imgPath: e.target.files[0],
+=======
+			let dataImg = e.target.value.split(`\\`);
+			let blob = URL.createObjectURL(e.target.files[0]);
+			console.log(e.target.files[0]);
+			setDisplay((state) => ({
+				...state,
+				// [e.target.name]: `./${e.target.files[0].name}`,
+				[e.target.name]:blob,
+>>>>>>> a7ec99ce7ceb28e974d84c81a5e5e99a9b8bb97e
 			}));
 		} else {
 			setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));
 		}
+	  
 	};
 
+	const handledisplay=()=>{
+		if(dis==="none"){
+			setdis("block");
+		}
+		else{
+			setdis("none");
+		}
+	}
 	const handleSubmit = (e) => {
 		console.log("done");
 		axiosSendRequest(AXIOS_ACTIONS.CREATE_PIN, "createPin", display).then(
@@ -54,7 +73,7 @@ const BoardCreation = () => {
 									<div>Delete</div>
 								</div>
 								<div className={style.dots}>
-									<img src={dots} alt="more" onClick={handlechange} />
+									<img src={dots} alt="more" onClick={handledisplay} />
 								</div>
 
 								<div className={style.picture}>
@@ -100,12 +119,13 @@ const BoardCreation = () => {
 																accept="image/*"
 																onChange={handlechange}
 															/>
-														) : (
-															<img src={display.imgPath} />
-														)}
+														) : (false)}
 													</form>
+
 												</div>
+
 											</label>
+
 											<p
 												style={{
 													color: "gray",
@@ -122,6 +142,7 @@ const BoardCreation = () => {
 									</div>
 								</div>
 							</div>
+							{display.imgPath && <img className={style.leftContainer} src={display.imgPath} style={{position: "relative",top: "-50%",width: "100%"}} alt=""/>}
 						</div>
 						<div className={style.rightContiner}>
 							<form className={style.BoardCreationForm} action="">
@@ -137,6 +158,7 @@ const BoardCreation = () => {
 										style={{
 											width: "150px",
 											height: "40px",
+											scrollBehaviour:"auto",
 											borderRadius: "10px 0px 0px 10px",
 											position: "relative",
 											backgroundColor: "rgb(230, 233, 233)",
@@ -145,9 +167,19 @@ const BoardCreation = () => {
 										disableUnderline
 										id="demo-simple-select-outlined"
 									>
+										<div style={{height:"100px",scrollBehaviour:"auto"}}>
 										<MenuItem value="section1">Section 1</MenuItem>
 										<MenuItem value="section2">Section 2</MenuItem>
 										<MenuItem value="section3">Section 3</MenuItem>
+										<MenuItem value="section4">Section 4</MenuItem>
+										<MenuItem value="section5">Section 5</MenuItem>
+										<MenuItem value="section6">Section 6</MenuItem>
+										<MenuItem value="section7">Section 7</MenuItem>
+										<MenuItem value="section8">Section 8</MenuItem>
+										<MenuItem value="section9">Section 9</MenuItem>
+										<MenuItem value="section10">Section 10</MenuItem>
+										<MenuItem value="section11">Section 11</MenuItem>
+										</div>
 									</Select>
 									<Button
 										// type="submit"
@@ -197,5 +229,6 @@ const BoardCreation = () => {
 			</div>
 		</React.Fragment>
 	);
-};
+}
+
 export default BoardCreation;

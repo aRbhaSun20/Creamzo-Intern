@@ -1,4 +1,4 @@
-import { Typography, Button } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import React from "react";
 import "./making.css";
 // import img from "../About/assets/img/art.jpg";
@@ -41,7 +41,7 @@ const Making = () => {
             facere aperiam eligendi cum saepe iure aut. Expedita soluta cum
             itaque deserunt ducimus?
           </Typography>
-          <Button
+          {/*<Button
             variant="contained"
             style={{
               backgroundColor: "black",
@@ -58,7 +58,7 @@ const Making = () => {
             color="primary"
           >
             Join the Community
-          </Button>
+          </Button>*/}
         </div>
         <div className="imagcontainer">
           <img src={img} alt="Makeawesome" className="imagemake"/>

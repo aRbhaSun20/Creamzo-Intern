@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "colcade": "^0.2.0",
+    "file-saver": "^2.0.5",
     "notistack": "^1.0.10",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
@@ -22,7 +23,11 @@
     "react-query": "^3.21.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+<<<<<<< HEAD
     "uuid": "^8.3.2",
+=======
+    "react-share": "^4.4.0",
+>>>>>>> a7ec99ce7ceb28e974d84c81a5e5e99a9b8bb97e
     "web-vitals": "^1.1.2"
   },
   "scripts": {

@@ -10,6 +10,7 @@ import style from "./style/BoardCreation.module.css";
 import dots from "./assets/dots.svg";
 
 import upload from "./assets/6578872_arrow_arrows_circle_direction_up_icon (1).png";
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 const BoardCreation = () => {
 	const [dis, setdis] = useState("none");
 	const [display, setDisplay] = useState({
@@ -18,17 +19,16 @@ const BoardCreation = () => {
 		tags: "",
 		link: "",
 		imgPath: "",
+		category: "new",
 	});
 
 	const handlechange = (e) => {
 		// console.log(dis);
 		if (e.target.name === "imgPath") {
-			let dataImg = e.target.value.split(`\\`);
-			// let blob = URL.createObjectURL(e.target.files[0]);
 			console.log(e.target.files[0]);
 			setDisplay((state) => ({
 				...state,
-				[e.target.name]: `./${e.target.files[0].name}`,
+				imgPath: e.target.files[0],
 			}));
 		} else {
 			setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));
@@ -37,6 +37,9 @@ const BoardCreation = () => {
 
 	const handleSubmit = (e) => {
 		console.log("done");
+		axiosSendRequest(AXIOS_ACTIONS.CREATE_PIN, "createPin", display).then(
+			(data) => console.log(data)
+		);
 	};
 
 	return (
@@ -179,7 +182,7 @@ const BoardCreation = () => {
 									id="standard-basic"
 									multiline
 									rows={2}
-									name="imgPath"
+									name="link"
 									onChange={handlechange}
 									label="Add link of blog / destination"
 								/>

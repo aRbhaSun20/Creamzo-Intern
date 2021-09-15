@@ -13,6 +13,7 @@ export const AXIOS_ACTIONS = {
 	SIGNUP: "SIGNUP",
 	LOGOUT: "LOGOUT",
 	REGISTER: "REGISTER",
+	CREATE_PIN: "CREATE_PIN",
 };
 
 export const axiosSendRequest = async (type, url, sendData) => {
@@ -58,7 +59,7 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			formLogin.append("age", sendData.age);
 			formLogin.append(
 				"creamzoId",
-				`#${Math.floor(Math.random() * 900000) + 100000}`
+				`#${Math.floor(Math.random() * 90000) + 10000}`
 			);
 			// formLogin.append("aboutYou", "");
 			// formLogin.append("location", "Lahore");
@@ -79,9 +80,26 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			formLogout.append("email", sendData.email);
 			config = {
 				method: "post",
-				url: ``,
+				url: `${AXIOS_ACTIONS.URL}/${url}`,
 				headers: { ...formLogout.getHeaders() },
 				data: formLogout,
+			};
+			break;
+
+		case AXIOS_ACTIONS.CREATE_PIN:
+			let formCreate = new FormData();
+			formCreate.append("title", sendData.title);
+			formCreate.append("websiteUrl", "url");
+			formCreate.append("desc", sendData.description);
+			formCreate.append("author", "user");
+			formCreate.append("category", sendData.category);
+			formCreate.append("tags", sendData.tags);
+			formCreate.append("creamzoId", "#7136");
+			formCreate.append("file1", sendData.imgPath);
+			config = {
+				method: "post",
+				url: `${AXIOS_ACTIONS.URL}/${url}`,
+				data: formCreate,
 			};
 			break;
 

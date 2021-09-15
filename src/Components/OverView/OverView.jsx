@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Typography } from "@material-ui/core";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { Typography } from "@material-ui/core";
+// import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 // import img1 from "./assets/img1.jpg";
 // import img2 from "./assets/img2 .jpg";
 // import img3 from "./assets/img3.jpg";
@@ -55,7 +55,7 @@ const OverView = () => {
             repellat maxime repudiandae voluptatem libero culpa quos dignissimos
             illum impedit!
           </Typography>
-          <Button
+          {/*<Button
             variant="contained"
             color="primary"
             style={{
@@ -72,7 +72,7 @@ const OverView = () => {
           >
             Checkout More
             <ArrowForwardIcon style={{ position: "relative", left: ".5rem" }} />
-          </Button>
+          </Button>*/}
         </div>
         <div className="imagcontainer">
           <img src={img} alt="Makeawesome" className="imagemake"/>

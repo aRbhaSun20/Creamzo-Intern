@@ -36,31 +36,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	};
 
 	const handleSIgnUp = () => {
-		let formLogin = new FormData();
-		formLogin.append("email", signUpData.mail);
-		formLogin.append("password", signUpData.password);
-		formLogin.append("fname", signUpData.firstName);
-		formLogin.append("lname", signUpData.lastName);
-		formLogin.append("age", signUpData.age);
-		formLogin.append(
-			"creamzoId",
-			`#${Math.floor(Math.random() * 900000) + 100000}`
+		axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", signUpData).then((res) =>
+			console.log(res)
 		);
-		formLogin.append("aboutYou", "");
-		formLogin.append("location", "");
-		formLogin.append("gender", "");
-		formLogin.append("image", "file");
-
-		var requestOptions = {
-			method: "POST",
-			body: formLogin,
-			redirect: "follow",
-		};
-
-		fetch("https://intense-meadow-34129.herokuapp.com/signup", requestOptions)
-			.then((response) => response.text())
-			.then((result) => console.log(result))
-			.catch((error) => console.log("error", error));
 	};
 
 	return (

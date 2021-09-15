@@ -61,7 +61,7 @@ const BoardDisplay = () => {
 									src={views}
 									alt="views"
 								/>
-								<h3>{pinCurrData.impressions?.length}</h3>
+								<h3>{pinCurrData.tags?.length}</h3>
 							</div>
 							<div style={{ display: "flex", justifyContent: "flex-start" }}>
 								<img

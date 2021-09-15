@@ -72,7 +72,7 @@ function Account() {
 								// 	</div>
 								// </div>
 								}
-								<div class="text-center" style={{marginTop:"40px"}}>
+								<div class="text-center" style={{marginTop:"50px"}}>
 									<h3>
 										Jessica Jones<span class="font-weight-light">, 27</span>
 									</h3>

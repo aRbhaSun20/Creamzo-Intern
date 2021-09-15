@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState} from "react";
 import TextField from "@material-ui/core/TextField";
 // import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from "@material-ui/core/MenuItem";
@@ -10,6 +10,10 @@ import style from "./style/BoardCreation.module.css";
 import dots from "./assets/dots.svg";
 
 import upload from "./assets/6578872_arrow_arrows_circle_direction_up_icon (1).png";
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
+import { usePin } from "../../Context/PinsContext";
+
+import { useSnackbar } from "notistack";
 const BoardCreation = () => {
 	const [dis, setdis] = useState("none");
 	const [display, setDisplay] = useState({
@@ -18,14 +22,27 @@ const BoardCreation = () => {
 		tags: "",
 		link: "",
 		imgPath: "",
+		category: "new",
 	});
+	const { enqueueSnackbar } = useSnackbar();
+	
+	// eslint-disable-next-line
+	const [pinsData, refetch] = usePin();
 
 	const handlechange = (e) => {
-		console.log(e.target.name);
+		// console.log(e.target.name);
+		// if (e.target.name === "imgPath") {
+		// 	setDisplay((state) => ({
+		// 		...state,
+		// 		[e.target.name]: e.target.files[0],
+		// 	}));
+		// } else {
+		// 	setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));
+		// }
 		if (e.target.name === "imgPath") {
 			let dataImg = e.target.value.split(`\\`);
 			let blob = URL.createObjectURL(e.target.files[0]);
-			console.log(e.target.files[0]);
+			// console.log(e.target.files[0]);
 			setDisplay((state) => ({
 				...state,
 				// [e.target.name]: `./${e.target.files[0].name}`,
@@ -34,19 +51,23 @@ const BoardCreation = () => {
 		} else {
 			setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));
 		}
-	  
 	};
 
-	const handledisplay=()=>{
-		if(dis==="none"){
+	const handledisplay = () => {
+		if (dis === "none") {
 			setdis("block");
-		}
-		else{
+		} else {
 			setdis("none");
 		}
-	}
+	};
 	const handleSubmit = (e) => {
 		console.log("done");
+		axiosSendRequest(AXIOS_ACTIONS.CREATE_PIN, "createPin", display).then(
+			(data) => {
+				refetch();
+				enqueueSnackbar("Pins Created", { variant: "success" });
+			}
+		);
 	};
 
 	return (
@@ -107,11 +128,11 @@ const BoardCreation = () => {
 																accept="image/*"
 																onChange={handlechange}
 															/>
-														) : (false)}
+														) : (
+															false
+														)}
 													</form>
-
 												</div>
-
 											</label>
 
 											<p
@@ -130,7 +151,10 @@ const BoardCreation = () => {
 									</div>
 								</div>
 							</div>
+
 							{display.imgPath && <img className={style.leftContainer} src={display.imgPath} style={{position: "relative",width: "100%",height:"80%",bottom:"60vh",maxHeight:"375px"}} alt=""/>}
+
+							
 						</div>
 						<div className={style.rightContiner}>
 							<form className={style.BoardCreationForm} action="">
@@ -143,36 +167,38 @@ const BoardCreation = () => {
                                     </select> */}
 									{/* <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel> */}
 									<Select
+										
+										labelId="demo-simple-select-outlined-label"
+										disableUnderline
+										id="demo-simple-select-outlined"
 										style={{
 											width: "150px",
 											height: "40px",
-											scrollBehaviour:"auto",
+											scrollBehaviour: "auto",
 											borderRadius: "10px 0px 0px 10px",
 											position: "relative",
 											backgroundColor: "rgb(230, 233, 233)",
 										}}
-										labelId="demo-simple-select-outlined-label"
-										disableUnderline
-										id="demo-simple-select-outlined"
 									>
-										<div style={{height:"100px",scrollBehaviour:"auto"}}>
-										<MenuItem value="section1">Art</MenuItem>
-										<MenuItem value="section2">Culture</MenuItem>
-										<MenuItem value="section3">DIY And Crafts</MenuItem>
-										<MenuItem value="section4">Design</MenuItem>
-										<MenuItem value="section5">Education</MenuItem>
-										<MenuItem value="section6">Environment</MenuItem>
-										<MenuItem value="section7">Events</MenuItem>
-										<MenuItem value="section8">Fashion</MenuItem>
-										<MenuItem value="section9">Food And Drink</MenuItem>
-										<MenuItem value="section10">Hobbies</MenuItem>
-										<MenuItem value="section11">Home Decor</MenuItem>
-										<MenuItem value="section12">Pets</MenuItem>
-										<MenuItem value="section13">Quotes</MenuItem>
-										<MenuItem value="section14">Technology</MenuItem>
-										<MenuItem value="section15">Travel</MenuItem>
-										<MenuItem value="section16">Vehicle</MenuItem>
-										</div>
+										
+											<MenuItem value="section1">Art</MenuItem>
+											<MenuItem value="section2">Culture</MenuItem>
+											<MenuItem value="section3">DIY And Crafts</MenuItem>
+											<MenuItem value="section4">Design</MenuItem>
+											<MenuItem value="section5">Education</MenuItem>
+											<MenuItem value="section6">Environment</MenuItem>
+											<MenuItem value="section7">Events</MenuItem>
+											<MenuItem value="section8">Fashion</MenuItem>
+											<MenuItem value="section9">Food And Drink</MenuItem>
+											<MenuItem value="section10">Hobbies</MenuItem>
+											<MenuItem value="section11">Home Decor</MenuItem>
+											<MenuItem value="section12">Pets</MenuItem>
+											<MenuItem value="section13">Quotes</MenuItem>
+											<MenuItem value="section14">Technology</MenuItem>
+											<MenuItem value="section15">Travel</MenuItem>
+											<MenuItem value="section16">Vehicle</MenuItem>
+										
+										
 									</Select>
 									<Button
 										// type="submit"
@@ -207,7 +233,7 @@ const BoardCreation = () => {
 									id="standard-basic"
 									multiline
 									rows={2}
-									name="imgPath"
+									name="link"
 									onChange={handlechange}
 									label="Add link of blog / destination"
 								/>
@@ -222,6 +248,6 @@ const BoardCreation = () => {
 			</div>
 		</React.Fragment>
 	);
-}
+};
 
 export default BoardCreation;

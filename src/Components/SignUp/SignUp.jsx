@@ -6,6 +6,7 @@ import "./style/style.css";
 // import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
+// eslint-disable-next-line
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";

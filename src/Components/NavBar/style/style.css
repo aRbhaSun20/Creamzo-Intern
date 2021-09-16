@@ -67,6 +67,12 @@
   transition: all 0.2s ease-in;
 }
 
+.logo{
+  height: 40px;
+  width: 90%;
+  margin-left: 10px;
+}
+
 .navbar .remaining-navs .activeLink {
   opacity: 1;
 }
@@ -173,6 +179,9 @@
   /*.top .input-group{
     display: none;
   }*/
+  .logo{
+    width: 80%;
+  }
   .top{
     width: 13%;
   }
@@ -183,6 +192,9 @@
   }
   .togglebutton{
     display: none;
+  }
+  .logo{
+    height: 32px;
   }
   .top{
     width: 8%;

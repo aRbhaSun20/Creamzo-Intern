@@ -44,7 +44,7 @@ const HomeAfter = () => {
 				// maxHeight: `${limit * 9}vh`,
 				// maxWidth: "80vw",
 				paddingTop: "2em",
-				height:"100vh"
+				// height:"100vh"
 			}}
 		>
 			<div className="column1">

@@ -12,6 +12,7 @@ import "./style/style.css";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Search } from "@material-ui/icons";
 import { useState } from "react";
+import logo from "./assets/logo.jpg";
 
 const NavBar = () => {
 	// eslint-disable-next-line
@@ -42,7 +43,7 @@ const NavBar = () => {
 							variant="h4"
 							style={{ fontWeight: "bold", fontSize: "1rem" }}
 						>
-							Logo
+							<img src={logo} className="logo" alt="logo" />
 						</Typography>
 					</NavLink>
 					<div className="input-group">

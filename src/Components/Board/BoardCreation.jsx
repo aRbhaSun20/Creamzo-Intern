@@ -40,7 +40,7 @@ const BoardCreation = () => {
 		// 	setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));
 		// }
 		if (e.target.name === "imgPath") {
-			let dataImg = e.target.value.split(`\\`);
+			// let dataImg = e.target.value.split(`\\`);
 			let blob = URL.createObjectURL(e.target.files[0]);
 			// console.log(e.target.files[0]);
 			setDisplay((state) => ({

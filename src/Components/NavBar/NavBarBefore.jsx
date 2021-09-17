@@ -38,7 +38,7 @@ const NavBar = () => {
 
   return (
 		<React.Fragment>
-			<div className="navbar" style={{marginTop:"10px",marginBotton:"10px"}}>
+			<div className="navbar" style={{paddingTop:"5px",marginBotton:"10px"}}>
 				<NavLink activeClassName="activeLink" to="/" exact>
 					<Typography
 						variant="h4"

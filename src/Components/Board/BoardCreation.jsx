@@ -152,13 +152,13 @@ const BoardCreation = () => {
 								</div>
 							</div>
 
-							{display.imgPath && <img className={style.leftContainer} src={display.imgPath} style={{position: "relative",width: "100%",height:"80%",bottom:"60vh",maxHeight:"375px"}} alt=""/>}
+							{display.imgPath && <img className={style.leftContainer} src={display.imgPath} style={{position: "relative",width: "100%",height:"60vh",bottom:"60vh",borderRadius:"20px"}} alt=""/>}
 
 							
 						</div>
 						<div className={style.rightContiner}>
 							<form className={style.BoardCreationForm} action="">
-								<div style={{ display: "flex", marginLeft: "40%" }}>
+								<div style={{ display: "flex", marginLeft: "28%",textAlign:"center" }}>
 									{/* <select style={{ width: "150px", height: "40px", border: "none", borderRadius: "10px 0px 0px 10px", position: "relative", backgroundColor: "rgb(230, 233, 233)" }} >
                                         <option value="section1">Section1</option>
                                         <option value="section2">Section2</option>
@@ -174,6 +174,7 @@ const BoardCreation = () => {
 										style={{
 											width: "150px",
 											height: "40px",
+											paddingLeft:"7px",
 											scrollBehaviour: "auto",
 											borderRadius: "10px 0px 0px 10px",
 											position: "relative",

@@ -60,6 +60,9 @@
     word-wrap: break-word;
     padding: 10px;
 }
+.tos_title h2{
+    color:black;
+}
 .tos_content{
     width: 100%;
     

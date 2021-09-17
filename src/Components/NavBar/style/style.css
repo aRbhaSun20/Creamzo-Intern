@@ -67,6 +67,13 @@
   transition: all 0.2s ease-in;
 }
 
+.logo{
+  /*height: 40px;*/
+  height: 55px;
+  width: 95%;
+  margin-left: 10px;
+}
+
 .navbar .remaining-navs .activeLink {
   opacity: 1;
 }
@@ -165,7 +172,7 @@
 }
 @media screen and (max-width: 656px){
   .navbar .remaining-navs {
-    width: 87%;
+    width: 86%;
   }
   .togglebutton{
     display: none;
@@ -173,16 +180,24 @@
   /*.top .input-group{
     display: none;
   }*/
+  .logo{
+    width: 90%;
+  }
   .top{
     width: 13%;
   }
 }
 @media screen and (max-width: 530px){
   .navbar .remaining-navs {
-    width: 91%;
+    /*width: 91%;*/
+    width: 88%;
   }
   .togglebutton{
     display: none;
+  }
+  .logo{
+    /*height: 32px;*/
+    height: 45px;
   }
   .top{
     width: 8%;

@@ -30,11 +30,23 @@ const BoardCreation = () => {
 	const [pinsData, refetch] = usePin();
 
 	const handlechange = (e) => {
-		console.log(e.target.name);
+		// console.log(e.target.name);
+		// if (e.target.name === "imgPath") {
+		// 	setDisplay((state) => ({
+		// 		...state,
+		// 		[e.target.name]: e.target.files[0],
+		// 	}));
+		// } else {
+		// 	setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));
+		// }
 		if (e.target.name === "imgPath") {
+			// let dataImg = e.target.value.split(`\\`);
+			let blob = URL.createObjectURL(e.target.files[0]);
+			// console.log(e.target.files[0]);
 			setDisplay((state) => ({
 				...state,
-				[e.target.name]: e.target.files[0],
+				// [e.target.name]: `./${e.target.files[0].name}`,
+				[e.target.name]:blob,
 			}));
 		} else {
 			setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));
@@ -65,7 +77,7 @@ const BoardCreation = () => {
 					<div className={style.ContentContainer}>
 						<div className={style.leftContainer}>
 							<div>
-								<div className={style.dotbox} style={{ display: dis }}>
+								<div className={style.dotbox} style={{ display: dis,zIndex:"1000" }}>
 									<div>Add</div>
 									<div>Delete</div>
 								</div>
@@ -139,14 +151,10 @@ const BoardCreation = () => {
 									</div>
 								</div>
 							</div>
-							{display.imgPath && (
-								<img
-									className={style.leftContainer}
-									src={URL.createObjectURL(display.imgPath)}
-									style={{ position: "relative", top: "-50%", width: "100%" }}
-									alt=""
-								/>
-							)}
+
+							{display.imgPath && <img className={style.leftContainer} src={display.imgPath} style={{position: "relative",width: "100%",height:"80%",bottom:"60vh",maxHeight:"375px"}} alt=""/>}
+
+							
 						</div>
 						<div className={style.rightContiner}>
 							<form className={style.BoardCreationForm} action="">
@@ -159,6 +167,10 @@ const BoardCreation = () => {
                                     </select> */}
 									{/* <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel> */}
 									<Select
+										
+										labelId="demo-simple-select-outlined-label"
+										disableUnderline
+										id="demo-simple-select-outlined"
 										style={{
 											width: "150px",
 											height: "40px",
@@ -167,23 +179,26 @@ const BoardCreation = () => {
 											position: "relative",
 											backgroundColor: "rgb(230, 233, 233)",
 										}}
-										labelId="demo-simple-select-outlined-label"
-										disableUnderline
-										id="demo-simple-select-outlined"
 									>
-										<div style={{ height: "100px", scrollBehaviour: "auto" }}>
-											<MenuItem value="section1">Section 1</MenuItem>
-											<MenuItem value="section2">Section 2</MenuItem>
-											<MenuItem value="section3">Section 3</MenuItem>
-											<MenuItem value="section4">Section 4</MenuItem>
-											<MenuItem value="section5">Section 5</MenuItem>
-											<MenuItem value="section6">Section 6</MenuItem>
-											<MenuItem value="section7">Section 7</MenuItem>
-											<MenuItem value="section8">Section 8</MenuItem>
-											<MenuItem value="section9">Section 9</MenuItem>
-											<MenuItem value="section10">Section 10</MenuItem>
-											<MenuItem value="section11">Section 11</MenuItem>
-										</div>
+										
+											<MenuItem value="section1">Art</MenuItem>
+											<MenuItem value="section2">Culture</MenuItem>
+											<MenuItem value="section3">DIY And Crafts</MenuItem>
+											<MenuItem value="section4">Design</MenuItem>
+											<MenuItem value="section5">Education</MenuItem>
+											<MenuItem value="section6">Environment</MenuItem>
+											<MenuItem value="section7">Events</MenuItem>
+											<MenuItem value="section8">Fashion</MenuItem>
+											<MenuItem value="section9">Food And Drink</MenuItem>
+											<MenuItem value="section10">Hobbies</MenuItem>
+											<MenuItem value="section11">Home Decor</MenuItem>
+											<MenuItem value="section12">Pets</MenuItem>
+											<MenuItem value="section13">Quotes</MenuItem>
+											<MenuItem value="section14">Technology</MenuItem>
+											<MenuItem value="section15">Travel</MenuItem>
+											<MenuItem value="section16">Vehicle</MenuItem>
+										
+										
 									</Select>
 									<Button
 										// type="submit"

@@ -5,7 +5,9 @@ const Details = ()=>{
    return(
        <div className={style.information} >
                <h1 style={{textTransform:"capitalize"}}>user name</h1>
-               <p> 100 followers . 20 following </p>
+               <div>
+               <p className={style.publicf}> 100 followers</p><p className={style.publicf}>20 following </p>
+               </div>
        </div>
    );
 }

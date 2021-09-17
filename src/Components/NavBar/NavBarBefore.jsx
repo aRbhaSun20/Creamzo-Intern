@@ -7,6 +7,7 @@ import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import Appbar from "./Appbar.jsx";
 import { LoginContext } from "../../Context/Login";
+import logo from "./assets/logo.jpg";
 
 const NavBar = () => {
   const [LoginOpen, setLoginOpen] = React.useState(false);
@@ -43,7 +44,7 @@ const NavBar = () => {
 						variant="h4"
 						style={{ fontWeight: "bold", fontSize:"15px"}}
 					>
-						Logo
+						<img src={logo} className="logo" alt="logo" />
 					</Typography>
 				</NavLink>
 

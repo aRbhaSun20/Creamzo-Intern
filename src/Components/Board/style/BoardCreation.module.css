@@ -85,7 +85,7 @@ row-gap: 3vh;
 .dotbox{
     position: absolute;
     /*left: 30%;*/
-    left: 29vw;
+    left: 27vw;
     background-color: whitesmoke;
     stroke: rgb(239, 239, 239);
     /*padding: 3px;*/
@@ -106,7 +106,7 @@ row-gap: 3vh;
         width: 80%;
     }
     .dotbox{
-        left: 25%;
+        left: 23vw;
     }
 }
 @media screen and (max-width: 650px){
@@ -117,6 +117,9 @@ row-gap: 3vh;
         padding: 20px;
         column-gap: 1vw;
     }
+    .dotbox{
+        left: 19vw;
+    }
 }
 @media screen and (max-width: 450px){
     .BoardCreationContainer{
@@ -126,5 +129,8 @@ row-gap: 3vh;
         padding: 5px;
         margin: auto;
         column-gap: 0vw;
+    }
+    .dotbox{
+        left: 21vw;
     }
 }

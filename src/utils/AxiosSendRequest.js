@@ -51,21 +51,10 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			break;
 
 		case AXIOS_ACTIONS.SIGNUP:
-			let formLogin = new FormData();
-			formLogin.append("email", sendData.mail);
-			formLogin.append("password", sendData.password);
-			formLogin.append("fname", sendData.firstName);
-			formLogin.append("lname", sendData.lastName);
-			formLogin.append("age", sendData.age);
-			formLogin.append(
-				"creamzoId",
-				`#${Math.floor(Math.random() * 90000) + 10000}`
-			);
-
 			config = {
 				method: "post",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				data: formLogin,
+				data: sendData,
 			};
 			break;
 

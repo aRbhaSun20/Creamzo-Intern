@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 // eslint-disable-next-line
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
+import { useSnackbar } from "notistack";
 const SignUp = ({ setopen, setLoginOpen }) => {
 	const [signUpData, setSignUpData] = useState({
 		firstName: "",
@@ -27,6 +28,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	const [password, setPassword] = useState("");
 	// eslint-disable-next-line
 	const [age, setAge] = useState("");
+	const { enqueueSnackbar } = useSnackbar();
 
 	const responseGoogle = (response) => {
 		console.log(response);
@@ -36,9 +38,25 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	};
 
 	const handleSIgnUp = () => {
-		axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", signUpData).then((res) =>
-			console.log(res)
-		);
+		axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", {
+			email: signUpData.mail,
+			password: signUpData.password,
+			fname: signUpData.firstName,
+			lname: signUpData.lastName,
+			age: signUpData.age,
+		})
+			.then((res) => {
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				setLoginOpen(false);
+				sessionStorage.setItem(
+					"creamzToken",
+					JSON.stringify({ token: res.token })
+				);
+				enqueueSnackbar("SignUp Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("SignUp Failed", { variant: "error" });
+			});
 	};
 
 	return (

@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 // eslint-disable-next-line
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
+import { useSnackbar } from "notistack";
 
 const Login = ({ setopen, setSignopen }) => {
 	const [mail, setMail] = useState("");
@@ -22,17 +23,25 @@ const Login = ({ setopen, setSignopen }) => {
 	const responseGoogle = (response) => {
 		console.log(response);
 	};
-
+	const { enqueueSnackbar } = useSnackbar();
 	const handleLogin = () => {
-		setLogin({ type: LOGIN_ACTIONS.LOGIN });
-		
-		// axiosSendRequest(AXIOS_ACTIONS.POST, "login", {
-		// 	email: mail,
-		// 	passwd: password,
-		// }).then((data) => {
-		// 	console.log(data);
-		// });
-		setopen(false);
+		axiosSendRequest(AXIOS_ACTIONS.POST, "login", {
+			email: mail,
+			passwd: password,
+		})
+			.then((data) => {
+				console.log(data);
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				sessionStorage.setItem(
+					"creamzToken",
+					JSON.stringify({ token: data.token })
+				);
+				setopen(false);
+				enqueueSnackbar("LogIn Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("LogIn Failed", { variant: "error" });
+			});
 	};
 	return (
 		<React.Fragment>

@@ -16,6 +16,7 @@ const reducer = (login, action) => {
 		case LOGIN_ACTIONS.LOGIN:
 			return true;
 		case LOGIN_ACTIONS.LOGOUT:
+			sessionStorage.setItem("creamzToken", "");
 			return false;
 		default:
 			return login;

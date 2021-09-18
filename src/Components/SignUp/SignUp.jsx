@@ -30,9 +30,12 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	const [age, setAge] = useState("");
 	const { enqueueSnackbar } = useSnackbar();
 
-	const responseGoogle = (response) => {
-		console.log(response);
+	const handleGoogleSignUp = (response) => {
+		axiosSendRequest(AXIOS_ACTIONS.GOOGLE_SIGNUP, "googlelogin", {
+			tokenId: response.tokenId,
+		}).then((data) => console.log(data));
 	};
+
 	const handleChange = (e) => {
 		setSignUpData((state) => ({ ...state, [e.target.name]: e.target.value }));
 	};
@@ -218,10 +221,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							<GoogleLogin
 								clientId="171125153728-pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
 								buttonText="Login"
-								onSuccess={responseGoogle}
-								onFailure={responseGoogle}
+								onSuccess={handleGoogleSignUp}
+								onFailure={() => {}}
 								cookiePolicy={"single_host_origin"}
-								isSignedIn={true}
 								render={(renderProps) => (
 									<Button
 										variant="contained"

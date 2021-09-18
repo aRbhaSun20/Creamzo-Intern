@@ -16,7 +16,13 @@ function Article({data}) {
 
 	return (
 		<div>
+			<Link
+				
+				to={"/articleitem"}
+				onClick={()=>setcurrentArticle(data)}
+			>
 			<img className="article-image" src={data?.image} alt="article" />
+			</Link>
 			<h1 style={{ paddingLeft: "1rem", fontSize: "1.5rem", width: "15rem" }}>
 				{data?.title}
 			</h1>

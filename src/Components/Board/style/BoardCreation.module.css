@@ -1,5 +1,5 @@
 .BoardCreationContainer{
-    width: 60vw;
+    width: 65vw;
     margin: 5vh auto;
     background-color: white;
     border-radius: 20px;
@@ -43,7 +43,11 @@ border-radius: 15px;
 align-items: center;
 /*border-style: dashed;*/
 }
-
+.post{
+    display: flex;
+    margin-left: 28%;
+    text-align: center;
+}
 .rightContiner{
 /*padding: 15PX;*/
 padding: 10px;
@@ -102,12 +106,20 @@ row-gap: 3vh;
     padding: 4px;
     margin-left: 6px;
 }
+@media screen and (max-width: 920px){
+    .post{
+        margin-left: 17%;
+    }
+}
 @media screen and (max-width: 800px){
     .BoardCreationContainer{
         width: 80%;
     }
     .dotbox{
         left: 23vw;
+    }
+    .post{
+        margin-left: 10%;
     }
 }
 @media screen and (max-width: 650px){
@@ -120,6 +132,18 @@ row-gap: 3vh;
     }
     .dotbox{
         left: 19vw;
+    }
+}
+@media screen and (max-width: 550px){
+    .ContentContainer{
+        flex-direction:column;
+        align-items: center;
+    }
+    .leftContainer{
+        width: 80%;
+    }
+    .rightContiner{
+        width: 80%;
     }
 }
 @media screen and (max-width: 450px){

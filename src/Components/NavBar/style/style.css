@@ -81,6 +81,8 @@
 .navbar a {
   text-decoration: none;
   color: black;
+  width: 30%;
+  max-width: 230px;
 }
 
 .navbar .title {
@@ -184,8 +186,12 @@
   } */
 }
 @media screen and (max-width: 656px){
+  .navbar a{
+    width: 20%;
+  }
   .navbar .remaining-navs {
-    width: 86%;
+    /*width: 85%;*/
+    width: 80%;
   }
   .togglebutton{
     display: none;
@@ -201,9 +207,12 @@
   } */
 }
 @media screen and (max-width: 530px){
+  .navbar a{
+    width: 15%;
+  }
   .navbar .remaining-navs {
     /*width: 91%;*/
-    width: 88%;
+    width: 85%;
   }
   .togglebutton{
     display: none;
@@ -225,8 +234,12 @@
     flex-direction: row;
     justify-content: flex-end;
   }
+  .navbar a{
+    width: 25%;
+  }
   .navbar .remaining-navs{
-    width: 80%;
+    /*width: 80%;*/
+    width: 75%;
     justify-content: space-evenly;
   }
 }
@@ -237,7 +250,7 @@
     width: 72%;
   }
   .afterloginnav{
-    width: 25%;
+    width: 28%;
     justify-content: space-evenly;
   }
 }
@@ -245,8 +258,11 @@
   .top{
     width: 62%;
   }
+  .top .input-group {
+    width: 72%;
+  }
   .afterloginnav{
-    width: 36%;
+    width: 38%;
     justify-content: space-evenly;
   }
 }

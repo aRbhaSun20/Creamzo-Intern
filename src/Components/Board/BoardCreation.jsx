@@ -158,7 +158,7 @@ const BoardCreation = () => {
 						</div>
 						<div className={style.rightContiner}>
 							<form className={style.BoardCreationForm} action="">
-								<div style={{ display: "flex", marginLeft: "28%",textAlign:"center" }}>
+								<div className={style.post}>
 									{/* <select style={{ width: "150px", height: "40px", border: "none", borderRadius: "10px 0px 0px 10px", position: "relative", backgroundColor: "rgb(230, 233, 233)" }} >
                                         <option value="section1">Section1</option>
                                         <option value="section2">Section2</option>

@@ -21,6 +21,7 @@ function Blogitem({data}) {
 
   return (
     <div style={{  margin: "2rem" }}>
+      <Link to="/articles">
       <img
         src={data?.image}
         alt="blog"
@@ -32,7 +33,7 @@ function Blogitem({data}) {
           borderRadius: "10px",
         }}
       />
-
+      </Link>
       <div style={{width:'50%'}}>
         <div style={{ height: "20rem", padding: "1rem" }}>
           <h3 className={"dateopacity"}>{categorytype}</h3>
@@ -57,10 +58,11 @@ function Blogitem({data}) {
             </Link>
           </div>
           <h6 className="dateopacity">{data?.time?.split('T')[0]}</h6>
-          
-          <Link to={'/articleItem'}>
-		  <br />
-            <h3 style={{paddingBottom:'5px',fontSize:'0.5rem'}}>Read more</h3>
+          <br />
+          <Link to={'/articles'}>
+		 
+           <h3 style={{fontSize:'1.2rem'}}>Read More</h3>
+
             
           </Link>
         </div>

@@ -33,7 +33,19 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	const handleGoogleSignUp = (response) => {
 		axiosSendRequest(AXIOS_ACTIONS.GOOGLE_SIGNUP, "googlelogin", {
 			tokenId: response.tokenId,
-		}).then((data) => console.log(data));
+		})
+			.then((res) => {
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				setLoginOpen(false);
+				sessionStorage.setItem(
+					"creamzToken",
+					JSON.stringify({ token: res.token })
+				);
+				enqueueSnackbar("SignUp Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("SignUp Failed", { variant: "error" });
+			});
 	};
 
 	const handleChange = (e) => {
@@ -222,7 +234,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								clientId="171125153728-pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
 								buttonText="Login"
 								onSuccess={handleGoogleSignUp}
-								onFailure={() => {}}
+								onFailure={(res) => {
+									console.log(res);
+								}}
 								cookiePolicy={"single_host_origin"}
 								render={(renderProps) => (
 									<Button

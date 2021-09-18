@@ -36,7 +36,7 @@ const NavBar = () => {
 
 	return (
 		<React.Fragment>
-			<div className="navbar">
+			<div className="navbar" style={{paddingTop:"5px"}}>
 				<div className="top">
 					<NavLink activeClassName="activeLink" to="/" exact>
 						<Typography

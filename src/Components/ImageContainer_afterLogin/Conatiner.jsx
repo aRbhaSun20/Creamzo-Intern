@@ -6,7 +6,7 @@ import { saveAs } from "file-saver";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import { Popover } from "@material-ui/core";
 // eslint-disable-next-line
-import { FacebookIcon, FacebookShareButton } from "react-share";
+import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, PinterestIcon, PinterestShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import {
   AddCircle,
   AddCircleOutline,
@@ -302,11 +302,20 @@ const Conatiner = ({ data, height }) => {
                     setAnchor(null);
                   }}
                 >
-                  <div>
-                    <h1>hello</h1>
+                  <div style={{padding:'1rem'}}>
+                    <h1>share</h1>
                     <FacebookShareButton url={data.imgUrl}>
-                      <FacebookIcon />
+                      <FacebookIcon round={true}/>
                     </FacebookShareButton>
+                    <TwitterShareButton image={data.imgUrl}>
+                      <TwitterIcon round={true}/>
+                    </TwitterShareButton>
+                    <WhatsappShareButton url={data.imgUrl}>
+                      <WhatsappIcon round={true}/>
+                    </WhatsappShareButton>
+                    <PinterestShareButton url={data.imgUrl}>
+                      <PinterestIcon round={true}/>
+                    </PinterestShareButton>
                   </div>
                 </Popover>
               </IconButton>

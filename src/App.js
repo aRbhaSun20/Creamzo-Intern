@@ -16,7 +16,7 @@ const App = () => {
 		<React.Fragment>
 			<QueryClientProvider client={queryClient}>
 				<SnackbarProvider
-					anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+					anchorOrigin={{ horizontal: "right", vertical: "top" }}
 					maxSnack={3}
 				>
 					<Login>

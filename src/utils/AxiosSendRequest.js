@@ -14,6 +14,7 @@ export const AXIOS_ACTIONS = {
 	LOGOUT: "LOGOUT",
 	REGISTER: "REGISTER",
 	CREATE_PIN: "CREATE_PIN",
+	GOOGLE_SIGNUP:"google_signup"
 };
 
 export const axiosSendRequest = async (type, url, sendData) => {
@@ -54,7 +55,16 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			config = {
 				method: "post",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				data: sendData,
+				data: JSON.stringify(sendData),
+			};
+			break;
+
+		case AXIOS_ACTIONS.GOOGLE_SIGNUP:
+			config = {
+				method: "post",
+				url: `${AXIOS_ACTIONS.URL}/${url}`,
+				data: JSON.stringify(sendData),
+				headers:AXIOS_ACTIONS.HEADERS
 			};
 			break;
 
@@ -92,7 +102,7 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			config = {
 				method: "put",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				data:sendData
+				data: sendData,
 			};
 			break;
 

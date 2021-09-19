@@ -13,6 +13,7 @@ import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Search } from "@material-ui/icons";
 import { useState } from "react";
 import logo from "./assets/logo.jpg";
+import { useSnackbar } from "notistack";
 
 const NavBar = () => {
 	// eslint-disable-next-line
@@ -23,6 +24,8 @@ const NavBar = () => {
 		setAnchorEl(event.currentTarget);
 		setOpen(!open);
 	};
+
+	const { enqueueSnackbar } = useSnackbar();
 
 	const handleClose = () => {
 		setAnchorEl(null);
@@ -36,7 +39,7 @@ const NavBar = () => {
 
 	return (
 		<React.Fragment>
-			<div className="navbar" style={{paddingTop:"5px"}}>
+			<div className="navbar" style={{ paddingTop: "5px" }}>
 				<div className="top">
 					<NavLink activeClassName="activeLink" to="/" exact>
 						<Typography
@@ -128,6 +131,8 @@ const NavBar = () => {
 							<MenuItem
 								onClick={() => {
 									handleClose();
+									enqueueSnackbar("Log Out", { variant: "success" });
+									sessionStorage.getItem("creamzToken", "");
 									setLogin({ type: LOGIN_ACTIONS.LOGOUT });
 								}}
 							>

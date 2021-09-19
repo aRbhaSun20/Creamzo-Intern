@@ -20,10 +20,8 @@ const Login = ({ setopen, setSignopen }) => {
 	// eslint-disable-next-line
 	const [password, setPassword] = useState("");
 
-	const responseGoogle = (response) => {
-		console.log(response);
-	};
 	const { enqueueSnackbar } = useSnackbar();
+
 	const handleLogin = () => {
 		axiosSendRequest(AXIOS_ACTIONS.POST, "login", {
 			email: mail,
@@ -43,6 +41,25 @@ const Login = ({ setopen, setSignopen }) => {
 				enqueueSnackbar("LogIn Failed", { variant: "error" });
 			});
 	};
+
+	const handleGoogleSignUp = (response) => {
+		axiosSendRequest(AXIOS_ACTIONS.GOOGLE_SIGNUP, "googlelogin", {
+			tokenId: response.tokenId,
+		})
+			.then((res) => {
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				sessionStorage.setItem(
+					"creamzToken",
+					JSON.stringify({ token: res.token })
+				);
+				setopen(false);
+				enqueueSnackbar("LogIn Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("LogIn Failed", { variant: "error" });
+			});
+	};
+	
 	return (
 		<React.Fragment>
 			<div className="login-card">
@@ -153,10 +170,11 @@ const Login = ({ setopen, setSignopen }) => {
 							<GoogleLogin
 								clientId="171125153728-pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
 								buttonText="Login"
-								onSuccess={responseGoogle}
-								onFailure={responseGoogle}
+								onSuccess={handleGoogleSignUp}
+								onFailure={(res) => {
+									console.log(res);
+								}}
 								cookiePolicy={"single_host_origin"}
-								isSignedIn={true}
 								render={(renderProps) => (
 									<Button
 										variant="contained"

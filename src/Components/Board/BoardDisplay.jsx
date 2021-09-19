@@ -9,103 +9,122 @@ import download from "./assets/326639_download_file_icon.png";
 import views from "./assets/1954555_eye_look_view_views_watch_icon.png";
 import share from "./assets/2561282_share_icon.png";
 import heart from "./assets/2246820_heart_like_notification_icon.png";
-import { useLocation } from "react-router-dom";
+import img from "./assets/eric-christian-king.jpg";
+import { useCurrentPin } from "../../Context/PinsContext";
+
 const BoardDisplay = () => {
-	const location = useLocation();
-	const {i} = location.state
+	// eslint-disable-next-line
+	const [pinCurrData, setPinCurrData] = useCurrentPin();
+
 	return (
 		<React.Fragment>
-			<div style={{ backgroundColor: "rgb(230, 233, 233)", padding: "30px" }}>
+			<div style={{ backgroundColor: "rgb(230, 233, 233)", padding: "15px" }}>
 				<div className={style.BoardDisplayContainer}>
 					<div className={style.ContentContainerDisplay}>
 						<div className={style.leftContainerDisplay}>
 							<img
 								style={{ width: "100%", height: "100%", borderRadius: "15px" }}
-								src={i}
+								src={pinCurrData.imgUrl}
 								alt="addedImage"
 							/>
 						</div>
 						<div className={style.rightContinerDisplay}>
 							<h3 style={{ color: "black" }}>
 								{" "}
-								Title: <small>title here</small>{" "}
+								Title: <small>{pinCurrData.title}</small>{" "}
 							</h3>
 							<h3 style={{ color: "black" }}>
 								{" "}
-								Description: <br />{" "}
+								URL:{" "}
 								<small>
-									Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-									Quasi reprehenderit tempora expedita praesentium fugiat?
-									Provident aspernatur rerum numquam autem excepturi labore
-									ipsum commodi? Vero repellat, assumenda suscipit maiores quis
-									cumque!
-								</small>
+									<a href={pinCurrData.imgUrl}>{pinCurrData.imgUrl}</a>
+								</small>{" "}
 							</h3>
 							<h3 style={{ color: "black" }}>
-								Author: <small>Author name</small>{" "}
+								{" "}
+								Description: <br /> <small>{pinCurrData.desc}</small>
 							</h3>
-							<div style={{ display: "flex" }}>
+							<h3 style={{ color: "black" }}>
+								Author: <small>{pinCurrData.author}</small>{" "}
+							</h3>
+							<div style={{ display: "flex", justifyContent: "flex-start" }}>
 								<img
 									style={{ width: "25px", height: "25px" }}
 									src={heart}
 									alt="liked"
 								/>
-								<h3>: 0</h3>
+								<h3>{pinCurrData.likes?.length}</h3>
 							</div>
-							<div style={{ display: "flex" }}>
+							<div style={{ display: "flex", justifyContent: "flex-start" }}>
 								<img
 									style={{ width: "25px", height: "25px" }}
 									src={views}
 									alt="views"
 								/>
-								<h3>: 0</h3>
+								<h3>{pinCurrData.tags?.length}</h3>
 							</div>
-							<div style={{ display: "flex" }}>
+							<div style={{ display: "flex", justifyContent: "flex-start" }}>
 								<img
 									style={{ width: "25px", height: "25px" }}
 									src={download}
 									alt="downloads"
 								/>
-								<h3>: 0</h3>
+								<h3>{pinCurrData.downloads?.length}</h3>
 							</div>
-							
-							<div style={{ display: "flex" }}>
+
+							<div style={{ display: "flex", justifyContent: "flex-start" }}>
 								<img
 									style={{ width: "25px", height: "25px" }}
 									src={share}
 									alt="shared"
 								/>
-								<h3>: 0</h3>
+								<h3>{pinCurrData.shares.length}</h3>
 							</div>
-							
+
 							<h3>Find Creamzo on</h3>
 							<div
 								style={{ height: "30px", display: "flex", paddingTop: "0px" }}
 							>
 								<a href="###">
 									<img
-										style={{ width: "30px", height: "30px", marginLeft: "7px" }}
+										style={{
+											width: "24px",
+											height: "24px",
+											marginLeft: "10px",
+										}}
 										src={facebook}
 										alt="facebook"
 									/>
 								</a>
 								<a href="###">
 									<img
-										style={{ width: "30px", height: "30px", marginLeft: "7px" }}
+										style={{
+											width: "24px",
+											height: "24px",
+											marginLeft: "10px",
+										}}
 										src={instagram}
 										alt="instagram"
 									/>
 								</a>
 								<a href="##">
 									<img
-										style={{ width: "30px", height: "30px", marginLeft: "7px" }}
+										style={{
+											width: "24px",
+											height: "24px",
+											marginLeft: "10px",
+										}}
 										src={twitter}
 										alt="twitter"
 									/>
 								</a>
 								<a href="##">
 									<img
-										style={{ width: "30px", height: "30px", marginLeft: "7px" }}
+										style={{
+											width: "24px",
+											height: "24px",
+											marginLeft: "10px",
+										}}
 										src={linkedin}
 										alt="twitter"
 									/>

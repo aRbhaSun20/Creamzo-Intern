@@ -1,22 +1,34 @@
-.container{
-    width: 50vw;
-    margin: 0 auto;
-
-}
-.details{
-margin: auto 15vw;
-}
-.links{
-margin: auto 19vw;
-padding-top: 20px;
-width: max-content;
+.container {
+    /*width: 50vw;*/
+    width: 60vw;
+    margin: 20px auto;
+    /*height: 100vh;*/
 }
 
-.followbtn{
+.details {
+    /*margin: auto 15vw;*/
+    /*margin: auto;*/
+}
+
+.links {
+    /*margin: auto 19vw;*/
+    margin: auto;
+    /*padding-top: 20px;*/
+    padding: 20px;
+    /*width: max-content;*/
+}
+
+.followbtn {
     margin: 0 auto;
-    position: relative;
-    left: 45%;
-    width: 10%;
+    /*position: relative;*/
+    display: block;
+    /*left: 45%;*/
+    /*width: 10%;*/
+    width: 20%;
+
+    max-width: 100px;
+    min-width: 60px;
+
     height: 35px;
     border-radius: 20px;
     background-color: rgba(220, 20, 60, 0.8);
@@ -27,7 +39,7 @@ width: max-content;
     cursor: pointer;
 }
 
-.followbtn:hover{
+.followbtn:hover {
     background-color: rgba(220, 20, 60, 1);
-   
+
 }

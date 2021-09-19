@@ -7,11 +7,13 @@ import {
 	Popper,
 } from "@material-ui/core";
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./style/style.css";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
-import {  Search } from "@material-ui/icons";
+import { Search } from "@material-ui/icons";
 import { useState } from "react";
+import logo from "./assets/logo.jpg";
+import { useSnackbar } from "notistack";
 
 const NavBar = () => {
 	// eslint-disable-next-line
@@ -22,6 +24,8 @@ const NavBar = () => {
 		setAnchorEl(event.currentTarget);
 		setOpen(!open);
 	};
+
+	const { enqueueSnackbar } = useSnackbar();
 
 	const handleClose = () => {
 		setAnchorEl(null);
@@ -35,45 +39,18 @@ const NavBar = () => {
 
 	return (
 		<React.Fragment>
-			<div className="navbar">
-				<div
-					className="top"
-					style={{
-						display: "flex",
-						justifyContent: "space-evenly",
-						alignItems: "center",
-						width: "20%",
-					}}
-				>
+			<div className="navbar" style={{ paddingTop: "5px" }}>
+				<div className="top">
 					<NavLink activeClassName="activeLink" to="/" exact>
 						<Typography
 							variant="h4"
-							style={{ fontWeight: "bold", fontSize: "2vw" }}
+							style={{ fontWeight: "bold", fontSize: "1rem" }}
 						>
-							Logo
+							<img src={logo} className="logo" alt="logo" />
 						</Typography>
 					</NavLink>
-					<NavLink activeClassName="activeLink" to="/" exact>
-						<Typography
-							variant="h5"
-							style={{ fontSize: ".8vw" }}
-						>
-							Home
-						</Typography>
-					</NavLink>
-				</div>
-
-				<div className="remaining-navs" style={{ width: "80%" }}>
-					<div
-						className="input-group"
-						style={{
-							display: "flex",
-							justifyContent: "space-evenly",
-							alignItems: "center",
-							width: "75rem",
-						}}
-					>
-						<div>
+					<div className="input-group">
+						<div style={{ width: "-webkit-fill-available" }}>
 							<InputBase
 								type="search"
 								placeholder="Search"
@@ -81,8 +58,8 @@ const NavBar = () => {
 								style={{
 									backgroundColor: "#eaeaf1",
 									borderRadius: "2rem",
-									paddingLeft: "2rem",
-									width: "60vw",
+									paddingLeft: "1rem",
+									width: "100%",
 									outline: "none",
 									height: "3rem",
 									display: "flex",
@@ -97,24 +74,25 @@ const NavBar = () => {
 							/>
 						</div>
 					</div>
-					<div
-						className="links"
-						style={{
-							width: "20rem",
-							display: "flex",
-							justifyContent: "space-evenly",
-							alignItems: "center",
-						}}
-					>
+				</div>
+
+				<div className="afterloginnav">
+					<NavLink activeClassName="activeLink" to="/" className="navs" exact>
+						<Typography>Home</Typography>
+					</NavLink>
+					<div className="links">
+						{/*<NavLink activeClassName="activeLink" to="/" className="navs" exact>
+							<Typography>
+								Home
+							</Typography>
+						</NavLink>*/}
 						<NavLink
 							activeClassName="activeLink"
 							to="/about"
 							className="navs"
 							exact
 						>
-							<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
-								About Us
-							</Typography>
+							<Typography>About</Typography>
 						</NavLink>
 						<NavLink
 							className="navs"
@@ -122,31 +100,45 @@ const NavBar = () => {
 							to="/blog"
 							exact
 						>
-							<Typography style={{ fontWeight: "bold", fontSize: ".8vw" }}>
-								Blog
-							</Typography>
+							<Typography>Blog</Typography>
 						</NavLink>
-
-						<div className="avatar">
-							<Avatar style={{ fontSize: "1vw" }} onClick={handleClick} />
-							<Popper
-								id="simple-menu"
-								anchorEl={anchorEl}
-								open={open}
-								onClose={handleClose}
-							>
-								<MenuItem onClick={handleClose}>Profile</MenuItem>
-								<MenuItem onClick={handleClose}>My account</MenuItem>
-								<MenuItem
-									onClick={() => {
-										handleClose();
-										setLogin({ type: LOGIN_ACTIONS.LOGOUT });
-									}}
+					</div>
+					<div className="avatar">
+						<Avatar style={{ fontSize: "1vw" }} onClick={handleClick} />
+						<Popper
+							id="simple-menu"
+							anchorEl={anchorEl}
+							open={open}
+							onClose={handleClose}
+							style={{ backgroundColor: "#f8f9fe", zIndex: "1000" }}
+						>
+							<MenuItem onClick={handleClose}>
+								<Link
+									to="/profile"
+									style={{ textDecoration: "none", color: "#616d8b" }}
 								>
-									Logout
-								</MenuItem>
-							</Popper>
-						</div>
+									Profile
+								</Link>
+							</MenuItem>
+							<MenuItem onClick={handleClose}>
+								<Link
+									to="/settings"
+									style={{ textDecoration: "none", color: "#616d8b" }}
+								>
+									My account
+								</Link>
+							</MenuItem>
+							<MenuItem
+								onClick={() => {
+									handleClose();
+									enqueueSnackbar("Log Out", { variant: "success" });
+									sessionStorage.getItem("creamzToken", "");
+									setLogin({ type: LOGIN_ACTIONS.LOGOUT });
+								}}
+							>
+								Logout
+							</MenuItem>
+						</Popper>
 					</div>
 				</div>
 			</div>

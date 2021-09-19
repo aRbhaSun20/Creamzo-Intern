@@ -1,10 +1,15 @@
+
 import React from 'react'
-// import Article from '../../Components/Blog/Article/Article'
 import ArticleItem from '../../Components/Blog/ArticleItem/ArticleItem'
+import {useArticle} from '../../Context/ArticlesContext'
 function Articledisplay() {
+   // eslint-disable-next-line
+   const [currentArticle,setcurrentArticle] = useArticle()
+    
     return (
-        <div>
-            <ArticleItem />
+        <div>    
+               
+            <ArticleItem data={currentArticle}/>
         </div>
     )
 }

@@ -23,7 +23,9 @@
           flex-direction: column;
   height: 80vh;
 }
-
+h2{
+  color:black
+}
 .termsContainer .terms_left h2 {
   font-size: 3.5rem;
   color: gray;

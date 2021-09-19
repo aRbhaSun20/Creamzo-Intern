@@ -1,59 +1,119 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import "./style/style.css";
 import Conatiner from "../../Components/ImageContainer_afterLogin/Conatiner";
 import { useState } from "react";
 import { Add } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import img1 from "../../Components/About/assets/img/art.jpg";
-import img2 from "../../Components/About/assets/img/authors.jpg";
-import img3 from "../../Components/About/assets/img/quotes.jpg";
-import img from "../../Components/About/assets/img/diy.jpg";
+import { usePin } from "../../Context/PinsContext";
 
 const HomeAfter = () => {
 	// eslint-disable-next-line
-	const [limit, setLimit] = useState(25);
-	const images = [img, img1, img2, img3, img2];
-	function shuffleArray(array) {
-		for (var i = array.length - 1; i > 0; i--) {
-			// Generate random number
-			var j = Math.floor(Math.random() * Math.random() * (i + 1));
+	const [limit, setLimit] = useState(5);
 
-			var temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
+	const [size, setSize] = useState([0, 0]);
+	// eslint-disable-next-line
+	const [pinsData, refetch] = usePin();
+	useLayoutEffect(() => {
+		function updateSize() {
+			setSize([window.innerWidth, window.innerHeight]);
 		}
+		window.addEventListener("resize", updateSize);
+		updateSize();
+		return () => window.removeEventListener("resize", updateSize);
+	}, []);
 
-		return array;
-	}
+	useEffect(() => {
+		if (size[0] < 900) {
+			setLimit(4);
+			if (size[0] < 700) {
+				setLimit(3);
+				if (size[0] < 480) {
+					setLimit(2);
+				}
+			}
+		} else {
+			setLimit(5);
+		}
+	}, [size]);
+
 	return (
 		<div
 			className="container1"
 			style={{
-				maxHeight: `${limit * 9}vh`,
-				maxWidth: "80vw",
-				width: "90%",
+				// maxHeight: `${limit * 9}vh`,
+				// maxWidth: "80vw",
 				paddingTop: "2em",
+				// height:"100vh"
 			}}
 		>
-			{new Array(5)
-				.fill("")
-				.map(() =>
-					shuffleArray(images).map((image, i) => (
+			<div className="column1">
+				{pinsData?.map((image, i) =>
+					i % limit === 0 ? (
 						<Conatiner
-							image={image}
+							data={image}
 							key={i}
-							height={Math.random() * limit * Math.random() + 12}
+							height="70%"
+							// height={Math.random() * limit * Math.random() + 12}
 						/>
-					))
+					) : null
 				)}
+			</div>
+			<div className="column2">
+				{pinsData?.map((image, i) =>
+					i % limit === 1 ? (
+						<Conatiner
+							data={image}
+							key={i}
+							height="70%"
+							// height={Math.random() * limit * Math.random() + 12}
+						/>
+					) : null
+				)}
+			</div>
+			<div className="column3">
+				{pinsData?.map((image, i) =>
+					i % limit === 2 ? (
+						<Conatiner
+							data={image}
+							key={i}
+							height="70%"
+							// height={Math.random() * limit * Math.random() + 12}
+						/>
+					) : null
+				)}
+			</div>
+			<div className="column4">
+				{pinsData?.map((image, i) =>
+					i % limit === 3 ? (
+						<Conatiner
+							data={image}
+							key={i}
+							height="70%"
+							// height={Math.random() * limit * Math.random() + 12}
+						/>
+					) : null
+				)}
+			</div>
+			<div className="column5">
+				{pinsData?.map((image, i) =>
+					i % limit === 4 ? (
+						<Conatiner
+							data={image}
+							key={i}
+							height="70%"
+							// height={Math.random() * limit * Math.random() + 12}
+						/>
+					) : null
+				)}
+			</div>
 			<div
 				className="add"
-				style={{ position: "fixed", bottom: "2.5em", right: "1em" }}
+				style={{ position: "fixed", bottom: "5.5em", right: "2em" }}
 			>
 				<Link to="/boardCreation">
 					<IconButton style={{ outline: "none", backgroundColor: "#dedede" }}>
-						<Add style={{ fontSize: "1.8vw", color: "black" }} />
+						<Add style={{ fontSize: "2vw", color: "black" }} />
 					</IconButton>
 				</Link>
 			</div>

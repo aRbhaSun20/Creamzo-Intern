@@ -7,7 +7,7 @@ function TermsOfService() {
       <h1>TERMS OF SERVICE</h1>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Introduction</h2>
+          <div>Introduction</div>
         </div>
         <div className='para'>
           <p>
@@ -29,7 +29,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Communications</h2>
+          <div>Communications</div>
         </div>
         <div className='para'>
           <p>
@@ -43,7 +43,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Contests, Sweepstakes and Promotions</h2>
+          <div>Contests, Sweepstakes and Promotions</div>
         </div>
         <div className='para'>
           <p>
@@ -58,7 +58,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Content</h2>
+          <div>Content</div>
         </div>
         <div className='para'>
           <p>
@@ -95,7 +95,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Prohibited Uses</h2>
+          <div>Prohibited Uses</div>
         </div>
         <div className='para'>
           <p>
@@ -175,7 +175,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Analytics</h2>
+          <div>Analytics</div>
         </div>
         <div className='para'>
           <p>
@@ -186,7 +186,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>No Use By Minors</h2>
+          <div>No Use By Minors</div>
         </div>
         <div className='para'>
           <p>
@@ -202,7 +202,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Accounts</h2>
+          <div>Accounts</div>
         </div>
         <div className='para'>
           <p>
@@ -230,7 +230,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Intellectual Property</h2>
+          <div>Intellectual Property</div>
         </div>
         <div className='para'>
           <p>
@@ -245,7 +245,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Copyright Policy</h2>
+          <div>Copyright Policy</div>
         </div>
         <div className='para'>
           <p>
@@ -269,7 +269,7 @@ function TermsOfService() {
 
       <div className='tos_inner'>
         <div className='title'>
-          <h2>DMCA Notice and Procedure for Copyright Infringement Claims</h2>
+          <div>DMCA Notice and Procedure for Copyright Infringement Claims</div>
         </div>
         <div className='para'>
           <p>
@@ -312,7 +312,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Error Reporting and Feedback</h2>
+          <div>Error Reporting and Feedback</div>
         </div>
         <div className='para'>
           <p>
@@ -338,7 +338,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Links To Other Web Sites</h2>
+          <div>Links To Other Web Sites</div>
         </div>
         <div className='para'>
           <p>
@@ -364,7 +364,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Disclaimer Of Warranty</h2>
+          <div>Disclaimer Of Warranty</div>
         </div>
         <div className='para'>
           <p>
@@ -395,7 +395,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Limitation Of Liability</h2>
+          <div>Limitation Of Liability</div>
         </div>
         <div className='para'>
           <p>
@@ -422,7 +422,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Termination</h2>
+          <div>Termination</div>
         </div>
         <div className='para'>
           <p>
@@ -440,7 +440,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Governing Law</h2>
+          <div>Governing Law</div>
         </div>
         <div className='para'>
           <p>
@@ -458,7 +458,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Changes To Service</h2>
+          <div>Changes To Service</div>
         </div>
         <div className='para'>
           <p>
@@ -473,7 +473,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Amendments To Terms</h2>
+          <div>Amendments To Terms</div>
         </div>
         <div className='para'>
           <p>
@@ -491,7 +491,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Waiver And Severability</h2>
+          <div>Waiver And Severability</div>
         </div>
         <div className='para'>
           <p>
@@ -510,7 +510,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Acknowledgement</h2>
+          <div>Acknowledgement</div>
         </div>
         <div className='para'>
           <p>
@@ -522,7 +522,7 @@ function TermsOfService() {
       </div>
       <div className='tos_inner'>
         <div className='title'>
-          <h2>Contact Us</h2>
+          <div>Contact Us</div>
         </div>
         <div className='para'>
           <p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -21,7 +21,15 @@ import Collection from "../Components/Collections/Collection";
 import BoardCreation from "../Components/Board/BoardCreation";
 import BoardDisplay from "../Components/Board/BoardDisplay";
 import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
+
+import PublicViewProfile from "./Profile/PublicViewProfile";
+import UserViewProfile from "./Profile/UserViewProfile";
+import { LoginContext } from "../Context/Login";
+
 const Routes = () => {
+	// eslint-disable-next-line 
+		const [login, setLogin] = useContext(LoginContext);
+
 	return (
 		<React.Fragment>
 			<Router>
@@ -96,6 +104,13 @@ const Routes = () => {
 							path="/terms"
 							exact
 							render={(props) => <TermsAndConditions />}
+						></Route>
+						<Route
+							path="/profile"
+							exact
+							render={(props) =>
+								!login ? <PublicViewProfile /> : <UserViewProfile />
+							}
 						></Route>
 						<Redirect to="/" />
 					</Switch>

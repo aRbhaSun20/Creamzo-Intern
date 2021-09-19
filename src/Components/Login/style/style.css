@@ -8,12 +8,12 @@
           align-items: center;
   display: -ms-grid;
   display: grid;
-  height: 60vh;
+  height: 80%;
   border-radius: 1rem;
-  width: 30vw;
+  width: 40%;
   -ms-grid-rows: 1fr 4fr;
       grid-template-rows: 1fr 4fr;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   place-content: center;
 }
 
@@ -30,8 +30,8 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-  height: 5vh;
-  width: 30vw;
+  height: 10vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,6 +45,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+
 }
 
 .login-card .top-header .title {
@@ -54,6 +55,8 @@
   -ms-grid-column-align: center;
       justify-self: center;
   margin-top: 2rem;
+  height: 10vh;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .login-card .buttons-gp {
@@ -90,37 +93,43 @@
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: .6em;
+  padding-bottom: .6em;
   color: #3d3d3d;
   font-size: 0.8rem;
 }
 
 .login-card .bottom-header {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-row: 2;
+  /*display: -ms-grid;*/
+  display: flex;
+  flex-direction: column;
+  /*-ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
   -ms-grid-rows: auto;
-      grid-template-rows: auto;
+      grid-template-rows: auto;*/
   width: 100%;
   height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: flex-start;
+
+
+
+
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
 }
 
 .login-card .bottom-header .inputs {
-  height: 20vh;
-  display: -ms-grid;
-  display: grid;
+  width: 90%;
+  height: 25vh;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -130,7 +139,7 @@
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: space-evenly;
 }
 
 .login-card .bottom-header .inputs .inp {
@@ -143,6 +152,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+   width: 100%;
+   height: 60px;
+
 }
 
 .login-card .login-forget {
@@ -162,11 +174,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 3rem;
 }
 
 .login-card .login-forget button {
-  height: 3rem;
-  width: 9rem;
+  width: 6rem;
+  font-size: 1rem;
+  border-radius: 20rem;
+  height: 2rem;
+  background-color: #c21336;
+  outline: none!important;
+  border: none!important;
 }
 
 .login-card .login-forget .forget {
@@ -174,19 +192,30 @@
   font-size: 0.8rem;
 }
 
-.login-card .dont-have {
+.dont-have {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: .95rem;
+  font-size: 90%;
 }
 
-.login-card .dont-have span {
+.dont-have span {
   padding-left: 0.5rem;
   color: #d82d57;
   cursor: pointer;
+}
+
+@media screen and (max-width: 650px){
+  .login-card{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 400px){
+  .login-card{
+    width: 75%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

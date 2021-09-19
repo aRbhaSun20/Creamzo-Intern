@@ -1,5 +1,8 @@
 .footer_container {
-  width: 100vw;
+  width: 100%;
+  /* padding: 5px; */
+  height: 5vh;
+  padding: 1px;
   background-color: #c21336;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,14 +10,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
+  -webkit-box-align: center;  
       -ms-flex-align: center;
           align-items: center;
+  justify-content: space-evenly;
 }
 
 .footer_container .footer_inner {
-  width: 38rem;
-  height: 2vh;
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,13 +27,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: auto;
-  padding-left: 13rem;
+  justify-content: flex-end;
 }
 
 .footer_container .footer_inner .footer_links {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-decoration: none !important;
 }
 
@@ -39,15 +41,14 @@
 }
 
 .footer_container .footer_social_links {
-  width: 150px;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-right: 3rem;
-  margin-left: auto;
+  justify-content: flex-end;
+  padding-top: 10px;
 }
 
 .footer_container .footer_social_links .footer_icons {
@@ -58,21 +59,39 @@
 .footer_container .footer_social_links .footer_icons:hover {
   color: black;
 }
+.footer_inner a{
+  margin-right: 3%;
+}
+.footer_social_links a{
+  align-items: center;
+  margin-right: 5px;
+}
 
-@media screen and (max-width: 768px) {
-  .footer_container {
-    padding: 0.3rem 1.6rem;
-    -ms-flex-wrap: wrap !important;
-        flex-wrap: wrap !important;
+@media screen and (max-width: 700px) {
+  .footer_container .footer_inner{
+    width: 55%;
   }
-  .footer_container .footer_inner {
-    margin-left: 0 !important;
-    width: 40rem !important;
-    padding-left: 0 !important;
+}
+@media screen and (max-width: 570px){
+  .footer_container .footer_social_links{
+    width: 40%;
+    justify-content: space-evenly;
+  }
+  .footer_container{
+    height: fit-content;
+    flex-direction: column;
+  }
+  .footer_container .footer_inner{
+    justify-content: space-evenly;
+    width: 75%;
+  }
+}
+@media screen and (max-width: 350px){
+  .footer_container .footer_inner{
+    width: 100%;
   }
   .footer_container .footer_social_links {
-    margin-left: 2rem;
-    margin-bottom: 6px;
+    width: 80%;
   }
 }
 /*# sourceMappingURL=Footer.css.map */

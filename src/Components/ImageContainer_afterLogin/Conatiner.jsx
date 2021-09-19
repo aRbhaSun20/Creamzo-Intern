@@ -1,172 +1,256 @@
 import { Button, IconButton } from "@material-ui/core";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import React, { useState } from "react";
+import { saveAs } from "file-saver";
 import GetAppIcon from "@material-ui/icons/GetApp";
+// eslint-disable-next-line
+import { FacebookShareButton } from "react-share";
 import {
+	AddCircle,
 	AddCircleOutline,
-	ArrowUpward,
+	ArrowUpward, // eslint-disable-next-line
 	FavoriteBorder,
 	Share,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
 
-const Conatiner = ({ image, height }) => {
-	// eslint-disable-next-line
+import { useHistory } from "react-router-dom";
+import "./style/style.css";
+import { PIN_ACTIONS, useCurrentPin, usePin } from "../../Context/PinsContext";
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
+
+const Conatiner = ({ data, height }) => {
 	const [opacity, setOpacity] = useState(0);
-	return (
-		<div
-			className="imglogin"
-			style={{ position: "relative" }}
-			onMouseEnter={(e) => {
-				e.preventDefault();
-				setOpacity(1);
-			}}
-			onMouseLeave={(e) => {
-				e.preventDefault();
-				setOpacity(0);
-			}}
-		>
-			<img
-				src={image}
-				alt=""
-				onClick={() => {
-					console.log("hi");
-				}}
-				style={{ height: `100%`, borderRadius: "1em" }}
-			/>
+	const [errorHandle, setErrorhandle] = useState(false);
+	// eslint-disable-next-line
+	const [pinCurrData, setPinCurrData] = useCurrentPin();
+	// eslint-disable-next-line
+	const [pinsData, refetch] = usePin();
 
+	let history = useHistory();
+
+	const [heartActive, setHeartActive] = useState("red");
+	const [addColl, setaddColl] = useState(true);
+
+	return (
+		<React.Fragment>
 			<div
-				className="details"
+				className="imglogin"
 				style={{
-					position: "absolute",
-					height: `8vh`,
-					opacity: `${opacity}`,
-					zIndex: "1000",
-					top: "1vh",
-					left: ".5em",
-					width: "15vw",
+					position: "relative",
+					height: { height },
+					display: errorHandle ? "none" : "block",
+				}}
+				onMouseEnter={(e) => {
+					e.preventDefault();
+					setOpacity(1);
+				}}
+				onMouseLeave={(e) => {
+					e.preventDefault();
+					setOpacity(0);
 				}}
 			>
-				<div
+				<img
+					src={data?.imgUrl}
+					alt=""
+					className="imgCont"
 					style={{
-						display: "flex",
-						width: "15vw",
-						position: "relative",
-						left: "-8.5em",
+						borderRadius: "1em",
+						height: height,
 					}}
-				>
-					{opacity ? (
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "flex-end",
-								width: "100%",
-							}}
-						>
-							<IconButton
-								variant="contained"
-								style={{
-									borderRadius: "1em",
-									position: "relative",
-									left: "3.5em",
-									top: ".5em",
-									outline: "none",
-								}}
-							>
-								<FavoriteBorder
-									style={{
-										color: "white",
-										fontSize: "1.5rem",
-									}}
-								/>
-							</IconButton>
-						</div>
-					) : null}
-					{opacity ? (
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "flex-end",
-								width: "100%",
-								position: "relative",
-								left: "8em",
-								top: ".5em",
-							}}
-						>
-							<IconButton
-								variant="contained"
-								style={{
-									borderRadius: "1em",
-									outline: "none",
-								}}
-							>
-								<AddCircleOutline
-									style={{ color: "white", fontSize: "1.5rem" }}
-								/>
-							</IconButton>
-						</div>
-					) : null}
-				</div>
-			</div>
-			<div
-				className="details"
-				style={{
-					position: "absolute",
-					height: `8vh`,
-					opacity: `${opacity}`,
-					zIndex: "1000",
-					bottom: "-6vh",
-					left: "9em",
-					width: "15vw",
-				}}
-			>
-				<div
-					style={{
-						display: "flex",
-						width: "15vw",
-						position: "relative",
-						left: "-8.5em",
+					onError={() => setErrorhandle(true)}
+					onClick={() => {
+						setPinCurrData({ type: PIN_ACTIONS.PINS_CLICK, payload: data });
+						history.push("/boardDisplay");
 					}}
-				>
-					{opacity ? (
+				/>
+
+				{opacity ? (
+					<div
+						style={{
+							display: "flex",
+							width: "100%",
+							position: "absolute",
+							justifyContent: "center",
+							alignItems: "center",
+							top: "0",
+						}}
+					>
 						<div
-							className="bottom"
 							style={{
 								display: "flex",
-								width: "21vw",
-								alignItems: "center",
-								position: "absolute",
+								width: "90%",
 								justifyContent: "space-between",
-								bottom: ".3em",
-								marginLeft: "1em",
+								alignItems: "center",
 							}}
 						>
-							<Link to="/boardDisplay">
-								<Button
-									variant="contained"
-									style={{
-										borderRadius: "1em",
-										position: "relative",
-										bottom: "0.5rem",
-										outline: "none",
-										fontSize: ".7rem",
-									}}
-								>
-									<ArrowUpward
+							<IconButton
+								variant="contained"
+								style={{
+									borderRadius: "1em",
+									outline: "none",
+								}}
+								name="favourite"
+								onClick={() => {
+									if (heartActive !== "red") {
+										axiosSendRequest(AXIOS_ACTIONS.PUT, `dislikePin`, {
+											creamzoId: `${data.creamzoId}`,
+											id: `${data._id}`,
+										}).then((res) => {
+											console.log(res);
+											refetch();
+										});
+									} else {
+										axiosSendRequest(AXIOS_ACTIONS.PUT, `likePin`, {
+											creamzoId: `${data.creamzoId}`,
+											id: `${data._id}`,
+										}).then((res) => {
+											console.log(res);
+											refetch();
+										});
+									}
+								}}
+							>
+								{heartActive === "red" ? (
+									<FavoriteIcon
+										onClick={() => {
+											if (heartActive === "black") {
+												setHeartActive("red");
+											} else {
+												setHeartActive("black");
+											}
+										}}
 										style={{
-											transform: "rotate(45deg)",
-											marginRight: ".5em",
-											fontSize: "1rem",
+											color: "red",
+											borderColor: "white",
+											fontSize: "1.5rem",
 										}}
 									/>
-									Link
-								</Button>
-							</Link>
-							<div
-								className="end"
-								style={{ position: "relative", left: "-7.5em", bottom: ".5em" }}
+								) : (
+									<FavoriteBorderIcon
+										onClick={() => {
+											if (heartActive === "black") {
+												setHeartActive("red");
+											} else {
+												setHeartActive("black");
+											}
+										}}
+										style={{
+											color: "red",
+											borderColor: "white",
+											fontSize: "1.5rem",
+										}}
+									/>
+								)}
+							</IconButton>
+							<IconButton
+								variant="contained"
+								style={{
+									borderRadius: "1em",
+									outline: "none",
+								}}
+								name="addcollection"
+								onClick={() => {
+									setaddColl((state) => !state);
+									if (!addColl) {
+										axiosSendRequest(AXIOS_ACTIONS.POST, `removeCollection`, {
+											creamzoId: `${data.creamzoId}`,
+											id: `${data._id}`,
+										}).then((res) => {
+											console.log(res);
+											refetch();
+										});
+									} else {
+										axiosSendRequest(AXIOS_ACTIONS.POST, `addCollection`, {
+											creamzoId: `${data.creamzoId}`,
+											id: `${data._id}`,
+										}).then((res) => {
+											console.log(res);
+											refetch();
+										});
+									}
+								}}
 							>
-								<IconButton style={{ outline: "none" }}>
+								{addColl ? (
+									<AddCircleOutline
+										style={{ color: "white", fontSize: "1.5rem" }}
+									/>
+								) : (
+									<AddCircle style={{ color: "white", fontSize: "1.5rem" }} />
+								)}
+							</IconButton>
+						</div>
+					</div>
+				) : null}
+
+				{opacity ? (
+					<div
+						style={{
+							display: "flex",
+							width: "100%",
+							position: "absolute",
+							justifyContent: "center",
+							alignItems: "center",
+							bottom: "1rem",
+						}}
+					>
+						<div
+							style={{
+								display: "flex",
+								width: "85%",
+								justifyContent: "space-between",
+								alignItems: "center",
+							}}
+						>
+							<Button
+								variant="contained"
+								style={{
+									borderRadius: "1em",
+									// position: "relative",
+									width: "6rem",
+									// bottom: "0.5rem",
+									outline: "none",
+									textTransform: "capitalize",
+									// fontSize: ".7rem",
+								}}
+							>
+								<ArrowUpward
+									style={{
+										transform: "rotate(45deg)",
+										// marginRight: ".5em",
+										width: "50%",
+										fontSize: "1rem",
+									}}
+								/>
+								<a href={data.imgUrl}>Link</a>
+							</Button>
+							<div
+								style={{
+									display: "flex",
+									justifyContent: "space-between",
+									alignItems: "center",
+									width: "4rem",
+								}}
+							>
+								<IconButton
+									onClick={() => {
+										axiosSendRequest(
+											AXIOS_ACTIONS.PUT,
+											`addDownloads/${data?._id}/${
+												data?.creamzoId.split("#")[1]
+											}`,
+											null
+										).then((data) => {
+											refetch();
+										});
+									}}
+									name="download"
+									style={{ outline: "none", padding: "4px" }}
+								>
 									<GetAppIcon
+										onClick={() => {
+											saveAs(data.imgUrl, "image.jpg");
+										}}
 										style={{
 											color: "white",
 											fontSize: "1.2rem",
@@ -175,7 +259,23 @@ const Conatiner = ({ image, height }) => {
 										}}
 									/>
 								</IconButton>
-								<IconButton style={{ outline: "none" }}>
+								<IconButton
+									onClick={() => {
+										axiosSendRequest(
+											AXIOS_ACTIONS.PUT,
+											`addShares/${data?._id}/${
+												data?.creamzoId.split("#").length > 0
+													? `%23${data?.creamzoId.split("#")[1]}`
+													: data?.creamzoId
+											}`,
+											null
+										).then((res) => {
+											refetch();
+										});
+									}}
+									name="share"
+									style={{ outline: "none", padding: "4px" }}
+								>
 									<Share
 										style={{
 											color: "white",
@@ -187,10 +287,10 @@ const Conatiner = ({ image, height }) => {
 								</IconButton>
 							</div>
 						</div>
-					) : null}
-				</div>
+					</div>
+				) : null}
 			</div>
-		</div>
+		</React.Fragment>
 	);
 };
 

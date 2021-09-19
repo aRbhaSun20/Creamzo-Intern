@@ -4,8 +4,10 @@ import style from "./style/style.module.css"
 const Details = ()=>{
    return(
        <div className={style.information} >
-               <h1>user name here</h1>
-               <p> 100 followers . 20 following </p>
+               <h1 style={{textTransform:"capitalize"}}>user name</h1>
+               <div>
+               <p className={style.publicf}> 100 followers</p><p className={style.publicf}>20 following </p>
+               </div>
        </div>
    );
 }

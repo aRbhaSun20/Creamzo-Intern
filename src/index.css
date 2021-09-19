@@ -16,3 +16,6 @@ code {
 button:focus{
   outline:none
 }
+.MuiBox-root-8 {
+  padding: 0;
+}

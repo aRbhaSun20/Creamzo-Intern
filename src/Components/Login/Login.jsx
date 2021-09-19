@@ -3,11 +3,15 @@ import React, { useContext, useState } from "react";
 import { Button, TextField } from "@material-ui/core";
 
 import "./style/style.css";
-import fb from "./assets/fb.png";
+// import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
+import { GoogleLogin } from "react-google-login";
+// eslint-disable-next-line
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
+import { useSnackbar } from "notistack";
 
 const Login = ({ setopen, setSignopen }) => {
 	const [mail, setMail] = useState("");
@@ -16,6 +20,46 @@ const Login = ({ setopen, setSignopen }) => {
 	// eslint-disable-next-line
 	const [password, setPassword] = useState("");
 
+	const { enqueueSnackbar } = useSnackbar();
+
+	const handleLogin = () => {
+		axiosSendRequest(AXIOS_ACTIONS.POST, "login", {
+			email: mail,
+			passwd: password,
+		})
+			.then((data) => {
+				console.log(data);
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				sessionStorage.setItem(
+					"creamzToken",
+					JSON.stringify({ token: data.token })
+				);
+				setopen(false);
+				enqueueSnackbar("LogIn Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("LogIn Failed", { variant: "error" });
+			});
+	};
+
+	const handleGoogleSignUp = (response) => {
+		axiosSendRequest(AXIOS_ACTIONS.GOOGLE_SIGNUP, "googlelogin", {
+			tokenId: response.tokenId,
+		})
+			.then((res) => {
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				sessionStorage.setItem(
+					"creamzToken",
+					JSON.stringify({ token: res.token })
+				);
+				setopen(false);
+				enqueueSnackbar("LogIn Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("LogIn Failed", { variant: "error" });
+			});
+	};
+	
 	return (
 		<React.Fragment>
 			<div className="login-card">
@@ -26,13 +70,14 @@ const Login = ({ setopen, setSignopen }) => {
 							position: "relative",
 							top: "-0.5rem",
 							color: "black",
-							fontSize: "1.8vw",
+							fontSize: "1.5rem",
 							fontWeight: "bold",
+							textAlign: "center",
 						}}
 					>
 						Welcome Back to Creamzo!
 					</div>
-					<div className="dont-have">
+					{/*<div className="dont-have">
 						Don't have an account?
 						<Link>
 							<span
@@ -44,7 +89,7 @@ const Login = ({ setopen, setSignopen }) => {
 								Signup
 							</span>
 						</Link>
-					</div>
+					</div>*/}
 				</div>
 				<div className="bottom-header">
 					<div className="inputs">
@@ -57,9 +102,8 @@ const Login = ({ setopen, setSignopen }) => {
 								}}
 								type="text"
 								style={{
-									width: "20vw",
+									width: "100%",
 									fontSize: ".8vw",
-									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -68,16 +112,15 @@ const Login = ({ setopen, setSignopen }) => {
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
+								value={password}
 								onChange={(e) => {
 									e.preventDefault();
-									setMail(e.target.value);
+									setPassword(e.target.value);
 								}}
 								type="password"
 								style={{
-									width: "20vw",
+									width: "100%",
 									fontSize: ".8vw",
-									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
@@ -85,20 +128,28 @@ const Login = ({ setopen, setSignopen }) => {
 							/>
 						</div>
 					</div>
-					<div className="login-forget" style={{ display: "flex" }}>
+					<div
+						className="login-forget"
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							flexDirection: "column",
+						}}
+					>
 						<Button
 							variant="contained"
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								setLogin({ type: LOGIN_ACTIONS.LOGIN });
-								setopen(false);
+								handleLogin();
 							}}
 							style={{
-								backgroundColor: "red",
-								fontSize: ".8vw",
-								color: "white",
-								width: "8rem",
+								// backgroundColor: "red",
+								// fontSize: ".8vw",
+								// color: "white",
+								// width: "8rem",
+								textTransform: "capitalize",
 							}}
 						>
 							Log In
@@ -115,33 +166,47 @@ const Login = ({ setopen, setSignopen }) => {
 								width: "100%",
 							}}
 						>
-							<Button
-								variant="contained"
-								color="primary"
-								onClick={(e) => {
-									e.preventDefault();
-									console.log("google");
+							{" "}
+							<GoogleLogin
+								clientId="171125153728-pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
+								buttonText="Login"
+								onSuccess={handleGoogleSignUp}
+								onFailure={(res) => {
+									console.log(res);
 								}}
-								style={{
-									backgroundColor: "white",
-									color: "black",
-									borderRadius: ".5rem",
-									fontSize: ".7vw",
-								}}
-							>
-								<img
-									src={google}
-									alt="google"
-									style={{
-										width: "1.5vw",
-										height: "3vh",
-										position: "relative",
-										left: "-.5rem",
-									}}
-								/>
-								Google
-							</Button>
-							<Button
+								cookiePolicy={"single_host_origin"}
+								render={(renderProps) => (
+									<Button
+										variant="contained"
+										color="primary"
+										onClick={renderProps.onClick}
+										style={{
+											backgroundColor: "white",
+											color: "black",
+											borderRadius: ".5rem",
+											fontSize: "1em",
+											textTransform: "capitalize",
+											padding: "0px",
+											width: "10rem",
+											height: "3rem",
+										}}
+										disabled={renderProps.disabled}
+									>
+										<img
+											src={google}
+											alt="google"
+											style={{
+												width: "1.3em",
+												height: "3vh",
+												position: "relative",
+												left: "-.5rem",
+											}}
+										/>
+										Google
+									</Button>
+								)}
+							/>
+							{/* <Button
 								variant="contained"
 								color="primary"
 								onClick={(e) => {
@@ -151,22 +216,24 @@ const Login = ({ setopen, setSignopen }) => {
 								style={{
 									backgroundColor: "white",
 									color: "black",
-									fontSize: ".9rem",
+									fontSize: "1em",
 									borderRadius: ".7vw",
+									textTransform:"capitalize",
+									padding:"0px",
 								}}
 							>
 								<img
 									src={fb}
 									alt="fb"
 									style={{
-										width: "1.5vw",
+										width: "1.3em",
 										height: "3vh",
 										position: "relative",
-										left: "-.5em",
+										left: "-.2em",
 									}}
 								/>
-								FaceBook
-							</Button>
+								Facebook
+							</Button> */}
 						</div>
 						<div
 							className="acceptance"
@@ -174,11 +241,11 @@ const Login = ({ setopen, setSignopen }) => {
 								display: "flex",
 								justifyContent: "space-evenly",
 								alignItems: "center",
-								width: "70%",
-								paddingTop: "1rem",
+								width: "90%",
+								paddingTop: ".7rem",
 							}}
 						>
-							<div style={{ textAlign: "center" }}>
+							<div style={{ textAlign: "center", fontSize: ".8rem" }}>
 								By continuing, you agree to Creamzo's
 								<Link
 									style={{ color: "black", paddingLeft: ".5em" }}
@@ -198,6 +265,19 @@ const Login = ({ setopen, setSignopen }) => {
 							</div>
 						</div>
 					</div>
+				</div>
+				<div className="dont-have">
+					Don't have an account?
+					<Link>
+						<span
+							onClick={() => {
+								setopen(false);
+								setSignopen(true);
+							}}
+						>
+							Signup
+						</span>
+					</Link>
 				</div>
 			</div>
 		</React.Fragment>

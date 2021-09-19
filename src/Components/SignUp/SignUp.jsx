@@ -3,20 +3,76 @@ import React, { useState, useContext } from "react";
 import { Button, TextField } from "@material-ui/core";
 
 import "./style/style.css";
-import fb from "./assets/fb.png";
+// import fb from "./assets/fb.png";
 import google from "./assets/google.png";
 
+// eslint-disable-next-line
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
-
+import { GoogleLogin } from "react-google-login";
+// eslint-disable-next-line
+import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
+import { useSnackbar } from "notistack";
 const SignUp = ({ setopen, setLoginOpen }) => {
-	const [mail, setMail] = useState("");
+	const [signUpData, setSignUpData] = useState({
+		firstName: "",
+		lastName: "",
+		mail: "",
+		age: 0,
+		password: "",
+		confPass: "",
+	});
 	// eslint-disable-next-line
 	const [login, setLogin] = useContext(LoginContext);
 	// eslint-disable-next-line
 	const [password, setPassword] = useState("");
 	// eslint-disable-next-line
 	const [age, setAge] = useState("");
+	const { enqueueSnackbar } = useSnackbar();
+
+	const handleGoogleSignUp = (response) => {
+		axiosSendRequest(AXIOS_ACTIONS.GOOGLE_SIGNUP, "googlelogin", {
+			tokenId: response.tokenId,
+		})
+			.then((res) => {
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				setLoginOpen(false);
+				sessionStorage.setItem(
+					"creamzToken",
+					JSON.stringify({ token: res.token })
+				);
+				enqueueSnackbar("SignUp Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("SignUp Failed", { variant: "error" });
+			});
+	};
+
+	const handleChange = (e) => {
+		setSignUpData((state) => ({ ...state, [e.target.name]: e.target.value }));
+	};
+
+	const handleSIgnUp = () => {
+		axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", {
+			email: signUpData.mail,
+			password: signUpData.password,
+			fname: signUpData.firstName,
+			lname: signUpData.lastName,
+			age: signUpData.age,
+		})
+			.then((res) => {
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				setLoginOpen(false);
+				sessionStorage.setItem(
+					"creamzToken",
+					JSON.stringify({ token: res.token })
+				);
+				enqueueSnackbar("SignUp Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("SignUp Failed", { variant: "error" });
+			});
+	};
 
 	return (
 		<React.Fragment>
@@ -28,7 +84,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							position: "relative",
 							top: "-0.5rem",
 							color: "black",
-							fontSize: "1.7vw",
+							fontSize: "1.5rem",
 							fontWeight: "bold",
 						}}
 					>
@@ -50,110 +106,101 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 					<div className="inputs">
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.firstName}
+								onChange={handleChange}
 								type="text"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
+								name="firstName"
 								variant="outlined"
 								label="First Name"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.lastName}
+								onChange={handleChange}
 								type="text"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
+								name="lastName"
 								variant="outlined"
 								label="Last Name"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.mail}
+								onChange={handleChange}
 								type="text"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
 								label="Email"
+								name="mail"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
-								type="text"
+								value={signUpData.age}
+								onChange={handleChange}
+								type="number"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
 								label="Age"
+								name="age"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.password}
+								onChange={handleChange}
 								type="password"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
 								variant="outlined"
 								label="Password"
+								name="password"
 							/>
 						</div>
 						<div className="inp">
 							<TextField
-								value={mail}
-								onChange={(e) => {
-									e.preventDefault();
-									setMail(e.target.value);
-								}}
+								value={signUpData.confPass}
+								onChange={handleChange}
 								type="password"
 								style={{
-									width: "20vw",
-									fontSize: ".7vw",
-									height: "5vh",
+									width: "90%",
+									fontSize: ".5vw",
+									height: "3vh",
 									outline: "none",
 								}}
+								error={
+									signUpData.password === signUpData.confPass ? false : true
+								}
 								variant="outlined"
 								label="Confirm Password"
+								name="confPass"
 							/>
 						</div>
 					</div>
@@ -163,14 +210,10 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								setLogin({ type: LOGIN_ACTIONS.LOGIN });
-								setopen(false);
+								handleSIgnUp();
 							}}
 							style={{
-								backgroundColor: "red",
-								fontSize: ".8vw",
-								color: "white",
-								width: "8vw",
+								textTransform: "capitalize",
 							}}
 						>
 							Sign Up
@@ -187,33 +230,46 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								width: "100%",
 							}}
 						>
-							<Button
-								variant="contained"
-								color="primary"
-								onClick={(e) => {
-									e.preventDefault();
-									console.log("google");
+							<GoogleLogin
+								clientId="171125153728-pd31fnftkqiq4o3803lgt6p9dhmodn21.apps.googleusercontent.com"
+								buttonText="Login"
+								onSuccess={handleGoogleSignUp}
+								onFailure={(res) => {
+									console.log(res);
 								}}
-								style={{
-									backgroundColor: "white",
-									color: "black",
-									borderRadius: ".5rem",
-									fontSize: ".7vw",
-								}}
-							>
-								<img
-									src={google}
-									alt="google"
-									style={{
-										width: "1.5vw",
-										height: "2vh",
-										position: "relative",
-										left: "-.5rem",
-									}}
-								/>
-								Google
-							</Button>
-							<Button
+								cookiePolicy={"single_host_origin"}
+								render={(renderProps) => (
+									<Button
+										variant="contained"
+										color="primary"
+										onClick={renderProps.onClick}
+										style={{
+											backgroundColor: "white",
+											color: "black",
+											borderRadius: ".5rem",
+											fontSize: "1em",
+											textTransform: "capitalize",
+											padding: "0px",
+											width: "10rem",
+											height: "3rem",
+										}}
+										disabled={renderProps.disabled}
+									>
+										<img
+											src={google}
+											alt="google"
+											style={{
+												width: "1.3em",
+												height: "3vh",
+												position: "relative",
+												left: "-.5rem",
+											}}
+										/>
+										Google
+									</Button>
+								)}
+							/>
+							{/* <Button
 								variant="contained"
 								color="primary"
 								onClick={(e) => {
@@ -223,31 +279,34 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								style={{
 									backgroundColor: "white",
 									color: "black",
-									fontSize: ".7vw",
-									borderRadius: ".5rem",
+									fontSize: "1em",
+									borderRadius: ".7vw",
+									textTransform:"capitalize",
+									padding:"0px",
 								}}
 							>
 								<img
 									src={fb}
 									alt="fb"
 									style={{
-										width: "1.5vw",
-										height: "2vh",
+										width: "1.3em",
+										height: "3vh",
 										position: "relative",
-										left: "-.5em",
+										left: "-.2em",
 									}}
 								/>
 								FaceBook
-							</Button>
+							</Button> */}
 						</div>
 						<div
 							className="acceptance"
 							style={{
-								display: "flex",
-								justifyContent: "space-evenly",
+								// display: "flex",
+								// justifyContent: "space-evenly",
 								alignItems: "center",
-								width: "70%",
-								paddingTop: "1rem",
+								width: "90%",
+								// paddingTop: "1rem",
+								fontSize: ".8em",
 							}}
 						>
 							<div style={{ textAlign: "center" }}>

@@ -22,11 +22,17 @@ const BoardDisplay = () => {
         <div className={style.BoardDisplayContainer}>
           <div className={style.ContentContainerDisplay}>
             <div className={style.leftContainerDisplay}>
-              <img
-                style={{ width: "100%", height: "100%", borderRadius: "15px" }}
-                src={pinCurrData.imgUrl}
-                alt="addedImage"
-              />
+              <a href={pinCurrData.imgUrl}>
+                <img
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "15px",
+                  }}
+                  src={pinCurrData.imgUrl}
+                  alt="addedImage"
+                />
+              </a>
             </div>
             <div className={style.rightContinerDisplay}>
               <h3 style={{ color: "black" }}>
@@ -37,7 +43,15 @@ const BoardDisplay = () => {
                 {" "}
                 URL:{" "}
                 <small>
-                  <a href={pinCurrData.imgUrl}>{pinCurrData.imgUrl}</a>
+                  <a
+                    href={`https://${
+                      pinCurrData.websiteUrl.split("https://")[
+                        pinCurrData.websiteUrl.split("https://").length - 1
+                      ]
+                    }/`}
+                  >
+                    {pinCurrData.websiteUrl}
+                  </a>
                 </small>{" "}
               </h3>
               <h3

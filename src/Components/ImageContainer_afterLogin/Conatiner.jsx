@@ -6,12 +6,13 @@ import { saveAs } from "file-saver";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import { Popover } from "@material-ui/core";
 // eslint-disable-next-line
-import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, PinterestIcon, PinterestShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
+import { FacebookIcon, FacebookShareButton,InstapaperShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import {
   AddCircle,
   AddCircleOutline,
   ArrowUpward, // eslint-disable-next-line
   FavoriteBorder,
+  
   Share,
 } from "@material-ui/icons";
 
@@ -313,9 +314,8 @@ const Conatiner = ({ data, height }) => {
                     <WhatsappShareButton url={data.imgUrl}>
                       <WhatsappIcon round={true}/>
                     </WhatsappShareButton>
-                    <PinterestShareButton url={data.imgUrl}>
-                      <PinterestIcon round={true}/>
-                    </PinterestShareButton>
+                    
+                
                   </div>
                 </Popover>
               </IconButton>
@@ -325,6 +325,7 @@ const Conatiner = ({ data, height }) => {
       ) : null}
     </div>
   );
+	
 };
 
 export default Conatiner;

@@ -31,7 +31,7 @@ const Conatiner = ({ data, height }) => {
 
   let history = useHistory();
 
-  const [heartActive, setHeartActive] = useState("red");
+  const [heartActive, setHeartActive] = useState("black");
   const [addColl, setaddColl] = useState(true);
 
   const [anchor, setAnchor] = useState(null);

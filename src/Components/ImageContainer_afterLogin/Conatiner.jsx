@@ -303,16 +303,18 @@ const Conatiner = ({ data, height }) => {
                     setAnchor(null);
                   }}
                 >
-                  <div style={{padding:'1rem'}}>
-                    <h1>share</h1>
+                  <div style={{padding:'0.3rem'}}>
+                    <h6>share</h6>
                     <FacebookShareButton url={data.imgUrl}>
-                      <FacebookIcon round={true}/>
+                      <FacebookIcon style={{padding:'0.2rem'}} size={25} round={true}/>
                     </FacebookShareButton>
-                    <TwitterShareButton image={data.imgUrl}>
-                      <TwitterIcon round={true}/>
+                    
+                    <TwitterShareButton  image={data.imgUrl}>
+                      <TwitterIcon style={{padding:'0.2rem'}} size={25} round={true}/>
                     </TwitterShareButton>
+                    
                     <WhatsappShareButton url={data.imgUrl}>
-                      <WhatsappIcon round={true}/>
+                      <WhatsappIcon style={{padding:'0.2rem'}} size={25} round={true}/>
                     </WhatsappShareButton>
                     
                 

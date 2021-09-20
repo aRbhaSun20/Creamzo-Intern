@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 // import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from "@material-ui/core/MenuItem";
@@ -25,7 +25,7 @@ const BoardCreation = () => {
 		category: "new",
 	});
 	const { enqueueSnackbar } = useSnackbar();
-	
+	const user = JSON.parse(sessionStorage.getItem("creamzoUser"));
 	// eslint-disable-next-line
 	const [pinsData, refetch] = usePin();
 
@@ -41,12 +41,12 @@ const BoardCreation = () => {
 		// }
 		if (e.target.name === "imgPath") {
 			// let dataImg = e.target.value.split(`\\`);
-			let blob = URL.createObjectURL(e.target.files[0]);
+			// let blob = URL.createObjectURL(e.target.files[0]);
 			// console.log(e.target.files[0]);
 			setDisplay((state) => ({
 				...state,
 				// [e.target.name]: `./${e.target.files[0].name}`,
-				[e.target.name]:blob,
+				[e.target.name]: e.target.files[0],
 			}));
 		} else {
 			setDisplay((state) => ({ ...state, [e.target.name]: e.target.value }));
@@ -62,12 +62,15 @@ const BoardCreation = () => {
 	};
 	const handleSubmit = (e) => {
 		console.log("done");
-		axiosSendRequest(AXIOS_ACTIONS.CREATE_PIN, "createPin", display).then(
-			(data) => {
-				refetch();
-				enqueueSnackbar("Pins Created", { variant: "success" });
-			}
-		);
+		axiosSendRequest(AXIOS_ACTIONS.CREATE_PIN, "createPin", {
+			...display,
+			fname: user.fname,
+			creamzoId: user.creamzoId,
+		}).then((data) => {
+			refetch();
+			enqueueSnackbar("Pins Created", { variant: "success" });
+		});
+		// console.log(display.tags.split(","))
 	};
 
 	return (
@@ -77,7 +80,10 @@ const BoardCreation = () => {
 					<div className={style.ContentContainer}>
 						<div className={style.leftContainer}>
 							<div>
-								<div className={style.dotbox} style={{ display: dis,zIndex:"1000" }}>
+								<div
+									className={style.dotbox}
+									style={{ display: dis, zIndex: "1000" }}
+								>
 									<div>Add</div>
 									<div>Delete</div>
 								</div>
@@ -152,9 +158,20 @@ const BoardCreation = () => {
 								</div>
 							</div>
 
-							{display.imgPath && <img className={style.leftContainer} src={display.imgPath} style={{position: "relative",width: "100%",height:"60vh",bottom:"60vh",borderRadius:"20px"}} alt=""/>}
-
-							
+							{display.imgPath && (
+								<img
+									className={style.leftContainer}
+									src={URL.createObjectURL(display.imgPath)}
+									style={{
+										position: "relative",
+										width: "100%",
+										height: "60vh",
+										bottom: "60vh",
+										borderRadius: "20px",
+									}}
+									alt=""
+								/>
+							)}
 						</div>
 						<div className={style.rightContiner}>
 							<form className={style.BoardCreationForm} action="">
@@ -167,39 +184,35 @@ const BoardCreation = () => {
                                     </select> */}
 									{/* <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel> */}
 									<Select
-										
 										labelId="demo-simple-select-outlined-label"
 										disableUnderline
 										id="demo-simple-select-outlined"
 										style={{
 											width: "150px",
 											height: "40px",
-											paddingLeft:"7px",
+											paddingLeft: "7px",
 											scrollBehaviour: "auto",
 											borderRadius: "10px 0px 0px 10px",
 											position: "relative",
 											backgroundColor: "rgb(230, 233, 233)",
 										}}
 									>
-										
-											<MenuItem value="section1">Art</MenuItem>
-											<MenuItem value="section2">Culture</MenuItem>
-											<MenuItem value="section3">DIY And Crafts</MenuItem>
-											<MenuItem value="section4">Design</MenuItem>
-											<MenuItem value="section5">Education</MenuItem>
-											<MenuItem value="section6">Environment</MenuItem>
-											<MenuItem value="section7">Events</MenuItem>
-											<MenuItem value="section8">Fashion</MenuItem>
-											<MenuItem value="section9">Food And Drink</MenuItem>
-											<MenuItem value="section10">Hobbies</MenuItem>
-											<MenuItem value="section11">Home Decor</MenuItem>
-											<MenuItem value="section12">Pets</MenuItem>
-											<MenuItem value="section13">Quotes</MenuItem>
-											<MenuItem value="section14">Technology</MenuItem>
-											<MenuItem value="section15">Travel</MenuItem>
-											<MenuItem value="section16">Vehicle</MenuItem>
-										
-										
+										<MenuItem value="section1">Art</MenuItem>
+										<MenuItem value="section2">Culture</MenuItem>
+										<MenuItem value="section3">DIY And Crafts</MenuItem>
+										<MenuItem value="section4">Design</MenuItem>
+										<MenuItem value="section5">Education</MenuItem>
+										<MenuItem value="section6">Environment</MenuItem>
+										<MenuItem value="section7">Events</MenuItem>
+										<MenuItem value="section8">Fashion</MenuItem>
+										<MenuItem value="section9">Food And Drink</MenuItem>
+										<MenuItem value="section10">Hobbies</MenuItem>
+										<MenuItem value="section11">Home Decor</MenuItem>
+										<MenuItem value="section12">Pets</MenuItem>
+										<MenuItem value="section13">Quotes</MenuItem>
+										<MenuItem value="section14">Technology</MenuItem>
+										<MenuItem value="section15">Travel</MenuItem>
+										<MenuItem value="section16">Vehicle</MenuItem>
 									</Select>
 									<Button
 										// type="submit"

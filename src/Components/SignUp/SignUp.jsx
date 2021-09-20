@@ -39,7 +39,14 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 				setLoginOpen(false);
 				sessionStorage.setItem(
 					"creamzToken",
-					JSON.stringify({ token: res.token })
+					JSON.stringify({
+						token: res.token,
+						fname: res.user.fname,
+						lname: res.user.lname,
+						age: res.user.age,
+						email: res.user.email,
+						creamzoId: res.user.creamzoId,
+					})
 				);
 				enqueueSnackbar("SignUp Successful", { variant: "success" });
 			})
@@ -59,6 +66,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			fname: signUpData.firstName,
 			lname: signUpData.lastName,
 			age: signUpData.age,
+			following: 0,
+			followers: 0,
+			collections: 0,
 		})
 			.then((res) => {
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
@@ -312,7 +322,11 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							<div style={{ textAlign: "center" }}>
 								By continuing, you agree to Creamzo's
 								<Link
-									style={{ color: "black", paddingLeft: ".5em" }}
+									style={{
+										color: "black",
+										textDecoration: "underline",
+										paddingLeft: ".5em",
+									}}
 									onClick={() => setopen(false)}
 									to="/terms"
 								>
@@ -320,9 +334,13 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 								</Link>
 								,
 								<Link
-									style={{ color: "black", paddingLeft: ".5em" }}
+									style={{
+										color: "black",
+										textDecoration: "underline",
+										paddingLeft: ".5em",
+									}}
 									onClick={() => setopen(false)}
-									to="/terms"
+									to="/privacy"
 								>
 									Privacy policy.
 								</Link>

@@ -21,7 +21,7 @@ import "./style/style.css";
 import { PIN_ACTIONS, useCurrentPin, usePin } from "../../Context/PinsContext";
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 
-const Conatiner = ({ data, height }) => {
+const Container = ({ data, height }) => {
   const [opacity, setOpacity] = useState(0);
   const [errorHandle, setErrorhandle] = useState(false);
   // eslint-disable-next-line
@@ -328,4 +328,4 @@ const Conatiner = ({ data, height }) => {
 	
 };
 
-export default Conatiner;
+export default Container;

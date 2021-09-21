@@ -31,8 +31,18 @@ const Login = ({ setopen, setSignopen }) => {
 				console.log(data);
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				sessionStorage.setItem(
-					"creamzToken",
-					JSON.stringify({ token: data.token })
+					"creamzoUser",
+					JSON.stringify({
+						token: data.token,
+						fname: data.user.fname,
+						lname: data.user.lname,
+						age: data.user.age,
+						email: data.user.email,
+						creamzoId: data.user.creamzoId,
+						following: data.user.following,
+						followers: data.user.followers,
+						collections: data.user.collections,
+					})
 				);
 				setopen(false);
 				enqueueSnackbar("LogIn Successful", { variant: "success" });
@@ -59,7 +69,7 @@ const Login = ({ setopen, setSignopen }) => {
 				enqueueSnackbar("LogIn Failed", { variant: "error" });
 			});
 	};
-	
+
 	return (
 		<React.Fragment>
 			<div className="login-card">
@@ -248,7 +258,11 @@ const Login = ({ setopen, setSignopen }) => {
 							<div style={{ textAlign: "center", fontSize: ".8rem" }}>
 								By continuing, you agree to Creamzo's
 								<Link
-									style={{ color: "black", paddingLeft: ".5em" }}
+									style={{
+										color: "black",
+										paddingLeft: ".5em",
+										textDecoration: "underline",
+									}}
 									to="/terms"
 									onClick={() => setopen(false)}
 								>
@@ -256,8 +270,12 @@ const Login = ({ setopen, setSignopen }) => {
 								</Link>
 								,
 								<Link
-									style={{ color: "black", paddingLeft: ".5em" }}
-									to="/terms"
+									style={{
+										color: "black",
+										textDecoration: "underline",
+										paddingLeft: ".5em",
+									}}
+									to="/privacy"
 									onClick={() => setopen(false)}
 								>
 									Privacy policy.

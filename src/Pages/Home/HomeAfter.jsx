@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect } from "react";
 import "./style/style.css";
-import Conatiner from "../../Components/ImageContainer_afterLogin/Conatiner";
+import Container from "../../Components/ImageContainer_afterLogin/Container";
 import { useState } from "react";
 import { Add } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
@@ -50,7 +50,7 @@ const HomeAfter = () => {
 			<div className="column1">
 				{pinsData?.map((image, i) =>
 					i % limit === 0 ? (
-						<Conatiner
+						<Container
 							data={image}
 							key={i}
 							height="70%"
@@ -62,7 +62,7 @@ const HomeAfter = () => {
 			<div className="column2">
 				{pinsData?.map((image, i) =>
 					i % limit === 1 ? (
-						<Conatiner
+						<Container
 							data={image}
 							key={i}
 							height="70%"
@@ -74,7 +74,7 @@ const HomeAfter = () => {
 			<div className="column3">
 				{pinsData?.map((image, i) =>
 					i % limit === 2 ? (
-						<Conatiner
+						<Container
 							data={image}
 							key={i}
 							height="70%"
@@ -86,7 +86,7 @@ const HomeAfter = () => {
 			<div className="column4">
 				{pinsData?.map((image, i) =>
 					i % limit === 3 ? (
-						<Conatiner
+						<Container
 							data={image}
 							key={i}
 							height="70%"
@@ -98,7 +98,7 @@ const HomeAfter = () => {
 			<div className="column5">
 				{pinsData?.map((image, i) =>
 					i % limit === 4 ? (
-						<Conatiner
+						<Container
 							data={image}
 							key={i}
 							height="70%"

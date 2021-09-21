@@ -25,10 +25,11 @@ import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditi
 import PublicViewProfile from "./Profile/PublicViewProfile";
 import UserViewProfile from "./Profile/UserViewProfile";
 import { LoginContext } from "../Context/Login";
+import PrivacyPolicy from "../Components/Tnc/PrivacyPolicy";
 
 const Routes = () => {
-	// eslint-disable-next-line 
-		const [login, setLogin] = useContext(LoginContext);
+	// eslint-disable-next-line
+	const [login, setLogin] = useContext(LoginContext);
 
 	return (
 		<React.Fragment>
@@ -111,6 +112,11 @@ const Routes = () => {
 							render={(props) =>
 								!login ? <PublicViewProfile /> : <UserViewProfile />
 							}
+						></Route>
+						<Route
+							path="/privacy"
+							exact
+							render={(props) => <PrivacyPolicy />}
 						></Route>
 						<Redirect to="/" />
 					</Switch>

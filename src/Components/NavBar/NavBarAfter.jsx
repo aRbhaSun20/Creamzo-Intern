@@ -136,7 +136,9 @@ const NavBar = () => {
 									setLogin({ type: LOGIN_ACTIONS.LOGOUT });
 								}}
 							>
-								Logout
+								<Link to="/" style={{ color: "#616d8b" }}>
+									Logout
+								</Link>
 							</MenuItem>
 						</Popper>
 					</div>

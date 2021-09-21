@@ -6,13 +6,19 @@ import { saveAs } from "file-saver";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import { Popover } from "@material-ui/core";
 // eslint-disable-next-line
-import { FacebookIcon, FacebookShareButton,InstapaperShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+} from "react-share";
 import {
   AddCircle,
   AddCircleOutline,
   ArrowUpward, // eslint-disable-next-line
   FavoriteBorder,
-  
   Share,
 } from "@material-ui/icons";
 
@@ -21,7 +27,7 @@ import "./style/style.css";
 import { PIN_ACTIONS, useCurrentPin, usePin } from "../../Context/PinsContext";
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 
-const Conatiner = ({ data, height }) => {
+const Container = ({ data, height }) => {
   const [opacity, setOpacity] = useState(0);
   const [errorHandle, setErrorhandle] = useState(false);
   // eslint-disable-next-line
@@ -225,7 +231,17 @@ const Conatiner = ({ data, height }) => {
                   fontSize: "1rem",
                 }}
               />
-              <a href={data.imgUrl}>Link</a>
+              <a
+                href={`https://${
+                  data.websiteUrl.split("https://")[
+                    data.websiteUrl.split("https://").length - 1
+                  ]
+                }/`}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Link
+              </a>
             </Button>
             <div
               style={{
@@ -303,21 +319,31 @@ const Conatiner = ({ data, height }) => {
                     setAnchor(null);
                   }}
                 >
-                  <div style={{padding:'0.3rem'}}>
+                  <div style={{ padding: "0.3rem" }}>
                     <h6>share</h6>
                     <FacebookShareButton url={data.imgUrl}>
-                      <FacebookIcon style={{padding:'0.2rem'}} size={25} round={true}/>
+                      <FacebookIcon
+                        style={{ padding: "0.2rem" }}
+                        size={25}
+                        round={true}
+                      />
                     </FacebookShareButton>
-                    
-                    <TwitterShareButton  image={data.imgUrl}>
-                      <TwitterIcon style={{padding:'0.2rem'}} size={25} round={true}/>
+
+                    <TwitterShareButton image={data.imgUrl}>
+                      <TwitterIcon
+                        style={{ padding: "0.2rem" }}
+                        size={25}
+                        round={true}
+                      />
                     </TwitterShareButton>
-                    
+
                     <WhatsappShareButton url={data.imgUrl}>
-                      <WhatsappIcon style={{padding:'0.2rem'}} size={25} round={true}/>
+                      <WhatsappIcon
+                        style={{ padding: "0.2rem" }}
+                        size={25}
+                        round={true}
+                      />
                     </WhatsappShareButton>
-                    
-                
                   </div>
                 </Popover>
               </IconButton>
@@ -327,7 +353,6 @@ const Conatiner = ({ data, height }) => {
       ) : null}
     </div>
   );
-	
 };
 
-export default Conatiner;
+export default Container;

@@ -5,6 +5,7 @@ import {
 	InputBase,
 	MenuItem,
 	Popper,
+	TextField,
 } from "@material-ui/core";
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
@@ -14,6 +15,8 @@ import { Search } from "@material-ui/icons";
 import { useState } from "react";
 import logo from "./assets/logo.jpg";
 import { useSnackbar } from "notistack";
+import { Autocomplete } from "@mui/material";
+import { usePin } from "../../Context/PinsContext";
 
 const NavBar = () => {
 	// eslint-disable-next-line
@@ -32,7 +35,7 @@ const NavBar = () => {
 		setOpen(false);
 	};
 	// const [notifyOpen, setnotifyOpen] = React.useState(false);
-
+	const [PinsData, refetch] = usePin();
 	// const handlenotifyClose = () => {
 	// 	setnotifyOpen(false);
 	// };
@@ -51,26 +54,37 @@ const NavBar = () => {
 					</NavLink>
 					<div className="input-group">
 						<div style={{ width: "-webkit-fill-available" }}>
-							<InputBase
+							{/* <InputBase
 								type="search"
-								placeholder="Search"
-								aria-describedby="button-addon2"
-								style={{
-									backgroundColor: "#eaeaf1",
-									borderRadius: "2rem",
-									paddingLeft: "1rem",
-									width: "100%",
-									outline: "none",
-									height: "3rem",
-									display: "flex",
-									alignItems: "center",
-								}}
-								startAdornment={
-									<InputAdornment position="start">
-										<Search />
-									</InputAdornment>
-								}
+								
 								class="form-control border-0 bg-light navbar_input"
+							/> */}
+							<Autocomplete
+								disablePortal
+								id="combo-box-demo"
+								options={PinsData?.map((pin) => pin?.title)}
+								renderInput={(params) => (
+									<TextField
+										{...params}
+										label="Search"
+										aria-describedby="button-addon2"
+										style={{
+											backgroundColor: "#eaeaf1",
+											borderRadius: "2rem",
+											paddingLeft: "1rem",
+											width: "100%",
+											outline: "none",
+											height: "3rem",
+											display: "flex",
+											alignItems: "center",
+										}}
+										startAdornment={
+											<InputAdornment position="start">
+												<Search />
+											</InputAdornment>
+										}
+									/>
+								)}
 							/>
 						</div>
 					</div>

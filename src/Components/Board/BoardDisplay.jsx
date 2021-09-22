@@ -22,7 +22,7 @@ const BoardDisplay = () => {
         <div className={style.BoardDisplayContainer}>
           <div className={style.ContentContainerDisplay}>
             <div className={style.leftContainerDisplay}>
-              <a href={pinCurrData.imgUrl}>
+              <a href={pinCurrData.imgUrl} target="_blank">
                 <img
                   style={{
                     width: "100%",

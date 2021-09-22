@@ -36,10 +36,10 @@ const Container = ({ data, height }) => {
   const [pinsData, refetch] = usePin();
 
   let history = useHistory();
+  const user = JSON.parse(sessionStorage.getItem("creamzoUser"));
 
-  const [heartActive, setHeartActive] = useState("black");
   const [addColl, setaddColl] = useState(true);
-
+  
   const [anchor, setAnchor] = useState(null);
   const openPopover = (event) => {
     setAnchor(event.currentTarget);
@@ -100,35 +100,21 @@ const Container = ({ data, height }) => {
                 outline: "none",
               }}
               name="favourite"
-              onClick={() => {
-                if (heartActive !== "red") {
-                  axiosSendRequest(AXIOS_ACTIONS.PUT, `dislikePin`, {
-                    creamzoId: `${data.creamzoId}`,
-                    id: `${data._id}`,
-                  }).then((res) => {
-                    console.log(res);
-                    refetch();
-                  });
-                } else {
-                  axiosSendRequest(AXIOS_ACTIONS.PUT, `likePin`, {
-                    creamzoId: `${data.creamzoId}`,
-                    id: `${data._id}`,
-                  }).then((res) => {
-                    console.log(res);
-                    refetch();
-                  });
-                }
-              }}
+             
             >
-              {heartActive === "red" ? (
+              {typeof(data?.likes.find(ele => (ele===user.creamzoId)) ) !== 'undefined' ? (
                 <FavoriteIcon
-                  onClick={() => {
-                    if (heartActive === "black") {
-                      setHeartActive("red");
-                    } else {
-                      setHeartActive("black");
-                    }
-                  }}
+                  onClick={
+					  ()=>{
+						axiosSendRequest(AXIOS_ACTIONS.PUT, `dislikePin`, {
+							creamzoId: `${data.creamzoId}`,
+							id: `${data._id}`,
+						  }).then((res) => {
+							console.log(res);
+							refetch();
+						  });
+					  }
+				  }
                   style={{
                     color: "red",
                     borderColor: "white",
@@ -137,15 +123,20 @@ const Container = ({ data, height }) => {
                 />
               ) : (
                 <FavoriteBorderIcon
-                  onClick={() => {
-                    if (heartActive === "black") {
-                      setHeartActive("red");
-                    } else {
-                      setHeartActive("black");
-                    }
-                  }}
+				onClick={
+				()=>{
+					axiosSendRequest(AXIOS_ACTIONS.PUT, `likePin`, {
+						creamzoId: `${data.creamzoId}`,
+						id: `${data._id}`,
+					  }).then((res) => {
+						console.log(res);
+						refetch();
+					  });
+				}
+				}
+                  
                   style={{
-                    color: "red",
+                    color: "white",
                     borderColor: "white",
                     fontSize: "1.5rem",
                   }}
@@ -280,6 +271,7 @@ const Container = ({ data, height }) => {
               </IconButton>
               <IconButton
                 onClick={() => {
+
                   axiosSendRequest(
                     AXIOS_ACTIONS.PUT,
                     `addShares/${data?._id}/${
@@ -324,7 +316,7 @@ const Container = ({ data, height }) => {
                     <FacebookShareButton url={data.imgUrl}>
                       <FacebookIcon
                         style={{ padding: "0.2rem" }}
-                        size={25}
+                        size={32}
                         round={true}
                       />
                     </FacebookShareButton>
@@ -332,7 +324,7 @@ const Container = ({ data, height }) => {
                     <TwitterShareButton image={data.imgUrl}>
                       <TwitterIcon
                         style={{ padding: "0.2rem" }}
-                        size={25}
+                        size={32}
                         round={true}
                       />
                     </TwitterShareButton>
@@ -340,7 +332,7 @@ const Container = ({ data, height }) => {
                     <WhatsappShareButton url={data.imgUrl}>
                       <WhatsappIcon
                         style={{ padding: "0.2rem" }}
-                        size={25}
+                        size={32}
                         round={true}
                       />
                     </WhatsappShareButton>

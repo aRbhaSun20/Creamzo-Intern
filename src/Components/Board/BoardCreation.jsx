@@ -15,7 +15,7 @@ import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 import { usePin } from "../../Context/PinsContext";
 
 import { useSnackbar } from "notistack";
-const BoardCreation = () => {
+const BoardCreation = ({ addMore, index, total }) => {
   const history = useHistory();
   const [dis, setdis] = useState("none");
   const [display, setDisplay] = useState({
@@ -71,7 +71,10 @@ const BoardCreation = () => {
     }).then((data) => {
       refetch();
       enqueueSnackbar("Pins Created", { variant: "success" });
-      history.push("/");
+      if(total.lenght===0 ){
+        history.push("/");
+      }
+    
     });
     // console.log(display.tags.split(","))
   };
@@ -87,8 +90,24 @@ const BoardCreation = () => {
                   className={style.dotbox}
                   style={{ display: dis, zIndex: "1000" }}
                 >
-                  <div>Add</div>
-                  <div>Delete</div>
+                  <div
+                    onClick={() =>
+                      addMore((state) => state.concat(state.lenght + 1))
+                    }
+                  >
+                    Add
+                  </div>
+                  <div
+                    onClick={() =>
+                      addMore((state) =>
+                        state.lenght - 1 === 0
+                          ? state
+                          : state.filter((ele) => ele !== index)
+                      )
+                    }
+                  >
+                    Delete
+                  </div>
                 </div>
                 <div className={style.dots}>
                   <img src={dots} alt="more" onClick={handledisplay} />

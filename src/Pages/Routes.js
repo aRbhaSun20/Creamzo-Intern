@@ -21,7 +21,7 @@ import Collection from "../Components/Collections/Collection";
 import BoardCreation from "../Components/Board/BoardCreation";
 import BoardDisplay from "../Components/Board/BoardDisplay";
 import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
-
+import BoardCreations from "./BoardCreations/BoardCreations";
 import PublicViewProfile from "./Profile/PublicViewProfile";
 import UserViewProfile from "./Profile/UserViewProfile";
 import { LoginContext } from "../Context/Login";
@@ -94,7 +94,7 @@ const Routes = () => {
 						<Route
 							path="/boardCreation"
 							exact
-							render={(props) => <BoardCreation />}
+							render={(props) => <BoardCreations />}
 						></Route>
 						<Route
 							path="/boardDisplay"

@@ -39,7 +39,7 @@ const Container = ({ data, height }) => {
   const user = JSON.parse(sessionStorage.getItem("creamzoUser"));
 
   const [addColl, setaddColl] = useState(true);
-  
+
   const [anchor, setAnchor] = useState(null);
   const openPopover = (event) => {
     setAnchor(event.currentTarget);
@@ -100,21 +100,19 @@ const Container = ({ data, height }) => {
                 outline: "none",
               }}
               name="favourite"
-             
             >
-              {typeof(data?.likes.find(ele => (ele===user.creamzoId)) ) !== 'undefined' ? (
+              {typeof data?.likes.find((ele) => ele === user.creamzoId) !==
+              "undefined" ? (
                 <FavoriteIcon
-                  onClick={
-					  ()=>{
-						axiosSendRequest(AXIOS_ACTIONS.PUT, `dislikePin`, {
-							creamzoId: `${data.creamzoId}`,
-							id: `${data._id}`,
-						  }).then((res) => {
-							console.log(res);
-							refetch();
-						  });
-					  }
-				  }
+                  onClick={() => {
+                    axiosSendRequest(AXIOS_ACTIONS.PUT, `dislikePin`, {
+                      creamzoId: `${data.creamzoId}`,
+                      id: `${data._id}`,
+                    }).then((res) => {
+                      console.log(res);
+                      refetch();
+                    });
+                  }}
                   style={{
                     color: "red",
                     borderColor: "white",
@@ -123,18 +121,15 @@ const Container = ({ data, height }) => {
                 />
               ) : (
                 <FavoriteBorderIcon
-				onClick={
-				()=>{
-					axiosSendRequest(AXIOS_ACTIONS.PUT, `likePin`, {
-						creamzoId: `${data.creamzoId}`,
-						id: `${data._id}`,
-					  }).then((res) => {
-						console.log(res);
-						refetch();
-					  });
-				}
-				}
-                  
+                  onClick={() => {
+                    axiosSendRequest(AXIOS_ACTIONS.PUT, `likePin`, {
+                      creamzoId: `${data.creamzoId}`,
+                      id: `${data._id}`,
+                    }).then((res) => {
+                      console.log(res);
+                      refetch();
+                    });
+                  }}
                   style={{
                     color: "white",
                     borderColor: "white",
@@ -150,34 +145,46 @@ const Container = ({ data, height }) => {
                 outline: "none",
               }}
               name="addcollection"
-              onClick={() => {
-                setaddColl((state) => !state);
-                if (!addColl) {
-                  axiosSendRequest(AXIOS_ACTIONS.POST, `removeCollection`, {
-                    creamzoId: `${data.creamzoId}`,
-                    id: `${data._id}`,
-                  }).then((res) => {
-                    console.log(res);
-                    refetch();
-                  });
-                } else {
-                  axiosSendRequest(AXIOS_ACTIONS.POST, `addCollection`, {
-                    creamzoId: `${data.creamzoId}`,
-                    id: `${data._id}`,
-                  }).then((res) => {
-                    console.log(res);
-                    refetch();
-                  });
-                }
-              }}
+              
             >
-              {addColl ? (
-                <AddCircleOutline
-                  style={{ color: "white", fontSize: "1.5rem" }}
+              {typeof data?.likes.find((ele) => ele === user.creamzoId) !==
+              "undefined" ? (
+                <AddCircle 
+                  onClick={() => {
+                    axiosSendRequest(AXIOS_ACTIONS.POST, `removeCollection`, {
+                      creamzoId: `${data.creamzoId}`,
+                      id: `${data._id}`,
+                    }).then((res) => {
+                      console.log(res);
+                      refetch();
+                    });
+                  }}
+                  style={{
+                    color: "white",
+                    borderColor: "white",
+                    fontSize: "1.5rem",
+                  }}
                 />
               ) : (
-                <AddCircle style={{ color: "white", fontSize: "1.5rem" }} />
+                <AddCircleOutline
+                
+                  onClick={() => {
+                    axiosSendRequest(AXIOS_ACTIONS.POST, `addCollection`, {
+                      creamzoId: `${data.creamzoId}`,
+                      id: `${data._id}`,
+                    }).then((res) => {
+                      console.log(res);
+                      refetch();
+                    });
+                  }}
+                  style={{
+                    color: "white",
+                    borderColor: "white",
+                    fontSize: "1.5rem",
+                  }}
+                />
               )}
+              
             </IconButton>
           </div>
         </div>
@@ -271,7 +278,6 @@ const Container = ({ data, height }) => {
               </IconButton>
               <IconButton
                 onClick={() => {
-
                   axiosSendRequest(
                     AXIOS_ACTIONS.PUT,
                     `addShares/${data?._id}/${

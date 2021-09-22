@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import Avatar from "@material-ui/core/Avatar";
+import { Autocomplete } from "@mui/material";
 import "./style/Navbar.css";
+import { TextField } from "@material-ui/core";
+import { usePin } from "../../Context/PinsContext";
 // import logo from "./../../assets/images/logo.png";
 // import LoginModal from "./LoginModal";
 // import SignUpModal from "./SignUpModal";
@@ -15,7 +18,7 @@ function Navbar(props) {
 	const [accountOptions, setAccountOptions] = useState(false);
 	const [inputValue, setInputValue] = useState("");
 	const history = useHistory();
-
+	const [PinsData, refetch] = usePin();
 	// const handleToggle = (val) => {
 	// 	if (val === "login") {
 	// 		dispatch({ type: "SHOW_LOGIN" });
@@ -61,10 +64,10 @@ function Navbar(props) {
 						<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 							<div className="p-1 mt-2 bg-lightrounded rounded-pill shadow-sm input_container">
 								<div className="input-group">
-									<div className="input-group-prepend">
+									{/* <div className="input-group-prepend">
 										<SearchIcon id="nav_icon" />
-									</div>
-									<input
+									</div> */}
+									{/* <input
 										type="search"
 										placeholder="Search"
 										aria-describedby="button-addon2"
@@ -74,6 +77,19 @@ function Navbar(props) {
 											props.submit(e.target.value);
 										}}
 										value={inputValue}
+									/> */}
+									<Autocomplete
+										disablePortal
+										id="combo-box-demo"
+										options={() =>
+											PinsData?.map((pin) =>
+												pin.title ? pin.title : "Undefined"
+											)
+										}
+										sx={{ width: 300 }}
+										renderInput={(params) => (
+											<TextField {...params} label="Movie" />
+										)}
 									/>
 								</div>
 							</div>
@@ -233,7 +249,6 @@ function Navbar(props) {
 					</div>
 				</nav>
 			</div>
-		
 		</>
 	);
 }

@@ -6,7 +6,7 @@ function BoardCreations() {
   return (
     <React.Fragment>
       {total.map((ele, i) => (
-        <BoardCreation key={i} addMore={setTotal} index={i} total={total}/>
+        <BoardCreation key={i} addMore={setTotal} index={ele} total={total}/>
       ))}
     </React.Fragment>
   );

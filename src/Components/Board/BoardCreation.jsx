@@ -71,7 +71,10 @@ const BoardCreation = ({ addMore, index, total }) => {
     }).then((data) => {
       refetch();
       enqueueSnackbar("Pins Created", { variant: "success" });
-      if(total.lenght===0 ){
+      addMore((state) =>
+      state.filter((ele) => ele !== index)
+   )
+      if(total.length===0 ){
         history.push("/");
       }
     
@@ -92,7 +95,7 @@ const BoardCreation = ({ addMore, index, total }) => {
                 >
                   <div
                     onClick={() =>
-                      addMore((state) => state.concat(state.lenght + 1))
+                      addMore((state) => state.concat(state.length + 1))
                     }
                   >
                     Add
@@ -100,9 +103,7 @@ const BoardCreation = ({ addMore, index, total }) => {
                   <div
                     onClick={() =>
                       addMore((state) =>
-                        state.lenght - 1 === 0
-                          ? state
-                          : state.filter((ele) => ele !== index)
+                         state.filter((ele) => ele !== index)
                       )
                     }
                   >

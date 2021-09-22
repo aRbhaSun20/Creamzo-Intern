@@ -2,7 +2,6 @@ import {
 	Avatar,
 	InputAdornment,
 	Typography,
-	InputBase,
 	MenuItem,
 	Popper,
 	TextField,
@@ -35,6 +34,7 @@ const NavBar = () => {
 		setOpen(false);
 	};
 	// const [notifyOpen, setnotifyOpen] = React.useState(false);
+	// eslint-disable-next-line
 	const [PinsData, refetch] = usePin();
 	// const handlenotifyClose = () => {
 	// 	setnotifyOpen(false);

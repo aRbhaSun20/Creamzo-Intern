@@ -18,7 +18,6 @@ import Articledisplay from "./ArticleDisplay/Articledisplay";
 import Account from "./Account/Account";
 import Teams from "../Pages/Team/Teams";
 import Collection from "../Components/Collections/Collection";
-import BoardCreation from "../Components/Board/BoardCreation";
 import BoardDisplay from "../Components/Board/BoardDisplay";
 import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
 import BoardCreations from "./BoardCreations/BoardCreations";

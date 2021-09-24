@@ -55,62 +55,64 @@ const BoardCreation = ({ addMore, index, total }) => {
 		}
 	};
 
-	const handledisplay = () => {
-		if (dis === "none") {
-			setdis("block");
-		} else {
-			setdis("none");
-		}
-	};
-	const handleSubmit = (e) => {
-		console.log("done");
-		axiosSendRequest(AXIOS_ACTIONS.CREATE_PIN, "createPin", {
-			...display,
-			fname: user.fname,
-			creamzoId: user.creamzoId,
-		}).then((data) => {
-			refetch();
-			enqueueSnackbar("Pins Created", { variant: "success" });
-			if (total.length === 0) {
-				history.push("/");
-			}
-		});
-		// console.log(display.tags.split(","))
-	};
+  const handledisplay = () => {
+    if (dis === "none") {
+      setdis("block");
+    } else {
+      setdis("none");
+    }
+  };
+  const handleSubmit = (e) => {
+    console.log("done");
+    axiosSendRequest(AXIOS_ACTIONS.CREATE_PIN, "createPin", {
+      ...display,
+      fname: user.fname,
+      creamzoId: user.creamzoId,
+    }).then((data) => {
+      refetch();
+      enqueueSnackbar("Pins Created", { variant: "success" });
+      addMore((state) =>
+      state.filter((ele) => ele !== index)
+   )
+      if(total.length===0 ){
+        history.push("/");
+      }
+    
+    });
+    // console.log(display.tags.split(","))
+  };
 
-	return (
-		<React.Fragment>
-			<div style={{ backgroundColor: "rgb(230, 233, 233)", padding: "20px" }}>
-				<div className={style.BoardCreationContainer}>
-					<div className={style.ContentContainer}>
-						<div className={style.leftContainer}>
-							<div>
-								<div
-									className={style.dotbox}
-									style={{ display: dis, zIndex: "1000" }}
-								>
-									<div
-										onClick={() => {
-											addMore((state) => state.concat(state.length + 1));
-										}}
-									>
-										Add
-									</div>
-									<div
-										onClick={() => {
-											addMore((state) => {
-												let newItem = state.filter((ele) => ele !== index);
-												console.log(newItem);
-												return [...newItem];
-											});
-										}}
-									>
-										Delete
-									</div>
-								</div>
-								<div className={style.dots}>
-									<img src={dots} alt="more" onClick={handledisplay} />
-								</div>
+  return (
+    <React.Fragment>
+      <div style={{ backgroundColor: "rgb(230, 233, 233)", padding: "20px" }}>
+        <div className={style.BoardCreationContainer}>
+          <div className={style.ContentContainer}>
+            <div className={style.leftContainer}>
+              <div>
+                <div
+                  className={style.dotbox}
+                  style={{ display: dis, zIndex: "1000" }}
+                >
+                  <div
+                    onClick={() =>
+                      addMore((state) => state.concat(state.length + 1))
+                    }
+                  >
+                    Add
+                  </div>
+                  <div
+                    onClick={() =>
+                      addMore((state) =>
+                         state.filter((ele) => ele !== index)
+                      )
+                    }
+                  >
+                    Delete
+                  </div>
+                </div>
+                <div className={style.dots}>
+                  <img src={dots} alt="more" onClick={handledisplay} />
+                </div>
 
 								<div className={style.picture}>
 									<div

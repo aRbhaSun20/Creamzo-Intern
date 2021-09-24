@@ -15,7 +15,7 @@ import { Search } from "@material-ui/icons";
 import { useState } from "react";
 import logo from "./assets/logo.jpg";
 import { useSnackbar } from "notistack";
-import { Autocomplete } from "@mui/material";
+import Autocomplete from '@mui/material/Autocomplete';
 import { usePin } from "../../Context/PinsContext";
 
 const NavBar = () => {
@@ -68,10 +68,10 @@ const NavBar = () => {
 										{...params}
 										label="Search"
 										aria-describedby="button-addon2"
+										variant="outlined"
 										style={{
-											backgroundColor: "#eaeaf1",
 											borderRadius: "2rem",
-											paddingLeft: "1rem",
+											// paddingLeft: "5rem",
 											width: "100%",
 											outline: "none",
 											height: "3rem",

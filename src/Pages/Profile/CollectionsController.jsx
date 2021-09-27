@@ -25,7 +25,8 @@ export default function CollectionsController({ type }) {
 			case UPLOADS:
 				userUploads()
 					.then((uploads) => {
-						if (type === UPLOADS) setFilteredData([uploads]);
+						console.log("upload", uploads);
+						if (type === UPLOADS) setFilteredData(uploads);
 					})
 					.catch((err) => console.log(err));
 				break;
@@ -36,7 +37,7 @@ export default function CollectionsController({ type }) {
 
 		setFilteredData(data);
 		// eslint-disable-next-line
-	}, [type]);
+	}, [type, pinsData]);
 
 	return (
 		<div

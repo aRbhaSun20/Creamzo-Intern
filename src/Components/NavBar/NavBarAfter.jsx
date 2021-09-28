@@ -14,7 +14,7 @@ import { Search } from "@material-ui/icons";
 import { useState } from "react";
 import logo from "./assets/logo.jpg";
 import { useSnackbar } from "notistack";
-import Autocomplete from '@mui/material/Autocomplete';
+import Autocomplete from "@mui/material/Autocomplete";
 import { usePin } from "../../Context/PinsContext";
 
 const NavBar = () => {
@@ -62,7 +62,7 @@ const NavBar = () => {
 							<Autocomplete
 								disablePortal
 								id="combo-box-demo"
-								options={PinsData?.map((pin) => pin?.title)}
+								options={searchBarOptions(PinsData)}
 								renderInput={(params) => (
 									<TextField
 										{...params}
@@ -163,3 +163,20 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+const searchBarOptions = (PinsData) => {
+	return [
+		...new Set([
+			...PinsData?.map((pin) => pin?.title),
+			...flatten(PinsData?.map((pin) => pin?.tags)),
+		]),
+	];
+};
+
+const flatten = (arr) => {
+	return arr.reduce(
+		(flat, toFlatten) =>
+			flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten),
+		[]
+	);
+};

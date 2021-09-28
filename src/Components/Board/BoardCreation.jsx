@@ -27,7 +27,7 @@ const BoardCreation = ({ addMore, index, total }) => {
 		category: "",
 	});
 	const { enqueueSnackbar } = useSnackbar();
-	const user = JSON.parse(sessionStorage.getItem("creamzoUser"));
+	const user = JSON.parse(localStorage.getItem("creamzoUser"));
 	// eslint-disable-next-line
 	const [pinsData, refetch] = usePin();
 

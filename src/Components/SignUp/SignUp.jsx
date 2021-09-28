@@ -37,7 +37,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			.then((res) => {
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				setLoginOpen(false);
-				sessionStorage.setItem(
+				localStorage.setItem(
 					"creamzToken",
 					JSON.stringify({
 						token: res.token,
@@ -73,7 +73,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			.then((res) => {
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				setLoginOpen(false);
-				sessionStorage.setItem(
+				localStorage.setItem(
 					"creamzToken",
 					JSON.stringify({ token: res.token })
 				);

@@ -146,7 +146,7 @@ const NavBar = () => {
 								onClick={() => {
 									handleClose();
 									enqueueSnackbar("Log Out", { variant: "success" });
-									sessionStorage.getItem("creamzToken", "");
+									localStorage.getItem("creamzToken", "");
 									setLogin({ type: LOGIN_ACTIONS.LOGOUT });
 								}}
 							>
@@ -166,13 +166,13 @@ export default NavBar;
 
 const searchBarOptions = (PinsData) => {
 	return [
-		...new Set([
-			...PinsData?.map((pin) => pin?.title),
-			...flatten(PinsData?.map((pin) => pin?.tags)),
-		]),
+		// ...new Set([
+		// 	...PinsData?.map((pin) => pin?.title),
+		// 	...flatten(PinsData?.map((pin) => pin?.tags)),
+		// ]),
 	];
 };
-
+// eslint-disable-next-line
 const flatten = (arr) => {
 	return arr.reduce(
 		(flat, toFlatten) =>

@@ -59,7 +59,7 @@ export const COLLECTION_ACTIONS = {
 };
 
 function likedPins(pinsData) {
-	const { creamzoId } = JSON.parse(sessionStorage.getItem("creamzoUser"));
+	const { creamzoId } = JSON.parse(localStorage.getItem("creamzoUser"));
 
 	const likedPins = pinsData.filter((pinData) =>
 		pinData.likes.includes(creamzoId)
@@ -69,7 +69,7 @@ function likedPins(pinsData) {
 }
 
 function userCollection(pinsData) {
-	const { collections } = JSON.parse(sessionStorage.getItem("creamzoUser"));
+	const { collections } = JSON.parse(localStorage.getItem("creamzoUser"));
 
 	const userCollections = pinsData.filter((pinData) =>
 		collections.includes(pinData._id)
@@ -79,7 +79,7 @@ function userCollection(pinsData) {
 }
 
 function userUploads() {
-	const { creamzoId } = JSON.parse(sessionStorage.getItem("creamzoUser"));
+	const { creamzoId } = JSON.parse(localStorage.getItem("creamzoUser"));
 
 	return axiosSendRequest(AXIOS_ACTIONS.GET, `myUploads/${creamzoId}`);
 }

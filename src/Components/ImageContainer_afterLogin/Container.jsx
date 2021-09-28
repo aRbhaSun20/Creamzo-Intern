@@ -1,7 +1,7 @@
 import { Button, IconButton } from "@material-ui/core";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import React, { useState, useEffect } from "react";
+import React, { useState,  } from "react";
 import { saveAs } from "file-saver";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import { Popover } from "@material-ui/core";
@@ -36,12 +36,14 @@ const Container = ({ data, height }) => {
   const [pinsData, refetch] = usePin();
   const user = JSON.parse(localStorage.getItem("creamzoUser"));
   const [Collections, setCollections] = useState(false);
-  useEffect(() => {
-    if (typeof user.collections.find((ele)=>(ele===data._id)) !== undefined) {
-      setCollections(true);
-    }
-	  // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   if(typeof(user)!==undefined){
+  //     if (typeof (user.collections.find((ele)=>(ele===data._id))) !== undefined) {
+  //       setCollections(true);
+  //     }
+  //   }
+	//   // eslint-disable-next-line
+  // }, []);
   // const { collections } = JSON.parse(localStorage.getItem("creamzoUser"));
   let history = useHistory();
 

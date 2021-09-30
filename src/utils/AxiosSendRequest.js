@@ -55,7 +55,7 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			config = {
 				method: "post",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				data: JSON.stringify(sendData),
+				data: sendData,
 			};
 			break;
 

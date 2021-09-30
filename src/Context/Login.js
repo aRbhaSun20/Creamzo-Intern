@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useReducer } from "react";
 import { ArticlesProvider } from "./ArticlesContext";
 import { BlogsProvider } from "./BlogsContext";
 import { PinsProvider } from "./PinsContext";
+import { UploadsProvider } from "./UploadsContext";
 
 export const LoginContext = createContext();
 // export const LoginDataContext = createContext()
@@ -40,7 +41,9 @@ export const Login = ({ children }) => {
 		<LoginContext.Provider value={[login, setLogin]}>
 			<BlogsProvider>
 				<PinsProvider>
-					<ArticlesProvider>{children}</ArticlesProvider>
+					<ArticlesProvider>
+						<UploadsProvider>{children}</UploadsProvider>
+					</ArticlesProvider>
 				</PinsProvider>
 			</BlogsProvider>
 		</LoginContext.Provider>

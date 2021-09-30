@@ -165,12 +165,14 @@ const NavBar = () => {
 export default NavBar;
 
 const searchBarOptions = (PinsData) => {
-	return [
-		// ...new Set([
-		// 	...PinsData?.map((pin) => pin?.title),
-		// 	...flatten(PinsData?.map((pin) => pin?.tags)),
-		// ]),
-	];
+	if (typeof PinsData !== "undefined" && PinsData.length > 0)
+		return [
+			...new Set([
+				...PinsData?.map((pin) => pin?.title),
+				...flatten(PinsData?.map((pin) => pin?.tags)),
+			]),
+		];
+	else return [];
 };
 // eslint-disable-next-line
 const flatten = (arr) => {

@@ -7,6 +7,7 @@ export default function CollectionsController({ type }) {
 	const [filteredData, setFilteredData] = useState([]);
 	// eslint-disable-next-line
 	const [pinsData, refetch] = usePin();
+	const creamzoUser = JSON.parse(localStorage.getItem("creamzoUser"));
 
 	const { LIKED, COLLECTION, UPLOADS } = COLLECTION_ACTIONS;
 
@@ -15,17 +16,16 @@ export default function CollectionsController({ type }) {
 
 		switch (type) {
 			case LIKED:
-				data = likedPins(pinsData);
+				data = likedPins(pinsData, creamzoUser);
 				break;
 
 			case COLLECTION:
-				data = userCollection(pinsData);
+				data = userCollection(pinsData, creamzoUser);
 				break;
 
 			case UPLOADS:
-				userUploads()
+				userUploads(creamzoUser)
 					.then((uploads) => {
-						console.log("upload", uploads);
 						if (type === UPLOADS) setFilteredData(uploads);
 					})
 					.catch((err) => console.log(err));
@@ -58,28 +58,38 @@ export const COLLECTION_ACTIONS = {
 	UPLOADS: "UPLOADS",
 };
 
-function likedPins(pinsData) {
-	const { creamzoId } = JSON.parse(localStorage.getItem("creamzoUser"));
+function likedPins(pinsData, creamzoUser) {
+	if (creamzoUser?.creamzoId) {
+		const likedPins = pinsData.filter((pinData) =>
+			pinData.likes.includes(creamzoUser.creamzoId)
+		);
+		return likedPins;
+	}
 
-	const likedPins = pinsData.filter((pinData) =>
-		pinData.likes.includes(creamzoId)
-	);
-
-	return likedPins;
+	return [];
 }
 
-function userCollection(pinsData) {
-	const { collections } = JSON.parse(localStorage.getItem("creamzoUser"));
+function userCollection(pinsData, creamzoUser) {
+	if (creamzoUser?.collections) {
+		const userCollections = pinsData.filter((pinData) =>
+			creamzoUser.collections.includes(pinData._id)
+		);
 
-	const userCollections = pinsData.filter((pinData) =>
-		collections.includes(pinData._id)
-	);
+		return userCollections;
+	}
 
-	return userCollections;
+	return [];
 }
 
-function userUploads() {
-	const { creamzoId } = JSON.parse(localStorage.getItem("creamzoUser"));
+function userUploads(creamzoUser) {
+	if (creamzoUser) {
+		return axiosSendRequest(
+			AXIOS_ACTIONS.GET,
+			`myUploads/${creamzoUser.creamzoId}`
+		);
+	}
 
-	return axiosSendRequest(AXIOS_ACTIONS.GET, `myUploads/${creamzoId}`);
+	return new Promise((resolve) => {
+		resolve([]);
+	});
 }

@@ -5,15 +5,15 @@ import { useState } from "react";
 import { Add } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { usePin } from "../../Context/PinsContext";
+import { useSearch } from "../../Context/SearchContext";
 
 const HomeAfter = () => {
 	// eslint-disable-next-line
 	const [limit, setLimit] = useState(5);
 
 	const [size, setSize] = useState([0, 0]);
-	// eslint-disable-next-line
-	const [pinsData, refetch] = usePin();
+	const [pinsData] = useSearch();
+
 	useLayoutEffect(() => {
 		function updateSize() {
 			setSize([window.innerWidth, window.innerHeight]);

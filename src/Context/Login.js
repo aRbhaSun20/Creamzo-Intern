@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useReducer } from "react";
 import { ArticlesProvider } from "./ArticlesContext";
 import { BlogsProvider } from "./BlogsContext";
 import { PinsProvider } from "./PinsContext";
+import { SearchProvider } from "./SearchContext";
 import { UploadsProvider } from "./UploadsContext";
 
 export const LoginContext = createContext();
@@ -18,7 +19,6 @@ const reducer = (login, action) => {
 			return true;
 		case LOGIN_ACTIONS.LOGOUT:
 			localStorage.removeItem("creamzoUser");
-			// localStorage.setItem("creamzoUser", "");
 			return false;
 		default:
 			return login;
@@ -33,16 +33,16 @@ export const Login = ({ children }) => {
 		if (user && typeof user !== "undefined") {
 			setLogin({ type: LOGIN_ACTIONS.LOGIN });
 		}
-
-		// eslint-disable-next-line
-	}, []);
+	}, [user]);
 
 	return (
 		<LoginContext.Provider value={[login, setLogin]}>
 			<BlogsProvider>
 				<PinsProvider>
 					<ArticlesProvider>
-						<UploadsProvider>{children}</UploadsProvider>
+						<UploadsProvider>
+							<SearchProvider>{children}</SearchProvider>
+						</UploadsProvider>
 					</ArticlesProvider>
 				</PinsProvider>
 			</BlogsProvider>

@@ -6,7 +6,7 @@ import {
 	Popper,
 	TextField,
 } from "@material-ui/core";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./style/style.css";
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
@@ -16,12 +16,15 @@ import logo from "./assets/logo.jpg";
 import { useSnackbar } from "notistack";
 import Autocomplete from "@mui/material/Autocomplete";
 import { usePin } from "../../Context/PinsContext";
+import { useSearch } from "../../Context/SearchContext";
 
 const NavBar = () => {
 	// eslint-disable-next-line
 	const [login, setLogin] = useContext(LoginContext);
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const [open, setOpen] = useState(false);
+	const [search, setSearch] = useState("");
+	const [, setSearchData] = useSearch("");
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 		setOpen(!open);
@@ -39,6 +42,11 @@ const NavBar = () => {
 	// const handlenotifyClose = () => {
 	// 	setnotifyOpen(false);
 	// };
+
+	useEffect(() => {
+		if (search === "") setSearchData(PinsData);
+		else setSearchData(filterPin(PinsData, search));
+	}, [search, PinsData, setSearchData]);
 
 	return (
 		<React.Fragment>
@@ -63,28 +71,33 @@ const NavBar = () => {
 								disablePortal
 								id="combo-box-demo"
 								options={searchBarOptions(PinsData)}
-								renderInput={(params) => (
-									<TextField
-										{...params}
-										label="Search"
-										aria-describedby="button-addon2"
-										variant="outlined"
-										style={{
-											borderRadius: "2rem",
-											// paddingLeft: "5rem",
-											width: "100%",
-											outline: "none",
-											height: "3rem",
-											display: "flex",
-											alignItems: "center",
-										}}
-										startAdornment={
-											<InputAdornment position="start">
-												<Search />
-											</InputAdornment>
-										}
-									/>
-								)}
+								onInputChange={(event, value) => {
+									setSearch(value);
+								}}
+								renderInput={(params) => {
+									return (
+										<TextField
+											{...params}
+											label="Search"
+											aria-describedby="button-addon2"
+											variant="outlined"
+											style={{
+												borderRadius: "2rem",
+												// paddingLeft: "5rem",
+												width: "100%",
+												outline: "none",
+												height: "3rem",
+												display: "flex",
+												alignItems: "center",
+											}}
+											startAdornment={
+												<InputAdornment position="start">
+													<Search />
+												</InputAdornment>
+											}
+										/>
+									);
+								}}
 							/>
 						</div>
 					</div>
@@ -173,6 +186,19 @@ const searchBarOptions = (PinsData) => {
 			]),
 		];
 	else return [];
+};
+
+const filterPin = (PinsData, filter) => {
+	if (typeof PinsData !== "undefined" && PinsData.length > 0) {
+		return PinsData?.filter((pin) => {
+			if (
+				pin?.title.toLowerCase().includes(filter.toLowerCase()) ||
+				pin?.tags.includes(filter)
+			)
+				return true;
+			return false;
+		});
+	} else return [];
 };
 // eslint-disable-next-line
 const flatten = (arr) => {

@@ -63,12 +63,14 @@ export const axiosSendRequest = async (type, url, sendData) => {
       break;
 
     case AXIOS_ACTIONS.SIGNUP:
-      config = {
-        method: "post",
-        url: `${AXIOS_ACTIONS.URL}/${url}`,
-        data: sendData,
-      };
-      break;
+      
+			config = {
+				method: "post",
+				url: `${AXIOS_ACTIONS.URL}/${url}`,
+				data: sendData,
+			};
+			break;
+     
 
     case AXIOS_ACTIONS.GOOGLE_SIGNUP:
       config = {

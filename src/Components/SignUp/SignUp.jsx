@@ -37,17 +37,21 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			.then((res) => {
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				setLoginOpen(false);
+				console.log(res)
 				localStorage.setItem(
-					"creamzToken",
+					"creamzoUser",
 					JSON.stringify({
-						token: res.token,
-						fname: res.user.fname,
-						lname: res.user.lname,
-						age: res.user.age,
-						email: res.user.email,
-						creamzoId: res.user.creamzoId,
+					  token: res.token,
+					  fname: res.user.fname,
+					  lname: '',
+					  age: 0,
+					  email:  res.user.email,
+					  creamzoId: res.user.creamzoId,
+					  following: [],
+					  followers: [],
+					  collections: [],
 					})
-				);
+				  );
 				enqueueSnackbar("SignUp Successful", { variant: "success" });
 			})
 			.catch((e) => {

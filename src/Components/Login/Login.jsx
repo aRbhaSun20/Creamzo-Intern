@@ -59,9 +59,19 @@ const Login = ({ setopen, setSignopen }) => {
       .then((res) => {
         setLogin({ type: LOGIN_ACTIONS.LOGIN });
         localStorage.setItem(
-          "creamzToken",
-          JSON.stringify({ token: res.token })
-        );
+					"creamzoUser",
+					JSON.stringify({
+					  token: res.token,
+					  fname: res.user.fname,
+					  lname: '',
+					  age: 0,
+					  email:  res.user.email,
+					  creamzoId: res.user.creamzoId,
+					  following: [],
+					  followers: [],
+					  collections: [],
+					})
+				  );
         setopen(false);
         enqueueSnackbar("LogIn Successful", { variant: "success" });
       })

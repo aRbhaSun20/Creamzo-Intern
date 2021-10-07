@@ -3,6 +3,7 @@ import { Facebook, Instagram, LinkedIn, Twitter } from "@material-ui/icons";
 
 import "./styles/styles.css";
 import { Link } from "react-router-dom";
+import {useArticle} from  '../../../Context/ArticlesContext'
 
 function Blogitem({data}) {
   console.log(data?.title)
@@ -18,7 +19,8 @@ function Blogitem({data}) {
   const [linkedinUrl, setlinkedinUrl] = useState("https://www.linkedin.com");
   // eslint-disable-next-line
   const [categorytype, setcategorytype] = useState("Art");
-
+  // eslint-disable-next-line
+  const [currentArticle,setcurrentArticle] = useArticle()
   return (
     <div style={{  margin: "2rem" }}>
       <Link to="/articles">
@@ -29,7 +31,7 @@ function Blogitem({data}) {
           height: "10rem",
           width: "15rem",
           margin: "1rem",
-          objectFit: "contain",
+          objectFit: "cover",
           borderRadius: "10px",
         }}
       />
@@ -59,9 +61,11 @@ function Blogitem({data}) {
           </div>
           <h6 className="dateopacity">{data?.time?.split('T')[0]}</h6>
           <br />
-          <Link to={'/articles'}>
+          <Link to={'/articleitem'}
+          onClick={()=>setcurrentArticle(data)}
+          >
 		 
-           <h3 style={{fontSize:'1.2rem'}}>Read More</h3>
+           <h3>Read More</h3>
 
             
           </Link>

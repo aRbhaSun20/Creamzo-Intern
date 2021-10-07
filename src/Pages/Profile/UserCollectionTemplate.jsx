@@ -5,14 +5,12 @@ import { useState } from "react";
 import { Add } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { useSearch } from "../../Context/SearchContext";
 
-const HomeAfter = () => {
+const UserCollectionTemplate = ({ pinsData }) => {
 	// eslint-disable-next-line
 	const [limit, setLimit] = useState(5);
 
 	const [size, setSize] = useState([0, 0]);
-	const [pinsData] = useSearch();
 
 	useLayoutEffect(() => {
 		function updateSize() {
@@ -121,4 +119,4 @@ const HomeAfter = () => {
 	);
 };
 
-export default HomeAfter;
+export default UserCollectionTemplate;

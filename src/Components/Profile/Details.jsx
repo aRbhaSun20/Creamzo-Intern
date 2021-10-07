@@ -2,7 +2,7 @@ import React from "react";
 import style from "./style/style.module.css";
 
 const Details = () => {
-	const user = JSON.parse(sessionStorage.getItem("creamzoUser"));
+	const user = JSON.parse(localStorage.getItem("creamzoUser"));
 
 	return (
 		<div className={style.information}>

@@ -52,10 +52,16 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			break;
 
 		case AXIOS_ACTIONS.SIGNUP:
+			let formSignUp = new FormData();
+			formSignUp.append("email", sendData.email);
+			formSignUp.append("password", sendData.password);
+			formSignUp.append("fname", sendData.fname);
+			formSignUp.append("lname", sendData.lname);
+			formSignUp.append("age", sendData.age);
 			config = {
 				method: "post",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				data: JSON.stringify(sendData),
+				data: formSignUp,
 			};
 			break;
 
@@ -89,7 +95,7 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			formCreate.append("author", sendData.fname);
 			formCreate.append("category", sendData.category);
 			formCreate.append("tags", sendData.tags);
-			formCreate.append("creamzoId",sendData.creamzoId)
+			formCreate.append("creamzoId", sendData.creamzoId);
 			formCreate.append("file1", sendData.imgPath);
 			console.log(sendData);
 			config = {

@@ -23,7 +23,8 @@ function Blogitem({data}) {
   const [currentArticle,setcurrentArticle] = useArticle()
   return (
     <div style={{  margin: "2rem" }}>
-      <Link to="/articles">
+      <Link  to={'/articleitem'}
+          onClick={()=>setcurrentArticle(data)}>
       <img
         src={data?.image}
         alt="blog"

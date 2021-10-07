@@ -2,7 +2,7 @@ import { TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 import "./style/style.css";
 
-const Forgotpassword = ({ setopen, setLoginOpen }) => {
+const Resetpassword = ({ setopen, setLoginOpen }) => {
 	const [mail, setMail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -29,7 +29,7 @@ const Forgotpassword = ({ setopen, setLoginOpen }) => {
 							textAlign: "center",
 						}}
 					>
-						Forget Password ?
+						Reset Password ?
 					</div>
 				</div>
 				<div className="bottom-header">
@@ -100,4 +100,4 @@ const Forgotpassword = ({ setopen, setLoginOpen }) => {
 	);
 };
 
-export default Forgotpassword;
+export default Resetpassword;

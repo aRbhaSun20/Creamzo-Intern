@@ -81,25 +81,6 @@ export const axiosSendRequest = async (type, url, sendData) => {
       };
       break;
 
-<<<<<<< HEAD
-		case AXIOS_ACTIONS.CREATE_PIN:
-			let formCreate = new FormData();
-			formCreate.append("title", sendData.title);
-			formCreate.append("websiteUrl", sendData.link);
-			formCreate.append("desc", sendData.description);
-			formCreate.append("author", sendData.fname);
-			formCreate.append("category", sendData.category);
-			formCreate.append("tags", sendData.tags);
-			formCreate.append("creamzoId", sendData.creamzoId);
-			formCreate.append("file1", sendData.imgPath);
-			console.log(sendData);
-			config = {
-				method: "post",
-				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				data: formCreate,
-			};
-			break;
-=======
     case AXIOS_ACTIONS.LOGOUT:
       let formLogout = new FormData();
       formLogout.append("user_id", sendData.user_id);
@@ -112,7 +93,6 @@ export const axiosSendRequest = async (type, url, sendData) => {
         data: formLogout,
       };
       break;
->>>>>>> 373c9002366d3e0956520967af001779e2baead3
 
     case AXIOS_ACTIONS.CREATE_PIN:
       let formCreate = new FormData();

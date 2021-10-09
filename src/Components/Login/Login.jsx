@@ -80,6 +80,7 @@ const Login = ({ setopen, setSignopen, setForget, setReset }) => {
 			});
 	};
 
+	// eslint-disable-next-line
 	const [forgotPasswordModal, setforgotPasswordModal] = useState(false);
 
 	return (

@@ -15,6 +15,7 @@ import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 import { usePin } from "../../Context/PinsContext";
 
 import { useSnackbar } from "notistack";
+import { useUploads } from "../../Context/UploadsContext";
 const BoardCreation = ({ addMore, index, total }) => {
 	const history = useHistory();
 	const [dis, setdis] = useState("none");
@@ -29,7 +30,8 @@ const BoardCreation = ({ addMore, index, total }) => {
 	const { enqueueSnackbar } = useSnackbar();
 	const user = JSON.parse(localStorage.getItem("creamzoUser"));
 	// eslint-disable-next-line
-	const [pinsData, refetch] = usePin();
+	const [pinsData, refetchPins] = usePin();
+	const [, refetchUploads] = useUploads();
 
 	const handlechange = (e) => {
 		// console.log(e.target.name);
@@ -72,10 +74,11 @@ const BoardCreation = ({ addMore, index, total }) => {
 			fname: user.fname,
 			creamzoId: user.creamzoId,
 		}).then((data) => {
-			refetch();
+			refetchPins();
+			refetchUploads();
 			enqueueSnackbar("Pins Created", { variant: "success" });
 			addMore((state) => state.filter((ele) => ele !== index));
-			if (total.length === 0) {
+			if (total.length - 1 === 0) {
 				history.push("/");
 			}
 		});

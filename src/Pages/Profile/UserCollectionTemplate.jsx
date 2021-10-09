@@ -6,7 +6,7 @@ import { Add } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-const UserCollectionTemplate = ({ pinsData }) => {
+const UserCollectionTemplate = ({ pinsData, ...props }) => {
 	// eslint-disable-next-line
 	const [limit, setLimit] = useState(5);
 
@@ -48,60 +48,45 @@ const UserCollectionTemplate = ({ pinsData }) => {
 			<div className="column1">
 				{pinsData?.map((image, i) =>
 					i % limit === 0 ? (
-						<Container
-							data={image}
-							key={i}
-							height="70%"
-							// height={Math.random() * limit * Math.random() + 12}
-						/>
+						<Container data={image} key={i} height="70%">
+							{props.children}
+						</Container>
 					) : null
 				)}
 			</div>
 			<div className="column2">
 				{pinsData?.map((image, i) =>
 					i % limit === 1 ? (
-						<Container
-							data={image}
-							key={i}
-							height="70%"
-							// height={Math.random() * limit * Math.random() + 12}
-						/>
+						<Container data={image} key={i} height="70%">
+							{props.children}
+						</Container>
 					) : null
 				)}
 			</div>
 			<div className="column3">
 				{pinsData?.map((image, i) =>
 					i % limit === 2 ? (
-						<Container
-							data={image}
-							key={i}
-							height="70%"
-							// height={Math.random() * limit * Math.random() + 12}
-						/>
+						<Container data={image} key={i} height="70%">
+							{props.children}
+						</Container>
 					) : null
 				)}
 			</div>
 			<div className="column4">
 				{pinsData?.map((image, i) =>
 					i % limit === 3 ? (
-						<Container
-							data={image}
-							key={i}
-							height="70%"
-							// height={Math.random() * limit * Math.random() + 12}
-						/>
+						<Container data={image} key={i} height="70%">
+							{props.children}
+						</Container>
 					) : null
 				)}
 			</div>
 			<div className="column5">
 				{pinsData?.map((image, i) =>
 					i % limit === 4 ? (
-						<Container
-							data={image}
-							key={i}
-							height="70%"
-							// height={Math.random() * limit * Math.random() + 12}
-						/>
+						<Container data={image} key={i} height="70%">
+							{props.children}
+						</Container>
 					) : null
 				)}
 			</div>

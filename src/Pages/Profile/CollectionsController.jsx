@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import DeletePinButton from "../../Components/Profile/DeletePinButton";
 import { usePin } from "../../Context/PinsContext";
 import { useUploads } from "../../Context/UploadsContext";
 import UserCollectionTemplate from "./UserCollectionTemplate";
@@ -33,7 +34,7 @@ export default function CollectionsController({ type }) {
 
 		setFilteredData(data);
 		// eslint-disable-next-line
-	}, [type, pinsData]);
+	}, [type, pinsData, uploadData]);
 
 	return (
 		<div
@@ -43,7 +44,15 @@ export default function CollectionsController({ type }) {
 				marginTop: "3rem",
 			}}
 		>
-			<UserCollectionTemplate pinsData={filteredData} />
+			<UserCollectionTemplate pinsData={filteredData}>
+				{type === UPLOADS
+					? (id) => (
+							<React.Fragment>
+								<DeletePinButton id={id} />
+							</React.Fragment>
+					  )
+					: null}
+			</UserCollectionTemplate>
 		</div>
 	);
 }

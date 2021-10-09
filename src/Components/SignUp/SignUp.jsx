@@ -37,21 +37,20 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			.then((res) => {
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				setLoginOpen(false);
-				console.log(res)
 				localStorage.setItem(
 					"creamzoUser",
 					JSON.stringify({
-					  token: res.token,
-					  fname: res.user.fname,
-					  lname: '',
-					  age: 0,
-					  email:  res.user.email,
-					  creamzoId: res.user.creamzoId,
-					  following: [],
-					  followers: [],
-					  collections: [],
+						token: res.token,
+						fname: res.user.fname,
+						lname: "",
+						age: 0,
+						email: res.user.email,
+						creamzoId: res.user.creamzoId,
+						following: [],
+						followers: [],
+						collections: [],
 					})
-				  );
+				);
 				enqueueSnackbar("SignUp Successful", { variant: "success" });
 			})
 			.catch((e) => {
@@ -77,22 +76,21 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			.then((res) => {
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				setLoginOpen(false);
-				console.log(res)
 				localStorage.setItem(
 					"creamzoUser",
 					JSON.stringify({
-					  token: res.token,
-					  fname: signUpData.firstName,
-					  lname: signUpData.lastName,
-					  age: signUpData.age,
-					  email:  signUpData.mail,
-					  creamzoId: res.creamzoId,
-					  following: [],
-					  followers: [],
-					  collections: [],
+						token: res.token,
+						fname: signUpData.firstName,
+						lname: signUpData.lastName,
+						age: signUpData.age,
+						email: signUpData.mail,
+						creamzoId: res.creamzoId,
+						following: [],
+						followers: [],
+						collections: [],
 					})
-				  );
-				
+				);
+
 				enqueueSnackbar("SignUp Successful", { variant: "success" });
 			})
 			.catch((e) => {

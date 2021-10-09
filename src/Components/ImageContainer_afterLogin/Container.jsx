@@ -39,11 +39,11 @@ const Container = ({ data, height, ...props }) => {
 	const [Collections, setCollections] = useState(false);
 
 	useEffect(() => {
-		// console.log(
-		// 	"collection",
-		// 	user?.collections,
-		// 	typeof user !== undefined && Array.isArray(user?.collections)
-		// );
+		console.log(
+			"collection",
+			user?.collections,
+			typeof user !== undefined && Array.isArray(user?.collections)
+		);
 
 		if (typeof user !== undefined && Array.isArray(user?.collections)) {
 			if (user?.collections.find((ele) => ele === data._id) !== undefined) {

@@ -43,7 +43,7 @@ const NavBar = () => {
 		}
 	};
 
-	const [ForgetOpen, setForgetOpen] = React.useState(true);
+	const [ForgetOpen, setForgetOpen] = React.useState(false);
 	const [ResetOpen, setResetOpen] = React.useState(false);
 
 	return (

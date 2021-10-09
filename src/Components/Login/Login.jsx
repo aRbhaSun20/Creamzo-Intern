@@ -320,7 +320,8 @@ const Login = ({ setopen, setSignopen, setForget, setReset }) => {
 					}}
 				>
 					<div
-						style={{ fontSize: ".7rem", color: "red" }}
+						className="re"
+						style={{ fontSize: ".7rem", color: "red", cursor: "pointer" }}
 						onClick={() => {
 							setopen(false);
 							setReset(true);
@@ -329,11 +330,12 @@ const Login = ({ setopen, setSignopen, setForget, setReset }) => {
 						Reset Password ?
 					</div>
 					<div
+						className="re"
 						onClick={() => {
 							setopen(false);
 							setForget(true);
 						}}
-						style={{ fontSize: ".7rem", color: "red" }}
+						style={{ fontSize: ".7rem", color: "red", cursor: "pointer" }}
 					>
 						Forget Password ?
 					</div>

@@ -49,6 +49,8 @@ const BoardDisplay = () => {
 												pinCurrData.websiteUrl.split("https://").length - 1
 											]
 										}/`}
+										rel="noreferrer" 
+										target="_blank"
 									>
 										{pinCurrData.websiteUrl}
 									</a>

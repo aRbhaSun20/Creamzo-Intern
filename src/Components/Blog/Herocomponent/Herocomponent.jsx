@@ -12,13 +12,14 @@ function Herocomponent() {
 			<div className="hero-image">
 				<div className="spacing"></div>
 				<h6 className="secondary-text">Hello! Welcome to</h6>
-
 				<h1 className="main-text">Creamzo blog</h1>
 				<p className="secondary-text">
-					Far far away, behind the word mountains, far from the countries
-					Vokalia and Consonantia, there live the blind texts. Separated they
-					live in Bookmarksgrove right at the coast of the Semantics, a large
-					language ocean.
+				 Get a giant cookie and hot chocolate with marshmallows. Sit on your favorite couch.
+				 We are here to share a lot of things that are going to make you happy. 
+				 What’s your niche? Art, DIY, Photography, Culture, Fashion, Hobbies, 
+				 Food and Drink, Travel, Environment, Home Decor, Pets or Technology? We got you covered! 
+				 Happy reading.
+
 				</p>
 				<br />
 				

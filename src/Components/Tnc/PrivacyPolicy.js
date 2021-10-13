@@ -11,18 +11,16 @@ function PrivacyPolicy() {
 				</div>
 				<div className="para">
 					<p>
-						Welcome to Creamzo (“Company”, “we”, “our”, “us”)! Welcome to
-						Creamzo. Creamzo (“us”, “we”, or “our”) operates Creamzo.com
-						(hereinafter referred to as “Service”). Our Privacy Policy governs
-						your visit to Creamzo.com, and explains how we collect, safeguard
-						and disclose information that results from your use of our Service.
-						We use your data to provide and improve Service. By using Service,
-						you agree to the collection and use of information in accordance
-						with this policy. Unless otherwise defined in this Privacy Policy,
-						the terms used in this Privacy Policy have the same meanings as in
-						our Terms and Conditions. Our Terms and Conditions (“Terms”) govern
-						all use of our Service and together with the Privacy Policy
-						constitutes your agreement with us (“agreement”).
+					Welcome to Creamzo.
+					Creamzo (“us”, “we”, or “our”) operates Creamzo.com (hereinafter referred to as “Service”).
+					Our Privacy Policy governs your visit to Creamzo.com, and explains how we collect, 
+					safeguard and disclose information that results from your use of our Service.
+					We use your data to provide and improve Service. By using Service, 
+					you agree to the collection and use of information in accordance with this policy. 
+					Unless otherwise defined in this Privacy Policy, 
+					the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
+					Our Terms and Conditions (“Terms”) govern all use of our Service and together with the Privacy Policy 
+					constitutes your agreement with us (“agreement”).
 					</p>
 				</div>
 			</div>

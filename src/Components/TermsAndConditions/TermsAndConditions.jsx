@@ -1091,34 +1091,89 @@ const TermsAndConditions = () => {
             </div>
             <div className={style.tos_inner}>
               <div className={style.tos_title}>
-                <h2>Waiver And Severability</h2>
+                <h2>Service Providers</h2>
               </div>
               <div className={style.tos_content}>
                 <p>
-                  No waiver by Company of any term or condition set forth in
-                  Terms shall be deemed a further or continuing waiver of such
-                  term or condition or a waiver of any other term or condition,
-                  and any failure of Company to assert a right or provision
-                  under Terms shall not constitute a waiver of such right or
-                  provision. If any provision of Terms is held by a court or
-                  other tribunal of competent jurisdiction to be invalid,
-                  illegal or unenforceable for any reason, such provision shall
-                  be eliminated or limited to the minimum extent such that the
-                  remaining provisions of Terms will continue in full force and
-                  effect.
+                We may employ third party companies and individuals to facilitate our Service (“Service Providers”), 
+                provide Service on our behalf, perform Service-related services or assist us in analysing how our Service is used.
+                </p>
+                <p>
+                These third parties have access to your Personal Data only to perform these tasks on our behalf 
+                and are obligated not to disclose or use it for any other purpose.
                 </p>
               </div>
             </div>
             <div className={style.tos_inner}>
               <div className={style.tos_title}>
-                <h2>Acknowledgement</h2>
+                <h2>Analytics</h2>
               </div>
               <div className={style.tos_content}>
                 <p>
-                  BY USING SERVICE OR OTHER SERVICES PROVIDED BY US, YOU
-                  ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS OF SERVICE AND
-                  AGREE TO BE BOUND BY THEM.
+                We may use third-party Service Providers to monitor and analyze the use of our Service.
                 </p>
+              </div>
+            </div>
+            <div className={style.tos_inner}>
+              <div className={style.tos_title}>
+                <h2>CI/CD tools</h2>
+              </div>
+              <div className={style.tos_content}>
+                <p>
+                We may use third-party Service Providers to automate the development process of our Service.
+                </p>
+              </div>
+            </div>
+            <div className={style.tos_inner}>
+              <div className={style.tos_title}>
+                <h2>Behavioral Remarketing</h2>
+              </div>
+              <div className={style.tos_content}>
+                <p>
+                We may use remarketing services to advertise on third party websites to you after you visited our Service. 
+                We and our third-party vendors use cookies to inform, optimise and serve ads based on your past visits to our Service.
+                </p>
+              </div>
+            </div>
+            <div className={style.tos_inner}>
+              <div className={style.tos_title}>
+                <h2>Links to Other Sites</h2>
+              </div>
+              <div className={style.tos_content}>
+              <p>Our Service may contain links to other sites that are not operated by us. 
+              If you click a third party link, you will be directed to that third party’s site. 
+              We strongly advise you to review the Privacy Policy of every site you visit.</p>
+              <p>We have no control over and assume no responsibility for the content, 
+              privacy policies or practices of any third party sites or services.</p>
+              <p>For example, the outlined privacy policy has been made using PolicyMaker.io, 
+              a free tool that helps create high-quality legal documents. 
+              PolicyMaker’s privacy policy generator is an easy-to-use tool for creating a privacy policy for blog, website, 
+              e-commerce store or mobile app.</p>
+              </div>
+            </div>
+            <div className={style.tos_inner}>
+              <div className={style.tos_title}>
+                <h2>Children’s Privacy</h2>
+              </div>
+              <div className={style.tos_content}>
+              <p>Our Services are not intended for use by children under the age of 18 (“Child” or “Children”).</p>
+              <p>We do not knowingly collect personally identifiable information from Children under 18. 
+                If you become aware that a Child has provided us with Personal Data, please contact us. 
+                If we become aware that we have collected Personal Data from Children without verification of parental consent, 
+                we take steps to remove that information from our servers.</p>
+              </div>
+            </div>
+            <div className={style.tos_inner}>
+              <div className={style.tos_title}>
+                <h2>Changes to This Privacy Policy</h2>
+              </div>
+              <div className={style.tos_content}>
+              <p>We may update our Privacy Policy from time to time. 
+                We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+              <p>We will let you know via email and/or a prominent notice on our Service, 
+                prior to the change becoming effective and update “effective date” at the top of this Privacy Policy.</p>
+              <p>You are advised to review this Privacy Policy periodically for any changes. 
+                Changes to this Privacy Policy are effective when they are posted on this page.</p>
               </div>
             </div>
             <div className={style.tos_inner}>
@@ -1127,9 +1182,7 @@ const TermsAndConditions = () => {
               </div>
               <div className={style.tos_content}>
                 <p>
-                  BY USING SERVICE OR OTHER SERVICES PROVIDED BY US, YOU
-                  ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS OF SERVICE AND
-                  AGREE TO BE BOUND BY THEM.
+                If you have any questions about this Privacy Policy, please contact us by email: creamzo1995@gmail.com.
                 </p>
               </div>
             </div>

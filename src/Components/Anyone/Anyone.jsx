@@ -43,10 +43,11 @@ const Anyone = () => {
 					</Typography>
 					<Typography
 						className="descriptionany">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
+						When you create something, you think of sharing it with other’s
+						{/*Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
 						perferendis ipsam blanditiis mollitia esse. Quod error voluptatibus
 						facere aperiam eligendi cum saepe iure aut. Expedita soluta cum
-						itaque deserunt ducimus?
+						itaque deserunt ducimus?*/}
 					</Typography>
 					<Button
 						variant="contained"

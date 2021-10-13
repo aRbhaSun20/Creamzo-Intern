@@ -45,15 +45,29 @@ const OverView = () => {
         className="continer">
         <div className="text" style={{width:"65%"}}>
           <Typography style={{ fontWeight: "bolder",fontSize:"2rem",textAlign: "center" }}>
-            OverView Content
+            {/*OverView Content*/}
+            All are welcome
           </Typography>
           <Typography
             variant="subtitle1"
             style={{ textAlign: "center", fontSize: "17px",padding:"10px" }}
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+            We welcome annyone who are creative , funny and wants to show the world the power of content.
+            {/*Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
             repellat maxime repudiandae voluptatem libero culpa quos dignissimos
-            illum impedit!
+            illum impedit!*/}
+          </Typography>
+          <Typography style={{ fontWeight: "bolder",fontSize:"2rem",textAlign: "center" }}>
+            The power to share
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            style={{ textAlign: "center", fontSize: "17px",padding:"10px" }}
+          >
+            Share your thoughts and to the largest community of content creators.
+            {/*Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+            repellat maxime repudiandae voluptatem libero culpa quos dignissimos
+            illum impedit!*/}
           </Typography>
           {/*<Button
             variant="contained"

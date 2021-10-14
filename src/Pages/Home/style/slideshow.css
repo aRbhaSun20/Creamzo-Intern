@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+#slide_bg {
+  width: 100%;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  animation: slideBg 15s linear infinite 2s;
+  animation-timing-function: ease-in-out;
+  background-image: url('../images/Animal.jpg');
+  z-index: 1;
+  transition: 0.5s;
+  animation-name: slideBg;
+  animation-direction: alternate-reverse;
+  animation-duration: 30s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: linear;
+  opacity: 1;
+  filter: brightness(50%);
+}
+
+.whiteLogo {
+  margin: auto;
+  margin-left: 42%;
+  margin-top: 14%;
+}
+
+.tagLine {
+  text-align: center;
+  font-size: 2.5rem;
+  z-index: 5;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 39%;
+}
+
+.contentAbove {
+  z-index: 5;
+  position: absolute;
+}
+
+@keyframes slideBg {
+  0% {
+    background-image: url('../images/Environment.jpg');
+  }
+  25% {
+    background-image: url('../images/Design.jpg');
+  }
+  50% {
+    background-image: url('../images/Animal.jpg');
+  }
+  75% {
+    background-image: url('../images/HomeDécor.jpg');
+  }
+  100% {
+    background-image: url('../images/Vehicles.jpg');
+  }
+}

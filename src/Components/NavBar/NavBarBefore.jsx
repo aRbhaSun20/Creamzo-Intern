@@ -7,7 +7,7 @@ import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import Appbar from './Appbar.jsx';
 import { LoginContext } from '../../Context/Login';
-import logo from './assets/creamzo_logo1.jpg';
+import logo from './assets/Creamzo_logo.jpeg';
 import ForgetPassword from '../Login/ForgotPassword';
 import ResetPassword from '../Login/ResetPassword';
 
@@ -50,7 +50,7 @@ const NavBar = () => {
     <React.Fragment>
       <div
         className="navbar"
-        style={{ paddingTop: '5px', marginBotton: '10px' }}
+        style={{ paddingTop: '5px', marginBotton: '34px' }}
       >
         <NavLink activeClassName="activeLink" to="/" exact>
           <Typography
@@ -61,7 +61,7 @@ const NavBar = () => {
               src={logo}
               className="logo"
               alt="logo"
-              style={{ height: '75px', width: '165px' }}
+              style={{ height: '65px', width: '205px', marginTop: '5px' }}
             />
           </Typography>
         </NavLink>

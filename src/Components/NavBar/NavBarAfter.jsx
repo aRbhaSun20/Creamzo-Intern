@@ -12,7 +12,7 @@ import './style/style.css';
 import { LoginContext, LOGIN_ACTIONS } from '../../Context/Login';
 import { Search } from '@material-ui/icons';
 import { useState } from 'react';
-import logo from './assets/creamzo_logo1.jpg';
+import logo from './assets/Creamzo_logo.jpeg';
 import { useSnackbar } from 'notistack';
 import Autocomplete from '@mui/material/Autocomplete';
 import { usePin } from '../../Context/PinsContext';
@@ -50,7 +50,10 @@ const NavBar = () => {
 
   return (
     <React.Fragment>
-      <div className="navbar" style={{ paddingTop: '5px' }}>
+      <div
+        className="navbar"
+        style={{ paddingTop: '5px', marginBotton: '34px' }}
+      >
         <div className="top">
           <NavLink activeClassName="activeLink" to="/" exact>
             <Typography
@@ -61,7 +64,7 @@ const NavBar = () => {
                 src={logo}
                 className="logo"
                 alt="logo"
-                style={{ height: '75px', width: '165px' }}
+                style={{ height: '65px', width: '205px', marginTop: '5px' }}
               />
             </Typography>
           </NavLink>

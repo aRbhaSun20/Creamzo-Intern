@@ -34,7 +34,8 @@
   z-index: 5;
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
-  margin-top: 39%;
+  margin-top: 24%;
+  letter-spacing: 0.5rem;
 }
 
 .contentAbove {

@@ -36,10 +36,40 @@ const Making = () => {
               fontSize: "17px",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
+            Taking you closer to the  people and content you love. <br/>            
+
+            {/*Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
             perferendis ipsam blanditiis mollitia esse. Quod error voluptatibus
             facere aperiam eligendi cum saepe iure aut. Expedita soluta cum
-            itaque deserunt ducimus?
+            itaque deserunt ducimus?*/}
+          </Typography>
+          <Typography
+            variant="h4"
+            style={{
+              paddingBottom: ".6rem",
+              fontWeight: "bolder",
+              // fontSize: "1.8vw",
+              fontSize:"2rem",
+              textAlign: "center",
+            }}
+          >
+            Find out what's trending
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            style={{
+              // paddingBottom: "2rem",
+              textAlign: "center",
+              fontSize: "17px",
+            }}
+          >
+            
+            Bring yourself to a whole new world of digital content.
+
+            {/*Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
+            perferendis ipsam blanditiis mollitia esse. Quod error voluptatibus
+            facere aperiam eligendi cum saepe iure aut. Expedita soluta cum
+            itaque deserunt ducimus?*/}
           </Typography>
           {/*<Button
             variant="contained"

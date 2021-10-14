@@ -17,6 +17,7 @@
     "bootstrap": "^5.0.2",
     "colcade": "^0.2.0",
     "file-saver": "^2.0.5",
+    "glide": "^0.2.0",
     "notistack": "^1.0.10",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",

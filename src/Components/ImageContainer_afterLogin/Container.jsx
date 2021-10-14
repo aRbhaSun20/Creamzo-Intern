@@ -281,115 +281,113 @@ const Container = ({ data, height, ...props }) => {
 								Link
 							</a>
 						</Button>
-						{props?.children ? (
-							<div
-								style={{
-									display: "flex",
-									justifyContent: "space-between",
-									alignItems: "center",
-									width: props?.children ? "6rem" : "4rem",
+						<div
+							style={{
+								display: "flex",
+								justifyContent: "space-between",
+								alignItems: "center",
+								width: props?.children ? "6rem" : "4rem",
+							}}
+						>
+							{props?.children ? props.children(data._id) : null}
+
+							<IconButton
+								onClick={() => {
+									axiosSendRequest(
+										AXIOS_ACTIONS.PUT,
+										`addDownloads/${data?._id}/${
+											data?.creamzoId.split("#")[1]
+										}`,
+										null
+									).then((data) => {
+										refetch();
+									});
 								}}
+								name="download"
+								style={{ outline: "none", padding: "4px" }}
 							>
-								{props?.children ? props.children(data._id) : null}
-
-								<IconButton
+								<GetAppIcon
 									onClick={() => {
-										axiosSendRequest(
-											AXIOS_ACTIONS.PUT,
-											`addDownloads/${data?._id}/${
-												data?.creamzoId.split("#")[1]
-											}`,
-											null
-										).then((data) => {
-											refetch();
-										});
+										saveAs(data.imgUrl, "image.jpg");
 									}}
-									name="download"
-									style={{ outline: "none", padding: "4px" }}
-								>
-									<GetAppIcon
-										onClick={() => {
-											saveAs(data.imgUrl, "image.jpg");
-										}}
-										style={{
-											color: "white",
-											fontSize: "1.2rem",
-											position: "relative",
-											bottom: "0em",
-										}}
-									/>
-								</IconButton>
-								<IconButton
-									onClick={() => {
-										axiosSendRequest(
-											AXIOS_ACTIONS.PUT,
-											`addShares/${data?._id}/${
-												data?.creamzoId.split("#").length > 0
-													? `%23${data?.creamzoId.split("#")[1]}`
-													: data?.creamzoId
-											}`,
-											null
-										).then((res) => {
-											refetch();
-										});
+									style={{
+										color: "white",
+										fontSize: "1.2rem",
+										position: "relative",
+										bottom: "0em",
 									}}
-									name="share"
-									style={{ outline: "none", padding: "4px" }}
+								/>
+							</IconButton>
+							<IconButton
+								onClick={() => {
+									axiosSendRequest(
+										AXIOS_ACTIONS.PUT,
+										`addShares/${data?._id}/${
+											data?.creamzoId.split("#").length > 0
+												? `%23${data?.creamzoId.split("#")[1]}`
+												: data?.creamzoId
+										}`,
+										null
+									).then((res) => {
+										refetch();
+									});
+								}}
+								name="share"
+								style={{ outline: "none", padding: "4px" }}
+							>
+								<Share
+									style={{
+										color: "white",
+										fontSize: "1.2rem",
+										position: "relative",
+										bottom: "0em",
+									}}
+									onClick={openPopover}
+								/>
+								<Popover
+									open={Boolean(anchor)}
+									anchorEl={anchor}
+									anchorOrigin={{
+										vertical: "center",
+										horizontal: "right",
+									}}
+									transformOrigin={{
+										vertical: "center",
+										horizontal: "left",
+									}}
+									onClose={() => {
+										setAnchor(null);
+									}}
 								>
-									<Share
-										style={{
-											color: "white",
-											fontSize: "1.2rem",
-											position: "relative",
-											bottom: "0em",
-										}}
-										onClick={openPopover}
-									/>
-									<Popover
-										open={Boolean(anchor)}
-										anchorEl={anchor}
-										anchorOrigin={{
-											vertical: "center",
-											horizontal: "right",
-										}}
-										transformOrigin={{
-											vertical: "center",
-											horizontal: "left",
-										}}
-										onClose={() => {
-											setAnchor(null);
-										}}
-									>
-										<div style={{ padding: "0.3rem" }}>
-											<h6>share</h6>
-											<FacebookShareButton url={data.imgUrl}>
-												<FacebookIcon
-													style={{ padding: "0.2rem" }}
-													size={32}
-													round={true}
-												/>
-											</FacebookShareButton>
+									<div style={{ padding: "0.3rem" }}>
+										<h6>share</h6>
+										<FacebookShareButton url={data.imgUrl}>
+											<FacebookIcon
+												style={{ padding: "0.2rem" }}
+												size={32}
+												round={true}
+											/>
+										</FacebookShareButton>
 
-											<TwitterShareButton image={data.imgUrl}>
-												<TwitterIcon
-													style={{ padding: "0.2rem" }}
-													size={32}
-													round={true}
-												/>
-											</TwitterShareButton>
+										<TwitterShareButton image={data.imgUrl}>
+											<TwitterIcon
+												style={{ padding: "0.2rem" }}
+												size={32}
+												round={true}
+											/>
+										</TwitterShareButton>
 
-											<WhatsappShareButton url={data.imgUrl}>
-												<WhatsappIcon
-													style={{ padding: "0.2rem" }}
-													size={32}
-													round={true}
-												/>
-											</WhatsappShareButton>
-										</div>
-									</Popover>
-								</IconButton>
-							</div>
-						) : null}
+										<WhatsappShareButton url={data.imgUrl}>
+											<WhatsappIcon
+												style={{ padding: "0.2rem" }}
+												size={32}
+												round={true}
+											/>
+										</WhatsappShareButton>
+									</div>
+								</Popover>
+							</IconButton>
+						</div>
 					</div>
 				</div>
 			) : null}

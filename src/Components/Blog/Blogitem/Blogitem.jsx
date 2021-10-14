@@ -10,20 +10,20 @@ function Blogitem({data}) {
   
  
   // eslint-disable-next-line
-  const [facebookUrl, setfacebookUrl] = useState("https://www.facebook.com");
+  const [facebookUrl, setfacebookUrl] = useState("https://www.facebook.com/Creamzo");
   // eslint-disable-next-line
-  const [twitterUrl, settwitterUrl] = useState("https://www.twitter.com");
+  const [twitterUrl, settwitterUrl] = useState("https://twitter.com/creamzo3");
   // eslint-disable-next-line
-  const [instagramUrl, setinstagramUrl] = useState("https://www.instagram.com");
+  const [instagramUrl, setinstagramUrl] = useState("https://www.instagram.com/creamzo7");
   // eslint-disable-next-line
-  const [linkedinUrl, setlinkedinUrl] = useState("https://www.linkedin.com");
+  const [linkedinUrl, setlinkedinUrl] = useState("https://www.linkedin.com/company/creamzo");
   // eslint-disable-next-line
   const [categorytype, setcategorytype] = useState("Art");
   // eslint-disable-next-line
   const [currentArticle,setcurrentArticle] = useArticle()
   return (
     <div style={{  margin: "2rem" }}>
-      <Link  to={'/articleitem'}
+      <Link  to={'/articleitem'} 
           onClick={()=>setcurrentArticle(data)}>
       <img
         src={data?.image}
@@ -46,19 +46,19 @@ function Blogitem({data}) {
        
 
           <div className="iconspack">
-            <Link to={facebookUrl} style={{ color: "black", fontSize: 45 }}>
+            <a href={facebookUrl} rel="noreferrer" target="_blank" style={{ color: "black", fontSize: 45 }}>
               <Facebook />
-            </Link>
-            <Link to={twitterUrl} style={{ color: "black", fontSize: 45 }}>
+            </a>
+            <a href={twitterUrl} target="_blank" rel="noreferrer" style={{ color: "black", fontSize: 45 }}>
               {" "}
               <Twitter />
-            </Link>
-            <Link to={instagramUrl} style={{ color: "black", fontSize: 45 }}>
+            </a>
+            <a href={instagramUrl} target="_blank" rel="noreferrer" style={{ color: "black", fontSize: 45 }}>
               <Instagram />
-            </Link>
-            <Link to={linkedinUrl} style={{ color: "black", fontSize: 45 }}>
+            </a>
+            <a href={linkedinUrl} target="_blank" rel="noreferrer" style={{ color: "black", fontSize: 45 }}>
               <LinkedIn />
-            </Link>
+            </a>
           </div>
           <h6 className="dateopacity">{data?.time?.split('T')[0]}</h6>
           <br />

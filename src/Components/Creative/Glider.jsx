@@ -38,6 +38,9 @@ const Glider = () => {
 					))}
 				</Carousel>
 			</div>
+			<div style={{textAlign:"center"}}>
+				Connect with people and content you love.
+			</div>
 		</React.Fragment>
 	);
 };

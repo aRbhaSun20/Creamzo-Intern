@@ -16,7 +16,8 @@ const HomeBefore = () => {
       <div id="slide_bg"></div>
       <div className="contentAbove">
         <p className="tagLine">
-          LIFE HAS NO COLOR WITHOUT YOUR{' '}
+          <span style={{ fontWeight: 'bold' }}>LIFE</span> HAS NO{' '}
+          <span style={{ fontWeight: 'bold' }}>COLOR</span> WITHOUT YOUR{' '}
           <span style={{ fontWeight: 'bold' }}>IMAGINATION</span> <br />
           IMAGINE <span style={{ fontWeight: 'bold' }}>LIFE </span> !
         </p>

@@ -23,32 +23,34 @@ const Login = ({ setopen, setSignopen, setForget, setReset }) => {
 	const { enqueueSnackbar } = useSnackbar();
 
 	const handleLogin = () => {
-		axiosSendRequest(AXIOS_ACTIONS.POST, "login", {
-			email: mail,
-			passwd: password,
-		})
-			.then((data) => {
-				setLogin({ type: LOGIN_ACTIONS.LOGIN });
-				localStorage.setItem(
-					"creamzoUser",
-					JSON.stringify({
-						token: data.token,
-						fname: data.user.fname,
-						lname: data.user.lname,
-						age: data.user.age,
-						email: data.user.email,
-						creamzoId: data.user.creamzoId,
-						following: data.user.following,
-						followers: data.user.followers,
-						collections: data.user.collections,
-					})
-				);
-				setopen(false);
-				enqueueSnackbar("LogIn Successful", { variant: "success" });
+		if (mail !== "" && password !== "") {
+			axiosSendRequest(AXIOS_ACTIONS.POST, "login", {
+				email: mail,
+				passwd: password,
 			})
-			.catch((e) => {
-				enqueueSnackbar("LogIn Failed", { variant: "error" });
-			});
+				.then((data) => {
+					setLogin({ type: LOGIN_ACTIONS.LOGIN });
+					localStorage.setItem(
+						"creamzoUser",
+						JSON.stringify({
+							token: data.token,
+							fname: data.user.fname,
+							lname: data.user.lname,
+							age: data.user.age,
+							email: data.user.email,
+							creamzoId: data.user.creamzoId,
+							following: data.user.following,
+							followers: data.user.followers,
+							collections: data.user.collections,
+						})
+					);
+					setopen(false);
+					enqueueSnackbar("LogIn Successful", { variant: "success" });
+				})
+				.catch((e) => {
+					enqueueSnackbar("LogIn Failed", { variant: "error" });
+				});
+		}
 	};
 
 	const handleGoogleSignUp = (response) => {

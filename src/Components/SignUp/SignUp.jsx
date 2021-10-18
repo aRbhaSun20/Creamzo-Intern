@@ -13,13 +13,13 @@ import { GoogleLogin } from "react-google-login";
 // eslint-disable-next-line
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 import { useSnackbar } from "notistack";
-const getEmptyStrings = (datas) => {
-	let setStatus = true;
-	datas.forEach((data) => {
-		if (data === "") setStatus = false;
-	});
-	return setStatus;
-};
+// const getEmptyStrings = (datas) => {
+// 	let setStatus = true;
+// 	datas.forEach((data) => {
+// 		if (data === "") setStatus = false;
+// 	});
+// 	return setStatus;
+// };
 const SignUp = ({ setopen, setLoginOpen }) => {
 	const [signUpData, setSignUpData] = useState({
 		firstName: "",
@@ -70,7 +70,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	};
 
 	const handleSIgnUp = () => {
-		if (getEmptyStrings(signUpData)) {
+		// if (getEmptyStrings(signUpData)) {
 			axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", {
 				email: signUpData.mail,
 				password: signUpData.password,
@@ -104,7 +104,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 				.catch((e) => {
 					enqueueSnackbar("SignUp Failed", { variant: "error" });
 				});
-		}
+		// }
 	};
 
 	return (

@@ -295,9 +295,7 @@ const Container = ({ data, height, ...props }) => {
 								onClick={() => {
 									axiosSendRequest(
 										AXIOS_ACTIONS.PUT,
-										`addDownloads/${data?._id}/${
-											data?.creamzoId.split("#")[1]
-										}`,
+										`addDownloads/${data?._id}/${data?.creamzoId}`,
 										null
 									).then((data) => {
 										refetch();
@@ -322,11 +320,7 @@ const Container = ({ data, height, ...props }) => {
 								onClick={() => {
 									axiosSendRequest(
 										AXIOS_ACTIONS.PUT,
-										`addShares/${data?._id}/${
-											data?.creamzoId.split("#").length > 0
-												? `%23${data?.creamzoId.split("#")[1]}`
-												: data?.creamzoId
-										}`,
+										`addShares/${data?._id}/${data?.creamzoId}`,
 										null
 									).then((res) => {
 										refetch();

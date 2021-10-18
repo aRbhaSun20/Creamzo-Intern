@@ -50,7 +50,7 @@ const OverView = () => {
           </Typography>
           <Typography
             variant="subtitle1"
-            style={{ textAlign: "left", fontSize: "17px",padding:"10px" }}
+            style={{ textAlign: "center", fontSize: "17px",padding:"10px" }}
           >
             We welcome annyone who are creative , funny and wants to show the world the power of content.
             {/*Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
@@ -62,7 +62,7 @@ const OverView = () => {
           </Typography>
           <Typography
             variant="subtitle1"
-            style={{ textAlign: "left", fontSize: "17px",padding:"10px" }}
+            style={{ textAlign: "center", fontSize: "17px",padding:"10px" }}
           >
             Share your thoughts and ideas to the largest community of content creators.
             {/*Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis

@@ -62,7 +62,7 @@ const NavBar = () => {
               src={logo}
               className="logo"
               alt="logo"
-              style={{ height: '65px', width: '205px', marginTop: '5px' }}
+              style={{ height: '55px', marginTop: '5px' }}
             />
           </Typography>
         </NavLink>

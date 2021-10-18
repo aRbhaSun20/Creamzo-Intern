@@ -186,11 +186,13 @@
 }
 @media screen and (max-width: 656px) {
   .navbar a {
-    width: 20%;
+    /*width: 20%;*/
+    width: 30%;
   }
   .navbar .remaining-navs {
     /*width: 85%;*/
-    width: 80%;
+    /*width: 80%;*/
+    width: 70%;
   }
   .togglebutton {
     display: none;
@@ -207,11 +209,13 @@
 }
 @media screen and (max-width: 530px) {
   .navbar a {
-    width: 15%;
+    /*width: 15%;*/
+    width: 20%;
   }
   .navbar .remaining-navs {
     /*width: 91%;*/
-    width: 85%;
+    /*width: 85%;*/
+    width: 80%;
   }
   .togglebutton {
     display: none;
@@ -234,11 +238,14 @@
     justify-content: flex-end;
   }
   .navbar a {
-    width: 25%;
+    /*width: 25%;*/
+    width: 33%;
+    height: 60px;
   }
   .navbar .remaining-navs {
     /*width: 80%;*/
-    width: 75%;
+    /*width: 75%;*/
+    width: 65%;
     justify-content: space-evenly;
   }
 }
@@ -246,6 +253,9 @@
 @media screen and (max-width: 600px) {
   .top {
     width: 72%;
+  }
+  .top .input-group {
+    width: 60%;
   }
   .afterloginnav {
     width: 28%;

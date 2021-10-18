@@ -64,7 +64,7 @@ const OverView = () => {
             variant="subtitle1"
             style={{ textAlign: "left", fontSize: "17px",padding:"10px" }}
           >
-            Share your thoughts and to the largest community of content creators.
+            Share your thoughts and ideas to the largest community of content creators.
             {/*Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
             repellat maxime repudiandae voluptatem libero culpa quos dignissimos
             illum impedit!*/}

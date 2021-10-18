@@ -53,7 +53,7 @@ function Account() {
                 }}
                 class="btn btn-info"
               >
-                Edit profile
+                Save Profile
               </Button>
             </div>
           </div>

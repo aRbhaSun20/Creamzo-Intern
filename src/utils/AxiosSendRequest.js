@@ -5,7 +5,7 @@ export const AXIOS_ACTIONS = {
 	GET: "GET",
 	POST: "POST",
 	DELETE: "DELETE",
-	URL: `https://intense-meadow-34129.herokuapp.com`,
+	URL:process.env.REACT_APP_KEY,
 	//   URL: `http://localhost:5000`,
 	HEADERS: {
 		"Content-Type": "application/json",

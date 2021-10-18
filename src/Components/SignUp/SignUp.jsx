@@ -13,6 +13,13 @@ import { GoogleLogin } from "react-google-login";
 // eslint-disable-next-line
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 import { useSnackbar } from "notistack";
+const getEmptyStrings = (datas) => {
+	let setStatus = true;
+	datas.forEach((data) => {
+		if (data === "") setStatus = false;
+	});
+	return setStatus;
+};
 const SignUp = ({ setopen, setLoginOpen }) => {
 	const [signUpData, setSignUpData] = useState({
 		firstName: "",
@@ -63,39 +70,41 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	};
 
 	const handleSIgnUp = () => {
-		axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", {
-			email: signUpData.mail,
-			password: signUpData.password,
-			fname: signUpData.firstName,
-			lname: signUpData.lastName,
-			age: signUpData.age,
-			following: 0,
-			followers: 0,
-			collections: 0,
-		})
-			.then((res) => {
-				setLogin({ type: LOGIN_ACTIONS.LOGIN });
-				setLoginOpen(false);
-				localStorage.setItem(
-					"creamzoUser",
-					JSON.stringify({
-						token: res.token,
-						fname: signUpData.firstName,
-						lname: signUpData.lastName,
-						age: signUpData.age,
-						email: signUpData.mail,
-						creamzoId: res.creamzoId,
-						following: [],
-						followers: [],
-						collections: [],
-					})
-				);
-
-				enqueueSnackbar("SignUp Successful", { variant: "success" });
+		if (getEmptyStrings(signUpData)) {
+			axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", {
+				email: signUpData.mail,
+				password: signUpData.password,
+				fname: signUpData.firstName,
+				lname: signUpData.lastName,
+				age: signUpData.age,
+				following: 0,
+				followers: 0,
+				collections: 0,
 			})
-			.catch((e) => {
-				enqueueSnackbar("SignUp Failed", { variant: "error" });
-			});
+				.then((res) => {
+					setLogin({ type: LOGIN_ACTIONS.LOGIN });
+					setLoginOpen(false);
+					localStorage.setItem(
+						"creamzoUser",
+						JSON.stringify({
+							token: res.token,
+							fname: signUpData.firstName,
+							lname: signUpData.lastName,
+							age: signUpData.age,
+							email: signUpData.mail,
+							creamzoId: res.creamzoId,
+							following: [],
+							followers: [],
+							collections: [],
+						})
+					);
+
+					enqueueSnackbar("SignUp Successful", { variant: "success" });
+				})
+				.catch((e) => {
+					enqueueSnackbar("SignUp Failed", { variant: "error" });
+				});
+		}
 	};
 
 	return (

@@ -5,7 +5,8 @@ import { Button, TextField } from "@material-ui/core";
 import "./style/style.css";
 // import fb from "./assets/fb.png";
 import google from "./assets/google.png";
-
+import Modal from '@material-ui/core/Modal';
+import OTP from "./Otp.jsx"
 // eslint-disable-next-line
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
@@ -36,6 +37,11 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	// eslint-disable-next-line
 	const [age, setAge] = useState("");
 	const { enqueueSnackbar } = useSnackbar();
+	
+	const [OTPOpen, setOTPOpen] = React.useState(false);
+	const handleOTPClose = () => {
+    	setOTPOpen(false);
+	};
 
 	const handleGoogleSignUp = (response) => {
 		axiosSendRequest(AXIOS_ACTIONS.GOOGLE_SIGNUP, "googlelogin", {
@@ -243,7 +249,8 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								handleSIgnUp();
+								setOTPOpen(true);
+								// handleSIgnUp();
 							}}
 							style={{
 								textTransform: "capitalize",
@@ -370,9 +377,22 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							</div>
 							,
 						</div>
+
 					</div>
 				</div>
 			</div>
+			<Modal
+            open={OTPOpen}
+            onClose={handleOTPClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            style={{ display: 'flex', margin: 'auto' }}
+          >
+            <OTP
+              setopen={setOTPOpen}
+              // setOTPopen={setOTPOpen}
+            />
+          </Modal>
 		</React.Fragment>
 	);
 };

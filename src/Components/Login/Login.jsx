@@ -28,7 +28,6 @@ const Login = ({ setopen, setSignopen, setForget, setReset }) => {
 			passwd: password,
 		})
 			.then((data) => {
-				console.log(data);
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				localStorage.setItem(
 					"creamzoUser",

@@ -65,7 +65,7 @@ const Anyone = () => {
 							maxWidth:"180px",
 						}}
 					>
-						Join the Community
+						Join{/*the Community*/}
 					</Button>
 				</div>
 				<div>

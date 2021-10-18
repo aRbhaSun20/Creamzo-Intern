@@ -43,14 +43,14 @@ const OverView = () => {
     <React.Fragment>
       <div
         className="continer">
-        <div className="text" style={{width:"65%"}}>
+        <div className="text" style={{width:"70%"}}>
           <Typography style={{ fontWeight: "bolder",fontSize:"2rem",textAlign: "center" }}>
             {/*OverView Content*/}
             All are welcome
           </Typography>
           <Typography
             variant="subtitle1"
-            style={{ textAlign: "center", fontSize: "17px",padding:"10px" }}
+            style={{ textAlign: "left", fontSize: "17px",padding:"10px" }}
           >
             We welcome annyone who are creative , funny and wants to show the world the power of content.
             {/*Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
@@ -62,7 +62,7 @@ const OverView = () => {
           </Typography>
           <Typography
             variant="subtitle1"
-            style={{ textAlign: "center", fontSize: "17px",padding:"10px" }}
+            style={{ textAlign: "left", fontSize: "17px",padding:"10px" }}
           >
             Share your thoughts and to the largest community of content creators.
             {/*Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis

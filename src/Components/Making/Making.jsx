@@ -32,7 +32,7 @@ const Making = () => {
             variant="subtitle1"
             style={{
               // paddingBottom: "2rem",
-              textAlign: "center",
+              textAlign: "left",
               fontSize: "17px",
             }}
           >
@@ -59,7 +59,7 @@ const Making = () => {
             variant="subtitle1"
             style={{
               // paddingBottom: "2rem",
-              textAlign: "center",
+              textAlign: "left",
               fontSize: "17px",
             }}
           >

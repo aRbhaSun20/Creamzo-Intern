@@ -7,7 +7,8 @@ import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import Appbar from './Appbar.jsx';
 import { LoginContext } from '../../Context/Login';
-import logo from './assets/Creamzo_logo.jpeg';
+// import logo from './assets/Creamzo_logo.jpeg';
+import logo from './assets/Creamzotransperant.png';
 import ForgetPassword from '../Login/ForgotPassword';
 import ResetPassword from '../Login/ResetPassword';
 

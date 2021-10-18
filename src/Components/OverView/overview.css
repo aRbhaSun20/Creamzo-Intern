@@ -28,7 +28,8 @@
     }
     .continer{
         display: block;
-        height: 64vh;
+        /*height: 64vh;*/
+        height: 75vh;
     }
     .text{
         width: 80%;
@@ -38,5 +39,10 @@
     .continer{
         margin-top: 30px;
         height: 85vh;
+    }
+}
+@media screen and (max-width: 400px){
+    .continer{
+        height: 100vh;
     }
 }

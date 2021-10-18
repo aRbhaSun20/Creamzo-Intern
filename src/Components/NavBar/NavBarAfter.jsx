@@ -12,7 +12,7 @@ import './style/style.css';
 import { LoginContext, LOGIN_ACTIONS } from '../../Context/Login';
 import { Search } from '@material-ui/icons';
 import { useState } from 'react';
-import logo from './assets/Creamzo_logo.jpeg';
+import logo from './assets/Creamzotransperant.png';
 import { useSnackbar } from 'notistack';
 import Autocomplete from '@mui/material/Autocomplete';
 import { usePin } from '../../Context/PinsContext';

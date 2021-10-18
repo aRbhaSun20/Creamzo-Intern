@@ -294,7 +294,7 @@ const Container = ({ data, height, ...props }) => {
 							<IconButton
 								onClick={() => {
 									axiosSendRequest(
-										AXIOS_ACTIONS.PUT,
+										AXIOS_ACTIONS.GET,
 										`addDownloads/${data?._id}/${data?.creamzoId}`,
 										null
 									).then((data) => {

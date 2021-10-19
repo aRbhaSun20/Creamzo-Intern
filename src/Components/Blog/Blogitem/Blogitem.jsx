@@ -42,7 +42,7 @@ function Blogitem({data}) {
           <h3 className={"dateopacity"}>{categorytype}</h3>
           <div style={{height:'5rem'}}>
           <h1 style={{ fontSize: "1.2rem" }}>{data?.title}</h1>
-          <p style={{ fontSize: "0.8rem",width:'8rem',fontWeight:'bold' }}>{data?.content.substring(1,30)}</p>
+          <p style={{ fontSize: "0.8rem",width:'8rem',fontWeight:'bold' }}>{data?.content.substring(1,30).concat(" . . .")}</p>
           <h3 style={{fontSize:'0.5rem',opacity:'50%'}}>Author : {data?.name}</h3>
           </div>
           

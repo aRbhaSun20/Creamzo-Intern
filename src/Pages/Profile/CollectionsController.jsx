@@ -34,7 +34,7 @@ export default function CollectionsController({ type }) {
 
 		setFilteredData(data);
 		// eslint-disable-next-line
-	}, [type, pinsData, uploadData]);
+	}, [type, pinsData, uploadData, creamzoUser]);
 
 	return (
 		<div
@@ -80,6 +80,7 @@ function userCollection(pinsData, creamzoUser) {
 			creamzoUser.collections.includes(pinData._id)
 		);
 
+		console.log("lol", userCollections);
 		return userCollections;
 	}
 

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { saveAs } from "file-saver";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import { Popover } from "@material-ui/core";
-// eslint-disable-next-line
+
 import {
 	FacebookIcon,
 	FacebookShareButton,
@@ -18,8 +18,7 @@ import {
 import {
 	AddCircle,
 	AddCircleOutline,
-	ArrowUpward, // eslint-disable-next-line
-	FavoriteBorder,
+	ArrowUpward,
 	Share,
 } from "@material-ui/icons";
 
@@ -29,43 +28,34 @@ import { PIN_ACTIONS, useCurrentPin, usePin } from "../../Context/PinsContext";
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 
 const Container = ({ data, height, ...props }) => {
-	const [opacity, setOpacity] = useState(0);
-	const [errorHandle, setErrorhandle] = useState(false);
-	// eslint-disable-next-line
-	const [pinCurrData, setPinCurrData] = useCurrentPin();
-	// eslint-disable-next-line
-	const [pinsData, refetch] = usePin();
-	const user = JSON.parse(localStorage.getItem("creamzoUser"));
-	const [Collections, setCollections] = useState(false);
-
-	useEffect(() => {
-		console.log(
-			"collection",
-			user?.collections,
-			typeof user !== undefined && Array.isArray(user?.collections)
-		);
-
-		if (typeof user !== undefined && Array.isArray(user?.collections)) {
-			if (user?.collections.find((ele) => ele === data._id) !== undefined) {
-				setCollections(true);
-			}
-		}
-
-		// eslint-disable-next-line
-	}, []);
-	// const { collections } = JSON.parse(localStorage.getItem("creamzoUser"));
 	let history = useHistory();
 
-	// eslint-disable-next-line
-	const [addColl, setaddColl] = useState(true);
-
+	const [opacity, setOpacity] = useState(0);
+	const [errorHandle, setErrorhandle] = useState(false);
+	const [Collections, setCollections] = useState(null);
 	const [anchor, setAnchor] = useState(null);
+
+	const [, setPinCurrData] = useCurrentPin();
+	const [, refetch] = usePin();
+	const user = JSON.parse(localStorage.getItem("creamzoUser"));
+
+	useEffect(() => {
+		if (typeof user !== undefined && Array.isArray(user?.collections)) {
+			if (user.collections.includes(data._id)) {
+				setCollections(true);
+			} else setCollections(false);
+		}
+	}, [user, user?.collections, data]);
+
+	// const [addColl, setaddColl] = useState(true);
+
 	const openPopover = (event) => {
 		setAnchor(event.currentTarget);
 	};
 
 	return (
 		<div
+			id={data._id}
 			className="imglogin"
 			style={{
 				position: "relative",
@@ -170,8 +160,9 @@ const Container = ({ data, height, ...props }) => {
 							{Collections ? (
 								<AddCircle
 									onClick={() => {
+										console.log("removing", data._id);
 										axiosSendRequest(AXIOS_ACTIONS.POST, `removeCollection`, {
-											creamzoId: `${data.creamzoId}`,
+											creamzoId: user?.creamzoId,
 											id: `${data._id}`,
 										}).then((res) => {
 											console.log(res);
@@ -181,9 +172,7 @@ const Container = ({ data, height, ...props }) => {
 												"creamzoUser",
 												JSON.stringify({
 													...user,
-													collections: Array.isArray(res?.collections)
-														? res.collections
-														: [],
+													collections: res?.collections,
 												})
 											);
 
@@ -199,6 +188,7 @@ const Container = ({ data, height, ...props }) => {
 							) : (
 								<AddCircleOutline
 									onClick={() => {
+										console.log("adding", data._id);
 										axiosSendRequest(AXIOS_ACTIONS.POST, `addCollection`, {
 											creamzoId: `${user?.creamzoId}`,
 											id: `${data._id}`,

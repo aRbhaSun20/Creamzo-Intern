@@ -29,25 +29,30 @@ const Login = ({ setopen, setSignopen, setForget, setReset }) => {
 				passwd: password,
 			})
 				.then((data) => {
-					setLogin({ type: LOGIN_ACTIONS.LOGIN });
-					localStorage.setItem(
-						"creamzoUser",
-						JSON.stringify({
-							token: data.token,
-							fname: data.user.fname,
-							lname: data.user.lname,
-							age: data.user.age,
-							email: data.user.email,
-							creamzoId: data.user.creamzoId,
-							following: data.user.following,
-							followers: data.user.followers,
-							collections: data.user.collections,
-						})
-					);
-					setopen(false);
-					enqueueSnackbar("LogIn Successful", { variant: "success" });
+					if (data && data !== "") {
+						setLogin({ type: LOGIN_ACTIONS.LOGIN });
+						localStorage.setItem(
+							"creamzoUser",
+							JSON.stringify({
+								token: data.token,
+								fname: data.user.fname,
+								lname: data.user.lname,
+								age: data.user.age,
+								email: data.user.email,
+								creamzoId: data.user.creamzoId,
+								following: data.user.following,
+								followers: data.user.followers,
+								collections: data.user.collections,
+							})
+						);
+						setopen(false);
+						enqueueSnackbar("LogIn Successful", { variant: "success" });
+					} else {
+						enqueueSnackbar("LogIn Failed", { variant: "error" });
+					}
 				})
 				.catch((e) => {
+					console.log("error", e);
 					enqueueSnackbar("LogIn Failed", { variant: "error" });
 				});
 		}

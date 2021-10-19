@@ -1,5 +1,5 @@
-import { TextField, Button,Link } from "@mui/material";
-import React, { useState } from "react";
+import { TextField, Button, Link } from "@mui/material";
+import React from "react";
 import "./style/style.css";
 
 const OTP = ({ setopen, setOTP }) => {
@@ -51,15 +51,15 @@ const OTP = ({ setopen, setOTP }) => {
 						</div>
 					</div>
 					<Button
-							variant="contained"
-							color="primary"
-							onClick={(e) => {
-								e.preventDefault();
-							}}
-							style={{
-								textTransform: "capitalize",
-							}}
-						>
+						variant="contained"
+						color="primary"
+						onClick={(e) => {
+							e.preventDefault();
+						}}
+						style={{
+							textTransform: "capitalize",
+						}}
+					>
 						<Link to="/">Submit</Link>
 					</Button>
 				</div>

@@ -17,6 +17,7 @@ export const AXIOS_ACTIONS = {
 	REGISTER: "REGISTER",
 	CREATE_PIN: "CREATE_PIN",
 	GOOGLE_SIGNUP: "google_signup",
+	IMAGE_UPLOAD: "IMG_UPLOAD",
 };
 
 export const axiosSendRequest = async (type, url, sendData) => {
@@ -98,11 +99,20 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			formCreate.append("tags", sendData.tags);
 			formCreate.append("creamzoId", sendData.creamzoId);
 			formCreate.append("file1", sendData.imgPath);
-			console.log(sendData);
 			config = {
 				method: "post",
 				url: `${AXIOS_ACTIONS.URL}/${url}`,
 				data: formCreate,
+			};
+			break;
+
+		case AXIOS_ACTIONS.IMAGE_UPLOAD:
+			let formImage = new FormData();
+			formImage.append("image", sendData.image);
+			config = {
+				method: "post",
+				url: `${AXIOS_ACTIONS.URL}/${url}`,
+				data: formImage,
 			};
 			break;
 

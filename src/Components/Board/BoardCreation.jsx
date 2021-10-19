@@ -47,7 +47,7 @@ const BoardCreation = ({ addMore, index, total }) => {
 			// let dataImg = e.target.value.split(`\\`);
 			// let blob = URL.createObjectURL(e.target.files[0]);
 			// console.log(e.target.files[0]);
-			if (e.target.files[0].size > 1_048_576) {
+			if (e.target.files[0].size > 1048576) {
 				alert("Image size should be less than 1mb");
 				return;
 			}

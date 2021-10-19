@@ -5,13 +5,13 @@ import './css/bootstrap.css';
 import './css/theme.css';
 import './css/inside.css';
 import './css/blocs.css';
-import ContentHead from './assets/ContentTeam/Sarvani Addanki.png';
-import WebDevLead from './assets/Leader/Jayesh J.png';
-import SocialLead from './assets/Leader/Tanisha P.png';
+// import ContentHead from './assets/ContentTeam/Sarvani Addanki.png';
+// import WebDevLead from './assets/Leader/Jayesh J.png';
+import SocialLead from './assets/Leader/Yuvan Raja.png';
 import ProofreadingLead from './assets/Leader/Anuradha Singha.png';
-import DigitalLead from './assets/Leader/Jhanavi Ananthakumar.png';
-import CreativeLead from './assets/Leader/Nishi Khodaria.png';
-
+import DigitalLead from './assets/Leader/Harshini Vhalli S.png';
+import CreativeLead from './assets/Leader/Shwetha Lakhwani.png';
+import GraphicLead from './assets/Leader/Abhishek Patil.png';
 // import Image from './img/caricature-joey.svg';
 
 function importAll(r){
@@ -37,13 +37,13 @@ const GraphicTeam=importAll(require.context('./assets/GraphicTeam/',false,/\.(sv
 
 function Team() {
   return (
-    <div style={{backgroundColor:"black"}}>
+    <div style={{backgroundColor:"black",paddingTop:"25px"}}>
       <section class="insideTeam contenuPage-section section-centree">
     <div class="container" style={{height:"auto",justifyContent:"center"}}>
             <div class="row no-gutters">
                 <div class="col-lg-11">
                     <div class="titreCarre" data-mini1="B" data-mini2="D" data-mini3="C">
-                        <h2 class="titreCarre-interne">
+                        <h2 class="titreCarre-interne" style={{color:"white"}}>
                           <small class="titreCarre-preTitre">The </small>
                           <span class="titreCarre-titre">CREAMZO TEAM</span>
                         </h2>
@@ -79,7 +79,7 @@ function Team() {
     <div class="row no-gutters"  style={{justifyContent:"center"}}>
                 <div class="col-lg-11"  style={{justifyContent:"center"}}>
                     <div class="titreCarre" data-mini1="B" data-mini2="D" data-mini3="C">
-                        <h2 class="titreCarre-interne">
+                        <h2 class="titreCarre-interne" style={{color:"white"}}>
                           <small class="titreCarre-preTitre">The </small>
                           <span class="titreCarre-titre">HR Team</span>
                         </h2>
@@ -113,7 +113,7 @@ function Team() {
     <div class="row no-gutters" style={{justifyContent:"center"}}>
                 <div class="col-lg-11" style={{justifyContent:"center"}}>
                     <div class="titreCarre" data-mini1="B" data-mini2="D" data-mini3="C">
-                        <h2 class="titreCarre-interne">
+                        <h2 class="titreCarre-interne" style={{color:"white"}}>
                           <small class="titreCarre-preTitre">The </small>
                           <span class="titreCarre-titre">Web Development Team</span>
                         </h2>
@@ -122,7 +122,7 @@ function Team() {
     </div>
 
     <div class="row gutters-right" style={{marginLeft:"1%",justifyContent:"center"}}>
-      <div class="col-lg-3">
+      {/*<div class="col-lg-3">
 
         <div class="tematik_trombinoscope">
       
@@ -136,7 +136,7 @@ function Team() {
           </div>
         
         </div>
-      </div>
+      </div>*/}
     {
       WebDevTeam.map(image=>(
         <div class="col-lg-3">
@@ -161,15 +161,32 @@ function Team() {
     <div class="row no-gutters" style={{justifyContent:"center"}}>
                 <div class="col-lg-11" style={{justifyContent:"center"}}>
                     <div class="titreCarre" data-mini1="B" data-mini2="D" data-mini3="C">
-                        <h2 class="titreCarre-interne">
+                        <h2 class="titreCarre-interne" style={{color:"white"}}>
                           <small class="titreCarre-preTitre">The </small>
                           <span class="titreCarre-titre">Graphic Design Team</span>
                         </h2>
                     </div>
                 </div>
     </div>
-
+    
+      
     <div class="row gutters-right" style={{marginLeft:"1%",justifyContent:"center"}}>
+    
+      <div class="col-lg-3">
+
+        <div class="tematik_trombinoscope">
+      
+          <div class="tematik_trombinoscope-image">
+            <img src={GraphicLead} alt="Caroline "/>
+          </div>
+      
+          <div class="info">
+            <strong class="titre4">Abhishek Patil</strong>
+            <small class="tip">Graphic Team Lead</small>
+          </div>
+        
+        </div>
+      </div>
     {
       GraphicTeam.map(image=>(
         <div class="col-lg-3">
@@ -194,7 +211,7 @@ function Team() {
     <div class="row no-gutters" style={{justifyContent:"center"}}>
                 <div class="col-lg-11" style={{justifyContent:"center"}}>
                     <div class="titreCarre" data-mini1="B" data-mini2="D" data-mini3="C">
-                        <h2 class="titreCarre-interne">
+                        <h2 class="titreCarre-interne" style={{color:"white"}}>
                           <small class="titreCarre-preTitre">The </small>
                           <span class="titreCarre-titre">Content Team</span>
                         </h2>
@@ -202,23 +219,23 @@ function Team() {
                 </div>
     </div>
 
-    <div class="row gutters-right" style={{marginLeft:"1%",justifyContent:"center"}}>
+    {/*<div class="row gutters-right" style={{marginLeft:"1%",justifyContent:"center"}}>
         <div class="col-lg-3">
 
-        <div class="tematik_trombinoscope">
-      
-          <div class="tematik_trombinoscope-image">
-            <img src={ContentHead} alt="Caroline "/>
-          </div>
-      
-          <div class="info">
-            <strong class="titre4">Sarvani Addanki</strong>
-            <small class="tip">Head of Content</small>
-          </div>
+          <div class="tematik_trombinoscope">
         
+            <div class="tematik_trombinoscope-image">
+              <img src={ContentHead} alt="Caroline "/>
+            </div>
+        
+            <div class="info">
+              <strong class="titre4">Sarvani Addanki</strong>
+              <small class="tip">Head of Content</small>
+            </div>
+          
+          </div>
         </div>
-        </div>
-    </div>
+    </div>*/}
     <div class="row gutters-right" style={{marginLeft:"1%",justifyContent:"center"}}>
       <div class="col-lg-3">
 
@@ -229,7 +246,7 @@ function Team() {
           </div>
       
           <div class="info">
-            <strong class="titre4">Nishi Khodaria</strong>
+            <strong class="titre4">Shewtha Lakhwani</strong>
             <small class="tip">Creative Team Lead</small>
           </div>
         
@@ -266,7 +283,7 @@ function Team() {
           </div>
       
           <div class="info">
-            <strong class="titre4">Jhanavi A</strong>
+            <strong class="titre4">Harshini Vhalli S</strong>
             <small class="tip">Digital Team Lead</small>
           </div>
         
@@ -340,7 +357,7 @@ function Team() {
           </div>
       
           <div class="info">
-            <strong class="titre4">Tanisha P</strong>
+            <strong class="titre4">Yuvan Shanker Raja P</strong>
             <small class="tip">Social Media Team Lead</small>
           </div>
         

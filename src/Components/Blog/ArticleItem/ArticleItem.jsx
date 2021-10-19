@@ -21,6 +21,7 @@ function ArticleItem({data}) {
 				alt="article"
 			/>
 			<h1 className="heading-text">{data?.title}</h1>
+			<h3 style={{fontSize:'1.5rem',opacity:'50%'}}>Author : {data?.name}</h3>
 			<h3 className="secondary-article-text">{data?.content} </h3>
 			{
 				Object.keys(data?.arObj ? data?.arObj[0] : {}).map((myData)=>

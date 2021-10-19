@@ -10,7 +10,7 @@ export const UploadsProvider = ({ children }) => {
 	const creamzoUser = JSON.parse(localStorage.getItem("creamzoUser"));
 
 	const { data: UploadsData, refetch } = useQuery("My Uploads", async () =>
-		axiosSendRequest(AXIOS_ACTIONS.GET, `myUploads/${creamzoUser.creamzoId}`)
+		axiosSendRequest(AXIOS_ACTIONS.GET, `myUploads/${creamzoUser?.creamzoId}`)
 	);
 
 	return (

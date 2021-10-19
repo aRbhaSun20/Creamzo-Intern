@@ -5,7 +5,8 @@ import { Button, TextField } from "@material-ui/core";
 import "./style/style.css";
 // import fb from "./assets/fb.png";
 import google from "./assets/google.png";
-
+import Modal from "@material-ui/core/Modal";
+import OTP from "./Otp.jsx";
 // eslint-disable-next-line
 import { LoginContext, LOGIN_ACTIONS } from "../../Context/Login";
 import { Link } from "react-router-dom";
@@ -13,13 +14,13 @@ import { GoogleLogin } from "react-google-login";
 // eslint-disable-next-line
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 import { useSnackbar } from "notistack";
-const getEmptyStrings = (datas) => {
-	let setStatus = true;
-	datas.forEach((data) => {
-		if (data === "") setStatus = false;
-	});
-	return setStatus;
-};
+// const getEmptyStrings = (datas) => {
+// 	let setStatus = true;
+// 	datas.forEach((data) => {
+// 		if (data === "") setStatus = false;
+// 	});
+// 	return setStatus;
+// };
 const SignUp = ({ setopen, setLoginOpen }) => {
 	const [signUpData, setSignUpData] = useState({
 		firstName: "",
@@ -36,6 +37,11 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	// eslint-disable-next-line
 	const [age, setAge] = useState("");
 	const { enqueueSnackbar } = useSnackbar();
+
+	const [OTPOpen, setOTPOpen] = React.useState(false);
+	const handleOTPClose = () => {
+		setOTPOpen(false);
+	};
 
 	const handleGoogleSignUp = (response) => {
 		axiosSendRequest(AXIOS_ACTIONS.GOOGLE_SIGNUP, "googlelogin", {
@@ -69,42 +75,43 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 		setSignUpData((state) => ({ ...state, [e.target.name]: e.target.value }));
 	};
 
+	// eslint-disable-next-line
 	const handleSIgnUp = () => {
-		if (getEmptyStrings(signUpData)) {
-			axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", {
-				email: signUpData.mail,
-				password: signUpData.password,
-				fname: signUpData.firstName,
-				lname: signUpData.lastName,
-				age: signUpData.age,
-				following: 0,
-				followers: 0,
-				collections: 0,
-			})
-				.then((res) => {
-					setLogin({ type: LOGIN_ACTIONS.LOGIN });
-					setLoginOpen(false);
-					localStorage.setItem(
-						"creamzoUser",
-						JSON.stringify({
-							token: res.token,
-							fname: signUpData.firstName,
-							lname: signUpData.lastName,
-							age: signUpData.age,
-							email: signUpData.mail,
-							creamzoId: res.creamzoId,
-							following: [],
-							followers: [],
-							collections: [],
-						})
-					);
+		// if (getEmptyStrings(signUpData)) {
+		axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", {
+			email: signUpData.mail,
+			password: signUpData.password,
+			fname: signUpData.firstName,
+			lname: signUpData.lastName,
+			age: signUpData.age,
+			following: 0,
+			followers: 0,
+			collections: 0,
+		})
+			.then((res) => {
+				setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				setLoginOpen(false);
+				localStorage.setItem(
+					"creamzoUser",
+					JSON.stringify({
+						token: res.token,
+						fname: signUpData.firstName,
+						lname: signUpData.lastName,
+						age: signUpData.age,
+						email: signUpData.mail,
+						creamzoId: res.creamzoId,
+						following: [],
+						followers: [],
+						collections: [],
+					})
+				);
 
-					enqueueSnackbar("SignUp Successful", { variant: "success" });
-				})
-				.catch((e) => {
-					enqueueSnackbar("SignUp Failed", { variant: "error" });
-				});
-		}
+				enqueueSnackbar("SignUp Successful", { variant: "success" });
+			})
+			.catch((e) => {
+				enqueueSnackbar("SignUp Failed", { variant: "error" });
+			});
+		// }
 	};
 
 	return (
@@ -243,7 +250,8 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								handleSIgnUp();
+								setOTPOpen(true);
+								// handleSIgnUp();
 							}}
 							style={{
 								textTransform: "capitalize",
@@ -373,6 +381,18 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 					</div>
 				</div>
 			</div>
+			<Modal
+				open={OTPOpen}
+				onClose={handleOTPClose}
+				aria-labelledby="simple-modal-title"
+				aria-describedby="simple-modal-description"
+				style={{ display: "flex", margin: "auto" }}
+			>
+				<OTP
+					setopen={setOTPOpen}
+					// setOTPopen={setOTPOpen}
+				/>
+			</Modal>
 		</React.Fragment>
 	);
 };

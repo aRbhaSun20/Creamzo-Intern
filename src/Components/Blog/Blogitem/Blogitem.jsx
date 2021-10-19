@@ -42,8 +42,10 @@ function Blogitem({data}) {
           <h3 className={"dateopacity"}>{categorytype}</h3>
           <div style={{height:'5rem'}}>
           <h1 style={{ fontSize: "1.2rem" }}>{data?.title}</h1>
+          <p style={{ fontSize: "0.8rem",width:'8rem',fontWeight:'bold' }}>{data?.content.substring(1,30).concat(" . . .")}</p>
+          <h3 style={{fontSize:'0.5rem',opacity:'50%'}}>Author : {data?.name}</h3>
           </div>
-       
+          
 
           <div className="iconspack">
             <a href={facebookUrl} rel="noreferrer" target="_blank" style={{ color: "black", fontSize: 45 }}>
@@ -60,7 +62,7 @@ function Blogitem({data}) {
               <LinkedIn />
             </a>
           </div>
-          <h6 className="dateopacity">{data?.time?.split('T')[0]}</h6>
+          <h6 style={{fontSize:'0.5rem',opacity:'50%'}}>{data?.time?.split('T')[0]}</h6>
           <br />
           <Link to={'/articleitem'}
           onClick={()=>setcurrentArticle(data)}

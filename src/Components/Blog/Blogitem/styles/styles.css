@@ -1,11 +1,8 @@
 .iconspack {
   display: flex;
-  gap: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  gap: 0.9rem;
+  padding-top: 1.1rem;
+ 
 }
 
-.dateopacity {
-  opacity: 0.5;
-}
 

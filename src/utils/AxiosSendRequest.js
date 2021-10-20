@@ -59,14 +59,6 @@ export const axiosSendRequest = async (type, url, sendData) => {
 			};
 			break;
 
-		case AXIOS_ACTIONS.SIGNUP:
-			config = {
-				method: "post",
-				url: `${AXIOS_ACTIONS.URL}/${url}`,
-				data: JSON.stringify(sendData),
-			};
-			break;
-
 		case AXIOS_ACTIONS.GOOGLE_SIGNUP:
 			config = {
 				method: "post",

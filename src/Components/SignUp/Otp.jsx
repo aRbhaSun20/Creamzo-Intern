@@ -1,14 +1,28 @@
-import { TextField, Button, Link } from "@mui/material";
-import React from "react";
+import { TextField, Button } from "@mui/material";
+import { useSnackbar } from "notistack";
+import React, { useState } from "react";
 import "./style/style.css";
 
-const OTP = ({ setopen, setOTP }) => {
-	// const [password, setPassword] = useState("");
+const OTP = ({ otp, setopen, handleSIgnUp }) => {
+	const [password, setPassword] = useState("");
+	const { enqueueSnackbar } = useSnackbar();
 
-	// const handleOTP = () => {
-	// 	setopen(false);
-	// 	setOTP(true);
-	// };
+	const handleOTP = () => {
+		if (password !== 0 && otp !== 0) {
+			if (password === otp) {
+				setopen(false);
+				enqueueSnackbar("otp verification is successful", {
+					variant: "success",
+				});
+				handleSIgnUp();
+			} else {
+				enqueueSnackbar("otp verification is failed try again", {
+					variant: "error",
+				});
+			}
+		}
+		console.log(password,otp)
+	};
 
 	return (
 		<React.Fragment>
@@ -35,9 +49,12 @@ const OTP = ({ setopen, setOTP }) => {
 					<div className="inputs">
 						<div className="inp">
 							<TextField
-								// value={password}
+								value={password}
 								onChange={(e) => {
+									let val = parseInt(e.target.value);
 									e.preventDefault();
+									if (!isNaN(val)) setPassword(val);
+									else setPassword("")
 								}}
 								type="password"
 								style={{
@@ -55,12 +72,13 @@ const OTP = ({ setopen, setOTP }) => {
 						color="primary"
 						onClick={(e) => {
 							e.preventDefault();
+							handleOTP();
 						}}
 						style={{
 							textTransform: "capitalize",
 						}}
 					>
-						<Link to="/">Submit</Link>
+						Submit
 					</Button>
 				</div>
 			</div>

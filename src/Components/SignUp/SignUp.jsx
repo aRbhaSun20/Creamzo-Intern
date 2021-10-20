@@ -14,13 +14,15 @@ import { GoogleLogin } from "react-google-login";
 // eslint-disable-next-line
 import { axiosSendRequest, AXIOS_ACTIONS } from "../../utils/AxiosSendRequest";
 import { useSnackbar } from "notistack";
-// const getEmptyStrings = (datas) => {
-// 	let setStatus = true;
-// 	datas.forEach((data) => {
-// 		if (data === "") setStatus = false;
-// 	});
-// 	return setStatus;
-// };
+
+const getEmptyStrings = (datas) => {
+	let setStatus = true;
+	Object.keys(datas).forEach((data) => {
+		if (datas[data] === "") setStatus = false;
+	});
+	return setStatus;
+};
+
 const SignUp = ({ setopen, setLoginOpen }) => {
 	const [signUpData, setSignUpData] = useState({
 		firstName: "",
@@ -39,6 +41,8 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 	const { enqueueSnackbar } = useSnackbar();
 
 	const [OTPOpen, setOTPOpen] = React.useState(false);
+	const [otp, setOtp] = useState(0);
+
 	const handleOTPClose = () => {
 		setOTPOpen(false);
 	};
@@ -50,7 +54,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			.then((res) => {
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				setLoginOpen(false);
-				console.log(res)
+				console.log(res);
 				localStorage.setItem(
 					"creamzoUser",
 					JSON.stringify({
@@ -78,39 +82,41 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 
 	// eslint-disable-next-line
 	const handleSIgnUp = () => {
-		// if (getEmptyStrings(signUpData)) {
-		axiosSendRequest(AXIOS_ACTIONS.SIGNUP, "signup", {
-			email: signUpData.mail,
-			password: signUpData.password,
-			fname: signUpData.firstName,
-			lname: signUpData.lastName,
-			age: signUpData.age,
-		})
-			.then((res) => {
-				// setLogin({ type: LOGIN_ACTIONS.LOGIN });
-				// setLoginOpen(false);
-				console.log(res)
-				localStorage.setItem(
-					"creamzoUser",
-					JSON.stringify({
-						token: res.token,
-						fname: signUpData.firstName,
-						lname: signUpData.lastName,
-						age: signUpData.age,
-						email: signUpData.mail,
-						creamzoId: res.creamzoId,
-						following: [],
-						followers: [],
-						collections: [],
-					})
-				);
-
-				enqueueSnackbar("SignUp Successful", { variant: "success" });
+		if (getEmptyStrings(signUpData)) {
+			axiosSendRequest(AXIOS_ACTIONS.POST, "signup", {
+				email: signUpData.mail,
+				password: signUpData.password,
+				fname: signUpData.firstName,
+				lname: signUpData.lastName,
+				age: signUpData.age,
 			})
-			.catch((e) => {
-				enqueueSnackbar("SignUp Failed", { variant: "error" });
-			});
-		// }
+				.then((res) => {
+					setLogin({ type: LOGIN_ACTIONS.LOGIN });
+					setLoginOpen(false);
+					console.log(res);
+					localStorage.setItem(
+						"creamzoUser",
+						JSON.stringify({
+							token: res.token,
+							fname: signUpData.firstName,
+							lname: signUpData.lastName,
+							age: signUpData.age,
+							email: signUpData.mail,
+							creamzoId: res.creamzoId,
+							following: [],
+							followers: [],
+							collections: [],
+						})
+					);
+
+					enqueueSnackbar("SignUp Successful", { variant: "success" });
+				})
+				.catch((e) => {
+					enqueueSnackbar("SignUp Failed", { variant: "error" });
+				});
+		} else {
+			enqueueSnackbar("SignUp Failed Enter details", { variant: "error" });
+		}
 	};
 
 	return (
@@ -249,7 +255,23 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								handleSIgnUp();
+
+								if (getEmptyStrings(signUpData)) {
+									enqueueSnackbar("Otp sent please verify", {
+										variant: "success",
+									});
+									axiosSendRequest(AXIOS_ACTIONS.POST, "otp", {
+										email: signUpData.mail,
+									}).then((res) => {
+										console.log(res);
+										setOtp(res.uid)
+										setOTPOpen(true);
+									});
+								}else{
+									enqueueSnackbar("SignUp failed enter valid information", {
+										variant: "error",
+									});
+								}
 							}}
 							style={{
 								textTransform: "capitalize",
@@ -387,7 +409,9 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 				style={{ display: "flex", margin: "auto" }}
 			>
 				<OTP
+					otp={otp}
 					setopen={setOTPOpen}
+					handleSIgnUp={handleSIgnUp}
 					// setOTPopen={setOTPOpen}
 				/>
 			</Modal>

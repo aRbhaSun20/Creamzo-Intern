@@ -50,6 +50,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			.then((res) => {
 				setLogin({ type: LOGIN_ACTIONS.LOGIN });
 				setLoginOpen(false);
+				console.log(res)
 				localStorage.setItem(
 					"creamzoUser",
 					JSON.stringify({
@@ -84,13 +85,11 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 			fname: signUpData.firstName,
 			lname: signUpData.lastName,
 			age: signUpData.age,
-			following: 0,
-			followers: 0,
-			collections: 0,
 		})
 			.then((res) => {
-				setLogin({ type: LOGIN_ACTIONS.LOGIN });
-				setLoginOpen(false);
+				// setLogin({ type: LOGIN_ACTIONS.LOGIN });
+				// setLoginOpen(false);
+				console.log(res)
 				localStorage.setItem(
 					"creamzoUser",
 					JSON.stringify({
@@ -250,8 +249,7 @@ const SignUp = ({ setopen, setLoginOpen }) => {
 							color="primary"
 							onClick={(e) => {
 								e.preventDefault();
-								setOTPOpen(true);
-								// handleSIgnUp();
+								handleSIgnUp();
 							}}
 							style={{
 								textTransform: "capitalize",
